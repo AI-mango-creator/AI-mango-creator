@@ -1,0 +1,73 @@
+{
+  "kind": "真实CDP两隔离浏览器上下文；仅开发显式seed A，未调用模型",
+  "owners": {
+    "A": "276adcc8-8dae-46cc-bbd8-b2596a0466dd",
+    "B": "417d787b-31d2-474a-9ed7-f6f7a7e8c923"
+  },
+  "new_device_A_empty_before_seed": true,
+  "seeded": "衣柜初始化完成：本次新增 14 件，当前共 14 件。",
+  "cards": {
+    "A": 14,
+    "B": 0
+  },
+  "id_persisted": true,
+  "metrics": {
+    "A": {
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    "B": {
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    }
+  },
+  "requests": {
+    "A": [
+      {
+        "url": "http://127.0.0.1:5173/api/wardrobe/items",
+        "method": "GET",
+        "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+      },
+      {
+        "url": "http://127.0.0.1:5173/api/wardrobe/items",
+        "method": "GET",
+        "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+      },
+      {
+        "url": "http://127.0.0.1:5173/api/wardrobe/items",
+        "method": "GET",
+        "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+      },
+      {
+        "url": "http://127.0.0.1:5173/api/wardrobe/items",
+        "method": "GET",
+        "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+      }
+    ],
+    "B": [
+      {
+        "url": "http://127.0.0.1:5173/api/wardrobe/items",
+        "method": "GET",
+        "device": "417d787b-31d2-474a-9ed7-f6f7a7e8c923"
+      },
+      {
+        "url": "http://127.0.0.1:5173/api/wardrobe/items",
+        "method": "GET",
+        "device": "417d787b-31d2-474a-9ed7-f6f7a7e8c923"
+      },
+      {
+        "url": "http://127.0.0.1:5173/api/wardrobe/items",
+        "method": "GET",
+        "device": "417d787b-31d2-474a-9ed7-f6f7a7e8c923"
+      },
+      {
+        "url": "http://127.0.0.1:5173/api/wardrobe/items",
+        "method": "GET",
+        "device": "417d787b-31d2-474a-9ed7-f6f7a7e8c923"
+      }
+    ]
+  },
+  "errors": []
+}

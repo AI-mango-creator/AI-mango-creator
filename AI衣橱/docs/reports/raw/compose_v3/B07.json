@@ -1,0 +1,415 @@
+{
+  "case_id": "B07",
+  "source": "真实调用",
+  "timestamp": "2026-11-13T16:32:22+08:00",
+  "sample_count": 3,
+  "passed_count": 3,
+  "degraded_count": 0,
+  "samples": [
+    {
+      "case_id": "B07",
+      "timestamp": "2026-11-13T16:32:03+08:00",
+      "model": "qwen3.8-flash",
+      "prompt_version": "outfit_compose.v1",
+      "source": "真实调用",
+      "input": {
+        "temp_c": 26,
+        "occasion": "commute",
+        "formality_target": [
+          3,
+          5
+        ],
+        "excluded": []
+      },
+      "expect": {
+        "set_count": 3,
+        "must_not_use": [
+          "W02",
+          "W07",
+          "W10",
+          "W12"
+        ],
+        "all_items_in_wardrobe": true
+      },
+      "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，正式度3符合通勤目标，热天无外套且黑色皮革鞋提供视觉平衡。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W11\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装与藏青混纺下装组合，正式度4处于目标区间，适合26度高温通勤穿着。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W06\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配黑色混纺下装，正式度5满足高要求场合，热天保持轻薄无外套状态。\"\n    }\n  ]\n}",
+      "parsed": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配米色混纺下装，正式度3符合通勤目标，热天无外套且黑色皮革鞋提供视觉平衡。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W11",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装与藏青混纺下装组合，正式度4处于目标区间，适合26度高温通勤穿着。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W06",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配黑色混纺下装，正式度5满足高要求场合，热天保持轻薄无外套状态。"
+          }
+        ]
+      },
+      "parse_ok": true,
+      "http_status": 200,
+      "candidate_ids": [
+        "W01",
+        "W04",
+        "W06",
+        "W09",
+        "W11"
+      ],
+      "band": "hot",
+      "composable_count": 3,
+      "latency_ms": 6872,
+      "degraded": false,
+      "degrade_reason": null,
+      "result": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配米色混纺下装，正式度3符合通勤目标，热天无外套且黑色皮革鞋提供视觉平衡。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W11",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装与藏青混纺下装组合，正式度4处于目标区间，适合26度高温通勤穿着。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W06",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配黑色混纺下装，正式度5满足高要求场合，热天保持轻薄无外套状态。"
+          }
+        ],
+        "shortage": null,
+        "shortage_hint": null,
+        "degraded": false,
+        "latency_ms": 6872,
+        "prompt_version": "outfit_compose.v1",
+        "degrade_reason": null
+      },
+      "checks": {
+        "set_count": true,
+        "must_not_use": true,
+        "all_items_in_wardrobe": true
+      },
+      "passed": true,
+      "failure_reasons": [],
+      "attribution": "—",
+      "attempts": [
+        {
+          "timestamp": "2026-11-13T16:32:03+08:00",
+          "http_status": 200,
+          "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，正式度3符合通勤目标，热天无外套且黑色皮革鞋提供视觉平衡。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W11\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装与藏青混纺下装组合，正式度4处于目标区间，适合26度高温通勤穿着。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W06\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配黑色混纺下装，正式度5满足高要求场合，热天保持轻薄无外套状态。\"\n    }\n  ]\n}"
+        }
+      ],
+      "retry_feedback": [],
+      "error": null,
+      "evidence": "docs/reports/raw/compose_v3/B07.r01.json",
+      "sample_index": 1
+    },
+    {
+      "case_id": "B07",
+      "timestamp": "2026-11-13T16:32:10+08:00",
+      "model": "qwen3.8-flash",
+      "prompt_version": "outfit_compose.v1",
+      "source": "真实调用",
+      "input": {
+        "temp_c": 26,
+        "occasion": "commute",
+        "formality_target": [
+          3,
+          5
+        ],
+        "excluded": []
+      },
+      "expect": {
+        "set_count": 3,
+        "must_not_use": [
+          "W02",
+          "W07",
+          "W10",
+          "W12"
+        ],
+        "all_items_in_wardrobe": true
+      },
+      "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，适合26度热带的通勤场景，正式度3符合目标下限。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W11\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装与藏青混纺下装组合，黑色皮革鞋提升整体正式度至4，适应热带通勤需求。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W06\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配黑色高正式度混纺下装，配合黑色皮鞋，满足正式度5的目标要求且无外套适应高温。\"\n    }\n  ]\n}",
+      "parsed": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配米色混纺下装，适合26度热带的通勤场景，正式度3符合目标下限。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W11",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装与藏青混纺下装组合，黑色皮革鞋提升整体正式度至4，适应热带通勤需求。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W06",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配黑色高正式度混纺下装，配合黑色皮鞋，满足正式度5的目标要求且无外套适应高温。"
+          }
+        ]
+      },
+      "parse_ok": true,
+      "http_status": 200,
+      "candidate_ids": [
+        "W01",
+        "W04",
+        "W06",
+        "W09",
+        "W11"
+      ],
+      "band": "hot",
+      "composable_count": 3,
+      "latency_ms": 6286,
+      "degraded": false,
+      "degrade_reason": null,
+      "result": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配米色混纺下装，适合26度热带的通勤场景，正式度3符合目标下限。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W11",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装与藏青混纺下装组合，黑色皮革鞋提升整体正式度至4，适应热带通勤需求。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W06",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配黑色高正式度混纺下装，配合黑色皮鞋，满足正式度5的目标要求且无外套适应高温。"
+          }
+        ],
+        "shortage": null,
+        "shortage_hint": null,
+        "degraded": false,
+        "latency_ms": 6286,
+        "prompt_version": "outfit_compose.v1",
+        "degrade_reason": null
+      },
+      "checks": {
+        "set_count": true,
+        "must_not_use": true,
+        "all_items_in_wardrobe": true
+      },
+      "passed": true,
+      "failure_reasons": [],
+      "attribution": "—",
+      "attempts": [
+        {
+          "timestamp": "2026-11-13T16:32:10+08:00",
+          "http_status": 200,
+          "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，适合26度热带的通勤场景，正式度3符合目标下限。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W11\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装与藏青混纺下装组合，黑色皮革鞋提升整体正式度至4，适应热带通勤需求。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W06\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配黑色高正式度混纺下装，配合黑色皮鞋，满足正式度5的目标要求且无外套适应高温。\"\n    }\n  ]\n}"
+        }
+      ],
+      "retry_feedback": [],
+      "error": null,
+      "evidence": "docs/reports/raw/compose_v3/B07.r02.json",
+      "sample_index": 2
+    },
+    {
+      "case_id": "B07",
+      "timestamp": "2026-11-13T16:32:16+08:00",
+      "model": "qwen3.8-flash",
+      "prompt_version": "outfit_compose.v1",
+      "source": "真实调用",
+      "input": {
+        "temp_c": 26,
+        "occasion": "commute",
+        "formality_target": [
+          3,
+          5
+        ],
+        "excluded": []
+      },
+      "expect": {
+        "set_count": 3,
+        "must_not_use": [
+          "W02",
+          "W07",
+          "W10",
+          "W12"
+        ],
+        "all_items_in_wardrobe": true
+      },
+      "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，正式度3符合通勤目标，热天无外套且黑色皮革鞋提供稳重感。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W11\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装与藏青混纺下装组合，正式度介于3至5之间，适合26度高温下的通勤场景。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W06\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配黑色高正式度混纺下装，整体风格简洁利落，满足热温带通勤对正式度的要求。\"\n    }\n  ]\n}",
+      "parsed": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配米色混纺下装，正式度3符合通勤目标，热天无外套且黑色皮革鞋提供稳重感。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W11",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装与藏青混纺下装组合，正式度介于3至5之间，适合26度高温下的通勤场景。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W06",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配黑色高正式度混纺下装，整体风格简洁利落，满足热温带通勤对正式度的要求。"
+          }
+        ]
+      },
+      "parse_ok": true,
+      "http_status": 200,
+      "candidate_ids": [
+        "W01",
+        "W04",
+        "W06",
+        "W09",
+        "W11"
+      ],
+      "band": "hot",
+      "composable_count": 3,
+      "latency_ms": 6163,
+      "degraded": false,
+      "degrade_reason": null,
+      "result": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配米色混纺下装，正式度3符合通勤目标，热天无外套且黑色皮革鞋提供稳重感。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W11",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装与藏青混纺下装组合，正式度介于3至5之间，适合26度高温下的通勤场景。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W06",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配黑色高正式度混纺下装，整体风格简洁利落，满足热温带通勤对正式度的要求。"
+          }
+        ],
+        "shortage": null,
+        "shortage_hint": null,
+        "degraded": false,
+        "latency_ms": 6163,
+        "prompt_version": "outfit_compose.v1",
+        "degrade_reason": null
+      },
+      "checks": {
+        "set_count": true,
+        "must_not_use": true,
+        "all_items_in_wardrobe": true
+      },
+      "passed": true,
+      "failure_reasons": [],
+      "attribution": "—",
+      "attempts": [
+        {
+          "timestamp": "2026-11-13T16:32:16+08:00",
+          "http_status": 200,
+          "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，正式度3符合通勤目标，热天无外套且黑色皮革鞋提供稳重感。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W11\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装与藏青混纺下装组合，正式度介于3至5之间，适合26度高温下的通勤场景。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W06\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配黑色高正式度混纺下装，整体风格简洁利落，满足热温带通勤对正式度的要求。\"\n    }\n  ]\n}"
+        }
+      ],
+      "retry_feedback": [],
+      "error": null,
+      "evidence": "docs/reports/raw/compose_v3/B07.r03.json",
+      "sample_index": 3
+    }
+  ],
+  "attribution_counts": {},
+  "failure_reasons": [],
+  "evidence": "docs/reports/raw/compose_v3/B07.json"
+}

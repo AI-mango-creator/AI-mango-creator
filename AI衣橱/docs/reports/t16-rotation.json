@@ -1,0 +1,30 @@
+{
+  "recorded_at": "2026-11-16T12:37:39.459841+08:00",
+  "url_snapshot": "https://f750a7e816a33e.app.lhr.life",
+  "earlier_public_checks": [
+    {
+      "endpoint": "/health",
+      "status": 200,
+      "body": "{\"status\":\"ok\"}"
+    },
+    {
+      "endpoint": "/",
+      "status": 200,
+      "bytes": 575
+    }
+  ],
+  "later_probe_error": "Python urllib SSL UNEXPECTED_EOF_WHILE_READING; process remained running",
+  "process": "69439     1 69439 /Users/yuanying/Desktop/算法衣橱/.venv/bin/python -m scripts.share --tunnel localhost",
+  "model_log_lines": 4,
+  "frozen_unchanged": 134,
+  "existing_test_files_unchanged": 12,
+  "subsequent_curl_checks": {
+    "health": {
+      "status": 200,
+      "body": "{\"status\":\"ok\"}"
+    },
+    "root": {
+      "status": 200
+    }
+  }
+}

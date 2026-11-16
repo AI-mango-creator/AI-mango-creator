@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-11-13T16:46:32.593Z",
+  "kind": "真实CDP最终UI；仅R02状态复位与GET暂挂/断网为故障注入，均不新增模型调用",
+  "cards_hide_ids": true,
+  "detail_has_id": true,
+  "nochange_action_requests": [
+    {
+      "url": "http://127.0.0.1:5173/api/wardrobe/items/I53f601cdf17112add08a96ea96fbe3ce-00/confirm",
+      "method": "POST",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    }
+  ],
+  "nochange_item": {
+    "sources": {
+      "sources": "derived",
+      "owner_id": "derived",
+      "id": "derived",
+      "name": "model",
+      "image_path": "user",
+      "category": "model",
+      "sub": "model",
+      "colors": "model",
+      "material": "model",
+      "pattern": "model",
+      "warmth": "model",
+      "formality": "model",
+      "seasons": "model",
+      "confidence": "model",
+      "needs_confirm": "derived",
+      "user_edited": "derived",
+      "created_at": "derived",
+      "_corrections": {
+        "source": "derived",
+        "entries": []
+      },
+      "_upload": {
+        "source": "derived",
+        "draft_id": "f81d242e-6816-43a6-99d3-b1b4b49b3beb",
+        "photo_sha256": "c23909f8a48ac0b5cf1bf06edc0e920e84bc1a6b01a3e6b6dab20b9c42c9a456"
+      }
+    },
+    "owner_id": "276adcc8-8dae-46cc-bbd8-b2596a0466dd",
+    "id": "I53f601cdf17112add08a96ea96fbe3ce-00",
+    "name": null,
+    "image_path": "uploads/276adcc8-8dae-46cc-bbd8-b2596a0466dd/f81d242e681643a699d3b1b4b49b3beb.jpg",
+    "category": "top",
+    "sub": "拉链长袖T恤",
+    "colors": [
+      "白色"
+    ],
+    "material": "棉混纺",
+    "pattern": "纯色",
+    "warmth": 2,
+    "formality": 1,
+    "seasons": [
+      "spring",
+      "autumn"
+    ],
+    "confidence": 0.95,
+    "needs_confirm": false,
+    "user_edited": true,
+    "created_at": "2026-11-13T16:17:19.559545Z"
+  },
+  "failure": {
+    "draft": "345c4add-ef42-4769-bacc-80a94362adb9",
+    "file": "cloth01.jpg",
+    "text": "cloth01.jpg\n\n连接失败，图片已保留。请重试，或稍后再试。\n\n照片已保留，不用重新选择。请重试，或稍后再试。\n\n原地重试"
+  },
+  "retry": {
+    "draft": "345c4add-ef42-4769-bacc-80a94362adb9",
+    "file": "cloth01.jpg"
+  },
+  "cache_headers": {
+    "cache_control": "no-store",
+    "vary": "X-Device-ID"
+  },
+  "metrics": {
+    "A": {
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    "B": {
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    "loading": {
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    "edit": {
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    }
+  },
+  "errors": []
+}

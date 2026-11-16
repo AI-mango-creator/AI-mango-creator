@@ -1,0 +1,100 @@
+{
+  "case_id": "C04",
+  "timestamp": "2026-11-13T15:52:47+08:00",
+  "model": "qwen3.8-flash",
+  "prompt_version": "outfit_compose.v1",
+  "source": "注入",
+  "input": {
+    "temp_c": 18,
+    "occasion": "commute",
+    "inject": "llm_timeout"
+  },
+  "expect": {
+    "final_status": "degraded",
+    "fallback_used": true,
+    "fallback_type": "rule_template",
+    "ui_shows_banner": true,
+    "set_count_gte": 1
+  },
+  "raw_content": null,
+  "parsed": null,
+  "parse_ok": false,
+  "http_status": null,
+  "candidate_ids": [
+    "W01",
+    "W02",
+    "W03",
+    "W04",
+    "W06",
+    "W07",
+    "W09",
+    "W10",
+    "W11"
+  ],
+  "band": "cool",
+  "composable_count": 18,
+  "latency_ms": 5,
+  "degraded": true,
+  "degrade_reason": "timeout",
+  "result": {
+    "sets": [
+      {
+        "slots": {
+          "top": "W01",
+          "bottom": "W06",
+          "outer": "W02",
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "按正式度从高到低搭配：W01为白色、厚薄2、正式度3。"
+      },
+      {
+        "slots": {
+          "top": "W01",
+          "bottom": "W04",
+          "outer": "W03",
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "按舒适策略（正式度从低到高）搭配：W01为白色、厚薄2、正式度3。"
+      },
+      {
+        "slots": {
+          "top": "W07",
+          "bottom": "W04",
+          "outer": "W02",
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "按厚薄从高到低搭配：W02为黑色、厚薄3、正式度5。"
+      }
+    ],
+    "shortage": null,
+    "shortage_hint": null,
+    "degraded": true,
+    "latency_ms": 4,
+    "prompt_version": "outfit_compose.v1",
+    "degrade_reason": "timeout"
+  },
+  "checks": {
+    "final_status": true,
+    "fallback_used": true,
+    "fallback_type": true,
+    "ui_shows_banner": true,
+    "set_count_gte": true
+  },
+  "passed": true,
+  "failure_reasons": [],
+  "attribution": "—",
+  "attempts": [
+    {
+      "timestamp": "2026-11-13T15:52:47+08:00",
+      "http_status": null,
+      "raw_content": null
+    }
+  ],
+  "retry_feedback": [],
+  "error": null,
+  "evidence": "docs/reports/raw/injections_v2/C04.json",
+  "ui_evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/ui-t7/03-degraded.png"
+}

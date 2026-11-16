@@ -1,0 +1,57 @@
+{
+  "case_id": "R04",
+  "title": "白/藏青拼色运动短袖（商品图）",
+  "image": "images/cloth04.jpg",
+  "image_bytes": 29896,
+  "model": "qwen3.8-omni-flash",
+  "prompt_file": "prompts/item_extract.v2.md",
+  "prompt_version": "item_extract.v2",
+  "prompt_sha256_prefix": "0489692373e6ea85",
+  "timestamp": "2026-11-13T15:51:12+0800",
+  "http_status": 200,
+  "raw_content": "```json\n{\n  \"items\": [\n    {\n      \"category\": \"top\",\n      \"sub\": \"半拉链短袖T恤\",\n      \"colors\": [\n        \"白色\",\n        \"深蓝色\",\n        \"军绿色\"\n      ],\n      \"material\": \"聚酯纤维\",\n      \"pattern\": \"拼色\",\n      \"warmth\": 1,\n      \"formality\": 2,\n      \"seasons\": [\n        \"summer\"\n      ],\n      \"confidence\": 0.98\n    }\n  ]\n}\n```",
+  "latency_ms": 8897,
+  "attempts": [
+    {
+      "http_status": 200,
+      "raw_content": "```json\n{\n  \"items\": [\n    {\n      \"category\": \"top\",\n      \"sub\": \"半拉链短袖T恤\",\n      \"colors\": [\n        \"白色\",\n        \"深蓝色\",\n        \"军绿色\"\n      ],\n      \"material\": \"聚酯纤维\",\n      \"pattern\": \"拼色\",\n      \"warmth\": 1,\n      \"formality\": 2,\n      \"seasons\": [\n        \"summer\"\n      ],\n      \"confidence\": 0.98\n    }\n  ]\n}\n```",
+      "latency_ms": 8897,
+      "error": null,
+      "category": null
+    }
+  ],
+  "error": null,
+  "category": null,
+  "had_fence": true,
+  "parse_ok": true,
+  "parsed": {
+    "items": [
+      {
+        "category": "top",
+        "sub": "半拉链短袖T恤",
+        "colors": [
+          "白色",
+          "深蓝色",
+          "军绿色"
+        ],
+        "material": "聚酯纤维",
+        "pattern": "拼色",
+        "warmth": 1,
+        "formality": 2,
+        "seasons": [
+          "summer"
+        ],
+        "confidence": 0.98
+      }
+    ]
+  },
+  "checks": {
+    "category": true,
+    "sub_in": true,
+    "color_in": true,
+    "formality_range": true,
+    "confidence_gte": true
+  },
+  "item_count": 1,
+  "passed": true
+}

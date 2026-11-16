@@ -1,0 +1,492 @@
+{
+  "timestamp": "2026-11-14T09:00:42.146Z",
+  "kind": "CDP375x812；临时SQLite/照片副本真实接口；编排client层离线注入，不计真实模型验收",
+  "screenshots": [
+    {
+      "file": "01-previews-normal.png",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375,
+      "brokenImages": 0
+    },
+    {
+      "file": "02-previews-loading.png",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375,
+      "brokenImages": 0
+    },
+    {
+      "file": "03-previews-image-error.png",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375,
+      "brokenImages": 0
+    },
+    {
+      "file": "04-delete-confirm.png",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375,
+      "brokenImages": 0
+    },
+    {
+      "file": "05-delete-pending.png",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375,
+      "brokenImages": 0
+    },
+    {
+      "file": "06-delete-error-preserved.png",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375,
+      "brokenImages": 0
+    },
+    {
+      "file": "07-delete-success.png",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375,
+      "brokenImages": 0
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I493524d2a133149d8fbb3ae004c1d215-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I4d132dae3375a1e1b699b07b75a945f6-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I4f74ae520ed0da8753d490716626e3aa-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I53f601cdf17112add08a96ea96fbe3ce-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I681ef888667832e583716de3bd49c0ca-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I920922f43edced62b23b92f42d040b6a-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ia6b5c6ee2f20f8b1bfbfbada931bfe91-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Iaeb4d5ab208ddca97df34e9e68c468e8-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ib6b5191b7e925858fa7adeb2b01c1d9c-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I493524d2a133149d8fbb3ae004c1d215-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I4d132dae3375a1e1b699b07b75a945f6-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I4f74ae520ed0da8753d490716626e3aa-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I53f601cdf17112add08a96ea96fbe3ce-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I681ef888667832e583716de3bd49c0ca-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I920922f43edced62b23b92f42d040b6a-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ia6b5c6ee2f20f8b1bfbfbada931bfe91-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Iaeb4d5ab208ddca97df34e9e68c468e8-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ib6b5191b7e925858fa7adeb2b01c1d9c-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:5175/api/outfits",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I493524d2a133149d8fbb3ae004c1d215-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ib6b5191b7e925858fa7adeb2b01c1d9c-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I4d132dae3375a1e1b699b07b75a945f6-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I53f601cdf17112add08a96ea96fbe3ce-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ib6b5191b7e925858fa7adeb2b01c1d9c-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I4d132dae3375a1e1b699b07b75a945f6-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I493524d2a133149d8fbb3ae004c1d215-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ib6b5191b7e925858fa7adeb2b01c1d9c-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ia6b5c6ee2f20f8b1bfbfbada931bfe91-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I493524d2a133149d8fbb3ae004c1d215-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ib6b5191b7e925858fa7adeb2b01c1d9c-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I4d132dae3375a1e1b699b07b75a945f6-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I53f601cdf17112add08a96ea96fbe3ce-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ib6b5191b7e925858fa7adeb2b01c1d9c-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I4d132dae3375a1e1b699b07b75a945f6-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I493524d2a133149d8fbb3ae004c1d215-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ib6b5191b7e925858fa7adeb2b01c1d9c-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ia6b5c6ee2f20f8b1bfbfbada931bfe91-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:5175/api/outfits",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I493524d2a133149d8fbb3ae004c1d215-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ib6b5191b7e925858fa7adeb2b01c1d9c-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I4d132dae3375a1e1b699b07b75a945f6-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I53f601cdf17112add08a96ea96fbe3ce-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ib6b5191b7e925858fa7adeb2b01c1d9c-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I4d132dae3375a1e1b699b07b75a945f6-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I493524d2a133149d8fbb3ae004c1d215-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ib6b5191b7e925858fa7adeb2b01c1d9c-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ia6b5c6ee2f20f8b1bfbfbada931bfe91-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I493524d2a133149d8fbb3ae004c1d215-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ib6b5191b7e925858fa7adeb2b01c1d9c-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I4d132dae3375a1e1b699b07b75a945f6-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I53f601cdf17112add08a96ea96fbe3ce-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ib6b5191b7e925858fa7adeb2b01c1d9c-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I4d132dae3375a1e1b699b07b75a945f6-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I493524d2a133149d8fbb3ae004c1d215-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ib6b5191b7e925858fa7adeb2b01c1d9c-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ia6b5c6ee2f20f8b1bfbfbada931bfe91-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I493524d2a133149d8fbb3ae004c1d215-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I4d132dae3375a1e1b699b07b75a945f6-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I4f74ae520ed0da8753d490716626e3aa-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I53f601cdf17112add08a96ea96fbe3ce-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I681ef888667832e583716de3bd49c0ca-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I920922f43edced62b23b92f42d040b6a-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ia6b5c6ee2f20f8b1bfbfbada931bfe91-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Iaeb4d5ab208ddca97df34e9e68c468e8-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ib6b5191b7e925858fa7adeb2b01c1d9c-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I493524d2a133149d8fbb3ae004c1d215-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I4d132dae3375a1e1b699b07b75a945f6-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I4f74ae520ed0da8753d490716626e3aa-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I53f601cdf17112add08a96ea96fbe3ce-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I681ef888667832e583716de3bd49c0ca-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I920922f43edced62b23b92f42d040b6a-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ia6b5c6ee2f20f8b1bfbfbada931bfe91-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Iaeb4d5ab208ddca97df34e9e68c468e8-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/Ib6b5191b7e925858fa7adeb2b01c1d9c-00/photo",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "DELETE",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I493524d2a133149d8fbb3ae004c1d215-00",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    },
+    {
+      "method": "DELETE",
+      "url": "http://127.0.0.1:5175/api/wardrobe/items/I493524d2a133149d8fbb3ae004c1d215-00",
+      "device": "276adcc8-8dae-46cc-bbd8-b2596a0466dd"
+    }
+  ],
+  "runtime_errors": [],
+  "wardrobe_unmount_released": {
+    "made": 0,
+    "revoked": 0,
+    "active": 0
+  },
+  "slot_order": [
+    "上装",
+    "下装",
+    "鞋"
+  ],
+  "decode_failure_urls": {
+    "made": 18,
+    "revoked": 18,
+    "active": 0
+  },
+  "deleted_item": {
+    "id": "I493524d2a133149d8fbb3ae004c1d215-00"
+  },
+  "confirm_text": "删除长袖衬衫？删除后将从历史方案中移除，不可恢复确认删除取消",
+  "failure_preserved": true,
+  "success_removed_from_database": true,
+  "repeated_delete_status": 404,
+  "final_urls": {
+    "made": 27,
+    "revoked": 27,
+    "active": 0
+  },
+  "sqlite_after_delete": {
+    "wardrobe_remaining": 22,
+    "deleted_item_rows": 0,
+    "deleted_item_references": 0,
+    "foreign_key_violations": [],
+    "last_reference_photo_exists": false
+  }
+}

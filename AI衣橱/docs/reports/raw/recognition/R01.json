@@ -1,0 +1,44 @@
+{
+  "case_id": "R01",
+  "title": "灰色冲锋衣（实拍，深色背景）",
+  "image": "images/cloth01.jpg",
+  "image_bytes": 163605,
+  "model": "qwen3.8-omni-flash",
+  "prompt_file": "prompts/item_extract.v1.md",
+  "prompt_sha256_prefix": "148a10064d22f145",
+  "http_status": 200,
+  "raw_content": "```json\n{\n  \"items\": [\n    {\n      \"category\": \"outer\",\n      \"sub\": \"冲锋衣\",\n      \"colors\": [\n        \"灰色\"\n      ],\n      \"material\": \"尼龙\",\n      \"pattern\": \"纯色\",\n      \"warmth\": 2,\n      \"formality\": 1,\n      \"seasons\": [\n        \"spring\",\n        \"autumn\",\n        \"winter\"\n      ],\n      \"confidence\": 0.95\n    }\n  ]\n}\n```",
+  "latency_ms": 23215,
+  "had_fence": true,
+  "parse_ok": true,
+  "parsed": {
+    "items": [
+      {
+        "category": "outer",
+        "sub": "冲锋衣",
+        "colors": [
+          "灰色"
+        ],
+        "material": "尼龙",
+        "pattern": "纯色",
+        "warmth": 2,
+        "formality": 1,
+        "seasons": [
+          "spring",
+          "autumn",
+          "winter"
+        ],
+        "confidence": 0.95
+      }
+    ]
+  },
+  "item_count": 1,
+  "checks": {
+    "category": true,
+    "sub_in": true,
+    "color_in": true,
+    "formality_range": true,
+    "confidence_gte": true
+  },
+  "passed": true
+}

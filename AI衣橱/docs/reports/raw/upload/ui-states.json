@@ -1,0 +1,13 @@
+{
+  "kind": "仅GET响应暂挂/空数组注入用于页面三态，不计真实上传样本；未改生产库",
+  "loading": {
+    "width": 375,
+    "height": 812,
+    "scrollWidth": 375
+  },
+  "empty": {
+    "width": 375,
+    "height": 812,
+    "scrollWidth": 375
+  }
+}

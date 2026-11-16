@@ -1,0 +1,75 @@
+{
+  "case_id": "R06",
+  "photo": "cloth06.jpg",
+  "timestamp": "2026-11-13T16:17:46.538Z",
+  "response": {
+    "at": 1794586662164,
+    "status": 201,
+    "body": {
+      "draft_id": "0f7d5247-9539-48dd-860c-8b1396e2903b",
+      "items": [
+        {
+          "sources": {
+            "sources": "derived",
+            "owner_id": "derived",
+            "id": "derived",
+            "name": "model",
+            "image_path": "user",
+            "category": "model",
+            "sub": "model",
+            "colors": "model",
+            "material": "model",
+            "pattern": "model",
+            "warmth": "model",
+            "formality": "model",
+            "seasons": "model",
+            "confidence": "model",
+            "needs_confirm": "derived",
+            "user_edited": "derived",
+            "created_at": "derived",
+            "_corrections": {
+              "source": "derived",
+              "entries": []
+            },
+            "_upload": {
+              "source": "derived",
+              "draft_id": "0f7d5247-9539-48dd-860c-8b1396e2903b",
+              "photo_sha256": "5a9ead2d538dfe7de04b15cb806a8f1035c9332b9ce75f04035246020ea14ec9"
+            }
+          },
+          "owner_id": "276adcc8-8dae-46cc-bbd8-b2596a0466dd",
+          "id": "U276adcc88dae46ccbbd8b2596a0466dd0f7d5247953948dd860c8b1396e2903b-00",
+          "name": null,
+          "image_path": "uploads/276adcc8-8dae-46cc-bbd8-b2596a0466dd/0f7d5247953948dd860c8b1396e2903b.jpg",
+          "category": "bottom",
+          "sub": "工装短裤",
+          "colors": [
+            "卡其色"
+          ],
+          "material": "棉布",
+          "pattern": "纯色",
+          "warmth": 1,
+          "formality": 2,
+          "seasons": [
+            "summer"
+          ],
+          "confidence": 0.98,
+          "needs_confirm": true,
+          "user_edited": false,
+          "created_at": "2026-11-13T16:17:46.461335Z"
+        }
+      ],
+      "corrections": [],
+      "latency_ms": 4298,
+      "prompt_version": "item_extract.v2",
+      "reused": false
+    }
+  },
+  "card_ms": 4379,
+  "viewport": {
+    "width": 375,
+    "height": 812,
+    "scrollWidth": 375
+  },
+  "pending_visible": true
+}

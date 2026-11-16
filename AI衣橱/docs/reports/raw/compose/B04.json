@@ -1,0 +1,135 @@
+{
+  "case_id": "B04",
+  "timestamp": "2026-11-13T15:26:50+08:00",
+  "model": "qwen3.8-flash",
+  "prompt_version": "outfit_compose.v1",
+  "source": "真实调用",
+  "input": {
+    "temp_c": 22,
+    "occasion": "date",
+    "formality_target": [
+      1,
+      3
+    ],
+    "excluded": []
+  },
+  "expect": {
+    "set_count": 3,
+    "must_not_use": [
+      "W02",
+      "W06"
+    ],
+    "all_items_in_wardrobe": true,
+    "no_season_conflict": true
+  },
+  "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": null,\n        \"shoes\": \"W08\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，整体正式度适中且色调清爽，适合22度温暖天气的约会场合。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W12\",\n        \"bottom\": \"W05\",\n        \"outer\": null,\n        \"shoes\": \"W13\",\n        \"dress\": null\n      },\n      \"reason\": \"米白针织上装与深蓝牛仔下装组合，利用皮革鞋履提升质感，符合休闲约会的轻松氛围。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W05\",\n        \"outer\": null,\n        \"shoes\": \"W14\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配深蓝牛仔裤，选用网面麂皮拼接运动鞋增加活力，适合温度适宜的户外约会。\"\n    }\n  ]\n}",
+  "parsed": {
+    "sets": [
+      {
+        "slots": {
+          "top": "W01",
+          "bottom": "W04",
+          "outer": null,
+          "shoes": "W08",
+          "dress": null
+        },
+        "reason": "白色棉质上装搭配米色混纺下装，整体正式度适中且色调清爽，适合22度温暖天气的约会场合。"
+      },
+      {
+        "slots": {
+          "top": "W12",
+          "bottom": "W05",
+          "outer": null,
+          "shoes": "W13",
+          "dress": null
+        },
+        "reason": "米白针织上装与深蓝牛仔下装组合，利用皮革鞋履提升质感，符合休闲约会的轻松氛围。"
+      },
+      {
+        "slots": {
+          "top": "W01",
+          "bottom": "W05",
+          "outer": null,
+          "shoes": "W14",
+          "dress": null
+        },
+        "reason": "白色棉质上装搭配深蓝牛仔裤，选用网面麂皮拼接运动鞋增加活力，适合温度适宜的户外约会。"
+      }
+    ]
+  },
+  "parse_ok": true,
+  "http_status": 200,
+  "candidate_ids": [
+    "W01",
+    "W04",
+    "W05",
+    "W08",
+    "W12",
+    "W13",
+    "W14"
+  ],
+  "band": "warm",
+  "composable_count": 12,
+  "latency_ms": 6542,
+  "degraded": false,
+  "degrade_reason": null,
+  "result": {
+    "sets": [
+      {
+        "slots": {
+          "top": "W01",
+          "bottom": "W04",
+          "outer": null,
+          "shoes": "W08",
+          "dress": null
+        },
+        "reason": "白色棉质上装搭配米色混纺下装，整体正式度适中且色调清爽，适合22度温暖天气的约会场合。"
+      },
+      {
+        "slots": {
+          "top": "W12",
+          "bottom": "W05",
+          "outer": null,
+          "shoes": "W13",
+          "dress": null
+        },
+        "reason": "米白针织上装与深蓝牛仔下装组合，利用皮革鞋履提升质感，符合休闲约会的轻松氛围。"
+      },
+      {
+        "slots": {
+          "top": "W01",
+          "bottom": "W05",
+          "outer": null,
+          "shoes": "W14",
+          "dress": null
+        },
+        "reason": "白色棉质上装搭配深蓝牛仔裤，选用网面麂皮拼接运动鞋增加活力，适合温度适宜的户外约会。"
+      }
+    ],
+    "shortage": null,
+    "shortage_hint": null,
+    "degraded": false,
+    "latency_ms": 6542,
+    "prompt_version": "outfit_compose.v1",
+    "degrade_reason": null
+  },
+  "checks": {
+    "set_count": true,
+    "must_not_use": true,
+    "all_items_in_wardrobe": true,
+    "no_season_conflict": true
+  },
+  "passed": true,
+  "failure_reasons": [],
+  "attribution": "—",
+  "attempts": [
+    {
+      "timestamp": "2026-11-13T15:26:50+08:00",
+      "http_status": 200,
+      "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": null,\n        \"shoes\": \"W08\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，整体正式度适中且色调清爽，适合22度温暖天气的约会场合。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W12\",\n        \"bottom\": \"W05\",\n        \"outer\": null,\n        \"shoes\": \"W13\",\n        \"dress\": null\n      },\n      \"reason\": \"米白针织上装与深蓝牛仔下装组合，利用皮革鞋履提升质感，符合休闲约会的轻松氛围。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W05\",\n        \"outer\": null,\n        \"shoes\": \"W14\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配深蓝牛仔裤，选用网面麂皮拼接运动鞋增加活力，适合温度适宜的户外约会。\"\n    }\n  ]\n}"
+    }
+  ],
+  "retry_feedback": [],
+  "error": null,
+  "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/compose/B04.json"
+}

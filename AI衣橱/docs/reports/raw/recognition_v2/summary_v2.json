@@ -1,0 +1,170 @@
+{
+  "model": "qwen3.8-omni-flash",
+  "prompt_file": "prompts/item_extract.v2.md",
+  "cases": 9,
+  "http_ok": 9,
+  "fence_count": 8,
+  "fence_rate": 0.8889,
+  "parse_ok": 9,
+  "case_pass": 8,
+  "latency_ms": {
+    "min": 5194,
+    "max": 9307,
+    "mean": 7303
+  },
+  "concurrency": 3,
+  "wall_ms": 22855,
+  "field_accuracy": {
+    "category": {
+      "hit": 8,
+      "total": 9,
+      "rate": 0.8889
+    },
+    "color_in": {
+      "hit": 9,
+      "total": 9,
+      "rate": 1.0
+    },
+    "confidence_gte": {
+      "hit": 9,
+      "total": 9,
+      "rate": 1.0
+    },
+    "formality_range": {
+      "hit": 9,
+      "total": 9,
+      "rate": 1.0
+    },
+    "pattern": {
+      "hit": 2,
+      "total": 2,
+      "rate": 1.0
+    },
+    "sub_in": {
+      "hit": 8,
+      "total": 9,
+      "rate": 0.8889
+    }
+  },
+  "records": [
+    {
+      "case_id": "R01",
+      "passed": true,
+      "latency_ms": 5304,
+      "had_fence": true,
+      "checks": {
+        "category": true,
+        "sub_in": true,
+        "color_in": true,
+        "formality_range": true,
+        "confidence_gte": true
+      }
+    },
+    {
+      "case_id": "R02",
+      "passed": false,
+      "latency_ms": 6597,
+      "had_fence": true,
+      "checks": {
+        "category": false,
+        "sub_in": false,
+        "color_in": true,
+        "formality_range": true,
+        "confidence_gte": true
+      }
+    },
+    {
+      "case_id": "R03",
+      "passed": true,
+      "latency_ms": 5869,
+      "had_fence": true,
+      "checks": {
+        "category": true,
+        "sub_in": true,
+        "color_in": true,
+        "formality_range": true,
+        "confidence_gte": true
+      }
+    },
+    {
+      "case_id": "R04",
+      "passed": true,
+      "latency_ms": 8897,
+      "had_fence": true,
+      "checks": {
+        "category": true,
+        "sub_in": true,
+        "color_in": true,
+        "formality_range": true,
+        "confidence_gte": true
+      }
+    },
+    {
+      "case_id": "R05",
+      "passed": true,
+      "latency_ms": 8441,
+      "had_fence": true,
+      "checks": {
+        "category": true,
+        "sub_in": true,
+        "color_in": true,
+        "formality_range": true,
+        "confidence_gte": true,
+        "pattern": true
+      }
+    },
+    {
+      "case_id": "R06",
+      "passed": true,
+      "latency_ms": 9307,
+      "had_fence": true,
+      "checks": {
+        "category": true,
+        "sub_in": true,
+        "color_in": true,
+        "formality_range": true,
+        "confidence_gte": true
+      }
+    },
+    {
+      "case_id": "R07",
+      "passed": true,
+      "latency_ms": 7581,
+      "had_fence": true,
+      "checks": {
+        "category": true,
+        "sub_in": true,
+        "color_in": true,
+        "formality_range": true,
+        "confidence_gte": true,
+        "pattern": true
+      }
+    },
+    {
+      "case_id": "R08",
+      "passed": true,
+      "latency_ms": 8536,
+      "had_fence": true,
+      "checks": {
+        "category": true,
+        "sub_in": true,
+        "color_in": true,
+        "formality_range": true,
+        "confidence_gte": true
+      }
+    },
+    {
+      "case_id": "R09",
+      "passed": true,
+      "latency_ms": 5194,
+      "had_fence": false,
+      "checks": {
+        "category": true,
+        "sub_in": true,
+        "color_in": true,
+        "formality_range": true,
+        "confidence_gte": true
+      }
+    }
+  ]
+}

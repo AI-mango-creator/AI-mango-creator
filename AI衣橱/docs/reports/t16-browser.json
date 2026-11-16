@@ -1,0 +1,649 @@
+{
+  "timestamp": "2026-11-16T03:47:13.382Z",
+  "timezone": "Asia/Shanghai",
+  "url": "https://719175e281768e.app.lhr.life",
+  "kind": "真实公网HTTPS→手机视口浏览器→上传→模型识别→确认→真实模型编排；无注入",
+  "uploads": [
+    {
+      "case_id": "R05",
+      "file": "cloth05.jpg",
+      "item_id": "I8b9141878ba04a80957354fbc2c2feb1-00",
+      "upload_to_photo_ms": 9561
+    },
+    {
+      "case_id": "R03",
+      "file": "cloth03.jpg",
+      "item_id": "I039f7e353c8b4868988a5a004c5088b4-00",
+      "upload_to_photo_ms": 23153
+    },
+    {
+      "case_id": "R08",
+      "file": "cloth08.jpg",
+      "item_id": "I6ca9bcbb15354d009c9e717f0f5ffc65-00",
+      "upload_to_photo_ms": 48055
+    }
+  ],
+  "responses": [
+    {
+      "url": "https://719175e281768e.app.lhr.life/api/wardrobe/items",
+      "status": 200,
+      "body": []
+    },
+    {
+      "url": "https://719175e281768e.app.lhr.life/api/wardrobe/items",
+      "status": 201,
+      "body": {
+        "draft_id": "a3826bb8-0281-487f-9603-7549cc1c0635",
+        "items": [
+          {
+            "sources": {
+              "sources": "derived",
+              "owner_id": "derived",
+              "id": "derived",
+              "name": "model",
+              "image_path": "user",
+              "category": "model",
+              "sub": "model",
+              "colors": "model",
+              "material": "model",
+              "pattern": "model",
+              "warmth": "model",
+              "formality": "model",
+              "seasons": "model",
+              "confidence": "model",
+              "needs_confirm": "derived",
+              "user_edited": "derived",
+              "created_at": "derived",
+              "_corrections": {
+                "source": "derived",
+                "entries": []
+              },
+              "_upload": {
+                "source": "derived",
+                "draft_id": "a3826bb8-0281-487f-9603-7549cc1c0635",
+                "photo_sha256": "f0d8fe4b0b1d74f484cd11f7fe29e8b9d1cad2b8db4f7f1b2d64cecea6e624f1"
+              }
+            },
+            "owner_id": "0ef45dd6-31f8-408f-a193-38577f78ebec",
+            "id": "I8b9141878ba04a80957354fbc2c2feb1-00",
+            "name": null,
+            "image_path": "uploads/0ef45dd6-31f8-408f-a193-38577f78ebec/a3826bb80281487f96037549cc1c0635.jpg",
+            "category": "top",
+            "sub": "长袖衬衫",
+            "colors": [
+              "棕色",
+              "蓝色"
+            ],
+            "material": "棉",
+            "pattern": "格纹",
+            "warmth": 3,
+            "formality": 2,
+            "seasons": [
+              "spring",
+              "autumn"
+            ],
+            "confidence": 0.98,
+            "needs_confirm": true,
+            "user_edited": false,
+            "created_at": "2026-11-16T03:47:37.167034Z"
+          }
+        ],
+        "corrections": [],
+        "latency_ms": 6382,
+        "prompt_version": "item_extract.v2",
+        "reused": false
+      }
+    },
+    {
+      "url": "https://719175e281768e.app.lhr.life/api/wardrobe/items/I8b9141878ba04a80957354fbc2c2feb1-00/confirm",
+      "status": 200,
+      "body": {
+        "sources": {
+          "sources": "derived",
+          "owner_id": "derived",
+          "id": "derived",
+          "name": "model",
+          "image_path": "user",
+          "category": "model",
+          "sub": "model",
+          "colors": "model",
+          "material": "model",
+          "pattern": "model",
+          "warmth": "model",
+          "formality": "model",
+          "seasons": "model",
+          "confidence": "model",
+          "needs_confirm": "derived",
+          "user_edited": "derived",
+          "created_at": "derived",
+          "_corrections": {
+            "source": "derived",
+            "entries": []
+          },
+          "_upload": {
+            "source": "derived",
+            "draft_id": "a3826bb8-0281-487f-9603-7549cc1c0635",
+            "photo_sha256": "f0d8fe4b0b1d74f484cd11f7fe29e8b9d1cad2b8db4f7f1b2d64cecea6e624f1"
+          }
+        },
+        "owner_id": "0ef45dd6-31f8-408f-a193-38577f78ebec",
+        "id": "I8b9141878ba04a80957354fbc2c2feb1-00",
+        "name": null,
+        "image_path": "uploads/0ef45dd6-31f8-408f-a193-38577f78ebec/a3826bb80281487f96037549cc1c0635.jpg",
+        "category": "top",
+        "sub": "长袖衬衫",
+        "colors": [
+          "棕色",
+          "蓝色"
+        ],
+        "material": "棉",
+        "pattern": "格纹",
+        "warmth": 3,
+        "formality": 2,
+        "seasons": [
+          "spring",
+          "autumn"
+        ],
+        "confidence": 0.98,
+        "needs_confirm": false,
+        "user_edited": true,
+        "created_at": "2026-11-16T03:47:37.167034Z"
+      }
+    },
+    {
+      "url": "https://719175e281768e.app.lhr.life/api/wardrobe/items",
+      "status": 201,
+      "body": {
+        "draft_id": "57191be7-2757-4f86-8503-2caeeddac96f",
+        "items": [
+          {
+            "sources": {
+              "sources": "derived",
+              "owner_id": "derived",
+              "id": "derived",
+              "name": "model",
+              "image_path": "user",
+              "category": "model",
+              "sub": "model",
+              "colors": "model",
+              "material": "model",
+              "pattern": "model",
+              "warmth": "model",
+              "formality": "model",
+              "seasons": "model",
+              "confidence": "model",
+              "needs_confirm": "derived",
+              "user_edited": "derived",
+              "created_at": "derived",
+              "_corrections": {
+                "source": "derived",
+                "entries": []
+              },
+              "_upload": {
+                "source": "derived",
+                "draft_id": "57191be7-2757-4f86-8503-2caeeddac96f",
+                "photo_sha256": "cdf688fa3e07e942a0b01fcad0775b4d8537a8aeb1aadba667d15c4536a172e2"
+              }
+            },
+            "owner_id": "0ef45dd6-31f8-408f-a193-38577f78ebec",
+            "id": "I039f7e353c8b4868988a5a004c5088b4-00",
+            "name": null,
+            "image_path": "uploads/0ef45dd6-31f8-408f-a193-38577f78ebec/57191be727574f8685032caeeddac96f.jpg",
+            "category": "bottom",
+            "sub": "阔腿工装裤",
+            "colors": [
+              "黑色"
+            ],
+            "material": "尼龙",
+            "pattern": "纯色",
+            "warmth": 2,
+            "formality": 1,
+            "seasons": [
+              "spring",
+              "summer",
+              "autumn"
+            ],
+            "confidence": 0.98,
+            "needs_confirm": true,
+            "user_edited": false,
+            "created_at": "2026-11-16T03:48:03.495848Z"
+          }
+        ],
+        "corrections": [],
+        "latency_ms": 22356,
+        "prompt_version": "item_extract.v2",
+        "reused": false
+      }
+    },
+    {
+      "url": "https://719175e281768e.app.lhr.life/api/wardrobe/items/I039f7e353c8b4868988a5a004c5088b4-00/confirm",
+      "status": 200,
+      "body": {
+        "sources": {
+          "sources": "derived",
+          "owner_id": "derived",
+          "id": "derived",
+          "name": "model",
+          "image_path": "user",
+          "category": "model",
+          "sub": "model",
+          "colors": "model",
+          "material": "model",
+          "pattern": "model",
+          "warmth": "model",
+          "formality": "model",
+          "seasons": "model",
+          "confidence": "model",
+          "needs_confirm": "derived",
+          "user_edited": "derived",
+          "created_at": "derived",
+          "_corrections": {
+            "source": "derived",
+            "entries": []
+          },
+          "_upload": {
+            "source": "derived",
+            "draft_id": "57191be7-2757-4f86-8503-2caeeddac96f",
+            "photo_sha256": "cdf688fa3e07e942a0b01fcad0775b4d8537a8aeb1aadba667d15c4536a172e2"
+          }
+        },
+        "owner_id": "0ef45dd6-31f8-408f-a193-38577f78ebec",
+        "id": "I039f7e353c8b4868988a5a004c5088b4-00",
+        "name": null,
+        "image_path": "uploads/0ef45dd6-31f8-408f-a193-38577f78ebec/57191be727574f8685032caeeddac96f.jpg",
+        "category": "bottom",
+        "sub": "阔腿工装裤",
+        "colors": [
+          "黑色"
+        ],
+        "material": "尼龙",
+        "pattern": "纯色",
+        "warmth": 2,
+        "formality": 1,
+        "seasons": [
+          "spring",
+          "summer",
+          "autumn"
+        ],
+        "confidence": 0.98,
+        "needs_confirm": false,
+        "user_edited": true,
+        "created_at": "2026-11-16T03:48:03.495848Z"
+      }
+    },
+    {
+      "url": "https://719175e281768e.app.lhr.life/api/wardrobe/items",
+      "status": 201,
+      "body": {
+        "draft_id": "9d877daa-ea80-4ff8-bb67-6382ccf08323",
+        "items": [
+          {
+            "sources": {
+              "sources": "derived",
+              "owner_id": "derived",
+              "id": "derived",
+              "name": "model",
+              "image_path": "user",
+              "category": "model",
+              "sub": "model",
+              "colors": "model",
+              "material": "model",
+              "pattern": "model",
+              "warmth": "model",
+              "formality": "model",
+              "seasons": "model",
+              "confidence": "model",
+              "needs_confirm": "derived",
+              "user_edited": "derived",
+              "created_at": "derived",
+              "_corrections": {
+                "source": "derived",
+                "entries": []
+              },
+              "_upload": {
+                "source": "derived",
+                "draft_id": "9d877daa-ea80-4ff8-bb67-6382ccf08323",
+                "photo_sha256": "7fecc714addb8420d09ecf6f95dccf093b5fdb398f61e0261c5f3aa8abec2368"
+              }
+            },
+            "owner_id": "0ef45dd6-31f8-408f-a193-38577f78ebec",
+            "id": "I6ca9bcbb15354d009c9e717f0f5ffc65-00",
+            "name": null,
+            "image_path": "uploads/0ef45dd6-31f8-408f-a193-38577f78ebec/9d877daaea804ff8bb676382ccf08323.jpg",
+            "category": "shoes",
+            "sub": "Air Jordan 1 Low 运动鞋",
+            "colors": [
+              "白色",
+              "黑色",
+              "卡其色"
+            ],
+            "material": "皮革",
+            "pattern": "拼色",
+            "warmth": 3,
+            "formality": 2,
+            "seasons": [
+              "spring",
+              "summer",
+              "autumn",
+              "winter"
+            ],
+            "confidence": 0.98,
+            "needs_confirm": true,
+            "user_edited": false,
+            "created_at": "2026-11-16T03:48:54.880716Z"
+          }
+        ],
+        "corrections": [],
+        "latency_ms": 47012,
+        "prompt_version": "item_extract.v2",
+        "reused": false
+      }
+    },
+    {
+      "url": "https://719175e281768e.app.lhr.life/api/wardrobe/items/I6ca9bcbb15354d009c9e717f0f5ffc65-00/confirm",
+      "status": 200,
+      "body": {
+        "sources": {
+          "sources": "derived",
+          "owner_id": "derived",
+          "id": "derived",
+          "name": "model",
+          "image_path": "user",
+          "category": "model",
+          "sub": "model",
+          "colors": "model",
+          "material": "model",
+          "pattern": "model",
+          "warmth": "model",
+          "formality": "model",
+          "seasons": "model",
+          "confidence": "model",
+          "needs_confirm": "derived",
+          "user_edited": "derived",
+          "created_at": "derived",
+          "_corrections": {
+            "source": "derived",
+            "entries": []
+          },
+          "_upload": {
+            "source": "derived",
+            "draft_id": "9d877daa-ea80-4ff8-bb67-6382ccf08323",
+            "photo_sha256": "7fecc714addb8420d09ecf6f95dccf093b5fdb398f61e0261c5f3aa8abec2368"
+          }
+        },
+        "owner_id": "0ef45dd6-31f8-408f-a193-38577f78ebec",
+        "id": "I6ca9bcbb15354d009c9e717f0f5ffc65-00",
+        "name": null,
+        "image_path": "uploads/0ef45dd6-31f8-408f-a193-38577f78ebec/9d877daaea804ff8bb676382ccf08323.jpg",
+        "category": "shoes",
+        "sub": "Air Jordan 1 Low 运动鞋",
+        "colors": [
+          "白色",
+          "黑色",
+          "卡其色"
+        ],
+        "material": "皮革",
+        "pattern": "拼色",
+        "warmth": 3,
+        "formality": 2,
+        "seasons": [
+          "spring",
+          "summer",
+          "autumn",
+          "winter"
+        ],
+        "confidence": 0.98,
+        "needs_confirm": false,
+        "user_edited": true,
+        "created_at": "2026-11-16T03:48:54.880716Z"
+      }
+    },
+    {
+      "url": "https://719175e281768e.app.lhr.life/api/outfits",
+      "status": 200,
+      "body": {
+        "session_id": "S8c9d558892e14322b97e54253c39cd43",
+        "sets": [
+          {
+            "id": "S8c9d558892e14322b97e54253c39cd43-1",
+            "rank": 1,
+            "slots": {
+              "top": "I8b9141878ba04a80957354fbc2c2feb1-00",
+              "bottom": "I039f7e353c8b4868988a5a004c5088b4-00",
+              "outer": null,
+              "shoes": "I6ca9bcbb15354d009c9e717f0f5ffc65-00",
+              "dress": null
+            },
+            "reason": "棕色棉质上衣搭配黑色尼龙下装与皮革鞋，正式度适中且厚度适合温暖天气。",
+            "items": [
+              {
+                "sources": {
+                  "sources": "derived",
+                  "owner_id": "derived",
+                  "id": "derived",
+                  "name": "model",
+                  "image_path": "user",
+                  "category": "model",
+                  "sub": "model",
+                  "colors": "model",
+                  "material": "model",
+                  "pattern": "model",
+                  "warmth": "model",
+                  "formality": "model",
+                  "seasons": "model",
+                  "confidence": "model",
+                  "needs_confirm": "derived",
+                  "user_edited": "derived",
+                  "created_at": "derived",
+                  "_corrections": {
+                    "source": "derived",
+                    "entries": []
+                  },
+                  "_upload": {
+                    "source": "derived",
+                    "draft_id": "a3826bb8-0281-487f-9603-7549cc1c0635",
+                    "photo_sha256": "f0d8fe4b0b1d74f484cd11f7fe29e8b9d1cad2b8db4f7f1b2d64cecea6e624f1"
+                  }
+                },
+                "owner_id": "0ef45dd6-31f8-408f-a193-38577f78ebec",
+                "id": "I8b9141878ba04a80957354fbc2c2feb1-00",
+                "name": null,
+                "image_path": "uploads/0ef45dd6-31f8-408f-a193-38577f78ebec/a3826bb80281487f96037549cc1c0635.jpg",
+                "category": "top",
+                "sub": "长袖衬衫",
+                "colors": [
+                  "棕色",
+                  "蓝色"
+                ],
+                "material": "棉",
+                "pattern": "格纹",
+                "warmth": 3,
+                "formality": 2,
+                "seasons": [
+                  "spring",
+                  "autumn"
+                ],
+                "confidence": 0.98,
+                "needs_confirm": false,
+                "user_edited": true,
+                "created_at": "2026-11-16T03:47:37.167034Z"
+              },
+              {
+                "sources": {
+                  "sources": "derived",
+                  "owner_id": "derived",
+                  "id": "derived",
+                  "name": "model",
+                  "image_path": "user",
+                  "category": "model",
+                  "sub": "model",
+                  "colors": "model",
+                  "material": "model",
+                  "pattern": "model",
+                  "warmth": "model",
+                  "formality": "model",
+                  "seasons": "model",
+                  "confidence": "model",
+                  "needs_confirm": "derived",
+                  "user_edited": "derived",
+                  "created_at": "derived",
+                  "_corrections": {
+                    "source": "derived",
+                    "entries": []
+                  },
+                  "_upload": {
+                    "source": "derived",
+                    "draft_id": "57191be7-2757-4f86-8503-2caeeddac96f",
+                    "photo_sha256": "cdf688fa3e07e942a0b01fcad0775b4d8537a8aeb1aadba667d15c4536a172e2"
+                  }
+                },
+                "owner_id": "0ef45dd6-31f8-408f-a193-38577f78ebec",
+                "id": "I039f7e353c8b4868988a5a004c5088b4-00",
+                "name": null,
+                "image_path": "uploads/0ef45dd6-31f8-408f-a193-38577f78ebec/57191be727574f8685032caeeddac96f.jpg",
+                "category": "bottom",
+                "sub": "阔腿工装裤",
+                "colors": [
+                  "黑色"
+                ],
+                "material": "尼龙",
+                "pattern": "纯色",
+                "warmth": 2,
+                "formality": 1,
+                "seasons": [
+                  "spring",
+                  "summer",
+                  "autumn"
+                ],
+                "confidence": 0.98,
+                "needs_confirm": false,
+                "user_edited": true,
+                "created_at": "2026-11-16T03:48:03.495848Z"
+              },
+              {
+                "sources": {
+                  "sources": "derived",
+                  "owner_id": "derived",
+                  "id": "derived",
+                  "name": "model",
+                  "image_path": "user",
+                  "category": "model",
+                  "sub": "model",
+                  "colors": "model",
+                  "material": "model",
+                  "pattern": "model",
+                  "warmth": "model",
+                  "formality": "model",
+                  "seasons": "model",
+                  "confidence": "model",
+                  "needs_confirm": "derived",
+                  "user_edited": "derived",
+                  "created_at": "derived",
+                  "_corrections": {
+                    "source": "derived",
+                    "entries": []
+                  },
+                  "_upload": {
+                    "source": "derived",
+                    "draft_id": "9d877daa-ea80-4ff8-bb67-6382ccf08323",
+                    "photo_sha256": "7fecc714addb8420d09ecf6f95dccf093b5fdb398f61e0261c5f3aa8abec2368"
+                  }
+                },
+                "owner_id": "0ef45dd6-31f8-408f-a193-38577f78ebec",
+                "id": "I6ca9bcbb15354d009c9e717f0f5ffc65-00",
+                "name": null,
+                "image_path": "uploads/0ef45dd6-31f8-408f-a193-38577f78ebec/9d877daaea804ff8bb676382ccf08323.jpg",
+                "category": "shoes",
+                "sub": "Air Jordan 1 Low 运动鞋",
+                "colors": [
+                  "白色",
+                  "黑色",
+                  "卡其色"
+                ],
+                "material": "皮革",
+                "pattern": "拼色",
+                "warmth": 3,
+                "formality": 2,
+                "seasons": [
+                  "spring",
+                  "summer",
+                  "autumn",
+                  "winter"
+                ],
+                "confidence": 0.98,
+                "needs_confirm": false,
+                "user_edited": true,
+                "created_at": "2026-11-16T03:48:54.880716Z"
+              }
+            ]
+          }
+        ],
+        "shortage": null,
+        "shortage_hint": "符合条件的不同方案仅 1 套。",
+        "degraded": false,
+        "degrade_reason": null,
+        "prompt_version": "outfit_compose.v1",
+        "latency_ms": 5026
+      }
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "00-public-empty.png",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "file": "01-public-three-items.png",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "file": "99-failure.png",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "file": "03-other-device-empty.png",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375,
+      "png_width": 375,
+      "png_height": 812
+    },
+    {
+      "file": "02-public-outfit.png",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375,
+      "png_width": 375,
+      "png_height": 812
+    }
+  ],
+  "runtime_errors": [],
+  "owner": "0ef45dd6-31f8-408f-a193-38577f78ebec",
+  "initial_image_check_failure": "timeout document.querySelectorAll('section[aria-label=\"搭配方案\"] img').length>=3 && [...document.querySelectorAll('section[aria-label=\"搭配方案\"] img')].every(x=>x.complete&&x.naturalWidth>0)",
+  "generated": {
+    "sets": 1,
+    "degraded": false,
+    "latency_ms": 5026,
+    "prompt_version": "outfit_compose.v1"
+  },
+  "photo_state": {
+    "images": 0,
+    "fallbacks": 3,
+    "broken": 0
+  },
+  "isolation": {
+    "owner_a_items": 3,
+    "owner_b_items": 0,
+    "different_device_ids": true,
+    "cross_owner_photo_status": 404
+  },
+  "completed_at": "2026-11-16T03:55:37.355Z",
+  "capture_note": "第二次补拍显式对每个Target重设CDP设备模拟，并核对PNG尺寸375×812，纠正新窗口默认尺寸干扰；未重调模型。",
+  "timing_note": "初版upload_to_photo_ms只等待页面任意一张图片，可能是旧卡，不能标作每张新照片完整加载耗时；仅保留操作观测，不当完整建档性能指标。"
+}

@@ -1,0 +1,77 @@
+{
+  "case_id": "R03",
+  "photo": "cases/images/cloth03.jpg",
+  "interaction": "file_selection",
+  "timestamp": "2026-11-13T15:06:45.655Z",
+  "response": {
+    "draft_id": "84abd928-248b-4c37-ad6d-507177fca0f1",
+    "items": [
+      {
+        "sources": {
+          "sources": "derived",
+          "id": "derived",
+          "name": "model",
+          "image_path": "user",
+          "category": "model",
+          "sub": "model",
+          "colors": "model",
+          "material": "model",
+          "pattern": "model",
+          "warmth": "model",
+          "formality": "model",
+          "seasons": "model",
+          "confidence": "model",
+          "needs_confirm": "derived",
+          "user_edited": "derived",
+          "created_at": "derived",
+          "_corrections": {
+            "source": "derived",
+            "entries": []
+          },
+          "_upload": {
+            "source": "derived",
+            "draft_id": "84abd928-248b-4c37-ad6d-507177fca0f1",
+            "photo_sha256": "cdf688fa3e07e942a0b01fcad0775b4d8537a8aeb1aadba667d15c4536a172e2"
+          }
+        },
+        "id": "U84abd928248b4c37ad6d507177fca0f1-00",
+        "name": null,
+        "image_path": "uploads/84abd928248b4c37ad6d507177fca0f1.jpg",
+        "category": "bottom",
+        "sub": "松紧腰阔腿裤",
+        "colors": [
+          "黑色"
+        ],
+        "material": "尼龙",
+        "pattern": "纯色",
+        "warmth": 2,
+        "formality": 2,
+        "seasons": [
+          "spring",
+          "summer",
+          "autumn"
+        ],
+        "confidence": 0.95,
+        "needs_confirm": false,
+        "user_edited": false,
+        "created_at": "2026-11-13T15:06:45.594758Z"
+      }
+    ],
+    "corrections": [],
+    "latency_ms": 6246,
+    "prompt_version": "item_extract.v2",
+    "reused": false
+  },
+  "archive_ms": 6314,
+  "card": {
+    "id": "U84abd928248b4c37ad6d507177fca0f1-00",
+    "highlighted": "true",
+    "cardCount": 1,
+    "photoLoaded": true
+  },
+  "viewport": {
+    "width": 375,
+    "height": 812,
+    "scrollWidth": 375
+  }
+}

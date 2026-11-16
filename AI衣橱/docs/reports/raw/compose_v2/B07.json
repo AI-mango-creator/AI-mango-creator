@@ -1,0 +1,133 @@
+{
+  "case_id": "B07",
+  "timestamp": "2026-11-13T15:52:17+08:00",
+  "model": "qwen3.8-flash",
+  "prompt_version": "outfit_compose.v1",
+  "source": "真实调用",
+  "input": {
+    "temp_c": 26,
+    "occasion": "commute",
+    "formality_target": [
+      3,
+      5
+    ],
+    "excluded": []
+  },
+  "expect": {
+    "set_count": 3,
+    "must_not_use": [
+      "W02",
+      "W07",
+      "W10",
+      "W12"
+    ],
+    "all_items_in_wardrobe": true
+  },
+  "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，适合26度热带的通勤场景。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W06\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装与黑色混纺下装组合，正式度适中且符合热带温度要求。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W11\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配藏青混纺下装，满足通勤场合的着装需求。\"\n    }\n  ]\n}",
+  "parsed": {
+    "sets": [
+      {
+        "slots": {
+          "top": "W01",
+          "bottom": "W04",
+          "outer": null,
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "白色棉质上装搭配米色混纺下装，适合26度热带的通勤场景。"
+      },
+      {
+        "slots": {
+          "top": "W01",
+          "bottom": "W06",
+          "outer": null,
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "白色棉质上装与黑色混纺下装组合，正式度适中且符合热带温度要求。"
+      },
+      {
+        "slots": {
+          "top": "W01",
+          "bottom": "W11",
+          "outer": null,
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "白色棉质上装搭配藏青混纺下装，满足通勤场合的着装需求。"
+      }
+    ]
+  },
+  "parse_ok": true,
+  "http_status": 200,
+  "candidate_ids": [
+    "W01",
+    "W04",
+    "W06",
+    "W09",
+    "W11"
+  ],
+  "band": "hot",
+  "composable_count": 3,
+  "latency_ms": 6174,
+  "degraded": false,
+  "degrade_reason": null,
+  "result": {
+    "sets": [
+      {
+        "slots": {
+          "top": "W01",
+          "bottom": "W04",
+          "outer": null,
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "白色棉质上装搭配米色混纺下装，适合26度热带的通勤场景。"
+      },
+      {
+        "slots": {
+          "top": "W01",
+          "bottom": "W06",
+          "outer": null,
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "白色棉质上装与黑色混纺下装组合，正式度适中且符合热带温度要求。"
+      },
+      {
+        "slots": {
+          "top": "W01",
+          "bottom": "W11",
+          "outer": null,
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "白色棉质上装搭配藏青混纺下装，满足通勤场合的着装需求。"
+      }
+    ],
+    "shortage": null,
+    "shortage_hint": null,
+    "degraded": false,
+    "latency_ms": 6172,
+    "prompt_version": "outfit_compose.v1",
+    "degrade_reason": null
+  },
+  "checks": {
+    "set_count": true,
+    "must_not_use": true,
+    "all_items_in_wardrobe": true
+  },
+  "passed": true,
+  "failure_reasons": [],
+  "attribution": "—",
+  "attempts": [
+    {
+      "timestamp": "2026-11-13T15:52:17+08:00",
+      "http_status": 200,
+      "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，适合26度热带的通勤场景。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W06\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装与黑色混纺下装组合，正式度适中且符合热带温度要求。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W11\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配藏青混纺下装，满足通勤场合的着装需求。\"\n    }\n  ]\n}"
+    }
+  ],
+  "retry_feedback": [],
+  "error": null,
+  "evidence": "docs/reports/raw/compose_v2/B07.json"
+}

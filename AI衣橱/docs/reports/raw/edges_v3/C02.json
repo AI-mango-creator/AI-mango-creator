@@ -1,0 +1,85 @@
+{
+  "case_id": "C02",
+  "timestamp": "2026-11-13T16:33:33+08:00",
+  "model": "qwen3.8-flash",
+  "prompt_version": "outfit_compose.v1",
+  "source": "纯规则边界",
+  "input": {
+    "temp_c": 8,
+    "occasion": "commute",
+    "formality_target": [
+      3,
+      5
+    ],
+    "excluded": [],
+    "wardrobe_override": [
+      "W01",
+      "W04",
+      "W08"
+    ]
+  },
+  "expect": {
+    "set_count_lte": 1,
+    "must_emit_shortage_hint": true,
+    "must_not_claim_warm": true,
+    "all_items_in_wardrobe": true
+  },
+  "raw_content": null,
+  "parsed": null,
+  "parse_ok": false,
+  "http_status": null,
+  "candidate_ids": [
+    "W04"
+  ],
+  "band": "cold",
+  "composable_count": 0,
+  "latency_ms": 0,
+  "degraded": false,
+  "degrade_reason": null,
+  "result": {
+    "sets": [],
+    "shortage": {
+      "missing_slots": [
+        "top",
+        "shoes",
+        "outer"
+      ],
+      "requirements": [
+        {
+          "slot": "top",
+          "warmth_min": 3,
+          "formality_min": 3
+        },
+        {
+          "slot": "shoes",
+          "warmth_min": 2,
+          "formality_min": 3
+        },
+        {
+          "slot": "outer",
+          "warmth_min": 2,
+          "formality_min": 3
+        }
+      ],
+      "message": "没有完整搭配，缺少符合条件的单品：上装、鞋、外套"
+    },
+    "shortage_hint": "没有完整搭配，缺少符合条件的单品：上装、鞋、外套",
+    "degraded": false,
+    "latency_ms": 0,
+    "prompt_version": "outfit_compose.v1",
+    "degrade_reason": null
+  },
+  "checks": {
+    "set_count_lte": true,
+    "must_emit_shortage_hint": true,
+    "must_not_claim_warm": true,
+    "all_items_in_wardrobe": true
+  },
+  "passed": true,
+  "failure_reasons": [],
+  "attribution": "—",
+  "attempts": [],
+  "retry_feedback": [],
+  "error": null,
+  "evidence": "docs/reports/raw/edges_v3/C02.json"
+}

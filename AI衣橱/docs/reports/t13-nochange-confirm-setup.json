@@ -1,0 +1,9 @@
+{
+  "kind": "仅QA状态注入，不是新识别样本：复位R02待确认，验无改动保存不伪造来源",
+  "owner": "276adcc8-8dae-46cc-bbd8-b2596a0466dd",
+  "id": "I53f601cdf17112add08a96ea96fbe3ce-00",
+  "original_needs_confirm": 0,
+  "original_user_edited": 1,
+  "category": "top",
+  "category_source": "model"
+}

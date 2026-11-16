@@ -1,0 +1,146 @@
+{
+  "case_id": "B09",
+  "timestamp": "2026-11-13T15:27:27+08:00",
+  "model": "qwen3.8-flash",
+  "prompt_version": "outfit_compose.v1",
+  "source": "真实调用",
+  "input": {
+    "temp_c": 18,
+    "occasion": "commute",
+    "formality_target": [
+      3,
+      5
+    ],
+    "excluded": []
+  },
+  "expect": {
+    "set_count": 3,
+    "reason_must_mention_any_of": [
+      "℃",
+      "温度",
+      "凉",
+      "正式",
+      "会议",
+      "白",
+      "黑",
+      "米",
+      "藏青",
+      "灰"
+    ],
+    "reason_length_range": [
+      10,
+      60
+    ]
+  },
+  "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，外搭藏青羊毛混纺外套以应对凉爽通勤温度，整体正式度适中。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W06\",\n        \"outer\": \"W02\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"灰色羊毛厚上装与黑色混纺下装组合，配以黑色聚酯纤维外套，满足凉爽天气下的较高正式度需求。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W11\",\n        \"outer\": \"W10\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配藏青混纺下装，外穿卡其棉质外套，适合凉爽天气的通勤场景且符合目标正式度区间。\"\n    }\n  ]\n}",
+  "parsed": {
+    "sets": [
+      {
+        "slots": {
+          "top": "W01",
+          "bottom": "W04",
+          "outer": "W03",
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "白色棉质上装搭配米色混纺下装，外搭藏青羊毛混纺外套以应对凉爽通勤温度，整体正式度适中。"
+      },
+      {
+        "slots": {
+          "top": "W07",
+          "bottom": "W06",
+          "outer": "W02",
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "灰色羊毛厚上装与黑色混纺下装组合，配以黑色聚酯纤维外套，满足凉爽天气下的较高正式度需求。"
+      },
+      {
+        "slots": {
+          "top": "W01",
+          "bottom": "W11",
+          "outer": "W10",
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "白色棉质上装搭配藏青混纺下装，外穿卡其棉质外套，适合凉爽天气的通勤场景且符合目标正式度区间。"
+      }
+    ]
+  },
+  "parse_ok": true,
+  "http_status": 200,
+  "candidate_ids": [
+    "W01",
+    "W02",
+    "W03",
+    "W04",
+    "W06",
+    "W07",
+    "W09",
+    "W10",
+    "W11"
+  ],
+  "band": "cool",
+  "composable_count": 18,
+  "latency_ms": 5969,
+  "degraded": false,
+  "degrade_reason": null,
+  "result": {
+    "sets": [
+      {
+        "slots": {
+          "top": "W01",
+          "bottom": "W04",
+          "outer": "W03",
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "白色棉质上装搭配米色混纺下装，外搭藏青羊毛混纺外套以应对凉爽通勤温度，整体正式度适中。"
+      },
+      {
+        "slots": {
+          "top": "W07",
+          "bottom": "W06",
+          "outer": "W02",
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "灰色羊毛厚上装与黑色混纺下装组合，配以黑色聚酯纤维外套，满足凉爽天气下的较高正式度需求。"
+      },
+      {
+        "slots": {
+          "top": "W01",
+          "bottom": "W11",
+          "outer": "W10",
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "白色棉质上装搭配藏青混纺下装，外穿卡其棉质外套，适合凉爽天气的通勤场景且符合目标正式度区间。"
+      }
+    ],
+    "shortage": null,
+    "shortage_hint": null,
+    "degraded": false,
+    "latency_ms": 5969,
+    "prompt_version": "outfit_compose.v1",
+    "degrade_reason": null
+  },
+  "checks": {
+    "set_count": true,
+    "reason_must_mention_any_of": true,
+    "reason_length_range": true
+  },
+  "passed": true,
+  "failure_reasons": [],
+  "attribution": "—",
+  "attempts": [
+    {
+      "timestamp": "2026-11-13T15:27:27+08:00",
+      "http_status": 200,
+      "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，外搭藏青羊毛混纺外套以应对凉爽通勤温度，整体正式度适中。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W06\",\n        \"outer\": \"W02\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"灰色羊毛厚上装与黑色混纺下装组合，配以黑色聚酯纤维外套，满足凉爽天气下的较高正式度需求。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W11\",\n        \"outer\": \"W10\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配藏青混纺下装，外穿卡其棉质外套，适合凉爽天气的通勤场景且符合目标正式度区间。\"\n    }\n  ]\n}"
+    }
+  ],
+  "retry_feedback": [],
+  "error": null,
+  "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/compose/B09.json"
+}

@@ -1,0 +1,66 @@
+{
+  "timestamp": "2026-11-14T00:35:38.070572+08:00",
+  "migration_runs": 2,
+  "total_before": 47,
+  "total_after": 47,
+  "legacy_unchanged": 24,
+  "owned_ids_now_opaque": 23,
+  "foreign_key_check": [],
+  "backup": "data/backups/t13-before-opaque/app.db",
+  "mapping_by_draft": [
+    {
+      "draft_id": "d47ef252-c34d-4433-89d6-0e7100e9d982",
+      "old_id": "U276adcc88dae46ccbbd8b2596a0466ddd47ef252c34d443389d60e7100e9d982-00",
+      "new_id": "Iaeb4d5ab208ddca97df34e9e68c468e8-00",
+      "needs_confirm": 0
+    },
+    {
+      "draft_id": "f81d242e-6816-43a6-99d3-b1b4b49b3beb",
+      "old_id": "U276adcc88dae46ccbbd8b2596a0466ddf81d242e681643a699d3b1b4b49b3beb-00",
+      "new_id": "I53f601cdf17112add08a96ea96fbe3ce-00",
+      "needs_confirm": 0
+    },
+    {
+      "draft_id": "85d7d992-06b7-4594-86d5-cbc47c6771eb",
+      "old_id": "U276adcc88dae46ccbbd8b2596a0466dd85d7d99206b7459486d5cbc47c6771eb-00",
+      "new_id": "Ib6b5191b7e925858fa7adeb2b01c1d9c-00",
+      "needs_confirm": 0
+    },
+    {
+      "draft_id": "f3d95871-d10c-441b-927b-231d00c630e0",
+      "old_id": "U276adcc88dae46ccbbd8b2596a0466ddf3d95871d10c441b927b231d00c630e0-00",
+      "new_id": "I681ef888667832e583716de3bd49c0ca-00",
+      "needs_confirm": 0
+    },
+    {
+      "draft_id": "ef124475-0687-40df-a76f-e542c06f263a",
+      "old_id": "U276adcc88dae46ccbbd8b2596a0466ddef124475068740dfa76fe542c06f263a-00",
+      "new_id": "I493524d2a133149d8fbb3ae004c1d215-00",
+      "needs_confirm": 0
+    },
+    {
+      "draft_id": "0f7d5247-9539-48dd-860c-8b1396e2903b",
+      "old_id": "U276adcc88dae46ccbbd8b2596a0466dd0f7d5247953948dd860c8b1396e2903b-00",
+      "new_id": "I920922f43edced62b23b92f42d040b6a-00",
+      "needs_confirm": 0
+    },
+    {
+      "draft_id": "0c6286e5-2610-493b-ad66-ed501a46526f",
+      "old_id": "U276adcc88dae46ccbbd8b2596a0466dd0c6286e52610493bad66ed501a46526f-00",
+      "new_id": "I4f74ae520ed0da8753d490716626e3aa-00",
+      "needs_confirm": 0
+    },
+    {
+      "draft_id": "74e682c5-f407-40df-8d77-288b643b163b",
+      "old_id": "U276adcc88dae46ccbbd8b2596a0466dd74e682c5f40740df8d77288b643b163b-00",
+      "new_id": "I4d132dae3375a1e1b699b07b75a945f6-00",
+      "needs_confirm": 0
+    },
+    {
+      "draft_id": "0e174eeb-cb95-4d65-b3b9-529faf30e60a",
+      "old_id": "U276adcc88dae46ccbbd8b2596a0466dd0e174eebcb954d65b3b9529faf30e60a-00",
+      "new_id": "Ia6b5c6ee2f20f8b1bfbfbada931bfe91-00",
+      "needs_confirm": 0
+    }
+  ]
+}

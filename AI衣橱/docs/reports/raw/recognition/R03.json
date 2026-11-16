@@ -1,0 +1,44 @@
+{
+  "case_id": "R03",
+  "title": "黑色阔腿运动裤（实拍挂拍）",
+  "image": "images/cloth03.jpg",
+  "image_bytes": 155902,
+  "model": "qwen3.8-omni-flash",
+  "prompt_file": "prompts/item_extract.v1.md",
+  "prompt_sha256_prefix": "148a10064d22f145",
+  "http_status": 200,
+  "raw_content": "```json\n{\n  \"items\": [\n    {\n      \"category\": \"bottom\",\n      \"sub\": \"长裤\",\n      \"colors\": [\n        \"黑色\"\n      ],\n      \"material\": \"尼龙\",\n      \"pattern\": \"纯色\",\n      \"warmth\": 2,\n      \"formality\": 1,\n      \"seasons\": [\n        \"spring\",\n        \"summer\",\n        \"autumn\"\n      ],\n      \"confidence\": 0.95\n    }\n  ]\n}\n```",
+  "latency_ms": 16893,
+  "had_fence": true,
+  "parse_ok": true,
+  "parsed": {
+    "items": [
+      {
+        "category": "bottom",
+        "sub": "长裤",
+        "colors": [
+          "黑色"
+        ],
+        "material": "尼龙",
+        "pattern": "纯色",
+        "warmth": 2,
+        "formality": 1,
+        "seasons": [
+          "spring",
+          "summer",
+          "autumn"
+        ],
+        "confidence": 0.95
+      }
+    ]
+  },
+  "item_count": 1,
+  "checks": {
+    "category": true,
+    "sub_in": false,
+    "color_in": true,
+    "formality_range": true,
+    "confidence_gte": true
+  },
+  "passed": false
+}

@@ -1,0 +1,11 @@
+# 本地状态与依赖，不入库
+data/
+.env
+.venv/
+__pycache__/
+*.pyc
+node_modules/
+web/dist/
+.pytest_cache/
+.ruff_cache/
+.DS_Store

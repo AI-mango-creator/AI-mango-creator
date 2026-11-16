@@ -1,0 +1,44 @@
+{
+  "case_id": "R04",
+  "title": "白/藏青拼色运动短袖（商品图）",
+  "image": "images/cloth04.jpg",
+  "image_bytes": 29896,
+  "model": "qwen3.8-omni-flash",
+  "prompt_file": "prompts/item_extract.v1.md",
+  "prompt_sha256_prefix": "148a10064d22f145",
+  "http_status": 200,
+  "raw_content": "```json\n{\"items\":[{\"category\":\"top\",\"sub\":\"运动短袖\",\"colors\":[\"白色\",\"藏青色\",\"灰绿色\"],\"material\":\"速干面料\",\"pattern\":\"纯色\",\"warmth\":2,\"formality\":1,\"seasons\":[\"summer\"],\"confidence\":0.95}]}\n```",
+  "latency_ms": 24888,
+  "had_fence": true,
+  "parse_ok": true,
+  "parsed": {
+    "items": [
+      {
+        "category": "top",
+        "sub": "运动短袖",
+        "colors": [
+          "白色",
+          "藏青色",
+          "灰绿色"
+        ],
+        "material": "速干面料",
+        "pattern": "纯色",
+        "warmth": 2,
+        "formality": 1,
+        "seasons": [
+          "summer"
+        ],
+        "confidence": 0.95
+      }
+    ]
+  },
+  "item_count": 1,
+  "checks": {
+    "category": true,
+    "sub_in": true,
+    "color_in": true,
+    "formality_range": true,
+    "confidence_gte": true
+  },
+  "passed": true
+}

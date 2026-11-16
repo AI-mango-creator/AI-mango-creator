@@ -1,0 +1,1071 @@
+{
+  "meta": {
+    "version": "v2",
+    "owner_persona": "林晓 28F 165cm 上海 互联网运营",
+    "temp_bands": {
+      "hot": "temp_c >= 26",
+      "warm": "20 <= temp_c < 26",
+      "cool": "15 <= temp_c < 20",
+      "cold": "temp_c < 15"
+    },
+    "note": "expect 里的键必须全部可被代码断言；禁止出现 subjective 类描述。fail_policy 只能取 IN/FILTER/COMPOSE/PARSE/NONE 之一。 v2 变更：wardrobe 增至 14 件（W13/W14 为真实鞋，取人工校正真值而非模型输出）；filter_spec 新增 warmth_exempt_slots=[shoes]，鞋不参与温度带 warmth 过滤（seasons 已足够）；A01-A05 的 image_status=pending 表示其引用的 cases/fixtures/ 尚不存在，跑批只取 image_status=ready 的用例；R01-R09 的 image 路径相对 cases/ 解析。",
+    "filter_spec": {
+      "band_by_temp": {
+        "hot": ">=26",
+        "warm": "20-25",
+        "cool": "15-19",
+        "cold": "<15"
+      },
+      "allowed_warmth": {
+        "hot": [
+          1,
+          2
+        ],
+        "warm": [
+          2,
+          3
+        ],
+        "cool": [
+          2,
+          5
+        ],
+        "cold": [
+          2,
+          5
+        ]
+      },
+      "allowed_seasons": {
+        "hot": [
+          "summer"
+        ],
+        "warm": [
+          "spring",
+          "summer",
+          "autumn"
+        ],
+        "cool": [
+          "spring",
+          "autumn"
+        ],
+        "cold": [
+          "autumn",
+          "winter"
+        ]
+      },
+      "slot_rules": [
+        "每套必含 top + bottom + shoes（dress 可替代 top+bottom）",
+        "band in (cool, cold) 时必含 outer；band==cold 时 top.warmth >= 3（保暖内层）",
+        "band in (hot, warm) 时 outer 不出现",
+        "同一套内每个 slot 只能 1 件",
+        "单品不得在 excluded 列表内"
+      ],
+      "occasion_formality": {
+        "commute": [
+          3,
+          5
+        ],
+        "date": [
+          1,
+          3
+        ],
+        "weekend": [
+          1,
+          3
+        ],
+        "client_meeting": [
+          4,
+          5
+        ]
+      },
+      "warmth_exempt_slots": [
+        "shoes"
+      ]
+    }
+  },
+  "wardrobe": [
+    {
+      "id": "W01",
+      "name": "白色棉质衬衫",
+      "category": "top",
+      "sub": "衬衫",
+      "colors": [
+        "白色"
+      ],
+      "material": "棉",
+      "warmth": 2,
+      "formality": 3,
+      "seasons": [
+        "spring",
+        "summer",
+        "autumn",
+        "winter"
+      ],
+      "pattern": "纯色"
+    },
+    {
+      "id": "W02",
+      "name": "黑色西装外套",
+      "category": "outer",
+      "sub": "西装外套",
+      "colors": [
+        "黑色"
+      ],
+      "material": "聚酯纤维",
+      "warmth": 3,
+      "formality": 5,
+      "seasons": [
+        "spring",
+        "autumn"
+      ],
+      "pattern": "纯色"
+    },
+    {
+      "id": "W03",
+      "name": "藏青针织开衫",
+      "category": "outer",
+      "sub": "针织开衫",
+      "colors": [
+        "藏青"
+      ],
+      "material": "羊毛混纺",
+      "warmth": 3,
+      "formality": 3,
+      "seasons": [
+        "spring",
+        "autumn"
+      ],
+      "pattern": "纯色"
+    },
+    {
+      "id": "W04",
+      "name": "米色阔腿裤",
+      "category": "bottom",
+      "sub": "阔腿裤",
+      "colors": [
+        "米色"
+      ],
+      "material": "混纺",
+      "warmth": 2,
+      "formality": 3,
+      "seasons": [
+        "spring",
+        "summer",
+        "autumn"
+      ],
+      "pattern": "纯色"
+    },
+    {
+      "id": "W05",
+      "name": "深蓝直筒牛仔裤",
+      "category": "bottom",
+      "sub": "牛仔裤",
+      "colors": [
+        "深蓝"
+      ],
+      "material": "牛仔",
+      "warmth": 3,
+      "formality": 2,
+      "seasons": [
+        "spring",
+        "autumn",
+        "winter"
+      ],
+      "pattern": "纯色"
+    },
+    {
+      "id": "W06",
+      "name": "黑色西裤",
+      "category": "bottom",
+      "sub": "西裤",
+      "colors": [
+        "黑色"
+      ],
+      "material": "混纺",
+      "warmth": 2,
+      "formality": 5,
+      "seasons": [
+        "spring",
+        "summer",
+        "autumn",
+        "winter"
+      ],
+      "pattern": "纯色"
+    },
+    {
+      "id": "W07",
+      "name": "灰色圆领羊毛衫",
+      "category": "top",
+      "sub": "毛衫",
+      "colors": [
+        "灰色"
+      ],
+      "material": "羊毛",
+      "warmth": 4,
+      "formality": 3,
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "pattern": "纯色"
+    },
+    {
+      "id": "W08",
+      "name": "白色厚底运动鞋",
+      "category": "shoes",
+      "sub": "运动鞋",
+      "colors": [
+        "白色"
+      ],
+      "material": "皮革",
+      "warmth": 2,
+      "formality": 1,
+      "seasons": [
+        "spring",
+        "summer",
+        "autumn",
+        "winter"
+      ],
+      "pattern": "纯色"
+    },
+    {
+      "id": "W09",
+      "name": "黑色乐福鞋",
+      "category": "shoes",
+      "sub": "乐福鞋",
+      "colors": [
+        "黑色"
+      ],
+      "material": "皮革",
+      "warmth": 2,
+      "formality": 4,
+      "seasons": [
+        "spring",
+        "summer",
+        "autumn",
+        "winter"
+      ],
+      "pattern": "纯色"
+    },
+    {
+      "id": "W10",
+      "name": "卡其色风衣",
+      "category": "outer",
+      "sub": "风衣",
+      "colors": [
+        "卡其"
+      ],
+      "material": "棉",
+      "warmth": 3,
+      "formality": 3,
+      "seasons": [
+        "spring",
+        "autumn"
+      ],
+      "pattern": "纯色"
+    },
+    {
+      "id": "W11",
+      "name": "藏青A字半裙",
+      "category": "bottom",
+      "sub": "半身裙",
+      "colors": [
+        "藏青"
+      ],
+      "material": "混纺",
+      "warmth": 2,
+      "formality": 4,
+      "seasons": [
+        "spring",
+        "summer",
+        "autumn",
+        "winter"
+      ],
+      "pattern": "纯色"
+    },
+    {
+      "id": "W12",
+      "name": "米白高领打底",
+      "category": "top",
+      "sub": "打底衫",
+      "colors": [
+        "米白"
+      ],
+      "material": "针织",
+      "warmth": 3,
+      "formality": 2,
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "pattern": "纯色"
+    },
+    {
+      "id": "W13",
+      "name": "白黑卡其拼色板鞋",
+      "category": "shoes",
+      "sub": "板鞋",
+      "colors": [
+        "白色",
+        "黑色",
+        "卡其色"
+      ],
+      "material": "皮革",
+      "pattern": "拼色",
+      "warmth": 2,
+      "formality": 1,
+      "seasons": [
+        "spring",
+        "summer",
+        "autumn",
+        "winter"
+      ]
+    },
+    {
+      "id": "W14",
+      "name": "米白厚底跑鞋",
+      "category": "shoes",
+      "sub": "运动鞋",
+      "colors": [
+        "白色",
+        "米白",
+        "灰色"
+      ],
+      "material": "网面麂皮拼接",
+      "pattern": "纯色",
+      "warmth": 2,
+      "formality": 1,
+      "seasons": [
+        "spring",
+        "summer",
+        "autumn"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "A01",
+      "type": "recognition",
+      "title": "白衬衫平铺，光线充足",
+      "input": {
+        "image": "fixtures/A01_shirt.jpg",
+        "hint": "平铺于浅色桌面，正面朝上",
+        "image_status": "pending"
+      },
+      "expect": {
+        "category": "top",
+        "sub_in": [
+          "衬衫",
+          "shirt"
+        ],
+        "color_in": [
+          "白色",
+          "白"
+        ],
+        "formality_range": [
+          2,
+          4
+        ],
+        "confidence_gte": 0.8
+      },
+      "fail_policy": "NONE",
+      "why_this_case": "最简单的一类，用来确认识别链路本身通，且置信度能到 0.8 以上。它挂了说明 S1 整体没接通。"
+    },
+    {
+      "id": "A02",
+      "type": "recognition",
+      "title": "深灰羊毛衫，叠放 + 弱光（难例）",
+      "input": {
+        "image": "fixtures/A02_knit_dark.jpg",
+        "hint": "夜间室内，衣服叠成方块",
+        "image_status": "pending"
+      },
+      "expect": {
+        "category": "top",
+        "confidence_lt": 0.7,
+        "needs_confirm": true
+      },
+      "fail_policy": "IN",
+      "why_this_case": "验证低置信度不会硬猜，而是进待确认队列。这是 P4 约束的前置条件。"
+    },
+    {
+      "id": "A03",
+      "type": "recognition",
+      "title": "碎花连衣裙",
+      "input": {
+        "image": "fixtures/A03_dress.jpg",
+        "image_status": "pending"
+      },
+      "expect": {
+        "category": "dress",
+        "pattern": "碎花",
+        "formality_range": [
+          1,
+          3
+        ]
+      },
+      "fail_policy": "IN",
+      "why_this_case": "图案与小类同时识别，且连衣裙不是 top+bottom 两件，验证品类枚举没有漏。"
+    },
+    {
+      "id": "A04",
+      "type": "recognition",
+      "title": "乐福鞋特写（只露鞋头）",
+      "input": {
+        "image": "fixtures/A04_loafer_crop.jpg",
+        "image_status": "pending"
+      },
+      "expect": {
+        "category": "shoes",
+        "confidence_lt": 0.8,
+        "needs_confirm": true
+      },
+      "fail_policy": "IN",
+      "why_this_case": "局部特写是真实拍照的常见情况，验证模型不会把鞋头识别成包或皮带。"
+    },
+    {
+      "id": "A05",
+      "type": "recognition",
+      "title": "非衣物图片（咖啡杯）",
+      "input": {
+        "image": "fixtures/A05_not_clothing.jpg",
+        "image_status": "pending"
+      },
+      "expect": {
+        "should_reject": true,
+        "error_code": "NOT_CLOTHING",
+        "item_created": false
+      },
+      "fail_policy": "IN",
+      "why_this_case": "用户会误传图。硬塞进衣柜会污染候选集，后续所有方案都错。必须有拒绝路径。"
+    },
+    {
+      "id": "B01",
+      "type": "compose",
+      "title": "18℃ 通勤（凉，需外套）",
+      "input": {
+        "temp_c": 18,
+        "occasion": "commute",
+        "formality_target": [
+          3,
+          5
+        ],
+        "excluded": []
+      },
+      "expect": {
+        "set_count": 3,
+        "all_items_in_wardrobe": true,
+        "no_duplicate_within_set": true,
+        "must_have_categories": [
+          "top",
+          "bottom",
+          "shoes"
+        ],
+        "must_have_outer": true,
+        "no_season_conflict": true
+      },
+      "fail_policy": "COMPOSE",
+      "why_this_case": "最高频场景，一切基线。3 套齐、带外套、品类齐，是产品的最小可用定义。"
+    },
+    {
+      "id": "B02",
+      "type": "compose",
+      "title": "28℃ 通勤（热，禁止厚衣物）",
+      "input": {
+        "temp_c": 28,
+        "occasion": "commute",
+        "formality_target": [
+          3,
+          5
+        ],
+        "excluded": []
+      },
+      "expect": {
+        "set_count": 3,
+        "must_not_use": [
+          "W02",
+          "W07",
+          "W10",
+          "W12"
+        ],
+        "all_items_in_wardrobe": true,
+        "no_season_conflict": true
+      },
+      "fail_policy": "FILTER",
+      "why_this_case": "夏天推荐羊毛衫是这类产品最典型的低级错误。断言打在具体 id 上，无法靠文案糊过去。"
+    },
+    {
+      "id": "B03",
+      "type": "compose",
+      "title": "5℃ 通勤（冷，必须有保暖层+外套）",
+      "input": {
+        "temp_c": 5,
+        "occasion": "commute",
+        "formality_target": [
+          3,
+          5
+        ],
+        "excluded": []
+      },
+      "expect": {
+        "set_count": 3,
+        "must_use_any_of": [
+          "W07",
+          "W12"
+        ],
+        "must_have_outer": true,
+        "outer_in": [
+          "W02",
+          "W10"
+        ],
+        "all_items_in_wardrobe": true
+      },
+      "fail_policy": "BENCH",
+      "why_this_case": "低温场景考验「保暖层」这个概念有没有被建模。只堆衣服不建模厚薄，这条必挂。"
+    },
+    {
+      "id": "B04",
+      "type": "compose",
+      "title": "22℃ 约会（正式度下探）",
+      "input": {
+        "temp_c": 22,
+        "occasion": "date",
+        "formality_target": [
+          1,
+          3
+        ],
+        "excluded": []
+      },
+      "expect": {
+        "set_count": 3,
+        "must_not_use": [
+          "W02",
+          "W06"
+        ],
+        "all_items_in_wardrobe": true,
+        "no_season_conflict": true
+      },
+      "fail_policy": "COMPOSE",
+      "why_this_case": "西装和西裤出现在约会场景，是「只按温度筛、不看正式度」的症状。这条专测正式度维度是否真的生效。"
+    },
+    {
+      "id": "B05",
+      "type": "compose",
+      "title": "18℃ 通勤 + 用户排除半裙",
+      "input": {
+        "temp_c": 18,
+        "occasion": "commute",
+        "formality_target": [
+          3,
+          5
+        ],
+        "excluded": [
+          "W11"
+        ]
+      },
+      "expect": {
+        "set_count": 3,
+        "must_not_use": [
+          "W11"
+        ],
+        "all_items_in_wardrobe": true,
+        "no_season_conflict": true
+      },
+      "fail_policy": "FILTER",
+      "why_this_case": "验证用户约束能穿透到候选集，而不是只在 UI 上「点了但不生效」。这是「保留/替换」功能的底座。"
+    },
+    {
+      "id": "B06",
+      "type": "compose",
+      "title": "12℃ 周末休闲（正式度 1–3）",
+      "input": {
+        "temp_c": 12,
+        "occasion": "weekend",
+        "formality_target": [
+          1,
+          3
+        ],
+        "excluded": []
+      },
+      "expect": {
+        "set_count": 3,
+        "must_not_use": [
+          "W02",
+          "W06"
+        ],
+        "all_items_in_wardrobe": true,
+        "no_season_conflict": true
+      },
+      "fail_policy": "COMPOSE",
+      "why_this_case": "周末场景必须在「冷」和「休闲」之间取得平衡：既要有外套又要避开西装。两个约束叠加时最容易漏掉一个。"
+    },
+    {
+      "id": "B07",
+      "type": "compose",
+      "title": "26℃ 边界（hot 下限）",
+      "input": {
+        "temp_c": 26,
+        "occasion": "commute",
+        "formality_target": [
+          3,
+          5
+        ],
+        "excluded": []
+      },
+      "expect": {
+        "set_count": 3,
+        "must_not_use": [
+          "W02",
+          "W07",
+          "W10",
+          "W12"
+        ],
+        "all_items_in_wardrobe": true
+      },
+      "fail_policy": "FILTER",
+      "why_this_case": "温度带边界值。用硬阈值写过滤时，26℃ 会被两边都排除，导致候选集骤减、套数不足。"
+    },
+    {
+      "id": "B08",
+      "type": "compose",
+      "title": "15℃ 边界（cool 下限）",
+      "input": {
+        "temp_c": 15,
+        "occasion": "commute",
+        "formality_target": [
+          3,
+          5
+        ],
+        "excluded": []
+      },
+      "expect": {
+        "set_count": 3,
+        "no_season_conflict": true,
+        "all_items_in_wardrobe": true
+      },
+      "fail_policy": "FILTER",
+      "why_this_case": "与 B07 成对，验证边界判定是「区间重叠」而不是「区间包含」。两条必须同时通过才有意义。"
+    },
+    {
+      "id": "B09",
+      "type": "compose",
+      "title": "理由必须引用真实属性",
+      "input": {
+        "temp_c": 18,
+        "occasion": "commute",
+        "formality_target": [
+          3,
+          5
+        ],
+        "excluded": []
+      },
+      "expect": {
+        "set_count": 3,
+        "reason_must_mention_any_of": [
+          "℃",
+          "温度",
+          "凉",
+          "正式",
+          "会议",
+          "白",
+          "黑",
+          "米",
+          "藏青",
+          "灰"
+        ],
+        "reason_length_range": [
+          10,
+          60
+        ]
+      },
+      "fail_policy": "COMPOSE",
+      "why_this_case": "「显瘦又舒适」这种万能理由没有信息量。理由必须锚定到真实属性，用户才能核对、才能信任（P3）。"
+    },
+    {
+      "id": "B10",
+      "type": "compose",
+      "title": "同场景连跑 3 次，「换一套」必须有效",
+      "input": {
+        "temp_c": 18,
+        "occasion": "commute",
+        "formality_target": [
+          3,
+          5
+        ],
+        "excluded": [],
+        "repeat": 3
+      },
+      "expect": {
+        "set_count": 3,
+        "distinct_sets_across_runs_gte": 2,
+        "all_items_in_wardrobe": true
+      },
+      "fail_policy": "COMPOSE",
+      "why_this_case": "temperature=0 时三次结果完全一样，「换一套」按钮就是个假的。这条验证多样性不是靠 UI 假装。"
+    },
+    {
+      "id": "C01",
+      "type": "edge",
+      "title": "客户会议（formal 5）+ 衣柜无正式上装",
+      "input": {
+        "temp_c": 16,
+        "occasion": "client_meeting",
+        "formality_target": [
+          4,
+          5
+        ],
+        "excluded": []
+      },
+      "expect": {
+        "set_count_lt": 3,
+        "must_emit_shortage_hint": true,
+        "must_not_use": [
+          "W08"
+        ],
+        "all_items_in_wardrobe": true
+      },
+      "fail_policy": "FILTER",
+      "why_this_case": "衣柜里没有 formal≥4 的上装，正确行为是「如实少出 + 告诉你缺什么」，不是硬凑 3 套塞一件 T 恤。这是 P4 的核心考题。"
+    },
+    {
+      "id": "C02",
+      "type": "edge",
+      "title": "衣柜只有夏装 + 今日 8℃",
+      "input": {
+        "temp_c": 8,
+        "occasion": "commute",
+        "formality_target": [
+          3,
+          5
+        ],
+        "excluded": [],
+        "wardrobe_override": [
+          "W01",
+          "W04",
+          "W08"
+        ]
+      },
+      "expect": {
+        "set_count_lte": 1,
+        "must_emit_shortage_hint": true,
+        "must_not_claim_warm": true,
+        "all_items_in_wardrobe": true
+      },
+      "fail_policy": "FILTER",
+      "why_this_case": "极端不匹配。产品的诚实度在这里见分晓：说「你缺一件外套」比塞一件衬衫过冬强一百倍。"
+    },
+    {
+      "id": "C03",
+      "type": "failure",
+      "title": "模型返回被 markdown 代码块包裹的 JSON",
+      "input": {
+        "temp_c": 18,
+        "occasion": "commute",
+        "inject": "llm_returns_fenced_json"
+      },
+      "expect": {
+        "parse_retry_gte": 1,
+        "final_status": "success",
+        "fallback_used": false
+      },
+      "fail_policy": "PARSE",
+      "why_this_case": "真实模型 10% 概率这么返回。裸 json.loads 会直接 500，用户看到白屏。必须先剥壳再重试。"
+    },
+    {
+      "id": "C04",
+      "type": "failure",
+      "title": "模型超时 20s",
+      "input": {
+        "temp_c": 18,
+        "occasion": "commute",
+        "inject": "llm_timeout"
+      },
+      "expect": {
+        "final_status": "degraded",
+        "fallback_used": true,
+        "fallback_type": "rule_template",
+        "ui_shows_banner": true,
+        "set_count_gte": 1
+      },
+      "fail_policy": "COMPOSE",
+      "why_this_case": "用户不会等 30 秒。超时必须给「基础搭配 + 明示降级」，静默降级等于欺骗。"
+    },
+    {
+      "id": "C05",
+      "type": "failure",
+      "title": "模型在同一套里放了两个上装",
+      "input": {
+        "temp_c": 18,
+        "occasion": "commute",
+        "inject": "llm_duplicate_category_in_set"
+      },
+      "expect": {
+        "validator_rejected": true,
+        "regenerate_count_gte": 1,
+        "final_status": "success",
+        "no_duplicate_within_set": true
+      },
+      "fail_policy": "COMPOSE",
+      "why_this_case": "「一件衬衫+一件毛衣」同时出现在上装位，是模型最常犯的结构性错误。校验器必须拦得住，不能靠 prompt 自觉。"
+    },
+    {
+      "id": "R01",
+      "type": "recognition",
+      "title": "灰色冲锋衣（实拍，深色背景）",
+      "input": {
+        "image": "images/cloth01.jpg",
+        "image_status": "ready"
+      },
+      "expect": {
+        "category": "outer",
+        "sub_in": [
+          "冲锋衣",
+          "夹克"
+        ],
+        "color_in": [
+          "灰",
+          "灰色"
+        ],
+        "formality_range": [
+          1,
+          2
+        ],
+        "confidence_gte": 0.8
+      },
+      "fail_policy": "IN",
+      "why_this_case": "外层品类的最难一例：蓬松厚外套容易被判成 top。真值 warmth=3，模型曾给 1 且置信 0.98。"
+    },
+    {
+      "id": "R02",
+      "type": "recognition",
+      "title": "米白轻薄夹克（实拍，举在手中）",
+      "input": {
+        "image": "images/cloth02.jpg",
+        "image_status": "ready"
+      },
+      "expect": {
+        "category": "outer",
+        "sub_in": [
+          "防晒服",
+          "夹克",
+          "风衣"
+        ],
+        "color_in": [
+          "米白",
+          "浅绿",
+          "白",
+          "米色"
+        ],
+        "formality_range": [
+          1,
+          2
+        ],
+        "confidence_gte": 0.8
+      },
+      "fail_policy": "IN",
+      "why_this_case": "薄外层的反向难例：容易被判成 top。用来验证 outer 类目没有被 warmth 下限误伤。"
+    },
+    {
+      "id": "R03",
+      "type": "recognition",
+      "title": "黑色阔腿运动裤（实拍挂拍）",
+      "input": {
+        "image": "images/cloth03.jpg",
+        "image_status": "ready"
+      },
+      "expect": {
+        "category": "bottom",
+        "sub_in": [
+          "阔腿裤",
+          "运动裤",
+          "休闲裤"
+        ],
+        "color_in": [
+          "黑色",
+          "黑"
+        ],
+        "formality_range": [
+          1,
+          2
+        ],
+        "confidence_gte": 0.8
+      },
+      "fail_policy": "IN",
+      "why_this_case": "宽松裤型：裆部结构不明显时易误判成半身裙。"
+    },
+    {
+      "id": "R04",
+      "type": "recognition",
+      "title": "白/藏青拼色运动短袖（商品图）",
+      "input": {
+        "image": "images/cloth04.jpg",
+        "image_status": "ready"
+      },
+      "expect": {
+        "category": "top",
+        "sub_in": [
+          "T恤",
+          "短袖",
+          "运动T恤"
+        ],
+        "color_in": [
+          "白",
+          "白色",
+          "藏青",
+          "灰绿"
+        ],
+        "formality_range": [
+          1,
+          2
+        ],
+        "confidence_gte": 0.8
+      },
+      "fail_policy": "IN",
+      "why_this_case": "纯商品图无真人穿着，验证平铺/挂拍输入的稳定性。"
+    },
+    {
+      "id": "R05",
+      "type": "recognition",
+      "title": "棕蓝格纹衬衫（商品图）",
+      "input": {
+        "image": "images/cloth05.jpg",
+        "image_status": "ready"
+      },
+      "expect": {
+        "category": "top",
+        "sub_in": [
+          "衬衫"
+        ],
+        "color_in": [
+          "棕",
+          "蓝色",
+          "蓝",
+          "米"
+        ],
+        "formality_range": [
+          2,
+          3
+        ],
+        "confidence_gte": 0.8,
+        "pattern": "格纹"
+      },
+      "fail_policy": "IN",
+      "why_this_case": "唯一带明确图案断言的一例：格纹判定错则整条链路的外套选择会失配。"
+    },
+    {
+      "id": "R06",
+      "type": "recognition",
+      "title": "卡其工装短裤（商品图）",
+      "input": {
+        "image": "images/cloth06.jpg",
+        "image_status": "ready"
+      },
+      "expect": {
+        "category": "bottom",
+        "sub_in": [
+          "短裤",
+          "工装短裤"
+        ],
+        "color_in": [
+          "卡其",
+          "卡其色"
+        ],
+        "formality_range": [
+          1,
+          2
+        ],
+        "confidence_gte": 0.8
+      },
+      "fail_policy": "IN",
+      "why_this_case": "短裤类目：最容易被判成 bottom 里的长裤，需靠长度线索。"
+    },
+    {
+      "id": "R07",
+      "type": "recognition",
+      "title": "黑底白条纹运动短裤（实拍）",
+      "input": {
+        "image": "images/cloth07.jpg",
+        "image_status": "ready"
+      },
+      "expect": {
+        "category": "bottom",
+        "sub_in": [
+          "短裤",
+          "运动短裤"
+        ],
+        "color_in": [
+          "黑",
+          "黑色"
+        ],
+        "formality_range": [
+          1,
+          2
+        ],
+        "confidence_gte": 0.8,
+        "pattern": "条纹"
+      },
+      "fail_policy": "IN",
+      "why_this_case": "深色 + 条纹双难叠加：既要求类目对，也要求图案不被忽略。"
+    },
+    {
+      "id": "R08",
+      "type": "recognition",
+      "title": "白黑卡其拼色板鞋（实拍，手持）",
+      "input": {
+        "image": "images/cloth08.jpg",
+        "image_status": "ready"
+      },
+      "expect": {
+        "category": "shoes",
+        "sub_in": [
+          "运动鞋",
+          "板鞋",
+          "休闲鞋"
+        ],
+        "color_in": [
+          "白",
+          "白色",
+          "黑",
+          "黑色",
+          "卡其"
+        ],
+        "formality_range": [
+          1,
+          2
+        ],
+        "confidence_gte": 0.8
+      },
+      "fail_policy": "IN",
+      "why_this_case": "鞋类首测。模型给 warmth=3 导致 26℃ 以上被过滤，是本轮发现的核心 bug 来源。"
+    },
+    {
+      "id": "R09",
+      "type": "recognition",
+      "title": "米白厚底跑鞋（商品图，白底）",
+      "input": {
+        "image": "images/cloth09.jpg",
+        "image_status": "ready"
+      },
+      "expect": {
+        "category": "shoes",
+        "sub_in": [
+          "运动鞋",
+          "跑鞋",
+          "休闲鞋"
+        ],
+        "color_in": [
+          "白",
+          "白色",
+          "米白",
+          "灰"
+        ],
+        "formality_range": [
+          1,
+          2
+        ],
+        "confidence_gte": 0.8
+      },
+      "fail_policy": "IN",
+      "why_this_case": "白底商品图 + 全白鞋身：低对比度，验证颜色是否还能区分主色与背景。"
+    }
+  ]
+}

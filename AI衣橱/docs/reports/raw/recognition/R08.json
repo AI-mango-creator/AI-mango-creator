@@ -1,0 +1,46 @@
+{
+  "case_id": "R08",
+  "title": "白黑卡其拼色板鞋（实拍，手持）",
+  "image": "images/cloth08.jpg",
+  "image_bytes": 147994,
+  "model": "qwen3.8-omni-flash",
+  "prompt_file": "prompts/item_extract.v1.md",
+  "prompt_sha256_prefix": "148a10064d22f145",
+  "http_status": 200,
+  "raw_content": "{\"items\":[{\"category\":\"shoes\",\"sub\":\"板鞋\",\"colors\":[\"白色\",\"黑色\",\"米色\"],\"material\":\"皮革\",\"pattern\":\"纯色\",\"warmth\":3,\"formality\":1,\"seasons\":[\"spring\",\"summer\",\"autumn\"],\"confidence\":0.95}]}",
+  "latency_ms": 7454,
+  "had_fence": false,
+  "parse_ok": true,
+  "parsed": {
+    "items": [
+      {
+        "category": "shoes",
+        "sub": "板鞋",
+        "colors": [
+          "白色",
+          "黑色",
+          "米色"
+        ],
+        "material": "皮革",
+        "pattern": "纯色",
+        "warmth": 3,
+        "formality": 1,
+        "seasons": [
+          "spring",
+          "summer",
+          "autumn"
+        ],
+        "confidence": 0.95
+      }
+    ]
+  },
+  "item_count": 1,
+  "checks": {
+    "category": true,
+    "sub_in": true,
+    "color_in": true,
+    "formality_range": true,
+    "confidence_gte": true
+  },
+  "passed": true
+}

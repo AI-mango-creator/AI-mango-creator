@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-11-13T23:40:18.764386+08:00",
+  "backup": "data/backups/t13-before/app.db",
+  "backup_sha256": "f711c03466158deb818fc103dfd0c3ec57854a0c0e71b0467f5c700205a333fd",
+  "migration_runs": 2,
+  "counts_before": {
+    "wardrobe_items": 24,
+    "sessions": 2,
+    "outfit_sets": 6,
+    "outfit_items": 18
+  },
+  "counts_after": {
+    "wardrobe_items": 24,
+    "sessions": 2,
+    "outfit_sets": 6,
+    "outfit_items": 18
+  },
+  "all_owner": "legacy",
+  "version": 2,
+  "original_fields_unchanged": true,
+  "frozen_files_unchanged": 134
+}

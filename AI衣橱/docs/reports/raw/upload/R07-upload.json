@@ -1,0 +1,76 @@
+{
+  "case_id": "R07",
+  "photo": "cases/images/cloth07.jpg",
+  "interaction": "file_selection",
+  "timestamp": "2026-11-13T15:07:10.948Z",
+  "response": {
+    "draft_id": "c6aa42a2-55f5-4dc8-a780-5f816492fdaa",
+    "items": [
+      {
+        "sources": {
+          "sources": "derived",
+          "id": "derived",
+          "name": "model",
+          "image_path": "user",
+          "category": "model",
+          "sub": "model",
+          "colors": "model",
+          "material": "model",
+          "pattern": "model",
+          "warmth": "model",
+          "formality": "model",
+          "seasons": "model",
+          "confidence": "model",
+          "needs_confirm": "derived",
+          "user_edited": "derived",
+          "created_at": "derived",
+          "_corrections": {
+            "source": "derived",
+            "entries": []
+          },
+          "_upload": {
+            "source": "derived",
+            "draft_id": "c6aa42a2-55f5-4dc8-a780-5f816492fdaa",
+            "photo_sha256": "8d7008705cb8369e411dfa8126651fdbd6d60699b6edf3284b23fa9154cb7c5b"
+          }
+        },
+        "id": "Uc6aa42a255f54dc8a7805f816492fdaa-00",
+        "name": null,
+        "image_path": "uploads/c6aa42a255f54dc8a7805f816492fdaa.jpg",
+        "category": "bottom",
+        "sub": "运动短裤",
+        "colors": [
+          "黑色",
+          "白色"
+        ],
+        "material": "聚酯纤维",
+        "pattern": "条纹",
+        "warmth": 1,
+        "formality": 1,
+        "seasons": [
+          "summer"
+        ],
+        "confidence": 0.98,
+        "needs_confirm": false,
+        "user_edited": false,
+        "created_at": "2026-11-13T15:07:10.883139Z"
+      }
+    ],
+    "corrections": [],
+    "latency_ms": 6149,
+    "prompt_version": "item_extract.v2",
+    "reused": false
+  },
+  "archive_ms": 6248,
+  "card": {
+    "id": "Uc6aa42a255f54dc8a7805f816492fdaa-00",
+    "highlighted": "true",
+    "cardCount": 1,
+    "photoLoaded": true
+  },
+  "viewport": {
+    "width": 375,
+    "height": 812,
+    "scrollWidth": 375
+  }
+}

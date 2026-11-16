@@ -1,0 +1,120 @@
+{
+  "case_id": "R01",
+  "photo": "cloth01.jpg",
+  "timestamp": "2026-11-13T16:16:04.130Z",
+  "recovery": "首张真实识别已入库；验收驱动截图超时、原浏览器页面随后刷新。相同draft缓存读取，无新模型调用；首调服务端/浏览器总耗时缺失，不能伪造。",
+  "response": {
+    "status": 200,
+    "body": {
+      "draft_id": "d47ef252-c34d-4433-89d6-0e7100e9d982",
+      "items": [
+        {
+          "sources": {
+            "sources": "derived",
+            "owner_id": "derived",
+            "id": "derived",
+            "name": "model",
+            "image_path": "user",
+            "category": "model",
+            "sub": "model",
+            "colors": "model",
+            "material": "model",
+            "pattern": "model",
+            "warmth": "model",
+            "formality": "model",
+            "seasons": "model",
+            "confidence": "model",
+            "needs_confirm": "derived",
+            "user_edited": "derived",
+            "created_at": "derived",
+            "_corrections": {
+              "source": "derived",
+              "entries": []
+            },
+            "_upload": {
+              "source": "derived",
+              "draft_id": "d47ef252-c34d-4433-89d6-0e7100e9d982",
+              "photo_sha256": "92ee8dc61b79130e740fe032f2ee70056f7b40694a4df8a35ccbde33c63746bb"
+            }
+          },
+          "owner_id": "276adcc8-8dae-46cc-bbd8-b2596a0466dd",
+          "id": "U276adcc88dae46ccbbd8b2596a0466ddd47ef252c34d443389d60e7100e9d982-00",
+          "name": null,
+          "image_path": "uploads/276adcc8-8dae-46cc-bbd8-b2596a0466dd/d47ef252c34d443389d60e7100e9d982.jpg",
+          "category": "outer",
+          "sub": "连帽冲锋衣",
+          "colors": [
+            "灰色"
+          ],
+          "material": "化纤面料",
+          "pattern": "纯色",
+          "warmth": 2,
+          "formality": 1,
+          "seasons": [
+            "spring",
+            "autumn"
+          ],
+          "confidence": 0.98,
+          "needs_confirm": true,
+          "user_edited": false,
+          "created_at": "2026-11-13T16:12:11.002379Z"
+        }
+      ],
+      "corrections": [],
+      "latency_ms": 4,
+      "prompt_version": "item_extract.v2",
+      "reused": true
+    }
+  },
+  "original_model_logs": [
+    {
+      "case_id": "upload:d47ef252-c34d-4433-89d6-0e7100e9d982",
+      "prompt_version": "item_extract.v2",
+      "latency_ms": 5038,
+      "prompt_tokens": null,
+      "completion_tokens": null,
+      "degraded": false,
+      "outcome": "network",
+      "event": "model_call",
+      "category": "network",
+      "http_status": null,
+      "provider_code": null,
+      "diagnostic": null
+    },
+    {
+      "case_id": "upload:d47ef252-c34d-4433-89d6-0e7100e9d982",
+      "prompt_version": "item_extract.v2",
+      "latency_ms": 5007,
+      "prompt_tokens": null,
+      "completion_tokens": null,
+      "degraded": false,
+      "outcome": "network",
+      "event": "model_call",
+      "category": "network",
+      "http_status": null,
+      "provider_code": null,
+      "diagnostic": null
+    },
+    {
+      "case_id": "upload:d47ef252-c34d-4433-89d6-0e7100e9d982",
+      "prompt_version": "item_extract.v2",
+      "latency_ms": 5150,
+      "prompt_tokens": 825,
+      "completion_tokens": 123,
+      "degraded": false,
+      "outcome": "ok",
+      "event": "model_call",
+      "category": null,
+      "http_status": null,
+      "provider_code": null,
+      "diagnostic": null
+    }
+  ],
+  "card_ms": null,
+  "pending_visible": true,
+  "viewport": {
+    "width": 375,
+    "height": 812,
+    "scrollWidth": 375
+  }
+}

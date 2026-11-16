@@ -1,0 +1,78 @@
+{
+  "case_id": "R04",
+  "photo": "cloth04.jpg",
+  "timestamp": "2026-11-13T16:17:35.753Z",
+  "response": {
+    "at": 1794586650325,
+    "status": 201,
+    "body": {
+      "draft_id": "f3d95871-d10c-441b-927b-231d00c630e0",
+      "items": [
+        {
+          "sources": {
+            "sources": "derived",
+            "owner_id": "derived",
+            "id": "derived",
+            "name": "model",
+            "image_path": "user",
+            "category": "model",
+            "sub": "model",
+            "colors": "model",
+            "material": "model",
+            "pattern": "model",
+            "warmth": "model",
+            "formality": "model",
+            "seasons": "model",
+            "confidence": "model",
+            "needs_confirm": "derived",
+            "user_edited": "derived",
+            "created_at": "derived",
+            "_corrections": {
+              "source": "derived",
+              "entries": []
+            },
+            "_upload": {
+              "source": "derived",
+              "draft_id": "f3d95871-d10c-441b-927b-231d00c630e0",
+              "photo_sha256": "f8b366830233e73e48c26578484191a6c8fc94a493978eb375f8257d7d294c42"
+            }
+          },
+          "owner_id": "276adcc8-8dae-46cc-bbd8-b2596a0466dd",
+          "id": "U276adcc88dae46ccbbd8b2596a0466ddf3d95871d10c441b927b231d00c630e0-00",
+          "name": null,
+          "image_path": "uploads/276adcc8-8dae-46cc-bbd8-b2596a0466dd/f3d95871d10c441b927b231d00c630e0.jpg",
+          "category": "top",
+          "sub": "半拉链拼色短袖T恤",
+          "colors": [
+            "白色",
+            "杏绿",
+            "藏青"
+          ],
+          "material": "聚酯纤维",
+          "pattern": "拼色",
+          "warmth": 2,
+          "formality": 1,
+          "seasons": [
+            "spring",
+            "summer"
+          ],
+          "confidence": 0.98,
+          "needs_confirm": true,
+          "user_edited": false,
+          "created_at": "2026-11-13T16:17:35.694898Z"
+        }
+      ],
+      "corrections": [],
+      "latency_ms": 5372,
+      "prompt_version": "item_extract.v2",
+      "reused": false
+    }
+  },
+  "card_ms": 5434,
+  "viewport": {
+    "width": 375,
+    "height": 812,
+    "scrollWidth": 375
+  },
+  "pending_visible": true
+}

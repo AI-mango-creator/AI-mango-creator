@@ -1,0 +1,76 @@
+{
+  "case_id": "R02",
+  "photo": "cloth02.jpg",
+  "timestamp": "2026-11-13T16:17:19.637Z",
+  "response": {
+    "at": 1794586632833,
+    "status": 201,
+    "body": {
+      "draft_id": "f81d242e-6816-43a6-99d3-b1b4b49b3beb",
+      "items": [
+        {
+          "sources": {
+            "sources": "derived",
+            "owner_id": "derived",
+            "id": "derived",
+            "name": "model",
+            "image_path": "user",
+            "category": "model",
+            "sub": "model",
+            "colors": "model",
+            "material": "model",
+            "pattern": "model",
+            "warmth": "model",
+            "formality": "model",
+            "seasons": "model",
+            "confidence": "model",
+            "needs_confirm": "derived",
+            "user_edited": "derived",
+            "created_at": "derived",
+            "_corrections": {
+              "source": "derived",
+              "entries": []
+            },
+            "_upload": {
+              "source": "derived",
+              "draft_id": "f81d242e-6816-43a6-99d3-b1b4b49b3beb",
+              "photo_sha256": "c23909f8a48ac0b5cf1bf06edc0e920e84bc1a6b01a3e6b6dab20b9c42c9a456"
+            }
+          },
+          "owner_id": "276adcc8-8dae-46cc-bbd8-b2596a0466dd",
+          "id": "U276adcc88dae46ccbbd8b2596a0466ddf81d242e681643a699d3b1b4b49b3beb-00",
+          "name": null,
+          "image_path": "uploads/276adcc8-8dae-46cc-bbd8-b2596a0466dd/f81d242e681643a699d3b1b4b49b3beb.jpg",
+          "category": "top",
+          "sub": "拉链长袖T恤",
+          "colors": [
+            "白色"
+          ],
+          "material": "棉混纺",
+          "pattern": "纯色",
+          "warmth": 2,
+          "formality": 1,
+          "seasons": [
+            "spring",
+            "autumn"
+          ],
+          "confidence": 0.95,
+          "needs_confirm": true,
+          "user_edited": false,
+          "created_at": "2026-11-13T16:17:19.559545Z"
+        }
+      ],
+      "corrections": [],
+      "latency_ms": 6729,
+      "prompt_version": "item_extract.v2",
+      "reused": false
+    }
+  },
+  "card_ms": 6810,
+  "viewport": {
+    "width": 375,
+    "height": 812,
+    "scrollWidth": 375
+  },
+  "pending_visible": true
+}

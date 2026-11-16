@@ -1,0 +1,2327 @@
+{
+  "timestamp": "2026-11-13T15:27:39+08:00",
+  "model": "qwen3.8-flash",
+  "prompt_version": "outfit_compose.v1",
+  "denominator": 24,
+  "rows": [
+    {
+      "case_id": "R01",
+      "source": "重放自 2026-11-13 录制",
+      "passed": true,
+      "failure_reasons": [],
+      "attribution": "—",
+      "latency_ms": 23215,
+      "checks": {
+        "category": true,
+        "sub_in": true,
+        "color_in": true,
+        "formality_range": true,
+        "confidence_gte": true
+      },
+      "actual": {
+        "category": "outer",
+        "sub": "冲锋衣",
+        "colors": [
+          "灰色"
+        ],
+        "material": "尼龙",
+        "pattern": "纯色",
+        "warmth": 2,
+        "formality": 1,
+        "seasons": [
+          "spring",
+          "autumn",
+          "winter"
+        ],
+        "confidence": 0.95
+      },
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/recognition/R01.json"
+    },
+    {
+      "case_id": "R02",
+      "source": "重放自 2026-11-13 录制",
+      "passed": true,
+      "failure_reasons": [],
+      "attribution": "—",
+      "latency_ms": 8386,
+      "checks": {
+        "category": true,
+        "sub_in": true,
+        "color_in": true,
+        "formality_range": true,
+        "confidence_gte": true
+      },
+      "actual": {
+        "category": "outer",
+        "sub": "拉链夹克",
+        "colors": [
+          "白色"
+        ],
+        "material": "棉涤混纺",
+        "pattern": "纯色",
+        "warmth": 3,
+        "formality": 1,
+        "seasons": [
+          "spring",
+          "autumn"
+        ],
+        "confidence": 0.95
+      },
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/recognition/R02.json"
+    },
+    {
+      "case_id": "R03",
+      "source": "重放自 2026-11-13 录制",
+      "passed": false,
+      "failure_reasons": [
+        "sub_in：实际 长裤；期望 ['阔腿裤', '运动裤', '休闲裤']"
+      ],
+      "attribution": "IN",
+      "latency_ms": 16893,
+      "checks": {
+        "category": true,
+        "sub_in": false,
+        "color_in": true,
+        "formality_range": true,
+        "confidence_gte": true
+      },
+      "actual": {
+        "category": "bottom",
+        "sub": "长裤",
+        "colors": [
+          "黑色"
+        ],
+        "material": "尼龙",
+        "pattern": "纯色",
+        "warmth": 2,
+        "formality": 1,
+        "seasons": [
+          "spring",
+          "summer",
+          "autumn"
+        ],
+        "confidence": 0.95
+      },
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/recognition/R03.json"
+    },
+    {
+      "case_id": "R04",
+      "source": "重放自 2026-11-13 录制",
+      "passed": true,
+      "failure_reasons": [],
+      "attribution": "—",
+      "latency_ms": 24888,
+      "checks": {
+        "category": true,
+        "sub_in": true,
+        "color_in": true,
+        "formality_range": true,
+        "confidence_gte": true
+      },
+      "actual": {
+        "category": "top",
+        "sub": "运动短袖",
+        "colors": [
+          "白色",
+          "藏青色",
+          "灰绿色"
+        ],
+        "material": "速干面料",
+        "pattern": "纯色",
+        "warmth": 2,
+        "formality": 1,
+        "seasons": [
+          "summer"
+        ],
+        "confidence": 0.95
+      },
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/recognition/R04.json"
+    },
+    {
+      "case_id": "R05",
+      "source": "重放自 2026-11-13 录制",
+      "passed": true,
+      "failure_reasons": [],
+      "attribution": "—",
+      "latency_ms": 17816,
+      "checks": {
+        "category": true,
+        "sub_in": true,
+        "color_in": true,
+        "formality_range": true,
+        "confidence_gte": true,
+        "pattern": true
+      },
+      "actual": {
+        "category": "top",
+        "sub": "长袖衬衫",
+        "colors": [
+          "棕色",
+          "蓝色"
+        ],
+        "material": "棉",
+        "pattern": "格纹",
+        "warmth": 3,
+        "formality": 2,
+        "seasons": [
+          "spring",
+          "autumn"
+        ],
+        "confidence": 0.95
+      },
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/recognition/R05.json"
+    },
+    {
+      "case_id": "R06",
+      "source": "重放自 2026-11-13 录制",
+      "passed": true,
+      "failure_reasons": [],
+      "attribution": "—",
+      "latency_ms": 18302,
+      "checks": {
+        "category": true,
+        "sub_in": true,
+        "color_in": true,
+        "formality_range": true,
+        "confidence_gte": true
+      },
+      "actual": {
+        "category": "bottom",
+        "sub": "工装短裤",
+        "colors": [
+          "卡其色"
+        ],
+        "material": "棉",
+        "pattern": "纯色",
+        "warmth": 1,
+        "formality": 1,
+        "seasons": [
+          "summer"
+        ],
+        "confidence": 0.95
+      },
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/recognition/R06.json"
+    },
+    {
+      "case_id": "R07",
+      "source": "重放自 2026-11-13 录制",
+      "passed": true,
+      "failure_reasons": [],
+      "attribution": "—",
+      "latency_ms": 23487,
+      "checks": {
+        "category": true,
+        "sub_in": true,
+        "color_in": true,
+        "formality_range": true,
+        "confidence_gte": true,
+        "pattern": true
+      },
+      "actual": {
+        "category": "bottom",
+        "sub": "短裤",
+        "colors": [
+          "黑色",
+          "白色"
+        ],
+        "material": "涤纶",
+        "pattern": "条纹",
+        "warmth": 1,
+        "formality": 1,
+        "seasons": [
+          "summer",
+          "spring"
+        ],
+        "confidence": 0.95
+      },
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/recognition/R07.json"
+    },
+    {
+      "case_id": "R08",
+      "source": "重放自 2026-11-13 录制",
+      "passed": true,
+      "failure_reasons": [],
+      "attribution": "—",
+      "latency_ms": 7454,
+      "checks": {
+        "category": true,
+        "sub_in": true,
+        "color_in": true,
+        "formality_range": true,
+        "confidence_gte": true
+      },
+      "actual": {
+        "category": "shoes",
+        "sub": "板鞋",
+        "colors": [
+          "白色",
+          "黑色",
+          "米色"
+        ],
+        "material": "皮革",
+        "pattern": "纯色",
+        "warmth": 3,
+        "formality": 1,
+        "seasons": [
+          "spring",
+          "summer",
+          "autumn"
+        ],
+        "confidence": 0.95
+      },
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/recognition/R08.json"
+    },
+    {
+      "case_id": "R09",
+      "source": "重放自 2026-11-13 录制",
+      "passed": true,
+      "failure_reasons": [],
+      "attribution": "—",
+      "latency_ms": 5880,
+      "checks": {
+        "category": true,
+        "sub_in": true,
+        "color_in": true,
+        "formality_range": true,
+        "confidence_gte": true
+      },
+      "actual": {
+        "category": "shoes",
+        "sub": "运动鞋",
+        "colors": [
+          "白色",
+          "灰色"
+        ],
+        "material": "麂皮/网布/橡胶",
+        "pattern": "纯色",
+        "warmth": 3,
+        "formality": 1,
+        "seasons": [
+          "spring",
+          "summer",
+          "autumn",
+          "winter"
+        ],
+        "confidence": 0.98
+      },
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/recognition/R09.json"
+    },
+    {
+      "case_id": "B01",
+      "timestamp": "2026-11-13T15:26:31+08:00",
+      "model": "qwen3.8-flash",
+      "prompt_version": "outfit_compose.v1",
+      "source": "真实调用",
+      "input": {
+        "temp_c": 18,
+        "occasion": "commute",
+        "formality_target": [
+          3,
+          5
+        ],
+        "excluded": []
+      },
+      "expect": {
+        "set_count": 3,
+        "all_items_in_wardrobe": true,
+        "no_duplicate_within_set": true,
+        "must_have_categories": [
+          "top",
+          "bottom",
+          "shoes"
+        ],
+        "must_have_outer": true,
+        "no_season_conflict": true
+      },
+      "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"藏青羊毛混纺外套搭配白色棉质上装与米色下装，黑色皮鞋提升正式度至通勤适宜范围。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W11\",\n        \"outer\": \"W10\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"灰色厚羊毛上装配藏青下装，外搭卡其棉质外套应对凉爽气温，黑色皮鞋保持整体正式感。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W06\",\n        \"outer\": \"W02\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"黑色聚酯纤维外套与黑色混纺下装形成同色系，搭配白色棉质上装提亮，适合高正式度通勤场合。\"\n    }\n  ]\n}",
+      "parsed": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": "W03",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "藏青羊毛混纺外套搭配白色棉质上装与米色下装，黑色皮鞋提升正式度至通勤适宜范围。"
+          },
+          {
+            "slots": {
+              "top": "W07",
+              "bottom": "W11",
+              "outer": "W10",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "灰色厚羊毛上装配藏青下装，外搭卡其棉质外套应对凉爽气温，黑色皮鞋保持整体正式感。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W06",
+              "outer": "W02",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "黑色聚酯纤维外套与黑色混纺下装形成同色系，搭配白色棉质上装提亮，适合高正式度通勤场合。"
+          }
+        ]
+      },
+      "parse_ok": true,
+      "http_status": 200,
+      "candidate_ids": [
+        "W01",
+        "W02",
+        "W03",
+        "W04",
+        "W06",
+        "W07",
+        "W09",
+        "W10",
+        "W11"
+      ],
+      "band": "cool",
+      "composable_count": 18,
+      "latency_ms": 5743,
+      "degraded": false,
+      "degrade_reason": null,
+      "result": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": "W03",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "藏青羊毛混纺外套搭配白色棉质上装与米色下装，黑色皮鞋提升正式度至通勤适宜范围。"
+          },
+          {
+            "slots": {
+              "top": "W07",
+              "bottom": "W11",
+              "outer": "W10",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "灰色厚羊毛上装配藏青下装，外搭卡其棉质外套应对凉爽气温，黑色皮鞋保持整体正式感。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W06",
+              "outer": "W02",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "黑色聚酯纤维外套与黑色混纺下装形成同色系，搭配白色棉质上装提亮，适合高正式度通勤场合。"
+          }
+        ],
+        "shortage": null,
+        "shortage_hint": null,
+        "degraded": false,
+        "latency_ms": 5743,
+        "prompt_version": "outfit_compose.v1",
+        "degrade_reason": null
+      },
+      "checks": {
+        "set_count": true,
+        "all_items_in_wardrobe": true,
+        "no_duplicate_within_set": true,
+        "must_have_categories": true,
+        "must_have_outer": true,
+        "no_season_conflict": true
+      },
+      "passed": true,
+      "failure_reasons": [],
+      "attribution": "—",
+      "attempts": [
+        {
+          "timestamp": "2026-11-13T15:26:31+08:00",
+          "http_status": 200,
+          "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"藏青羊毛混纺外套搭配白色棉质上装与米色下装，黑色皮鞋提升正式度至通勤适宜范围。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W11\",\n        \"outer\": \"W10\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"灰色厚羊毛上装配藏青下装，外搭卡其棉质外套应对凉爽气温，黑色皮鞋保持整体正式感。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W06\",\n        \"outer\": \"W02\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"黑色聚酯纤维外套与黑色混纺下装形成同色系，搭配白色棉质上装提亮，适合高正式度通勤场合。\"\n    }\n  ]\n}"
+        }
+      ],
+      "retry_feedback": [],
+      "error": null,
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/compose/B01.json"
+    },
+    {
+      "case_id": "B02",
+      "timestamp": "2026-11-13T15:26:37+08:00",
+      "model": "qwen3.8-flash",
+      "prompt_version": "outfit_compose.v1",
+      "source": "真实调用",
+      "input": {
+        "temp_c": 28,
+        "occasion": "commute",
+        "formality_target": [
+          3,
+          5
+        ],
+        "excluded": []
+      },
+      "expect": {
+        "set_count": 3,
+        "must_not_use": [
+          "W02",
+          "W07",
+          "W10",
+          "W12"
+        ],
+        "all_items_in_wardrobe": true,
+        "no_season_conflict": true
+      },
+      "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，厚度适中适合28度高温通勤，黑色皮革鞋提供正式度支撑。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W11\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装与藏青混纺下装组合，材质轻薄适应热温带，黑色皮鞋提升整体正式感。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W06\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装配黑色混纺下装，厚薄适宜高温环境，黑色皮革鞋确保通勤所需的正式度。\"\n    }\n  ]\n}",
+      "parsed": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配米色混纺下装，厚度适中适合28度高温通勤，黑色皮革鞋提供正式度支撑。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W11",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装与藏青混纺下装组合，材质轻薄适应热温带，黑色皮鞋提升整体正式感。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W06",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装配黑色混纺下装，厚薄适宜高温环境，黑色皮革鞋确保通勤所需的正式度。"
+          }
+        ]
+      },
+      "parse_ok": true,
+      "http_status": 200,
+      "candidate_ids": [
+        "W01",
+        "W04",
+        "W06",
+        "W09",
+        "W11"
+      ],
+      "band": "hot",
+      "composable_count": 3,
+      "latency_ms": 6738,
+      "degraded": false,
+      "degrade_reason": null,
+      "result": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配米色混纺下装，厚度适中适合28度高温通勤，黑色皮革鞋提供正式度支撑。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W11",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装与藏青混纺下装组合，材质轻薄适应热温带，黑色皮鞋提升整体正式感。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W06",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装配黑色混纺下装，厚薄适宜高温环境，黑色皮革鞋确保通勤所需的正式度。"
+          }
+        ],
+        "shortage": null,
+        "shortage_hint": null,
+        "degraded": false,
+        "latency_ms": 6738,
+        "prompt_version": "outfit_compose.v1",
+        "degrade_reason": null
+      },
+      "checks": {
+        "set_count": true,
+        "must_not_use": true,
+        "all_items_in_wardrobe": true,
+        "no_season_conflict": true
+      },
+      "passed": true,
+      "failure_reasons": [],
+      "attribution": "—",
+      "attempts": [
+        {
+          "timestamp": "2026-11-13T15:26:37+08:00",
+          "http_status": 200,
+          "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，厚度适中适合28度高温通勤，黑色皮革鞋提供正式度支撑。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W11\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装与藏青混纺下装组合，材质轻薄适应热温带，黑色皮鞋提升整体正式感。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W06\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装配黑色混纺下装，厚薄适宜高温环境，黑色皮革鞋确保通勤所需的正式度。\"\n    }\n  ]\n}"
+        }
+      ],
+      "retry_feedback": [],
+      "error": null,
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/compose/B02.json"
+    },
+    {
+      "case_id": "B03",
+      "timestamp": "2026-11-13T15:26:43+08:00",
+      "model": "qwen3.8-flash",
+      "prompt_version": "outfit_compose.v1",
+      "source": "真实调用",
+      "input": {
+        "temp_c": 5,
+        "occasion": "commute",
+        "formality_target": [
+          3,
+          5
+        ],
+        "excluded": []
+      },
+      "expect": {
+        "set_count": 3,
+        "must_use_any_of": [
+          "W07",
+          "W12"
+        ],
+        "must_have_outer": true,
+        "outer_in": [
+          "W02",
+          "W10"
+        ],
+        "all_items_in_wardrobe": true
+      },
+      "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W06\",\n        \"outer\": \"W02\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"黑色聚酯纤维外套与黑色混纺下装及皮革鞋构成正式度5的通勤造型，灰色羊毛上装提供冷带所需的保暖。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W11\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"藏青羊毛混纺外套搭配藏青混纺下装和黑色皮革鞋，整体正式度适中且符合冷带保暖需求。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W10\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"卡其棉质外套与米色混纺下装营造柔和色调，配合灰色羊毛上装和黑色皮鞋满足正式度3的通勤要求。\"\n    }\n  ]\n}",
+      "parsed": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W07",
+              "bottom": "W06",
+              "outer": "W02",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "黑色聚酯纤维外套与黑色混纺下装及皮革鞋构成正式度5的通勤造型，灰色羊毛上装提供冷带所需的保暖。"
+          },
+          {
+            "slots": {
+              "top": "W07",
+              "bottom": "W11",
+              "outer": "W03",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "藏青羊毛混纺外套搭配藏青混纺下装和黑色皮革鞋，整体正式度适中且符合冷带保暖需求。"
+          },
+          {
+            "slots": {
+              "top": "W07",
+              "bottom": "W04",
+              "outer": "W10",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "卡其棉质外套与米色混纺下装营造柔和色调，配合灰色羊毛上装和黑色皮鞋满足正式度3的通勤要求。"
+          }
+        ]
+      },
+      "parse_ok": true,
+      "http_status": 200,
+      "candidate_ids": [
+        "W02",
+        "W03",
+        "W04",
+        "W06",
+        "W07",
+        "W09",
+        "W10",
+        "W11"
+      ],
+      "band": "cold",
+      "composable_count": 9,
+      "latency_ms": 6266,
+      "degraded": false,
+      "degrade_reason": null,
+      "result": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W07",
+              "bottom": "W06",
+              "outer": "W02",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "黑色聚酯纤维外套与黑色混纺下装及皮革鞋构成正式度5的通勤造型，灰色羊毛上装提供冷带所需的保暖。"
+          },
+          {
+            "slots": {
+              "top": "W07",
+              "bottom": "W11",
+              "outer": "W03",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "藏青羊毛混纺外套搭配藏青混纺下装和黑色皮革鞋，整体正式度适中且符合冷带保暖需求。"
+          },
+          {
+            "slots": {
+              "top": "W07",
+              "bottom": "W04",
+              "outer": "W10",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "卡其棉质外套与米色混纺下装营造柔和色调，配合灰色羊毛上装和黑色皮鞋满足正式度3的通勤要求。"
+          }
+        ],
+        "shortage": null,
+        "shortage_hint": null,
+        "degraded": false,
+        "latency_ms": 6266,
+        "prompt_version": "outfit_compose.v1",
+        "degrade_reason": null
+      },
+      "checks": {
+        "set_count": true,
+        "must_use_any_of": true,
+        "must_have_outer": true,
+        "outer_in": false,
+        "all_items_in_wardrobe": true
+      },
+      "passed": false,
+      "failure_reasons": [
+        "outer_in"
+      ],
+      "attribution": "COMPOSE",
+      "attempts": [
+        {
+          "timestamp": "2026-11-13T15:26:43+08:00",
+          "http_status": 200,
+          "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W06\",\n        \"outer\": \"W02\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"黑色聚酯纤维外套与黑色混纺下装及皮革鞋构成正式度5的通勤造型，灰色羊毛上装提供冷带所需的保暖。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W11\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"藏青羊毛混纺外套搭配藏青混纺下装和黑色皮革鞋，整体正式度适中且符合冷带保暖需求。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W10\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"卡其棉质外套与米色混纺下装营造柔和色调，配合灰色羊毛上装和黑色皮鞋满足正式度3的通勤要求。\"\n    }\n  ]\n}"
+        }
+      ],
+      "retry_feedback": [],
+      "error": null,
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/compose/B03.json"
+    },
+    {
+      "case_id": "B04",
+      "timestamp": "2026-11-13T15:26:50+08:00",
+      "model": "qwen3.8-flash",
+      "prompt_version": "outfit_compose.v1",
+      "source": "真实调用",
+      "input": {
+        "temp_c": 22,
+        "occasion": "date",
+        "formality_target": [
+          1,
+          3
+        ],
+        "excluded": []
+      },
+      "expect": {
+        "set_count": 3,
+        "must_not_use": [
+          "W02",
+          "W06"
+        ],
+        "all_items_in_wardrobe": true,
+        "no_season_conflict": true
+      },
+      "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": null,\n        \"shoes\": \"W08\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，整体正式度适中且色调清爽，适合22度温暖天气的约会场合。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W12\",\n        \"bottom\": \"W05\",\n        \"outer\": null,\n        \"shoes\": \"W13\",\n        \"dress\": null\n      },\n      \"reason\": \"米白针织上装与深蓝牛仔下装组合，利用皮革鞋履提升质感，符合休闲约会的轻松氛围。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W05\",\n        \"outer\": null,\n        \"shoes\": \"W14\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配深蓝牛仔裤，选用网面麂皮拼接运动鞋增加活力，适合温度适宜的户外约会。\"\n    }\n  ]\n}",
+      "parsed": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": null,
+              "shoes": "W08",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配米色混纺下装，整体正式度适中且色调清爽，适合22度温暖天气的约会场合。"
+          },
+          {
+            "slots": {
+              "top": "W12",
+              "bottom": "W05",
+              "outer": null,
+              "shoes": "W13",
+              "dress": null
+            },
+            "reason": "米白针织上装与深蓝牛仔下装组合，利用皮革鞋履提升质感，符合休闲约会的轻松氛围。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W05",
+              "outer": null,
+              "shoes": "W14",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配深蓝牛仔裤，选用网面麂皮拼接运动鞋增加活力，适合温度适宜的户外约会。"
+          }
+        ]
+      },
+      "parse_ok": true,
+      "http_status": 200,
+      "candidate_ids": [
+        "W01",
+        "W04",
+        "W05",
+        "W08",
+        "W12",
+        "W13",
+        "W14"
+      ],
+      "band": "warm",
+      "composable_count": 12,
+      "latency_ms": 6542,
+      "degraded": false,
+      "degrade_reason": null,
+      "result": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": null,
+              "shoes": "W08",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配米色混纺下装，整体正式度适中且色调清爽，适合22度温暖天气的约会场合。"
+          },
+          {
+            "slots": {
+              "top": "W12",
+              "bottom": "W05",
+              "outer": null,
+              "shoes": "W13",
+              "dress": null
+            },
+            "reason": "米白针织上装与深蓝牛仔下装组合，利用皮革鞋履提升质感，符合休闲约会的轻松氛围。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W05",
+              "outer": null,
+              "shoes": "W14",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配深蓝牛仔裤，选用网面麂皮拼接运动鞋增加活力，适合温度适宜的户外约会。"
+          }
+        ],
+        "shortage": null,
+        "shortage_hint": null,
+        "degraded": false,
+        "latency_ms": 6542,
+        "prompt_version": "outfit_compose.v1",
+        "degrade_reason": null
+      },
+      "checks": {
+        "set_count": true,
+        "must_not_use": true,
+        "all_items_in_wardrobe": true,
+        "no_season_conflict": true
+      },
+      "passed": true,
+      "failure_reasons": [],
+      "attribution": "—",
+      "attempts": [
+        {
+          "timestamp": "2026-11-13T15:26:50+08:00",
+          "http_status": 200,
+          "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": null,\n        \"shoes\": \"W08\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，整体正式度适中且色调清爽，适合22度温暖天气的约会场合。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W12\",\n        \"bottom\": \"W05\",\n        \"outer\": null,\n        \"shoes\": \"W13\",\n        \"dress\": null\n      },\n      \"reason\": \"米白针织上装与深蓝牛仔下装组合，利用皮革鞋履提升质感，符合休闲约会的轻松氛围。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W05\",\n        \"outer\": null,\n        \"shoes\": \"W14\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配深蓝牛仔裤，选用网面麂皮拼接运动鞋增加活力，适合温度适宜的户外约会。\"\n    }\n  ]\n}"
+        }
+      ],
+      "retry_feedback": [],
+      "error": null,
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/compose/B04.json"
+    },
+    {
+      "case_id": "B05",
+      "timestamp": "2026-11-13T15:26:56+08:00",
+      "model": "qwen3.8-flash",
+      "prompt_version": "outfit_compose.v1",
+      "source": "真实调用",
+      "input": {
+        "temp_c": 18,
+        "occasion": "commute",
+        "formality_target": [
+          3,
+          5
+        ],
+        "excluded": [
+          "W11"
+        ]
+      },
+      "expect": {
+        "set_count": 3,
+        "must_not_use": [
+          "W11"
+        ],
+        "all_items_in_wardrobe": true,
+        "no_season_conflict": true
+      },
+      "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，外搭藏青羊毛混纺外套以应对凉爽温度，整体正式度适中适合通勤。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W06\",\n        \"outer\": \"W02\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"灰色厚羊毛上装与黑色高正式度混纺下装组合，配黑色聚酯纤维外套增强保暖性并提升职场正式感。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W06\",\n        \"outer\": \"W10\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配黑色正式度较高的混纺下装，外穿卡其棉质外套平衡冷暖需求，适合日常通勤场景。\"\n    }\n  ]\n}",
+      "parsed": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": "W03",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配米色混纺下装，外搭藏青羊毛混纺外套以应对凉爽温度，整体正式度适中适合通勤。"
+          },
+          {
+            "slots": {
+              "top": "W07",
+              "bottom": "W06",
+              "outer": "W02",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "灰色厚羊毛上装与黑色高正式度混纺下装组合，配黑色聚酯纤维外套增强保暖性并提升职场正式感。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W06",
+              "outer": "W10",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配黑色正式度较高的混纺下装，外穿卡其棉质外套平衡冷暖需求，适合日常通勤场景。"
+          }
+        ]
+      },
+      "parse_ok": true,
+      "http_status": 200,
+      "candidate_ids": [
+        "W01",
+        "W02",
+        "W03",
+        "W04",
+        "W06",
+        "W07",
+        "W09",
+        "W10"
+      ],
+      "band": "cool",
+      "composable_count": 12,
+      "latency_ms": 7056,
+      "degraded": false,
+      "degrade_reason": null,
+      "result": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": "W03",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配米色混纺下装，外搭藏青羊毛混纺外套以应对凉爽温度，整体正式度适中适合通勤。"
+          },
+          {
+            "slots": {
+              "top": "W07",
+              "bottom": "W06",
+              "outer": "W02",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "灰色厚羊毛上装与黑色高正式度混纺下装组合，配黑色聚酯纤维外套增强保暖性并提升职场正式感。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W06",
+              "outer": "W10",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配黑色正式度较高的混纺下装，外穿卡其棉质外套平衡冷暖需求，适合日常通勤场景。"
+          }
+        ],
+        "shortage": null,
+        "shortage_hint": null,
+        "degraded": false,
+        "latency_ms": 7056,
+        "prompt_version": "outfit_compose.v1",
+        "degrade_reason": null
+      },
+      "checks": {
+        "set_count": true,
+        "must_not_use": true,
+        "all_items_in_wardrobe": true,
+        "no_season_conflict": true
+      },
+      "passed": false,
+      "failure_reasons": [
+        "依赖未实现（T9）；基础真实生成不等于排除交互/换一套验收"
+      ],
+      "attribution": "依赖未实现（T9）",
+      "attempts": [
+        {
+          "timestamp": "2026-11-13T15:26:56+08:00",
+          "http_status": 200,
+          "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，外搭藏青羊毛混纺外套以应对凉爽温度，整体正式度适中适合通勤。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W06\",\n        \"outer\": \"W02\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"灰色厚羊毛上装与黑色高正式度混纺下装组合，配黑色聚酯纤维外套增强保暖性并提升职场正式感。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W06\",\n        \"outer\": \"W10\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配黑色正式度较高的混纺下装，外穿卡其棉质外套平衡冷暖需求，适合日常通勤场景。\"\n    }\n  ]\n}"
+        }
+      ],
+      "retry_feedback": [],
+      "error": null,
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/compose/B05.json"
+    },
+    {
+      "case_id": "B06",
+      "timestamp": "2026-11-13T15:27:03+08:00",
+      "model": "qwen3.8-flash",
+      "prompt_version": "outfit_compose.v1",
+      "source": "真实调用",
+      "input": {
+        "temp_c": 12,
+        "occasion": "weekend",
+        "formality_target": [
+          1,
+          3
+        ],
+        "excluded": []
+      },
+      "expect": {
+        "set_count": 3,
+        "must_not_use": [
+          "W02",
+          "W06"
+        ],
+        "all_items_in_wardrobe": true,
+        "no_season_conflict": true
+      },
+      "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W12\",\n        \"bottom\": \"W05\",\n        \"outer\": \"W10\",\n        \"shoes\": \"W08\",\n        \"dress\": null\n      },\n      \"reason\": \"米白针织上装搭配深蓝牛仔下装，外罩卡其棉质外套以应对冷带温度，白色皮革鞋保持周末休闲感。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W13\",\n        \"dress\": null\n      },\n      \"reason\": \"灰色羊毛厚上装配米色混纺下装，藏青羊毛混纺外套提供保暖，多色拼接皮革鞋增加视觉层次。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W12\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W14\",\n        \"dress\": null\n      },\n      \"reason\": \"米白针织上装与米色混纺下装色调统一，藏青羊毛混纺外套平衡正式度，网面麂皮拼接鞋适合周末出行。\"\n    }\n  ]\n}",
+      "parsed": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W12",
+              "bottom": "W05",
+              "outer": "W10",
+              "shoes": "W08",
+              "dress": null
+            },
+            "reason": "米白针织上装搭配深蓝牛仔下装，外罩卡其棉质外套以应对冷带温度，白色皮革鞋保持周末休闲感。"
+          },
+          {
+            "slots": {
+              "top": "W07",
+              "bottom": "W04",
+              "outer": "W03",
+              "shoes": "W13",
+              "dress": null
+            },
+            "reason": "灰色羊毛厚上装配米色混纺下装，藏青羊毛混纺外套提供保暖，多色拼接皮革鞋增加视觉层次。"
+          },
+          {
+            "slots": {
+              "top": "W12",
+              "bottom": "W04",
+              "outer": "W03",
+              "shoes": "W14",
+              "dress": null
+            },
+            "reason": "米白针织上装与米色混纺下装色调统一，藏青羊毛混纺外套平衡正式度，网面麂皮拼接鞋适合周末出行。"
+          }
+        ]
+      },
+      "parse_ok": true,
+      "http_status": 200,
+      "candidate_ids": [
+        "W03",
+        "W04",
+        "W05",
+        "W07",
+        "W08",
+        "W10",
+        "W12",
+        "W13",
+        "W14"
+      ],
+      "band": "cold",
+      "composable_count": 24,
+      "latency_ms": 11923,
+      "degraded": false,
+      "degrade_reason": null,
+      "result": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W12",
+              "bottom": "W05",
+              "outer": "W10",
+              "shoes": "W08",
+              "dress": null
+            },
+            "reason": "米白针织上装搭配深蓝牛仔下装，外罩卡其棉质外套以应对冷带温度，白色皮革鞋保持周末休闲感。"
+          },
+          {
+            "slots": {
+              "top": "W07",
+              "bottom": "W04",
+              "outer": "W03",
+              "shoes": "W13",
+              "dress": null
+            },
+            "reason": "灰色羊毛厚上装配米色混纺下装，藏青羊毛混纺外套提供保暖，多色拼接皮革鞋增加视觉层次。"
+          },
+          {
+            "slots": {
+              "top": "W12",
+              "bottom": "W04",
+              "outer": "W03",
+              "shoes": "W14",
+              "dress": null
+            },
+            "reason": "米白针织上装与米色混纺下装色调统一，藏青羊毛混纺外套平衡正式度，网面麂皮拼接鞋适合周末出行。"
+          }
+        ],
+        "shortage": null,
+        "shortage_hint": null,
+        "degraded": false,
+        "latency_ms": 11922,
+        "prompt_version": "outfit_compose.v1",
+        "degrade_reason": null
+      },
+      "checks": {
+        "set_count": true,
+        "must_not_use": true,
+        "all_items_in_wardrobe": true,
+        "no_season_conflict": true
+      },
+      "passed": true,
+      "failure_reasons": [],
+      "attribution": "—",
+      "attempts": [
+        {
+          "timestamp": "2026-11-13T15:27:03+08:00",
+          "http_status": null,
+          "raw_content": null
+        },
+        {
+          "timestamp": "2026-11-13T15:27:08+08:00",
+          "http_status": 200,
+          "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W12\",\n        \"bottom\": \"W05\",\n        \"outer\": \"W10\",\n        \"shoes\": \"W08\",\n        \"dress\": null\n      },\n      \"reason\": \"米白针织上装搭配深蓝牛仔下装，外罩卡其棉质外套以应对冷带温度，白色皮革鞋保持周末休闲感。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W13\",\n        \"dress\": null\n      },\n      \"reason\": \"灰色羊毛厚上装配米色混纺下装，藏青羊毛混纺外套提供保暖，多色拼接皮革鞋增加视觉层次。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W12\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W14\",\n        \"dress\": null\n      },\n      \"reason\": \"米白针织上装与米色混纺下装色调统一，藏青羊毛混纺外套平衡正式度，网面麂皮拼接鞋适合周末出行。\"\n    }\n  ]\n}"
+        }
+      ],
+      "retry_feedback": [
+        "上次调用失败：无法连接模型服务，请检查网络后重试。 请基于原始输入重新生成。"
+      ],
+      "error": null,
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/compose/B06.json"
+    },
+    {
+      "case_id": "B07",
+      "timestamp": "2026-11-13T15:27:15+08:00",
+      "model": "qwen3.8-flash",
+      "prompt_version": "outfit_compose.v1",
+      "source": "真实调用",
+      "input": {
+        "temp_c": 26,
+        "occasion": "commute",
+        "formality_target": [
+          3,
+          5
+        ],
+        "excluded": []
+      },
+      "expect": {
+        "set_count": 3,
+        "must_not_use": [
+          "W02",
+          "W07",
+          "W10",
+          "W12"
+        ],
+        "all_items_in_wardrobe": true
+      },
+      "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，黑色皮革鞋履提供正式度支撑，适合26度炎热通勤。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W11\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装与藏青混纺下装组合，黑色皮革鞋履提升整体正式感，适应高温环境。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W06\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配黑色高正式度混纺下装，同色系黑色皮革鞋履确保通勤着装规范。\"\n    }\n  ]\n}",
+      "parsed": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配米色混纺下装，黑色皮革鞋履提供正式度支撑，适合26度炎热通勤。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W11",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装与藏青混纺下装组合，黑色皮革鞋履提升整体正式感，适应高温环境。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W06",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配黑色高正式度混纺下装，同色系黑色皮革鞋履确保通勤着装规范。"
+          }
+        ]
+      },
+      "parse_ok": true,
+      "http_status": 200,
+      "candidate_ids": [
+        "W01",
+        "W04",
+        "W06",
+        "W09",
+        "W11"
+      ],
+      "band": "hot",
+      "composable_count": 3,
+      "latency_ms": 5774,
+      "degraded": false,
+      "degrade_reason": null,
+      "result": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配米色混纺下装，黑色皮革鞋履提供正式度支撑，适合26度炎热通勤。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W11",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装与藏青混纺下装组合，黑色皮革鞋履提升整体正式感，适应高温环境。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W06",
+              "outer": null,
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配黑色高正式度混纺下装，同色系黑色皮革鞋履确保通勤着装规范。"
+          }
+        ],
+        "shortage": null,
+        "shortage_hint": null,
+        "degraded": false,
+        "latency_ms": 5773,
+        "prompt_version": "outfit_compose.v1",
+        "degrade_reason": null
+      },
+      "checks": {
+        "set_count": true,
+        "must_not_use": true,
+        "all_items_in_wardrobe": true
+      },
+      "passed": true,
+      "failure_reasons": [],
+      "attribution": "—",
+      "attempts": [
+        {
+          "timestamp": "2026-11-13T15:27:15+08:00",
+          "http_status": 200,
+          "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，黑色皮革鞋履提供正式度支撑，适合26度炎热通勤。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W11\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装与藏青混纺下装组合，黑色皮革鞋履提升整体正式感，适应高温环境。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W06\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配黑色高正式度混纺下装，同色系黑色皮革鞋履确保通勤着装规范。\"\n    }\n  ]\n}"
+        }
+      ],
+      "retry_feedback": [],
+      "error": null,
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/compose/B07.json"
+    },
+    {
+      "case_id": "B08",
+      "timestamp": "2026-11-13T15:27:21+08:00",
+      "model": "qwen3.8-flash",
+      "prompt_version": "outfit_compose.v1",
+      "source": "真实调用",
+      "input": {
+        "temp_c": 15,
+        "occasion": "commute",
+        "formality_target": [
+          3,
+          5
+        ],
+        "excluded": []
+      },
+      "expect": {
+        "set_count": 3,
+        "no_season_conflict": true,
+        "all_items_in_wardrobe": true
+      },
+      "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，外穿藏青羊毛混纺外套以应对凉爽通勤温度。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W11\",\n        \"outer\": \"W10\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"灰色厚羊毛上装配藏青混纺下装，加卡其棉质外套保暖并维持中等正式度。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W06\",\n        \"outer\": \"W02\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装与黑色高正式度混纺下装组合，配黑色聚酯纤维外套满足较高正式度需求。\"\n    }\n  ]\n}",
+      "parsed": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": "W03",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配米色混纺下装，外穿藏青羊毛混纺外套以应对凉爽通勤温度。"
+          },
+          {
+            "slots": {
+              "top": "W07",
+              "bottom": "W11",
+              "outer": "W10",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "灰色厚羊毛上装配藏青混纺下装，加卡其棉质外套保暖并维持中等正式度。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W06",
+              "outer": "W02",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装与黑色高正式度混纺下装组合，配黑色聚酯纤维外套满足较高正式度需求。"
+          }
+        ]
+      },
+      "parse_ok": true,
+      "http_status": 200,
+      "candidate_ids": [
+        "W01",
+        "W02",
+        "W03",
+        "W04",
+        "W06",
+        "W07",
+        "W09",
+        "W10",
+        "W11"
+      ],
+      "band": "cool",
+      "composable_count": 18,
+      "latency_ms": 5664,
+      "degraded": false,
+      "degrade_reason": null,
+      "result": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": "W03",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配米色混纺下装，外穿藏青羊毛混纺外套以应对凉爽通勤温度。"
+          },
+          {
+            "slots": {
+              "top": "W07",
+              "bottom": "W11",
+              "outer": "W10",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "灰色厚羊毛上装配藏青混纺下装，加卡其棉质外套保暖并维持中等正式度。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W06",
+              "outer": "W02",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装与黑色高正式度混纺下装组合，配黑色聚酯纤维外套满足较高正式度需求。"
+          }
+        ],
+        "shortage": null,
+        "shortage_hint": null,
+        "degraded": false,
+        "latency_ms": 5664,
+        "prompt_version": "outfit_compose.v1",
+        "degrade_reason": null
+      },
+      "checks": {
+        "set_count": true,
+        "no_season_conflict": true,
+        "all_items_in_wardrobe": true
+      },
+      "passed": true,
+      "failure_reasons": [],
+      "attribution": "—",
+      "attempts": [
+        {
+          "timestamp": "2026-11-13T15:27:21+08:00",
+          "http_status": 200,
+          "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，外穿藏青羊毛混纺外套以应对凉爽通勤温度。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W11\",\n        \"outer\": \"W10\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"灰色厚羊毛上装配藏青混纺下装，加卡其棉质外套保暖并维持中等正式度。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W06\",\n        \"outer\": \"W02\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装与黑色高正式度混纺下装组合，配黑色聚酯纤维外套满足较高正式度需求。\"\n    }\n  ]\n}"
+        }
+      ],
+      "retry_feedback": [],
+      "error": null,
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/compose/B08.json"
+    },
+    {
+      "case_id": "B09",
+      "timestamp": "2026-11-13T15:27:27+08:00",
+      "model": "qwen3.8-flash",
+      "prompt_version": "outfit_compose.v1",
+      "source": "真实调用",
+      "input": {
+        "temp_c": 18,
+        "occasion": "commute",
+        "formality_target": [
+          3,
+          5
+        ],
+        "excluded": []
+      },
+      "expect": {
+        "set_count": 3,
+        "reason_must_mention_any_of": [
+          "℃",
+          "温度",
+          "凉",
+          "正式",
+          "会议",
+          "白",
+          "黑",
+          "米",
+          "藏青",
+          "灰"
+        ],
+        "reason_length_range": [
+          10,
+          60
+        ]
+      },
+      "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，外搭藏青羊毛混纺外套以应对凉爽通勤温度，整体正式度适中。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W06\",\n        \"outer\": \"W02\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"灰色羊毛厚上装与黑色混纺下装组合，配以黑色聚酯纤维外套，满足凉爽天气下的较高正式度需求。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W11\",\n        \"outer\": \"W10\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配藏青混纺下装，外穿卡其棉质外套，适合凉爽天气的通勤场景且符合目标正式度区间。\"\n    }\n  ]\n}",
+      "parsed": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": "W03",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配米色混纺下装，外搭藏青羊毛混纺外套以应对凉爽通勤温度，整体正式度适中。"
+          },
+          {
+            "slots": {
+              "top": "W07",
+              "bottom": "W06",
+              "outer": "W02",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "灰色羊毛厚上装与黑色混纺下装组合，配以黑色聚酯纤维外套，满足凉爽天气下的较高正式度需求。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W11",
+              "outer": "W10",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配藏青混纺下装，外穿卡其棉质外套，适合凉爽天气的通勤场景且符合目标正式度区间。"
+          }
+        ]
+      },
+      "parse_ok": true,
+      "http_status": 200,
+      "candidate_ids": [
+        "W01",
+        "W02",
+        "W03",
+        "W04",
+        "W06",
+        "W07",
+        "W09",
+        "W10",
+        "W11"
+      ],
+      "band": "cool",
+      "composable_count": 18,
+      "latency_ms": 5969,
+      "degraded": false,
+      "degrade_reason": null,
+      "result": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": "W03",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配米色混纺下装，外搭藏青羊毛混纺外套以应对凉爽通勤温度，整体正式度适中。"
+          },
+          {
+            "slots": {
+              "top": "W07",
+              "bottom": "W06",
+              "outer": "W02",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "灰色羊毛厚上装与黑色混纺下装组合，配以黑色聚酯纤维外套，满足凉爽天气下的较高正式度需求。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W11",
+              "outer": "W10",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上装搭配藏青混纺下装，外穿卡其棉质外套，适合凉爽天气的通勤场景且符合目标正式度区间。"
+          }
+        ],
+        "shortage": null,
+        "shortage_hint": null,
+        "degraded": false,
+        "latency_ms": 5969,
+        "prompt_version": "outfit_compose.v1",
+        "degrade_reason": null
+      },
+      "checks": {
+        "set_count": true,
+        "reason_must_mention_any_of": true,
+        "reason_length_range": true
+      },
+      "passed": true,
+      "failure_reasons": [],
+      "attribution": "—",
+      "attempts": [
+        {
+          "timestamp": "2026-11-13T15:27:27+08:00",
+          "http_status": 200,
+          "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，外搭藏青羊毛混纺外套以应对凉爽通勤温度，整体正式度适中。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W06\",\n        \"outer\": \"W02\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"灰色羊毛厚上装与黑色混纺下装组合，配以黑色聚酯纤维外套，满足凉爽天气下的较高正式度需求。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W11\",\n        \"outer\": \"W10\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配藏青混纺下装，外穿卡其棉质外套，适合凉爽天气的通勤场景且符合目标正式度区间。\"\n    }\n  ]\n}"
+        }
+      ],
+      "retry_feedback": [],
+      "error": null,
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/compose/B09.json"
+    },
+    {
+      "case_id": "B10",
+      "timestamp": "2026-11-13T15:27:33+08:00",
+      "model": "qwen3.8-flash",
+      "prompt_version": "outfit_compose.v1",
+      "source": "真实调用",
+      "input": {
+        "temp_c": 18,
+        "occasion": "commute",
+        "formality_target": [
+          3,
+          5
+        ],
+        "excluded": [],
+        "repeat": 3
+      },
+      "expect": {
+        "set_count": 3,
+        "distinct_sets_across_runs_gte": 2,
+        "all_items_in_wardrobe": true
+      },
+      "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W10\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上衣搭配米色混纺下装，外穿卡其色棉质外套适应凉爽通勤温度，整体正式度适中。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W11\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"灰色羊毛厚上衣与藏青混纺下装组合，搭配藏青羊毛混纺外套提供保暖，适合凉爽天气的通勤场景。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W06\",\n        \"outer\": \"W02\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上衣配黑色混纺下装，外搭黑色聚酯纤维外套提升正式感，满足较高正式度的通勤需求。\"\n    }\n  ]\n}",
+      "parsed": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": "W10",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上衣搭配米色混纺下装，外穿卡其色棉质外套适应凉爽通勤温度，整体正式度适中。"
+          },
+          {
+            "slots": {
+              "top": "W07",
+              "bottom": "W11",
+              "outer": "W03",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "灰色羊毛厚上衣与藏青混纺下装组合，搭配藏青羊毛混纺外套提供保暖，适合凉爽天气的通勤场景。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W06",
+              "outer": "W02",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上衣配黑色混纺下装，外搭黑色聚酯纤维外套提升正式感，满足较高正式度的通勤需求。"
+          }
+        ]
+      },
+      "parse_ok": true,
+      "http_status": 200,
+      "candidate_ids": [
+        "W01",
+        "W02",
+        "W03",
+        "W04",
+        "W06",
+        "W07",
+        "W09",
+        "W10",
+        "W11"
+      ],
+      "band": "cool",
+      "composable_count": 18,
+      "latency_ms": 5905,
+      "degraded": false,
+      "degrade_reason": null,
+      "result": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": "W10",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上衣搭配米色混纺下装，外穿卡其色棉质外套适应凉爽通勤温度，整体正式度适中。"
+          },
+          {
+            "slots": {
+              "top": "W07",
+              "bottom": "W11",
+              "outer": "W03",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "灰色羊毛厚上衣与藏青混纺下装组合，搭配藏青羊毛混纺外套提供保暖，适合凉爽天气的通勤场景。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W06",
+              "outer": "W02",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "白色棉质上衣配黑色混纺下装，外搭黑色聚酯纤维外套提升正式感，满足较高正式度的通勤需求。"
+          }
+        ],
+        "shortage": null,
+        "shortage_hint": null,
+        "degraded": false,
+        "latency_ms": 5905,
+        "prompt_version": "outfit_compose.v1",
+        "degrade_reason": null
+      },
+      "checks": {
+        "set_count": true,
+        "distinct_sets_across_runs_gte": false,
+        "all_items_in_wardrobe": true
+      },
+      "passed": false,
+      "failure_reasons": [
+        "distinct_sets_across_runs_gte",
+        "依赖未实现（T9）；基础真实生成不等于排除交互/换一套验收"
+      ],
+      "attribution": "依赖未实现（T9）",
+      "attempts": [
+        {
+          "timestamp": "2026-11-13T15:27:33+08:00",
+          "http_status": 200,
+          "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W10\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上衣搭配米色混纺下装，外穿卡其色棉质外套适应凉爽通勤温度，整体正式度适中。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W11\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"灰色羊毛厚上衣与藏青混纺下装组合，搭配藏青羊毛混纺外套提供保暖，适合凉爽天气的通勤场景。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W06\",\n        \"outer\": \"W02\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上衣配黑色混纺下装，外搭黑色聚酯纤维外套提升正式感，满足较高正式度的通勤需求。\"\n    }\n  ]\n}"
+        }
+      ],
+      "retry_feedback": [],
+      "error": null,
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/compose/B10.json"
+    },
+    {
+      "case_id": "C01",
+      "timestamp": "2026-11-13T15:27:39+08:00",
+      "model": "qwen3.8-flash",
+      "prompt_version": "outfit_compose.v1",
+      "source": "纯规则边界",
+      "input": {
+        "temp_c": 16,
+        "occasion": "client_meeting",
+        "formality_target": [
+          4,
+          5
+        ],
+        "excluded": []
+      },
+      "expect": {
+        "set_count_lt": 3,
+        "must_emit_shortage_hint": true,
+        "must_not_use": [
+          "W08"
+        ],
+        "all_items_in_wardrobe": true
+      },
+      "raw_content": null,
+      "parsed": null,
+      "parse_ok": false,
+      "http_status": null,
+      "candidate_ids": [
+        "W02",
+        "W06",
+        "W09",
+        "W11"
+      ],
+      "band": "cool",
+      "composable_count": 0,
+      "latency_ms": 0,
+      "degraded": false,
+      "degrade_reason": null,
+      "result": {
+        "sets": [],
+        "shortage": {
+          "missing_slots": [
+            "top"
+          ],
+          "requirements": [
+            {
+              "slot": "top",
+              "warmth_min": 2,
+              "formality_min": 4
+            }
+          ],
+          "message": "没有完整搭配，缺少符合条件的单品：上装"
+        },
+        "shortage_hint": "没有完整搭配，缺少符合条件的单品：上装",
+        "degraded": false,
+        "latency_ms": 0,
+        "prompt_version": "outfit_compose.v1",
+        "degrade_reason": null
+      },
+      "checks": {
+        "set_count_lt": true,
+        "must_emit_shortage_hint": true,
+        "must_not_use": true,
+        "all_items_in_wardrobe": true
+      },
+      "passed": true,
+      "failure_reasons": [],
+      "attribution": "—",
+      "attempts": [],
+      "retry_feedback": [],
+      "error": null,
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/edges/C01.json"
+    },
+    {
+      "case_id": "C02",
+      "timestamp": "2026-11-13T15:27:39+08:00",
+      "model": "qwen3.8-flash",
+      "prompt_version": "outfit_compose.v1",
+      "source": "纯规则边界",
+      "input": {
+        "temp_c": 8,
+        "occasion": "commute",
+        "formality_target": [
+          3,
+          5
+        ],
+        "excluded": [],
+        "wardrobe_override": [
+          "W01",
+          "W04",
+          "W08"
+        ]
+      },
+      "expect": {
+        "set_count_lte": 1,
+        "must_emit_shortage_hint": true,
+        "must_not_claim_warm": true,
+        "all_items_in_wardrobe": true
+      },
+      "raw_content": null,
+      "parsed": null,
+      "parse_ok": false,
+      "http_status": null,
+      "candidate_ids": [
+        "W04"
+      ],
+      "band": "cold",
+      "composable_count": 0,
+      "latency_ms": 0,
+      "degraded": false,
+      "degrade_reason": null,
+      "result": {
+        "sets": [],
+        "shortage": {
+          "missing_slots": [
+            "top",
+            "shoes",
+            "outer"
+          ],
+          "requirements": [
+            {
+              "slot": "top",
+              "warmth_min": 3,
+              "formality_min": 3
+            },
+            {
+              "slot": "shoes",
+              "warmth_min": 2,
+              "formality_min": 3
+            },
+            {
+              "slot": "outer",
+              "warmth_min": 2,
+              "formality_min": 3
+            }
+          ],
+          "message": "没有完整搭配，缺少符合条件的单品：上装、鞋、外套"
+        },
+        "shortage_hint": "没有完整搭配，缺少符合条件的单品：上装、鞋、外套",
+        "degraded": false,
+        "latency_ms": 0,
+        "prompt_version": "outfit_compose.v1",
+        "degrade_reason": null
+      },
+      "checks": {
+        "set_count_lte": true,
+        "must_emit_shortage_hint": true,
+        "must_not_claim_warm": true,
+        "all_items_in_wardrobe": true
+      },
+      "passed": true,
+      "failure_reasons": [],
+      "attribution": "—",
+      "attempts": [],
+      "retry_feedback": [],
+      "error": null,
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/edges/C02.json"
+    },
+    {
+      "case_id": "C03",
+      "timestamp": "2026-11-13T15:27:39+08:00",
+      "model": "qwen3.8-flash",
+      "prompt_version": "outfit_compose.v1",
+      "source": "注入",
+      "input": {
+        "temp_c": 18,
+        "occasion": "commute",
+        "inject": "llm_returns_fenced_json"
+      },
+      "expect": {
+        "parse_retry_gte": 1,
+        "final_status": "success",
+        "fallback_used": false
+      },
+      "raw_content": "{\"sets\":[{\"slots\":{\"top\":\"W01\",\"bottom\":\"W06\",\"outer\":\"W02\",\"shoes\":\"W09\",\"dress\":null},\"reason\":\"按正式度从高到低搭配：W01为白色、厚薄2、正式度3。\"},{\"slots\":{\"top\":\"W01\",\"bottom\":\"W04\",\"outer\":\"W03\",\"shoes\":\"W09\",\"dress\":null},\"reason\":\"按舒适策略（正式度从低到高）搭配：W01为白色、厚薄2、正式度3。\"},{\"slots\":{\"top\":\"W07\",\"bottom\":\"W04\",\"outer\":\"W02\",\"shoes\":\"W09\",\"dress\":null},\"reason\":\"按厚薄从高到低搭配：W02为黑色、厚薄3、正式度5。\"}]}",
+      "parsed": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W06",
+              "outer": "W02",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "按正式度从高到低搭配：W01为白色、厚薄2、正式度3。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": "W03",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "按舒适策略（正式度从低到高）搭配：W01为白色、厚薄2、正式度3。"
+          },
+          {
+            "slots": {
+              "top": "W07",
+              "bottom": "W04",
+              "outer": "W02",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "按厚薄从高到低搭配：W02为黑色、厚薄3、正式度5。"
+          }
+        ]
+      },
+      "parse_ok": true,
+      "http_status": 200,
+      "candidate_ids": [
+        "W01",
+        "W02",
+        "W03",
+        "W04",
+        "W06",
+        "W07",
+        "W09",
+        "W10",
+        "W11"
+      ],
+      "band": "cool",
+      "composable_count": 18,
+      "latency_ms": 8,
+      "degraded": false,
+      "degrade_reason": null,
+      "result": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W06",
+              "outer": "W02",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "按正式度从高到低搭配：W01为白色、厚薄2、正式度3。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": "W03",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "按舒适策略（正式度从低到高）搭配：W01为白色、厚薄2、正式度3。"
+          },
+          {
+            "slots": {
+              "top": "W07",
+              "bottom": "W04",
+              "outer": "W02",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "按厚薄从高到低搭配：W02为黑色、厚薄3、正式度5。"
+          }
+        ],
+        "shortage": null,
+        "shortage_hint": null,
+        "degraded": false,
+        "latency_ms": 7,
+        "prompt_version": "outfit_compose.v1",
+        "degrade_reason": null
+      },
+      "checks": {
+        "parse_retry_gte": true,
+        "final_status": true,
+        "fallback_used": true
+      },
+      "passed": true,
+      "failure_reasons": [],
+      "attribution": "—",
+      "attempts": [
+        {
+          "timestamp": "2026-11-13T15:27:39+08:00",
+          "http_status": 200,
+          "raw_content": "```json\n{\"sets\":[{\"slots\":{\"top\":\"W01\",\"bottom\":\"W06\",\"outer\":\"W02\",\"shoes\":\"W09\",\"dress\":null},\"reason\":\"按正式度从高到低搭配：W01为白色、厚薄2、正式度3。\"},{\"slots\":{\"top\":\"W01\",\"bottom\":\"W04\",\"outer\":\"W03\",\"shoes\":\"W09\",\"dress\":null},\"reason\":\"按舒适策略（正式度从低到高）搭配：W01为白色、厚薄2、正式度3。\"},{\"slots\":{\"top\":\"W07\",\"bottom\":\"W04\",\"outer\":\"W02\",\"shoes\":\"W09\",\"dress\":null},\"reason\":\"按厚薄从高到低搭配：W02为黑色、厚薄3、正式度5。\"}]}\n```"
+        },
+        {
+          "timestamp": "2026-11-13T15:27:39+08:00",
+          "http_status": 200,
+          "raw_content": "{\"sets\":[{\"slots\":{\"top\":\"W01\",\"bottom\":\"W06\",\"outer\":\"W02\",\"shoes\":\"W09\",\"dress\":null},\"reason\":\"按正式度从高到低搭配：W01为白色、厚薄2、正式度3。\"},{\"slots\":{\"top\":\"W01\",\"bottom\":\"W04\",\"outer\":\"W03\",\"shoes\":\"W09\",\"dress\":null},\"reason\":\"按舒适策略（正式度从低到高）搭配：W01为白色、厚薄2、正式度3。\"},{\"slots\":{\"top\":\"W07\",\"bottom\":\"W04\",\"outer\":\"W02\",\"shoes\":\"W09\",\"dress\":null},\"reason\":\"按厚薄从高到低搭配：W02为黑色、厚薄3、正式度5。\"}]}"
+        }
+      ],
+      "retry_feedback": [
+        "PARSE 校验失败：response: json_invalid 请修正这些问题并重新输出完整 JSON。"
+      ],
+      "error": null,
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/injections/C03.json"
+    },
+    {
+      "case_id": "C04",
+      "timestamp": "2026-11-13T15:27:39+08:00",
+      "model": "qwen3.8-flash",
+      "prompt_version": "outfit_compose.v1",
+      "source": "注入",
+      "input": {
+        "temp_c": 18,
+        "occasion": "commute",
+        "inject": "llm_timeout"
+      },
+      "expect": {
+        "final_status": "degraded",
+        "fallback_used": true,
+        "fallback_type": "rule_template",
+        "ui_shows_banner": true,
+        "set_count_gte": 1
+      },
+      "raw_content": null,
+      "parsed": null,
+      "parse_ok": false,
+      "http_status": null,
+      "candidate_ids": [
+        "W01",
+        "W02",
+        "W03",
+        "W04",
+        "W06",
+        "W07",
+        "W09",
+        "W10",
+        "W11"
+      ],
+      "band": "cool",
+      "composable_count": 18,
+      "latency_ms": 4,
+      "degraded": true,
+      "degrade_reason": "timeout",
+      "result": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W06",
+              "outer": "W02",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "按正式度从高到低搭配：W01为白色、厚薄2、正式度3。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": "W03",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "按舒适策略（正式度从低到高）搭配：W01为白色、厚薄2、正式度3。"
+          },
+          {
+            "slots": {
+              "top": "W07",
+              "bottom": "W04",
+              "outer": "W02",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "按厚薄从高到低搭配：W02为黑色、厚薄3、正式度5。"
+          }
+        ],
+        "shortage": null,
+        "shortage_hint": null,
+        "degraded": true,
+        "latency_ms": 3,
+        "prompt_version": "outfit_compose.v1",
+        "degrade_reason": "timeout"
+      },
+      "checks": {
+        "final_status": true,
+        "fallback_used": true,
+        "fallback_type": true,
+        "ui_shows_banner": true,
+        "set_count_gte": true
+      },
+      "passed": true,
+      "failure_reasons": [],
+      "attribution": "—",
+      "attempts": [
+        {
+          "timestamp": "2026-11-13T15:27:39+08:00",
+          "http_status": null,
+          "raw_content": null
+        }
+      ],
+      "retry_feedback": [],
+      "error": null,
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/injections/C04.json",
+      "ui_evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/ui-t7/03-degraded.png"
+    },
+    {
+      "case_id": "C05",
+      "timestamp": "2026-11-13T15:27:39+08:00",
+      "model": "qwen3.8-flash",
+      "prompt_version": "outfit_compose.v1",
+      "source": "注入",
+      "input": {
+        "temp_c": 18,
+        "occasion": "commute",
+        "inject": "llm_duplicate_category_in_set"
+      },
+      "expect": {
+        "validator_rejected": true,
+        "regenerate_count_gte": 1,
+        "final_status": "success",
+        "no_duplicate_within_set": true
+      },
+      "raw_content": "{\"sets\":[{\"slots\":{\"top\":\"W01\",\"bottom\":\"W06\",\"outer\":\"W02\",\"shoes\":\"W09\",\"dress\":null},\"reason\":\"按正式度从高到低搭配：W01为白色、厚薄2、正式度3。\"},{\"slots\":{\"top\":\"W01\",\"bottom\":\"W04\",\"outer\":\"W03\",\"shoes\":\"W09\",\"dress\":null},\"reason\":\"按舒适策略（正式度从低到高）搭配：W01为白色、厚薄2、正式度3。\"},{\"slots\":{\"top\":\"W07\",\"bottom\":\"W04\",\"outer\":\"W02\",\"shoes\":\"W09\",\"dress\":null},\"reason\":\"按厚薄从高到低搭配：W02为黑色、厚薄3、正式度5。\"}]}",
+      "parsed": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W06",
+              "outer": "W02",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "按正式度从高到低搭配：W01为白色、厚薄2、正式度3。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": "W03",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "按舒适策略（正式度从低到高）搭配：W01为白色、厚薄2、正式度3。"
+          },
+          {
+            "slots": {
+              "top": "W07",
+              "bottom": "W04",
+              "outer": "W02",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "按厚薄从高到低搭配：W02为黑色、厚薄3、正式度5。"
+          }
+        ]
+      },
+      "parse_ok": true,
+      "http_status": 200,
+      "candidate_ids": [
+        "W01",
+        "W02",
+        "W03",
+        "W04",
+        "W06",
+        "W07",
+        "W09",
+        "W10",
+        "W11"
+      ],
+      "band": "cool",
+      "composable_count": 18,
+      "latency_ms": 5,
+      "degraded": false,
+      "degrade_reason": null,
+      "result": {
+        "sets": [
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W06",
+              "outer": "W02",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "按正式度从高到低搭配：W01为白色、厚薄2、正式度3。"
+          },
+          {
+            "slots": {
+              "top": "W01",
+              "bottom": "W04",
+              "outer": "W03",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "按舒适策略（正式度从低到高）搭配：W01为白色、厚薄2、正式度3。"
+          },
+          {
+            "slots": {
+              "top": "W07",
+              "bottom": "W04",
+              "outer": "W02",
+              "shoes": "W09",
+              "dress": null
+            },
+            "reason": "按厚薄从高到低搭配：W02为黑色、厚薄3、正式度5。"
+          }
+        ],
+        "shortage": null,
+        "shortage_hint": null,
+        "degraded": false,
+        "latency_ms": 4,
+        "prompt_version": "outfit_compose.v1",
+        "degrade_reason": null
+      },
+      "checks": {
+        "validator_rejected": true,
+        "regenerate_count_gte": true,
+        "final_status": true,
+        "no_duplicate_within_set": true
+      },
+      "passed": true,
+      "failure_reasons": [],
+      "attribution": "—",
+      "attempts": [
+        {
+          "timestamp": "2026-11-13T15:27:39+08:00",
+          "http_status": 200,
+          "raw_content": "{\"sets\": [{\"slots\": {\"top\": \"W01\", \"bottom\": \"W07\", \"outer\": \"W02\", \"shoes\": \"W09\", \"dress\": null}, \"reason\": \"按正式度从高到低搭配：W01为白色、厚薄2、正式度3。\"}, {\"slots\": {\"top\": \"W01\", \"bottom\": \"W04\", \"outer\": \"W03\", \"shoes\": \"W09\", \"dress\": null}, \"reason\": \"按舒适策略（正式度从低到高）搭配：W01为白色、厚薄2、正式度3。\"}, {\"slots\": {\"top\": \"W07\", \"bottom\": \"W04\", \"outer\": \"W02\", \"shoes\": \"W09\", \"dress\": null}, \"reason\": \"按厚薄从高到低搭配：W02为黑色、厚薄3、正式度5。\"}]}"
+        },
+        {
+          "timestamp": "2026-11-13T15:27:39+08:00",
+          "http_status": 200,
+          "raw_content": "{\"sets\":[{\"slots\":{\"top\":\"W01\",\"bottom\":\"W06\",\"outer\":\"W02\",\"shoes\":\"W09\",\"dress\":null},\"reason\":\"按正式度从高到低搭配：W01为白色、厚薄2、正式度3。\"},{\"slots\":{\"top\":\"W01\",\"bottom\":\"W04\",\"outer\":\"W03\",\"shoes\":\"W09\",\"dress\":null},\"reason\":\"按舒适策略（正式度从低到高）搭配：W01为白色、厚薄2、正式度3。\"},{\"slots\":{\"top\":\"W07\",\"bottom\":\"W04\",\"outer\":\"W02\",\"shoes\":\"W09\",\"dress\":null},\"reason\":\"按厚薄从高到低搭配：W02为黑色、厚薄3、正式度5。\"}]}"
+        }
+      ],
+      "retry_feedback": [
+        "COMPOSE 校验失败：第 1 套：单品 W07 与槽位 bottom 不符（可能重复品类）。；第 1 套：所选单品无法组成符合温度和保暖规则的完整方案。 请修正这些问题并重新输出完整 JSON。"
+      ],
+      "error": null,
+      "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/injections/C05.json"
+    }
+  ],
+  "skipped": [
+    {
+      "id": "A01",
+      "type": "recognition",
+      "title": "白衬衫平铺，光线充足",
+      "input": {
+        "image": "fixtures/A01_shirt.jpg",
+        "hint": "平铺于浅色桌面，正面朝上",
+        "image_status": "pending"
+      },
+      "expect": {
+        "category": "top",
+        "sub_in": [
+          "衬衫",
+          "shirt"
+        ],
+        "color_in": [
+          "白色",
+          "白"
+        ],
+        "formality_range": [
+          2,
+          4
+        ],
+        "confidence_gte": 0.8
+      },
+      "fail_policy": "NONE",
+      "why_this_case": "最简单的一类，用来确认识别链路本身通，且置信度能到 0.8 以上。它挂了说明 S1 整体没接通。"
+    },
+    {
+      "id": "A02",
+      "type": "recognition",
+      "title": "深灰羊毛衫，叠放 + 弱光（难例）",
+      "input": {
+        "image": "fixtures/A02_knit_dark.jpg",
+        "hint": "夜间室内，衣服叠成方块",
+        "image_status": "pending"
+      },
+      "expect": {
+        "category": "top",
+        "confidence_lt": 0.7,
+        "needs_confirm": true
+      },
+      "fail_policy": "IN",
+      "why_this_case": "验证低置信度不会硬猜，而是进待确认队列。这是 P4 约束的前置条件。"
+    },
+    {
+      "id": "A03",
+      "type": "recognition",
+      "title": "碎花连衣裙",
+      "input": {
+        "image": "fixtures/A03_dress.jpg",
+        "image_status": "pending"
+      },
+      "expect": {
+        "category": "dress",
+        "pattern": "碎花",
+        "formality_range": [
+          1,
+          3
+        ]
+      },
+      "fail_policy": "IN",
+      "why_this_case": "图案与小类同时识别，且连衣裙不是 top+bottom 两件，验证品类枚举没有漏。"
+    },
+    {
+      "id": "A04",
+      "type": "recognition",
+      "title": "乐福鞋特写（只露鞋头）",
+      "input": {
+        "image": "fixtures/A04_loafer_crop.jpg",
+        "image_status": "pending"
+      },
+      "expect": {
+        "category": "shoes",
+        "confidence_lt": 0.8,
+        "needs_confirm": true
+      },
+      "fail_policy": "IN",
+      "why_this_case": "局部特写是真实拍照的常见情况，验证模型不会把鞋头识别成包或皮带。"
+    },
+    {
+      "id": "A05",
+      "type": "recognition",
+      "title": "非衣物图片（咖啡杯）",
+      "input": {
+        "image": "fixtures/A05_not_clothing.jpg",
+        "image_status": "pending"
+      },
+      "expect": {
+        "should_reject": true,
+        "error_code": "NOT_CLOTHING",
+        "item_created": false
+      },
+      "fail_policy": "IN",
+      "why_this_case": "用户会误传图。硬塞进衣柜会污染候选集，后续所有方案都错。必须有拒绝路径。"
+    }
+  ],
+  "interrupted": false,
+  "interruption_reason": null,
+  "recognition_model": "qwen3.8-omni-flash",
+  "cases_sha256": "5fa9bee64cac864e35e55afb9d7d53a3dd2ae1ad1d9dd71e73325e0381223467"
+}

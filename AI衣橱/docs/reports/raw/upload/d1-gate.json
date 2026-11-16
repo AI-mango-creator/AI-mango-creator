@@ -1,0 +1,148 @@
+{
+  "kind": "D1真实上传门闸",
+  "photo": "cases/images/cloth01.jpg",
+  "draft_id": "a032ac9e-3114-455b-8941-f2854d50f3c9",
+  "http_status": 201,
+  "client_total_ms": 5708,
+  "response": {
+    "draft_id": "a032ac9e-3114-455b-8941-f2854d50f3c9",
+    "items": [
+      {
+        "sources": {
+          "sources": "derived",
+          "id": "derived",
+          "name": "model",
+          "image_path": "user",
+          "category": "model",
+          "sub": "model",
+          "colors": "model",
+          "material": "model",
+          "pattern": "model",
+          "warmth": "model",
+          "formality": "model",
+          "seasons": "model",
+          "confidence": "model",
+          "needs_confirm": "derived",
+          "user_edited": "derived",
+          "created_at": "derived",
+          "_corrections": {
+            "source": "derived",
+            "entries": []
+          },
+          "_upload": {
+            "source": "derived",
+            "draft_id": "a032ac9e-3114-455b-8941-f2854d50f3c9",
+            "photo_sha256": "92ee8dc61b79130e740fe032f2ee70056f7b40694a4df8a35ccbde33c63746bb"
+          }
+        },
+        "id": "Ua032ac9e3114455b8941f2854d50f3c9-00",
+        "name": null,
+        "image_path": "uploads/a032ac9e3114455b8941f2854d50f3c9.jpg",
+        "category": "outer",
+        "sub": "冲锋衣",
+        "colors": [
+          "灰色"
+        ],
+        "material": "化纤",
+        "pattern": "纯色",
+        "warmth": 2,
+        "formality": 1,
+        "seasons": [
+          "spring",
+          "autumn"
+        ],
+        "confidence": 0.98,
+        "needs_confirm": false,
+        "user_edited": false,
+        "created_at": "2026-11-13T09:41:45.852588Z"
+      }
+    ],
+    "corrections": [],
+    "latency_ms": 5699,
+    "prompt_version": "item_extract.v2",
+    "reused": false
+  },
+  "before_count": 14,
+  "after_count": 15,
+  "sqlite_rows": [
+    {
+      "id": "Ua032ac9e3114455b8941f2854d50f3c9-00",
+      "name": null,
+      "image_path": "uploads/a032ac9e3114455b8941f2854d50f3c9.jpg",
+      "category": "outer",
+      "sub": "冲锋衣",
+      "colors": "[\"灰色\"]",
+      "material": "化纤",
+      "pattern": "纯色",
+      "warmth": 2,
+      "formality": 1,
+      "seasons": "[\"spring\", \"autumn\"]",
+      "confidence": 0.98,
+      "needs_confirm": 0,
+      "user_edited": 0,
+      "created_at": "2026-11-13T09:41:45.852588Z",
+      "sources": "{\"sources\": \"derived\", \"id\": \"derived\", \"name\": \"model\", \"image_path\": \"user\", \"category\": \"model\", \"sub\": \"model\", \"colors\": \"model\", \"material\": \"model\", \"pattern\": \"model\", \"warmth\": \"model\", \"formality\": \"model\", \"seasons\": \"model\", \"confidence\": \"model\", \"needs_confirm\": \"derived\", \"user_edited\": \"derived\", \"created_at\": \"derived\", \"_corrections\": {\"source\": \"derived\", \"entries\": []}, \"_upload\": {\"source\": \"derived\", \"draft_id\": \"a032ac9e-3114-455b-8941-f2854d50f3c9\", \"photo_sha256\": \"92ee8dc61b79130e740fe032f2ee70056f7b40694a4df8a35ccbde33c63746bb\"}}"
+    }
+  ],
+  "retry_http_status": 200,
+  "retry_response": {
+    "draft_id": "a032ac9e-3114-455b-8941-f2854d50f3c9",
+    "items": [
+      {
+        "sources": {
+          "sources": "derived",
+          "id": "derived",
+          "name": "model",
+          "image_path": "user",
+          "category": "model",
+          "sub": "model",
+          "colors": "model",
+          "material": "model",
+          "pattern": "model",
+          "warmth": "model",
+          "formality": "model",
+          "seasons": "model",
+          "confidence": "model",
+          "needs_confirm": "derived",
+          "user_edited": "derived",
+          "created_at": "derived",
+          "_corrections": {
+            "source": "derived",
+            "entries": []
+          },
+          "_upload": {
+            "source": "derived",
+            "draft_id": "a032ac9e-3114-455b-8941-f2854d50f3c9",
+            "photo_sha256": "92ee8dc61b79130e740fe032f2ee70056f7b40694a4df8a35ccbde33c63746bb"
+          }
+        },
+        "id": "Ua032ac9e3114455b8941f2854d50f3c9-00",
+        "name": null,
+        "image_path": "uploads/a032ac9e3114455b8941f2854d50f3c9.jpg",
+        "category": "outer",
+        "sub": "冲锋衣",
+        "colors": [
+          "灰色"
+        ],
+        "material": "化纤",
+        "pattern": "纯色",
+        "warmth": 2,
+        "formality": 1,
+        "seasons": [
+          "spring",
+          "autumn"
+        ],
+        "confidence": 0.98,
+        "needs_confirm": false,
+        "user_edited": false,
+        "created_at": "2026-11-13T09:41:45.852588Z"
+      }
+    ],
+    "corrections": [],
+    "latency_ms": 3,
+    "prompt_version": "item_extract.v2",
+    "reused": true
+  },
+  "retry_count": 15,
+  "model_attempts": 1
+}

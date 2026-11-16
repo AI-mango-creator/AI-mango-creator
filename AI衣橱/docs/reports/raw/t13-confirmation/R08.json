@@ -1,0 +1,80 @@
+{
+  "case_id": "R08",
+  "photo": "cloth08.jpg",
+  "timestamp": "2026-11-13T16:18:00.325Z",
+  "response": {
+    "at": 1794586673846,
+    "status": 201,
+    "body": {
+      "draft_id": "74e682c5-f407-40df-8d77-288b643b163b",
+      "items": [
+        {
+          "sources": {
+            "sources": "derived",
+            "owner_id": "derived",
+            "id": "derived",
+            "name": "model",
+            "image_path": "user",
+            "category": "model",
+            "sub": "model",
+            "colors": "model",
+            "material": "model",
+            "pattern": "model",
+            "warmth": "model",
+            "formality": "model",
+            "seasons": "model",
+            "confidence": "model",
+            "needs_confirm": "derived",
+            "user_edited": "derived",
+            "created_at": "derived",
+            "_corrections": {
+              "source": "derived",
+              "entries": []
+            },
+            "_upload": {
+              "source": "derived",
+              "draft_id": "74e682c5-f407-40df-8d77-288b643b163b",
+              "photo_sha256": "7fecc714addb8420d09ecf6f95dccf093b5fdb398f61e0261c5f3aa8abec2368"
+            }
+          },
+          "owner_id": "276adcc8-8dae-46cc-bbd8-b2596a0466dd",
+          "id": "U276adcc88dae46ccbbd8b2596a0466dd74e682c5f40740df8d77288b643b163b-00",
+          "name": null,
+          "image_path": "uploads/276adcc8-8dae-46cc-bbd8-b2596a0466dd/74e682c5f40740df8d77288b643b163b.jpg",
+          "category": "shoes",
+          "sub": "Air Jordan 1 Low 运动鞋",
+          "colors": [
+            "白色",
+            "黑色",
+            "卡其色"
+          ],
+          "material": "皮革",
+          "pattern": "拼色",
+          "warmth": 3,
+          "formality": 2,
+          "seasons": [
+            "spring",
+            "summer",
+            "autumn",
+            "winter"
+          ],
+          "confidence": 0.98,
+          "needs_confirm": true,
+          "user_edited": false,
+          "created_at": "2026-11-13T16:18:00.292155Z"
+        }
+      ],
+      "corrections": [],
+      "latency_ms": 6447,
+      "prompt_version": "item_extract.v2",
+      "reused": false
+    }
+  },
+  "card_ms": 6484,
+  "viewport": {
+    "width": 375,
+    "height": 812,
+    "scrollWidth": 375
+  },
+  "pending_visible": true
+}

@@ -1,0 +1,77 @@
+{
+  "case_id": "R01",
+  "photo": "cases/images/cloth01.jpg",
+  "interaction": "file_selection",
+  "timestamp": "2026-11-13T15:06:30.506Z",
+  "response": {
+    "draft_id": "77d9b552-2379-4ba1-ae60-f34d65fa08d8",
+    "items": [
+      {
+        "sources": {
+          "sources": "derived",
+          "id": "derived",
+          "name": "model",
+          "image_path": "user",
+          "category": "model",
+          "sub": "model",
+          "colors": "model",
+          "material": "model",
+          "pattern": "model",
+          "warmth": "model",
+          "formality": "model",
+          "seasons": "model",
+          "confidence": "model",
+          "needs_confirm": "derived",
+          "user_edited": "derived",
+          "created_at": "derived",
+          "_corrections": {
+            "source": "derived",
+            "entries": []
+          },
+          "_upload": {
+            "source": "derived",
+            "draft_id": "77d9b552-2379-4ba1-ae60-f34d65fa08d8",
+            "photo_sha256": "92ee8dc61b79130e740fe032f2ee70056f7b40694a4df8a35ccbde33c63746bb"
+          }
+        },
+        "id": "U77d9b55223794ba1ae60f34d65fa08d8-00",
+        "name": null,
+        "image_path": "uploads/77d9b55223794ba1ae60f34d65fa08d8.jpg",
+        "category": "outer",
+        "sub": "连帽冲锋衣",
+        "colors": [
+          "灰色"
+        ],
+        "material": "化纤面料",
+        "pattern": "纯色",
+        "warmth": 2,
+        "formality": 1,
+        "seasons": [
+          "spring",
+          "autumn"
+        ],
+        "confidence": 0.98,
+        "needs_confirm": false,
+        "user_edited": false,
+        "created_at": "2026-11-13T15:06:30.399065Z"
+      }
+    ],
+    "corrections": [],
+    "latency_ms": 6162,
+    "prompt_version": "item_extract.v2",
+    "reused": false
+  },
+  "archive_ms": 6278,
+  "card": {
+    "id": "U77d9b55223794ba1ae60f34d65fa08d8-00",
+    "highlighted": "true",
+    "cardCount": 1,
+    "photoLoaded": true
+  },
+  "viewport": {
+    "width": 375,
+    "height": 812,
+    "scrollWidth": 375
+  },
+  "highlight_after_2s": "false"
+}

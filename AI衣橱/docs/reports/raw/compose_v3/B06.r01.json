@@ -1,0 +1,138 @@
+{
+  "case_id": "B06",
+  "timestamp": "2026-11-13T16:31:47+08:00",
+  "model": "qwen3.8-flash",
+  "prompt_version": "outfit_compose.v1",
+  "source": "真实调用",
+  "input": {
+    "temp_c": 12,
+    "occasion": "weekend",
+    "formality_target": [
+      1,
+      3
+    ],
+    "excluded": []
+  },
+  "expect": {
+    "set_count": 3,
+    "must_not_use": [
+      "W02",
+      "W06"
+    ],
+    "all_items_in_wardrobe": true,
+    "no_season_conflict": true
+  },
+  "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W13\",\n        \"dress\": null\n      },\n      \"reason\": \"藏青羊毛混纺外套搭配灰色羊毛上装与米色混纺下装，适合12度冷带周末穿着。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W12\",\n        \"bottom\": \"W05\",\n        \"outer\": \"W10\",\n        \"shoes\": \"W08\",\n        \"dress\": null\n      },\n      \"reason\": \"卡其棉外套配合米白针织上装和深蓝牛仔下装，满足冷带保暖需求且正式度适中。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W12\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W14\",\n        \"dress\": null\n      },\n      \"reason\": \"藏青羊毛混纺外套与米白针织上装、米色混纺下装组合，提供冷带所需的厚度。\"\n    }\n  ]\n}",
+  "parsed": {
+    "sets": [
+      {
+        "slots": {
+          "top": "W07",
+          "bottom": "W04",
+          "outer": "W03",
+          "shoes": "W13",
+          "dress": null
+        },
+        "reason": "藏青羊毛混纺外套搭配灰色羊毛上装与米色混纺下装，适合12度冷带周末穿着。"
+      },
+      {
+        "slots": {
+          "top": "W12",
+          "bottom": "W05",
+          "outer": "W10",
+          "shoes": "W08",
+          "dress": null
+        },
+        "reason": "卡其棉外套配合米白针织上装和深蓝牛仔下装，满足冷带保暖需求且正式度适中。"
+      },
+      {
+        "slots": {
+          "top": "W12",
+          "bottom": "W04",
+          "outer": "W03",
+          "shoes": "W14",
+          "dress": null
+        },
+        "reason": "藏青羊毛混纺外套与米白针织上装、米色混纺下装组合，提供冷带所需的厚度。"
+      }
+    ]
+  },
+  "parse_ok": true,
+  "http_status": 200,
+  "candidate_ids": [
+    "W03",
+    "W04",
+    "W05",
+    "W07",
+    "W08",
+    "W10",
+    "W12",
+    "W13",
+    "W14"
+  ],
+  "band": "cold",
+  "composable_count": 24,
+  "latency_ms": 6152,
+  "degraded": false,
+  "degrade_reason": null,
+  "result": {
+    "sets": [
+      {
+        "slots": {
+          "top": "W07",
+          "bottom": "W04",
+          "outer": "W03",
+          "shoes": "W13",
+          "dress": null
+        },
+        "reason": "藏青羊毛混纺外套搭配灰色羊毛上装与米色混纺下装，适合12度冷带周末穿着。"
+      },
+      {
+        "slots": {
+          "top": "W12",
+          "bottom": "W05",
+          "outer": "W10",
+          "shoes": "W08",
+          "dress": null
+        },
+        "reason": "卡其棉外套配合米白针织上装和深蓝牛仔下装，满足冷带保暖需求且正式度适中。"
+      },
+      {
+        "slots": {
+          "top": "W12",
+          "bottom": "W04",
+          "outer": "W03",
+          "shoes": "W14",
+          "dress": null
+        },
+        "reason": "藏青羊毛混纺外套与米白针织上装、米色混纺下装组合，提供冷带所需的厚度。"
+      }
+    ],
+    "shortage": null,
+    "shortage_hint": null,
+    "degraded": false,
+    "latency_ms": 6152,
+    "prompt_version": "outfit_compose.v1",
+    "degrade_reason": null
+  },
+  "checks": {
+    "set_count": true,
+    "must_not_use": true,
+    "all_items_in_wardrobe": true,
+    "no_season_conflict": true
+  },
+  "passed": true,
+  "failure_reasons": [],
+  "attribution": "—",
+  "attempts": [
+    {
+      "timestamp": "2026-11-13T16:31:47+08:00",
+      "http_status": 200,
+      "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W13\",\n        \"dress\": null\n      },\n      \"reason\": \"藏青羊毛混纺外套搭配灰色羊毛上装与米色混纺下装，适合12度冷带周末穿着。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W12\",\n        \"bottom\": \"W05\",\n        \"outer\": \"W10\",\n        \"shoes\": \"W08\",\n        \"dress\": null\n      },\n      \"reason\": \"卡其棉外套配合米白针织上装和深蓝牛仔下装，满足冷带保暖需求且正式度适中。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W12\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W14\",\n        \"dress\": null\n      },\n      \"reason\": \"藏青羊毛混纺外套与米白针织上装、米色混纺下装组合，提供冷带所需的厚度。\"\n    }\n  ]\n}"
+    }
+  ],
+  "retry_feedback": [],
+  "error": null,
+  "evidence": "docs/reports/raw/compose_v3/B06.r01.json",
+  "sample_index": 1
+}

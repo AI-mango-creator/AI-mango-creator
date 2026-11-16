@@ -1,0 +1,73 @@
+{
+  "case_id": "C01",
+  "timestamp": "2026-11-13T16:33:33+08:00",
+  "model": "qwen3.8-flash",
+  "prompt_version": "outfit_compose.v1",
+  "source": "纯规则边界",
+  "input": {
+    "temp_c": 16,
+    "occasion": "client_meeting",
+    "formality_target": [
+      4,
+      5
+    ],
+    "excluded": []
+  },
+  "expect": {
+    "set_count_lt": 3,
+    "must_emit_shortage_hint": true,
+    "must_not_use": [
+      "W08"
+    ],
+    "all_items_in_wardrobe": true
+  },
+  "raw_content": null,
+  "parsed": null,
+  "parse_ok": false,
+  "http_status": null,
+  "candidate_ids": [
+    "W02",
+    "W06",
+    "W09",
+    "W11"
+  ],
+  "band": "cool",
+  "composable_count": 0,
+  "latency_ms": 0,
+  "degraded": false,
+  "degrade_reason": null,
+  "result": {
+    "sets": [],
+    "shortage": {
+      "missing_slots": [
+        "top"
+      ],
+      "requirements": [
+        {
+          "slot": "top",
+          "warmth_min": 2,
+          "formality_min": 4
+        }
+      ],
+      "message": "没有完整搭配，缺少符合条件的单品：上装"
+    },
+    "shortage_hint": "没有完整搭配，缺少符合条件的单品：上装",
+    "degraded": false,
+    "latency_ms": 0,
+    "prompt_version": "outfit_compose.v1",
+    "degrade_reason": null
+  },
+  "checks": {
+    "set_count_lt": true,
+    "must_emit_shortage_hint": true,
+    "must_not_use": true,
+    "all_items_in_wardrobe": true
+  },
+  "passed": true,
+  "failure_reasons": [],
+  "attribution": "—",
+  "attempts": [],
+  "retry_feedback": [],
+  "error": null,
+  "evidence": "docs/reports/raw/edges_v3/C01.json"
+}

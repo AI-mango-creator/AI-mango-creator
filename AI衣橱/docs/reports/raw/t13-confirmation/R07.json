@@ -1,0 +1,76 @@
+{
+  "case_id": "R07",
+  "photo": "cloth07.jpg",
+  "timestamp": "2026-11-13T16:17:53.840Z",
+  "response": {
+    "at": 1794586666547,
+    "status": 201,
+    "body": {
+      "draft_id": "0c6286e5-2610-493b-ad66-ed501a46526f",
+      "items": [
+        {
+          "sources": {
+            "sources": "derived",
+            "owner_id": "derived",
+            "id": "derived",
+            "name": "model",
+            "image_path": "user",
+            "category": "model",
+            "sub": "model",
+            "colors": "model",
+            "material": "model",
+            "pattern": "model",
+            "warmth": "model",
+            "formality": "model",
+            "seasons": "model",
+            "confidence": "model",
+            "needs_confirm": "derived",
+            "user_edited": "derived",
+            "created_at": "derived",
+            "_corrections": {
+              "source": "derived",
+              "entries": []
+            },
+            "_upload": {
+              "source": "derived",
+              "draft_id": "0c6286e5-2610-493b-ad66-ed501a46526f",
+              "photo_sha256": "8d7008705cb8369e411dfa8126651fdbd6d60699b6edf3284b23fa9154cb7c5b"
+            }
+          },
+          "owner_id": "276adcc8-8dae-46cc-bbd8-b2596a0466dd",
+          "id": "U276adcc88dae46ccbbd8b2596a0466dd0c6286e52610493bad66ed501a46526f-00",
+          "name": null,
+          "image_path": "uploads/276adcc8-8dae-46cc-bbd8-b2596a0466dd/0c6286e52610493bad66ed501a46526f.jpg",
+          "category": "bottom",
+          "sub": "运动短裤",
+          "colors": [
+            "黑色",
+            "白色"
+          ],
+          "material": "聚酯纤维",
+          "pattern": "条纹",
+          "warmth": 1,
+          "formality": 1,
+          "seasons": [
+            "summer"
+          ],
+          "confidence": 0.98,
+          "needs_confirm": true,
+          "user_edited": false,
+          "created_at": "2026-11-13T16:17:53.806891Z"
+        }
+      ],
+      "corrections": [],
+      "latency_ms": 7261,
+      "prompt_version": "item_extract.v2",
+      "reused": false
+    }
+  },
+  "card_ms": 7300,
+  "viewport": {
+    "width": 375,
+    "height": 812,
+    "scrollWidth": 375
+  },
+  "pending_visible": true
+}

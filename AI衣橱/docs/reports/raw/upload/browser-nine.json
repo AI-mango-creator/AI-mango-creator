@@ -1,0 +1,702 @@
+{
+  "kind": "真实浏览器逐张上传",
+  "timing": "选定文件/触发拖拽前→新卡照片加载并绘制下一帧；不含系统相册选择或拍摄操作",
+  "rows": [
+    {
+      "case_id": "R01",
+      "photo": "cases/images/cloth01.jpg",
+      "interaction": "file_selection",
+      "timestamp": "2026-11-13T15:06:30.506Z",
+      "response": {
+        "draft_id": "77d9b552-2379-4ba1-ae60-f34d65fa08d8",
+        "items": [
+          {
+            "sources": {
+              "sources": "derived",
+              "id": "derived",
+              "name": "model",
+              "image_path": "user",
+              "category": "model",
+              "sub": "model",
+              "colors": "model",
+              "material": "model",
+              "pattern": "model",
+              "warmth": "model",
+              "formality": "model",
+              "seasons": "model",
+              "confidence": "model",
+              "needs_confirm": "derived",
+              "user_edited": "derived",
+              "created_at": "derived",
+              "_corrections": {
+                "source": "derived",
+                "entries": []
+              },
+              "_upload": {
+                "source": "derived",
+                "draft_id": "77d9b552-2379-4ba1-ae60-f34d65fa08d8",
+                "photo_sha256": "92ee8dc61b79130e740fe032f2ee70056f7b40694a4df8a35ccbde33c63746bb"
+              }
+            },
+            "id": "U77d9b55223794ba1ae60f34d65fa08d8-00",
+            "name": null,
+            "image_path": "uploads/77d9b55223794ba1ae60f34d65fa08d8.jpg",
+            "category": "outer",
+            "sub": "连帽冲锋衣",
+            "colors": [
+              "灰色"
+            ],
+            "material": "化纤面料",
+            "pattern": "纯色",
+            "warmth": 2,
+            "formality": 1,
+            "seasons": [
+              "spring",
+              "autumn"
+            ],
+            "confidence": 0.98,
+            "needs_confirm": false,
+            "user_edited": false,
+            "created_at": "2026-11-13T15:06:30.399065Z"
+          }
+        ],
+        "corrections": [],
+        "latency_ms": 6162,
+        "prompt_version": "item_extract.v2",
+        "reused": false
+      },
+      "archive_ms": 6278,
+      "card": {
+        "id": "U77d9b55223794ba1ae60f34d65fa08d8-00",
+        "highlighted": "true",
+        "cardCount": 1,
+        "photoLoaded": true
+      },
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "scrollWidth": 375
+      },
+      "highlight_after_2s": "false"
+    },
+    {
+      "case_id": "R02",
+      "photo": "cases/images/cloth02.jpg",
+      "interaction": "file_selection",
+      "timestamp": "2026-11-13T15:06:39.327Z",
+      "response": {
+        "draft_id": "681994d3-c859-4e81-a885-ac48377cb7ea",
+        "items": [
+          {
+            "sources": {
+              "sources": "derived",
+              "id": "derived",
+              "name": "model",
+              "image_path": "user",
+              "category": "model",
+              "sub": "model",
+              "colors": "model",
+              "material": "model",
+              "pattern": "model",
+              "warmth": "model",
+              "formality": "model",
+              "seasons": "model",
+              "confidence": "model",
+              "needs_confirm": "derived",
+              "user_edited": "derived",
+              "created_at": "derived",
+              "_corrections": {
+                "source": "derived",
+                "entries": []
+              },
+              "_upload": {
+                "source": "derived",
+                "draft_id": "681994d3-c859-4e81-a885-ac48377cb7ea",
+                "photo_sha256": "c23909f8a48ac0b5cf1bf06edc0e920e84bc1a6b01a3e6b6dab20b9c42c9a456"
+              }
+            },
+            "id": "U681994d3c8594e81a885ac48377cb7ea-00",
+            "name": null,
+            "image_path": "uploads/681994d3c8594e81a885ac48377cb7ea.jpg",
+            "category": "top",
+            "sub": "拉链长袖短款上衣",
+            "colors": [
+              "白色"
+            ],
+            "material": "化纤面料",
+            "pattern": "纯色",
+            "warmth": 2,
+            "formality": 1,
+            "seasons": [
+              "spring",
+              "summer",
+              "autumn"
+            ],
+            "confidence": 0.95,
+            "needs_confirm": false,
+            "user_edited": false,
+            "created_at": "2026-11-13T15:06:39.297657Z"
+          }
+        ],
+        "corrections": [],
+        "latency_ms": 6580,
+        "prompt_version": "item_extract.v2",
+        "reused": false
+      },
+      "archive_ms": 6635,
+      "card": {
+        "id": "U681994d3c8594e81a885ac48377cb7ea-00",
+        "highlighted": "true",
+        "cardCount": 1,
+        "photoLoaded": true
+      },
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "scrollWidth": 375
+      }
+    },
+    {
+      "case_id": "R03",
+      "photo": "cases/images/cloth03.jpg",
+      "interaction": "file_selection",
+      "timestamp": "2026-11-13T15:06:45.655Z",
+      "response": {
+        "draft_id": "84abd928-248b-4c37-ad6d-507177fca0f1",
+        "items": [
+          {
+            "sources": {
+              "sources": "derived",
+              "id": "derived",
+              "name": "model",
+              "image_path": "user",
+              "category": "model",
+              "sub": "model",
+              "colors": "model",
+              "material": "model",
+              "pattern": "model",
+              "warmth": "model",
+              "formality": "model",
+              "seasons": "model",
+              "confidence": "model",
+              "needs_confirm": "derived",
+              "user_edited": "derived",
+              "created_at": "derived",
+              "_corrections": {
+                "source": "derived",
+                "entries": []
+              },
+              "_upload": {
+                "source": "derived",
+                "draft_id": "84abd928-248b-4c37-ad6d-507177fca0f1",
+                "photo_sha256": "cdf688fa3e07e942a0b01fcad0775b4d8537a8aeb1aadba667d15c4536a172e2"
+              }
+            },
+            "id": "U84abd928248b4c37ad6d507177fca0f1-00",
+            "name": null,
+            "image_path": "uploads/84abd928248b4c37ad6d507177fca0f1.jpg",
+            "category": "bottom",
+            "sub": "松紧腰阔腿裤",
+            "colors": [
+              "黑色"
+            ],
+            "material": "尼龙",
+            "pattern": "纯色",
+            "warmth": 2,
+            "formality": 2,
+            "seasons": [
+              "spring",
+              "summer",
+              "autumn"
+            ],
+            "confidence": 0.95,
+            "needs_confirm": false,
+            "user_edited": false,
+            "created_at": "2026-11-13T15:06:45.594758Z"
+          }
+        ],
+        "corrections": [],
+        "latency_ms": 6246,
+        "prompt_version": "item_extract.v2",
+        "reused": false
+      },
+      "archive_ms": 6314,
+      "card": {
+        "id": "U84abd928248b4c37ad6d507177fca0f1-00",
+        "highlighted": "true",
+        "cardCount": 1,
+        "photoLoaded": true
+      },
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "scrollWidth": 375
+      }
+    },
+    {
+      "case_id": "R04",
+      "photo": "cases/images/cloth04.jpg",
+      "interaction": "file_selection",
+      "timestamp": "2026-11-13T15:06:52.670Z",
+      "response": {
+        "draft_id": "9eccecff-ccb8-460b-864d-5ef3a495d30f",
+        "items": [
+          {
+            "sources": {
+              "sources": "derived",
+              "id": "derived",
+              "name": "model",
+              "image_path": "user",
+              "category": "model",
+              "sub": "model",
+              "colors": "model",
+              "material": "model",
+              "pattern": "model",
+              "warmth": "model",
+              "formality": "model",
+              "seasons": "model",
+              "confidence": "model",
+              "needs_confirm": "derived",
+              "user_edited": "derived",
+              "created_at": "derived",
+              "_corrections": {
+                "source": "derived",
+                "entries": []
+              },
+              "_upload": {
+                "source": "derived",
+                "draft_id": "9eccecff-ccb8-460b-864d-5ef3a495d30f",
+                "photo_sha256": "f8b366830233e73e48c26578484191a6c8fc94a493978eb375f8257d7d294c42"
+              }
+            },
+            "id": "U9eccecffccb8460b864d5ef3a495d30f-00",
+            "name": null,
+            "image_path": "uploads/9eccecffccb8460b864d5ef3a495d30f.jpg",
+            "category": "top",
+            "sub": "半拉链短袖T恤",
+            "colors": [
+              "白色",
+              "藏青色",
+              "军绿色"
+            ],
+            "material": "聚酯纤维",
+            "pattern": "拼色",
+            "warmth": 2,
+            "formality": 1,
+            "seasons": [
+              "spring",
+              "summer",
+              "autumn"
+            ],
+            "confidence": 0.98,
+            "needs_confirm": false,
+            "user_edited": false,
+            "created_at": "2026-11-13T15:06:52.619803Z"
+          }
+        ],
+        "corrections": [],
+        "latency_ms": 6951,
+        "prompt_version": "item_extract.v2",
+        "reused": false
+      },
+      "archive_ms": 7015,
+      "card": {
+        "id": "U9eccecffccb8460b864d5ef3a495d30f-00",
+        "highlighted": "true",
+        "cardCount": 1,
+        "photoLoaded": true
+      },
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "scrollWidth": 375
+      }
+    },
+    {
+      "case_id": "R05",
+      "photo": "cases/images/cloth05.jpg",
+      "interaction": "file_selection",
+      "timestamp": "2026-11-13T15:06:59.295Z",
+      "response": {
+        "draft_id": "dd574fe5-a33b-478a-a246-d677612ea4cc",
+        "items": [
+          {
+            "sources": {
+              "sources": "derived",
+              "id": "derived",
+              "name": "model",
+              "image_path": "user",
+              "category": "model",
+              "sub": "model",
+              "colors": "model",
+              "material": "model",
+              "pattern": "model",
+              "warmth": "model",
+              "formality": "model",
+              "seasons": "model",
+              "confidence": "model",
+              "needs_confirm": "derived",
+              "user_edited": "derived",
+              "created_at": "derived",
+              "_corrections": {
+                "source": "derived",
+                "entries": []
+              },
+              "_upload": {
+                "source": "derived",
+                "draft_id": "dd574fe5-a33b-478a-a246-d677612ea4cc",
+                "photo_sha256": "f0d8fe4b0b1d74f484cd11f7fe29e8b9d1cad2b8db4f7f1b2d64cecea6e624f1"
+              }
+            },
+            "id": "Udd574fe5a33b478aa246d677612ea4cc-00",
+            "name": null,
+            "image_path": "uploads/dd574fe5a33b478aa246d677612ea4cc.jpg",
+            "category": "top",
+            "sub": "长袖衬衫",
+            "colors": [
+              "棕色"
+            ],
+            "material": "棉",
+            "pattern": "格纹",
+            "warmth": 3,
+            "formality": 2,
+            "seasons": [
+              "spring",
+              "autumn"
+            ],
+            "confidence": 0.95,
+            "needs_confirm": false,
+            "user_edited": false,
+            "created_at": "2026-11-13T15:06:59.198968Z"
+          }
+        ],
+        "corrections": [],
+        "latency_ms": 6517,
+        "prompt_version": "item_extract.v2",
+        "reused": false
+      },
+      "archive_ms": 6632,
+      "card": {
+        "id": "Udd574fe5a33b478aa246d677612ea4cc-00",
+        "highlighted": "true",
+        "cardCount": 1,
+        "photoLoaded": true
+      },
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "scrollWidth": 375
+      }
+    },
+    {
+      "case_id": "R06",
+      "photo": "cases/images/cloth06.jpg",
+      "interaction": "file_selection",
+      "timestamp": "2026-11-13T15:07:04.708Z",
+      "response": {
+        "draft_id": "41111b10-54ea-4037-b55a-2f6522c93414",
+        "items": [
+          {
+            "sources": {
+              "sources": "derived",
+              "id": "derived",
+              "name": "model",
+              "image_path": "user",
+              "category": "model",
+              "sub": "model",
+              "colors": "model",
+              "material": "model",
+              "pattern": "model",
+              "warmth": "model",
+              "formality": "model",
+              "seasons": "model",
+              "confidence": "model",
+              "needs_confirm": "derived",
+              "user_edited": "derived",
+              "created_at": "derived",
+              "_corrections": {
+                "source": "derived",
+                "entries": []
+              },
+              "_upload": {
+                "source": "derived",
+                "draft_id": "41111b10-54ea-4037-b55a-2f6522c93414",
+                "photo_sha256": "5a9ead2d538dfe7de04b15cb806a8f1035c9332b9ce75f04035246020ea14ec9"
+              }
+            },
+            "id": "U41111b1054ea4037b55a2f6522c93414-00",
+            "name": null,
+            "image_path": "uploads/41111b1054ea4037b55a2f6522c93414.jpg",
+            "category": "bottom",
+            "sub": "工装短裤",
+            "colors": [
+              "卡其色"
+            ],
+            "material": "棉布",
+            "pattern": "纯色",
+            "warmth": 1,
+            "formality": 2,
+            "seasons": [
+              "summer"
+            ],
+            "confidence": 0.98,
+            "needs_confirm": false,
+            "user_edited": false,
+            "created_at": "2026-11-13T15:07:04.596294Z"
+          }
+        ],
+        "corrections": [],
+        "latency_ms": 5277,
+        "prompt_version": "item_extract.v2",
+        "reused": false
+      },
+      "archive_ms": 5411,
+      "card": {
+        "id": "U41111b1054ea4037b55a2f6522c93414-00",
+        "highlighted": "true",
+        "cardCount": 1,
+        "photoLoaded": true
+      },
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "scrollWidth": 375
+      }
+    },
+    {
+      "case_id": "R07",
+      "photo": "cases/images/cloth07.jpg",
+      "interaction": "file_selection",
+      "timestamp": "2026-11-13T15:07:10.948Z",
+      "response": {
+        "draft_id": "c6aa42a2-55f5-4dc8-a780-5f816492fdaa",
+        "items": [
+          {
+            "sources": {
+              "sources": "derived",
+              "id": "derived",
+              "name": "model",
+              "image_path": "user",
+              "category": "model",
+              "sub": "model",
+              "colors": "model",
+              "material": "model",
+              "pattern": "model",
+              "warmth": "model",
+              "formality": "model",
+              "seasons": "model",
+              "confidence": "model",
+              "needs_confirm": "derived",
+              "user_edited": "derived",
+              "created_at": "derived",
+              "_corrections": {
+                "source": "derived",
+                "entries": []
+              },
+              "_upload": {
+                "source": "derived",
+                "draft_id": "c6aa42a2-55f5-4dc8-a780-5f816492fdaa",
+                "photo_sha256": "8d7008705cb8369e411dfa8126651fdbd6d60699b6edf3284b23fa9154cb7c5b"
+              }
+            },
+            "id": "Uc6aa42a255f54dc8a7805f816492fdaa-00",
+            "name": null,
+            "image_path": "uploads/c6aa42a255f54dc8a7805f816492fdaa.jpg",
+            "category": "bottom",
+            "sub": "运动短裤",
+            "colors": [
+              "黑色",
+              "白色"
+            ],
+            "material": "聚酯纤维",
+            "pattern": "条纹",
+            "warmth": 1,
+            "formality": 1,
+            "seasons": [
+              "summer"
+            ],
+            "confidence": 0.98,
+            "needs_confirm": false,
+            "user_edited": false,
+            "created_at": "2026-11-13T15:07:10.883139Z"
+          }
+        ],
+        "corrections": [],
+        "latency_ms": 6149,
+        "prompt_version": "item_extract.v2",
+        "reused": false
+      },
+      "archive_ms": 6248,
+      "card": {
+        "id": "Uc6aa42a255f54dc8a7805f816492fdaa-00",
+        "highlighted": "true",
+        "cardCount": 1,
+        "photoLoaded": true
+      },
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "scrollWidth": 375
+      }
+    },
+    {
+      "case_id": "R08",
+      "photo": "cases/images/cloth08.jpg",
+      "interaction": "file_selection",
+      "timestamp": "2026-11-13T15:07:19.843Z",
+      "response": {
+        "draft_id": "319d30a7-0192-4a86-a791-3486ac304fc9",
+        "items": [
+          {
+            "sources": {
+              "sources": "derived",
+              "id": "derived",
+              "name": "model",
+              "image_path": "user",
+              "category": "model",
+              "sub": "model",
+              "colors": "model",
+              "material": "model",
+              "pattern": "model",
+              "warmth": "model",
+              "formality": "model",
+              "seasons": "model",
+              "confidence": "model",
+              "needs_confirm": "derived",
+              "user_edited": "derived",
+              "created_at": "derived",
+              "_corrections": {
+                "source": "derived",
+                "entries": []
+              },
+              "_upload": {
+                "source": "derived",
+                "draft_id": "319d30a7-0192-4a86-a791-3486ac304fc9",
+                "photo_sha256": "7fecc714addb8420d09ecf6f95dccf093b5fdb398f61e0261c5f3aa8abec2368"
+              }
+            },
+            "id": "U319d30a701924a86a7913486ac304fc9-00",
+            "name": null,
+            "image_path": "uploads/319d30a701924a86a7913486ac304fc9.jpg",
+            "category": "shoes",
+            "sub": "Air Jordan 1 Low运动鞋",
+            "colors": [
+              "白色",
+              "黑色",
+              "卡其色"
+            ],
+            "material": "皮革",
+            "pattern": "拼色",
+            "warmth": 3,
+            "formality": 2,
+            "seasons": [
+              "spring",
+              "summer",
+              "autumn"
+            ],
+            "confidence": 0.98,
+            "needs_confirm": false,
+            "user_edited": false,
+            "created_at": "2026-11-13T15:07:19.743157Z"
+          }
+        ],
+        "corrections": [],
+        "latency_ms": 8761,
+        "prompt_version": "item_extract.v2",
+        "reused": false
+      },
+      "archive_ms": 8880,
+      "card": {
+        "id": "U319d30a701924a86a7913486ac304fc9-00",
+        "highlighted": "true",
+        "cardCount": 1,
+        "photoLoaded": true
+      },
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "scrollWidth": 375
+      }
+    },
+    {
+      "case_id": "R09",
+      "photo": "cases/images/cloth09.jpg",
+      "interaction": "drag_drop",
+      "timestamp": "2026-11-13T15:07:26.288Z",
+      "response": {
+        "draft_id": "a3e06619-b733-48a6-a476-4df20895a957",
+        "items": [
+          {
+            "sources": {
+              "sources": "derived",
+              "id": "derived",
+              "name": "model",
+              "image_path": "user",
+              "category": "model",
+              "sub": "model",
+              "colors": "model",
+              "material": "model",
+              "pattern": "model",
+              "warmth": "model",
+              "formality": "model",
+              "seasons": "model",
+              "confidence": "model",
+              "needs_confirm": "derived",
+              "user_edited": "derived",
+              "created_at": "derived",
+              "_corrections": {
+                "source": "derived",
+                "entries": []
+              },
+              "_upload": {
+                "source": "derived",
+                "draft_id": "a3e06619-b733-48a6-a476-4df20895a957",
+                "photo_sha256": "f9ad27b566f5b681503bbb941714dbc479d9922a7feab72eec24abca7cdfba4e"
+              }
+            },
+            "id": "Ua3e06619b73348a6a4764df20895a957-00",
+            "name": null,
+            "image_path": "uploads/a3e06619b73348a6a4764df20895a957.jpg",
+            "category": "shoes",
+            "sub": "Nike Ja 2 Low EP 篮球鞋",
+            "colors": [
+              "白色",
+              "浅灰色",
+              "生胶色"
+            ],
+            "material": "麂皮/网布",
+            "pattern": "纯色",
+            "warmth": 3,
+            "formality": 1,
+            "seasons": [
+              "spring",
+              "summer",
+              "autumn"
+            ],
+            "confidence": 0.98,
+            "needs_confirm": false,
+            "user_edited": false,
+            "created_at": "2026-11-13T15:07:26.183820Z"
+          }
+        ],
+        "corrections": [],
+        "latency_ms": 6315,
+        "prompt_version": "item_extract.v2",
+        "reused": false
+      },
+      "archive_ms": 6431,
+      "card": {
+        "id": "Ua3e06619b73348a6a4764df20895a957-00",
+        "highlighted": "true",
+        "cardCount": 1,
+        "photoLoaded": true
+      },
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "scrollWidth": 375
+      }
+    }
+  ],
+  "errors": []
+}

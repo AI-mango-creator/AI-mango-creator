@@ -1,0 +1,56 @@
+{
+  "case_id": "R02",
+  "title": "米白轻薄夹克（实拍，举在手中）",
+  "image": "images/cloth02.jpg",
+  "image_bytes": 155179,
+  "model": "qwen3.8-omni-flash",
+  "prompt_file": "prompts/item_extract.v2.md",
+  "prompt_version": "item_extract.v2",
+  "prompt_sha256_prefix": "0489692373e6ea85",
+  "timestamp": "2026-11-13T15:51:04+0800",
+  "http_status": 200,
+  "raw_content": "```json\n{\n  \"items\": [\n    {\n      \"category\": \"top\",\n      \"sub\": \"拉链短款长袖T恤\",\n      \"colors\": [\n        \"白色\"\n      ],\n      \"material\": \"棉混纺\",\n      \"pattern\": \"纯色\",\n      \"warmth\": 2,\n      \"formality\": 1,\n      \"seasons\": [\n        \"spring\",\n        \"autumn\"\n      ],\n      \"confidence\": 0.95\n    }\n  ]\n}\n```",
+  "latency_ms": 6597,
+  "attempts": [
+    {
+      "http_status": 200,
+      "raw_content": "```json\n{\n  \"items\": [\n    {\n      \"category\": \"top\",\n      \"sub\": \"拉链短款长袖T恤\",\n      \"colors\": [\n        \"白色\"\n      ],\n      \"material\": \"棉混纺\",\n      \"pattern\": \"纯色\",\n      \"warmth\": 2,\n      \"formality\": 1,\n      \"seasons\": [\n        \"spring\",\n        \"autumn\"\n      ],\n      \"confidence\": 0.95\n    }\n  ]\n}\n```",
+      "latency_ms": 6597,
+      "error": null,
+      "category": null
+    }
+  ],
+  "error": null,
+  "category": null,
+  "had_fence": true,
+  "parse_ok": true,
+  "parsed": {
+    "items": [
+      {
+        "category": "top",
+        "sub": "拉链短款长袖T恤",
+        "colors": [
+          "白色"
+        ],
+        "material": "棉混纺",
+        "pattern": "纯色",
+        "warmth": 2,
+        "formality": 1,
+        "seasons": [
+          "spring",
+          "autumn"
+        ],
+        "confidence": 0.95
+      }
+    ]
+  },
+  "checks": {
+    "category": false,
+    "sub_in": false,
+    "color_in": true,
+    "formality_range": true,
+    "confidence_gte": true
+  },
+  "item_count": 1,
+  "passed": false
+}

@@ -1,0 +1,75 @@
+{
+  "case_id": "R06",
+  "photo": "cases/images/cloth06.jpg",
+  "interaction": "file_selection",
+  "timestamp": "2026-11-13T15:07:04.708Z",
+  "response": {
+    "draft_id": "41111b10-54ea-4037-b55a-2f6522c93414",
+    "items": [
+      {
+        "sources": {
+          "sources": "derived",
+          "id": "derived",
+          "name": "model",
+          "image_path": "user",
+          "category": "model",
+          "sub": "model",
+          "colors": "model",
+          "material": "model",
+          "pattern": "model",
+          "warmth": "model",
+          "formality": "model",
+          "seasons": "model",
+          "confidence": "model",
+          "needs_confirm": "derived",
+          "user_edited": "derived",
+          "created_at": "derived",
+          "_corrections": {
+            "source": "derived",
+            "entries": []
+          },
+          "_upload": {
+            "source": "derived",
+            "draft_id": "41111b10-54ea-4037-b55a-2f6522c93414",
+            "photo_sha256": "5a9ead2d538dfe7de04b15cb806a8f1035c9332b9ce75f04035246020ea14ec9"
+          }
+        },
+        "id": "U41111b1054ea4037b55a2f6522c93414-00",
+        "name": null,
+        "image_path": "uploads/41111b1054ea4037b55a2f6522c93414.jpg",
+        "category": "bottom",
+        "sub": "工装短裤",
+        "colors": [
+          "卡其色"
+        ],
+        "material": "棉布",
+        "pattern": "纯色",
+        "warmth": 1,
+        "formality": 2,
+        "seasons": [
+          "summer"
+        ],
+        "confidence": 0.98,
+        "needs_confirm": false,
+        "user_edited": false,
+        "created_at": "2026-11-13T15:07:04.596294Z"
+      }
+    ],
+    "corrections": [],
+    "latency_ms": 5277,
+    "prompt_version": "item_extract.v2",
+    "reused": false
+  },
+  "archive_ms": 5411,
+  "card": {
+    "id": "U41111b1054ea4037b55a2f6522c93414-00",
+    "highlighted": "true",
+    "cardCount": 1,
+    "photoLoaded": true
+  },
+  "viewport": {
+    "width": 375,
+    "height": 812,
+    "scrollWidth": 375
+  }
+}

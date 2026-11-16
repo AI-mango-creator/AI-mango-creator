@@ -1,0 +1,143 @@
+{
+  "case_id": "B03",
+  "timestamp": "2026-11-13T15:51:53+08:00",
+  "model": "qwen3.8-flash",
+  "prompt_version": "outfit_compose.v1",
+  "source": "真实调用",
+  "input": {
+    "temp_c": 5,
+    "occasion": "commute",
+    "formality_target": [
+      3,
+      5
+    ],
+    "excluded": []
+  },
+  "expect": {
+    "set_count": 3,
+    "must_use_any_of": [
+      "W07",
+      "W12"
+    ],
+    "must_have_outer": true,
+    "outer_in": [
+      "W02",
+      "W10"
+    ],
+    "all_items_in_wardrobe": true
+  },
+  "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W06\",\n        \"outer\": \"W02\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"黑色聚酯纤维外套搭配灰色羊毛上装与黑色混纺下装，整体正式度较高且保暖性强。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W11\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"藏青羊毛混纺外套配合灰色羊毛上装和藏青混纺下装，色调和谐适合通勤。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W10\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"卡其棉质外套搭配米色混纺下装，中和了灰色羊毛上装的厚重感，风格较为休闲。\"\n    }\n  ]\n}",
+  "parsed": {
+    "sets": [
+      {
+        "slots": {
+          "top": "W07",
+          "bottom": "W06",
+          "outer": "W02",
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "黑色聚酯纤维外套搭配灰色羊毛上装与黑色混纺下装，整体正式度较高且保暖性强。"
+      },
+      {
+        "slots": {
+          "top": "W07",
+          "bottom": "W11",
+          "outer": "W03",
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "藏青羊毛混纺外套配合灰色羊毛上装和藏青混纺下装，色调和谐适合通勤。"
+      },
+      {
+        "slots": {
+          "top": "W07",
+          "bottom": "W04",
+          "outer": "W10",
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "卡其棉质外套搭配米色混纺下装，中和了灰色羊毛上装的厚重感，风格较为休闲。"
+      }
+    ]
+  },
+  "parse_ok": true,
+  "http_status": 200,
+  "candidate_ids": [
+    "W02",
+    "W03",
+    "W04",
+    "W06",
+    "W07",
+    "W09",
+    "W10",
+    "W11"
+  ],
+  "band": "cold",
+  "composable_count": 9,
+  "latency_ms": 5061,
+  "degraded": false,
+  "degrade_reason": null,
+  "result": {
+    "sets": [
+      {
+        "slots": {
+          "top": "W07",
+          "bottom": "W06",
+          "outer": "W02",
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "黑色聚酯纤维外套搭配灰色羊毛上装与黑色混纺下装，整体正式度较高且保暖性强。"
+      },
+      {
+        "slots": {
+          "top": "W07",
+          "bottom": "W11",
+          "outer": "W03",
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "藏青羊毛混纺外套配合灰色羊毛上装和藏青混纺下装，色调和谐适合通勤。"
+      },
+      {
+        "slots": {
+          "top": "W07",
+          "bottom": "W04",
+          "outer": "W10",
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "卡其棉质外套搭配米色混纺下装，中和了灰色羊毛上装的厚重感，风格较为休闲。"
+      }
+    ],
+    "shortage": null,
+    "shortage_hint": null,
+    "degraded": false,
+    "latency_ms": 5061,
+    "prompt_version": "outfit_compose.v1",
+    "degrade_reason": null
+  },
+  "checks": {
+    "set_count": true,
+    "must_use_any_of": true,
+    "must_have_outer": true,
+    "outer_in": false,
+    "all_items_in_wardrobe": true
+  },
+  "passed": false,
+  "failure_reasons": [
+    "outer_in"
+  ],
+  "attribution": "BENCH",
+  "attempts": [
+    {
+      "timestamp": "2026-11-13T15:51:53+08:00",
+      "http_status": 200,
+      "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W06\",\n        \"outer\": \"W02\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"黑色聚酯纤维外套搭配灰色羊毛上装与黑色混纺下装，整体正式度较高且保暖性强。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W11\",\n        \"outer\": \"W03\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"藏青羊毛混纺外套配合灰色羊毛上装和藏青混纺下装，色调和谐适合通勤。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W07\",\n        \"bottom\": \"W04\",\n        \"outer\": \"W10\",\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"卡其棉质外套搭配米色混纺下装，中和了灰色羊毛上装的厚重感，风格较为休闲。\"\n    }\n  ]\n}"
+    }
+  ],
+  "retry_feedback": [],
+  "error": null,
+  "evidence": "docs/reports/raw/compose_v2/B03.json"
+}

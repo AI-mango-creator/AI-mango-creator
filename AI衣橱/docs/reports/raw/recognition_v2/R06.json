@@ -1,0 +1,62 @@
+{
+  "case_id": "R06",
+  "title": "卡其工装短裤（商品图）",
+  "image": "images/cloth06.jpg",
+  "image_bytes": 26639,
+  "model": "qwen3.8-omni-flash",
+  "prompt_file": "prompts/item_extract.v2.md",
+  "prompt_version": "item_extract.v2",
+  "prompt_sha256_prefix": "0489692373e6ea85",
+  "timestamp": "2026-11-13T15:51:13+0800",
+  "http_status": 200,
+  "raw_content": "```json\n{\n  \"items\": [\n    {\n      \"category\": \"bottom\",\n      \"sub\": \"工装短裤\",\n      \"colors\": [\n        \"卡其色\"\n      ],\n      \"material\": \"棉质感面料\",\n      \"pattern\": \"纯色\",\n      \"warmth\": 1,\n      \"formality\": 2,\n      \"seasons\": [\n        \"summer\"\n      ],\n      \"confidence\": 0.98\n    }\n  ]\n}\n```",
+  "latency_ms": 9307,
+  "attempts": [
+    {
+      "http_status": null,
+      "raw_content": null,
+      "latency_ms": 5006,
+      "error": "无法连接识别服务，请检查网络。",
+      "category": "network"
+    },
+    {
+      "http_status": 200,
+      "raw_content": "```json\n{\n  \"items\": [\n    {\n      \"category\": \"bottom\",\n      \"sub\": \"工装短裤\",\n      \"colors\": [\n        \"卡其色\"\n      ],\n      \"material\": \"棉质感面料\",\n      \"pattern\": \"纯色\",\n      \"warmth\": 1,\n      \"formality\": 2,\n      \"seasons\": [\n        \"summer\"\n      ],\n      \"confidence\": 0.98\n    }\n  ]\n}\n```",
+      "latency_ms": 4300,
+      "error": null,
+      "category": null
+    }
+  ],
+  "error": null,
+  "category": null,
+  "had_fence": true,
+  "parse_ok": true,
+  "parsed": {
+    "items": [
+      {
+        "category": "bottom",
+        "sub": "工装短裤",
+        "colors": [
+          "卡其色"
+        ],
+        "material": "棉质感面料",
+        "pattern": "纯色",
+        "warmth": 1,
+        "formality": 2,
+        "seasons": [
+          "summer"
+        ],
+        "confidence": 0.98
+      }
+    ]
+  },
+  "checks": {
+    "category": true,
+    "sub_in": true,
+    "color_in": true,
+    "formality_range": true,
+    "confidence_gte": true
+  },
+  "item_count": 1,
+  "passed": true
+}

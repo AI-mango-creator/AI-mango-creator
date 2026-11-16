@@ -1,0 +1,57 @@
+{
+  "case_id": "R05",
+  "title": "棕蓝格纹衬衫（商品图）",
+  "image": "images/cloth05.jpg",
+  "image_bytes": 36576,
+  "model": "qwen3.8-omni-flash",
+  "prompt_file": "prompts/item_extract.v2.md",
+  "prompt_version": "item_extract.v2",
+  "prompt_sha256_prefix": "0489692373e6ea85",
+  "timestamp": "2026-11-13T15:51:12+0800",
+  "http_status": 200,
+  "raw_content": "```json\n{\n  \"items\": [\n    {\n      \"category\": \"top\",\n      \"sub\": \"长袖衬衫\",\n      \"colors\": [\n        \"棕色\"\n      ],\n      \"material\": \"棉\",\n      \"pattern\": \"格纹\",\n      \"warmth\": 3,\n      \"formality\": 2,\n      \"seasons\": [\n        \"spring\",\n        \"autumn\"\n      ],\n      \"confidence\": 0.98\n    }\n  ]\n}\n```",
+  "latency_ms": 8441,
+  "attempts": [
+    {
+      "http_status": 200,
+      "raw_content": "```json\n{\n  \"items\": [\n    {\n      \"category\": \"top\",\n      \"sub\": \"长袖衬衫\",\n      \"colors\": [\n        \"棕色\"\n      ],\n      \"material\": \"棉\",\n      \"pattern\": \"格纹\",\n      \"warmth\": 3,\n      \"formality\": 2,\n      \"seasons\": [\n        \"spring\",\n        \"autumn\"\n      ],\n      \"confidence\": 0.98\n    }\n  ]\n}\n```",
+      "latency_ms": 8441,
+      "error": null,
+      "category": null
+    }
+  ],
+  "error": null,
+  "category": null,
+  "had_fence": true,
+  "parse_ok": true,
+  "parsed": {
+    "items": [
+      {
+        "category": "top",
+        "sub": "长袖衬衫",
+        "colors": [
+          "棕色"
+        ],
+        "material": "棉",
+        "pattern": "格纹",
+        "warmth": 3,
+        "formality": 2,
+        "seasons": [
+          "spring",
+          "autumn"
+        ],
+        "confidence": 0.98
+      }
+    ]
+  },
+  "checks": {
+    "category": true,
+    "sub_in": true,
+    "color_in": true,
+    "formality_range": true,
+    "confidence_gte": true,
+    "pattern": true
+  },
+  "item_count": 1,
+  "passed": true
+}

@@ -1,0 +1,46 @@
+{
+  "case_id": "R09",
+  "title": "米白厚底跑鞋（商品图，白底）",
+  "image": "images/cloth09.jpg",
+  "image_bytes": 52510,
+  "model": "qwen3.8-omni-flash",
+  "prompt_file": "prompts/item_extract.v1.md",
+  "prompt_sha256_prefix": "148a10064d22f145",
+  "http_status": 200,
+  "raw_content": "{\"items\":[{\"category\":\"shoes\",\"sub\":\"运动鞋\",\"colors\":[\"白色\",\"灰色\"],\"material\":\"麂皮/网布/橡胶\",\"pattern\":\"纯色\",\"warmth\":3,\"formality\":1,\"seasons\":[\"spring\",\"summer\",\"autumn\",\"winter\"],\"confidence\":0.98}]}",
+  "latency_ms": 5880,
+  "had_fence": false,
+  "parse_ok": true,
+  "parsed": {
+    "items": [
+      {
+        "category": "shoes",
+        "sub": "运动鞋",
+        "colors": [
+          "白色",
+          "灰色"
+        ],
+        "material": "麂皮/网布/橡胶",
+        "pattern": "纯色",
+        "warmth": 3,
+        "formality": 1,
+        "seasons": [
+          "spring",
+          "summer",
+          "autumn",
+          "winter"
+        ],
+        "confidence": 0.98
+      }
+    ]
+  },
+  "item_count": 1,
+  "checks": {
+    "category": true,
+    "sub_in": true,
+    "color_in": true,
+    "formality_range": true,
+    "confidence_gte": true
+  },
+  "passed": true
+}

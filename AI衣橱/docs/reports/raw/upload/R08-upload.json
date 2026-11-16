@@ -1,0 +1,79 @@
+{
+  "case_id": "R08",
+  "photo": "cases/images/cloth08.jpg",
+  "interaction": "file_selection",
+  "timestamp": "2026-11-13T15:07:19.843Z",
+  "response": {
+    "draft_id": "319d30a7-0192-4a86-a791-3486ac304fc9",
+    "items": [
+      {
+        "sources": {
+          "sources": "derived",
+          "id": "derived",
+          "name": "model",
+          "image_path": "user",
+          "category": "model",
+          "sub": "model",
+          "colors": "model",
+          "material": "model",
+          "pattern": "model",
+          "warmth": "model",
+          "formality": "model",
+          "seasons": "model",
+          "confidence": "model",
+          "needs_confirm": "derived",
+          "user_edited": "derived",
+          "created_at": "derived",
+          "_corrections": {
+            "source": "derived",
+            "entries": []
+          },
+          "_upload": {
+            "source": "derived",
+            "draft_id": "319d30a7-0192-4a86-a791-3486ac304fc9",
+            "photo_sha256": "7fecc714addb8420d09ecf6f95dccf093b5fdb398f61e0261c5f3aa8abec2368"
+          }
+        },
+        "id": "U319d30a701924a86a7913486ac304fc9-00",
+        "name": null,
+        "image_path": "uploads/319d30a701924a86a7913486ac304fc9.jpg",
+        "category": "shoes",
+        "sub": "Air Jordan 1 Low运动鞋",
+        "colors": [
+          "白色",
+          "黑色",
+          "卡其色"
+        ],
+        "material": "皮革",
+        "pattern": "拼色",
+        "warmth": 3,
+        "formality": 2,
+        "seasons": [
+          "spring",
+          "summer",
+          "autumn"
+        ],
+        "confidence": 0.98,
+        "needs_confirm": false,
+        "user_edited": false,
+        "created_at": "2026-11-13T15:07:19.743157Z"
+      }
+    ],
+    "corrections": [],
+    "latency_ms": 8761,
+    "prompt_version": "item_extract.v2",
+    "reused": false
+  },
+  "archive_ms": 8880,
+  "card": {
+    "id": "U319d30a701924a86a7913486ac304fc9-00",
+    "highlighted": "true",
+    "cardCount": 1,
+    "photoLoaded": true
+  },
+  "viewport": {
+    "width": 375,
+    "height": 812,
+    "scrollWidth": 375
+  }
+}

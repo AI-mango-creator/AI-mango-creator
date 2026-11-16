@@ -1,0 +1,133 @@
+{
+  "case_id": "B07",
+  "timestamp": "2026-11-13T15:27:15+08:00",
+  "model": "qwen3.8-flash",
+  "prompt_version": "outfit_compose.v1",
+  "source": "真实调用",
+  "input": {
+    "temp_c": 26,
+    "occasion": "commute",
+    "formality_target": [
+      3,
+      5
+    ],
+    "excluded": []
+  },
+  "expect": {
+    "set_count": 3,
+    "must_not_use": [
+      "W02",
+      "W07",
+      "W10",
+      "W12"
+    ],
+    "all_items_in_wardrobe": true
+  },
+  "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，黑色皮革鞋履提供正式度支撑，适合26度炎热通勤。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W11\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装与藏青混纺下装组合，黑色皮革鞋履提升整体正式感，适应高温环境。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W06\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配黑色高正式度混纺下装，同色系黑色皮革鞋履确保通勤着装规范。\"\n    }\n  ]\n}",
+  "parsed": {
+    "sets": [
+      {
+        "slots": {
+          "top": "W01",
+          "bottom": "W04",
+          "outer": null,
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "白色棉质上装搭配米色混纺下装，黑色皮革鞋履提供正式度支撑，适合26度炎热通勤。"
+      },
+      {
+        "slots": {
+          "top": "W01",
+          "bottom": "W11",
+          "outer": null,
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "白色棉质上装与藏青混纺下装组合，黑色皮革鞋履提升整体正式感，适应高温环境。"
+      },
+      {
+        "slots": {
+          "top": "W01",
+          "bottom": "W06",
+          "outer": null,
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "白色棉质上装搭配黑色高正式度混纺下装，同色系黑色皮革鞋履确保通勤着装规范。"
+      }
+    ]
+  },
+  "parse_ok": true,
+  "http_status": 200,
+  "candidate_ids": [
+    "W01",
+    "W04",
+    "W06",
+    "W09",
+    "W11"
+  ],
+  "band": "hot",
+  "composable_count": 3,
+  "latency_ms": 5774,
+  "degraded": false,
+  "degrade_reason": null,
+  "result": {
+    "sets": [
+      {
+        "slots": {
+          "top": "W01",
+          "bottom": "W04",
+          "outer": null,
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "白色棉质上装搭配米色混纺下装，黑色皮革鞋履提供正式度支撑，适合26度炎热通勤。"
+      },
+      {
+        "slots": {
+          "top": "W01",
+          "bottom": "W11",
+          "outer": null,
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "白色棉质上装与藏青混纺下装组合，黑色皮革鞋履提升整体正式感，适应高温环境。"
+      },
+      {
+        "slots": {
+          "top": "W01",
+          "bottom": "W06",
+          "outer": null,
+          "shoes": "W09",
+          "dress": null
+        },
+        "reason": "白色棉质上装搭配黑色高正式度混纺下装，同色系黑色皮革鞋履确保通勤着装规范。"
+      }
+    ],
+    "shortage": null,
+    "shortage_hint": null,
+    "degraded": false,
+    "latency_ms": 5773,
+    "prompt_version": "outfit_compose.v1",
+    "degrade_reason": null
+  },
+  "checks": {
+    "set_count": true,
+    "must_not_use": true,
+    "all_items_in_wardrobe": true
+  },
+  "passed": true,
+  "failure_reasons": [],
+  "attribution": "—",
+  "attempts": [
+    {
+      "timestamp": "2026-11-13T15:27:15+08:00",
+      "http_status": 200,
+      "raw_content": "{\n  \"sets\": [\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W04\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配米色混纺下装，黑色皮革鞋履提供正式度支撑，适合26度炎热通勤。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W11\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装与藏青混纺下装组合，黑色皮革鞋履提升整体正式感，适应高温环境。\"\n    },\n    {\n      \"slots\": {\n        \"top\": \"W01\",\n        \"bottom\": \"W06\",\n        \"outer\": null,\n        \"shoes\": \"W09\",\n        \"dress\": null\n      },\n      \"reason\": \"白色棉质上装搭配黑色高正式度混纺下装，同色系黑色皮革鞋履确保通勤着装规范。\"\n    }\n  ]\n}"
+    }
+  ],
+  "retry_feedback": [],
+  "error": null,
+  "evidence": "/Users/yuanying/Desktop/算法衣橱/docs/reports/raw/compose/B07.json"
+}

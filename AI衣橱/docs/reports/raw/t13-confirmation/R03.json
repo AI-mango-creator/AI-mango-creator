@@ -1,0 +1,77 @@
+{
+  "case_id": "R03",
+  "photo": "cloth03.jpg",
+  "timestamp": "2026-11-13T16:17:30.317Z",
+  "response": {
+    "at": 1794586639707,
+    "status": 201,
+    "body": {
+      "draft_id": "85d7d992-06b7-4594-86d5-cbc47c6771eb",
+      "items": [
+        {
+          "sources": {
+            "sources": "derived",
+            "owner_id": "derived",
+            "id": "derived",
+            "name": "model",
+            "image_path": "user",
+            "category": "model",
+            "sub": "model",
+            "colors": "model",
+            "material": "model",
+            "pattern": "model",
+            "warmth": "model",
+            "formality": "model",
+            "seasons": "model",
+            "confidence": "model",
+            "needs_confirm": "derived",
+            "user_edited": "derived",
+            "created_at": "derived",
+            "_corrections": {
+              "source": "derived",
+              "entries": []
+            },
+            "_upload": {
+              "source": "derived",
+              "draft_id": "85d7d992-06b7-4594-86d5-cbc47c6771eb",
+              "photo_sha256": "cdf688fa3e07e942a0b01fcad0775b4d8537a8aeb1aadba667d15c4536a172e2"
+            }
+          },
+          "owner_id": "276adcc8-8dae-46cc-bbd8-b2596a0466dd",
+          "id": "U276adcc88dae46ccbbd8b2596a0466dd85d7d99206b7459486d5cbc47c6771eb-00",
+          "name": null,
+          "image_path": "uploads/276adcc8-8dae-46cc-bbd8-b2596a0466dd/85d7d99206b7459486d5cbc47c6771eb.jpg",
+          "category": "bottom",
+          "sub": "阔腿裤",
+          "colors": [
+            "黑色"
+          ],
+          "material": "尼龙",
+          "pattern": "纯色",
+          "warmth": 2,
+          "formality": 2,
+          "seasons": [
+            "spring",
+            "summer",
+            "autumn"
+          ],
+          "confidence": 0.95,
+          "needs_confirm": true,
+          "user_edited": false,
+          "created_at": "2026-11-13T16:17:30.283928Z"
+        }
+      ],
+      "corrections": [],
+      "latency_ms": 10579,
+      "prompt_version": "item_extract.v2",
+      "reused": false
+    }
+  },
+  "card_ms": 10615,
+  "viewport": {
+    "width": 375,
+    "height": 812,
+    "scrollWidth": 375
+  },
+  "pending_visible": true
+}

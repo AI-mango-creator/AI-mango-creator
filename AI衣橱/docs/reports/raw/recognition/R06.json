@@ -1,0 +1,42 @@
+{
+  "case_id": "R06",
+  "title": "卡其工装短裤（商品图）",
+  "image": "images/cloth06.jpg",
+  "image_bytes": 26639,
+  "model": "qwen3.8-omni-flash",
+  "prompt_file": "prompts/item_extract.v1.md",
+  "prompt_sha256_prefix": "148a10064d22f145",
+  "http_status": 200,
+  "raw_content": "```json\n{\"items\":[{\"category\":\"bottom\",\"sub\":\"工装短裤\",\"colors\":[\"卡其色\"],\"material\":\"棉\",\"pattern\":\"纯色\",\"warmth\":1,\"formality\":1,\"seasons\":[\"summer\"],\"confidence\":0.95}]}\n```",
+  "latency_ms": 18302,
+  "had_fence": true,
+  "parse_ok": true,
+  "parsed": {
+    "items": [
+      {
+        "category": "bottom",
+        "sub": "工装短裤",
+        "colors": [
+          "卡其色"
+        ],
+        "material": "棉",
+        "pattern": "纯色",
+        "warmth": 1,
+        "formality": 1,
+        "seasons": [
+          "summer"
+        ],
+        "confidence": 0.95
+      }
+    ]
+  },
+  "item_count": 1,
+  "checks": {
+    "category": true,
+    "sub_in": true,
+    "color_in": true,
+    "formality_range": true,
+    "confidence_gte": true
+  },
+  "passed": true
+}

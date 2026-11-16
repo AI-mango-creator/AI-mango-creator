@@ -1,0 +1,56 @@
+{
+  "case_id": "R07",
+  "title": "黑底白条纹运动短裤（实拍）",
+  "image": "images/cloth07.jpg",
+  "image_bytes": 215683,
+  "model": "qwen3.8-omni-flash",
+  "prompt_file": "prompts/item_extract.v2.md",
+  "prompt_version": "item_extract.v2",
+  "prompt_sha256_prefix": "0489692373e6ea85",
+  "timestamp": "2026-11-13T15:51:19+0800",
+  "http_status": 200,
+  "raw_content": "```json\n{\n  \"items\": [\n    {\n      \"category\": \"bottom\",\n      \"sub\": \"运动短裤\",\n      \"colors\": [\n        \"黑色\"\n      ],\n      \"material\": \"聚酯纤维\",\n      \"pattern\": \"条纹\",\n      \"warmth\": 1,\n      \"formality\": 1,\n      \"seasons\": [\n        \"summer\"\n      ],\n      \"confidence\": 0.98\n    }\n  ]\n}\n```",
+  "latency_ms": 7581,
+  "attempts": [
+    {
+      "http_status": 200,
+      "raw_content": "```json\n{\n  \"items\": [\n    {\n      \"category\": \"bottom\",\n      \"sub\": \"运动短裤\",\n      \"colors\": [\n        \"黑色\"\n      ],\n      \"material\": \"聚酯纤维\",\n      \"pattern\": \"条纹\",\n      \"warmth\": 1,\n      \"formality\": 1,\n      \"seasons\": [\n        \"summer\"\n      ],\n      \"confidence\": 0.98\n    }\n  ]\n}\n```",
+      "latency_ms": 7581,
+      "error": null,
+      "category": null
+    }
+  ],
+  "error": null,
+  "category": null,
+  "had_fence": true,
+  "parse_ok": true,
+  "parsed": {
+    "items": [
+      {
+        "category": "bottom",
+        "sub": "运动短裤",
+        "colors": [
+          "黑色"
+        ],
+        "material": "聚酯纤维",
+        "pattern": "条纹",
+        "warmth": 1,
+        "formality": 1,
+        "seasons": [
+          "summer"
+        ],
+        "confidence": 0.98
+      }
+    ]
+  },
+  "checks": {
+    "category": true,
+    "sub_in": true,
+    "color_in": true,
+    "formality_range": true,
+    "confidence_gte": true,
+    "pattern": true
+  },
+  "item_count": 1,
+  "passed": true
+}

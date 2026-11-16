@@ -1,0 +1,778 @@
+{
+  "timestamp": "2026-11-13T23:51:02.576140+08:00",
+  "kind": "真实TestClient multipart与SQLite，无模型注入",
+  "owners": {
+    "A": "1dbd7aae-2f1a-4562-86fe-4949d1cc06db",
+    "B": "7d2516b1-74f2-4454-860f-e77f60473891"
+  },
+  "responses": {
+    "1dbd7aae-2f1a-4562-86fe-4949d1cc06db": {
+      "status": 201,
+      "body": {
+        "draft_id": "bb70fa14-1587-4eb1-9639-e369e7d04527",
+        "items": [
+          {
+            "sources": {
+              "sources": "derived",
+              "owner_id": "derived",
+              "id": "derived",
+              "name": "model",
+              "image_path": "user",
+              "category": "model",
+              "sub": "model",
+              "colors": "model",
+              "material": "model",
+              "pattern": "model",
+              "warmth": "model",
+              "formality": "model",
+              "seasons": "model",
+              "confidence": "model",
+              "needs_confirm": "derived",
+              "user_edited": "derived",
+              "created_at": "derived",
+              "_corrections": {
+                "source": "derived",
+                "entries": []
+              },
+              "_upload": {
+                "source": "derived",
+                "draft_id": "bb70fa14-1587-4eb1-9639-e369e7d04527",
+                "photo_sha256": "92ee8dc61b79130e740fe032f2ee70056f7b40694a4df8a35ccbde33c63746bb"
+              }
+            },
+            "owner_id": "1dbd7aae-2f1a-4562-86fe-4949d1cc06db",
+            "id": "U1dbd7aae2f1a456286fe4949d1cc06dbbb70fa1415874eb19639e369e7d04527-00",
+            "name": null,
+            "image_path": "uploads/1dbd7aae-2f1a-4562-86fe-4949d1cc06db/bb70fa1415874eb19639e369e7d04527.jpg",
+            "category": "outer",
+            "sub": "连帽冲锋衣",
+            "colors": [
+              "灰色"
+            ],
+            "material": "化纤面料",
+            "pattern": "纯色",
+            "warmth": 2,
+            "formality": 1,
+            "seasons": [
+              "spring",
+              "autumn"
+            ],
+            "confidence": 0.98,
+            "needs_confirm": false,
+            "user_edited": false,
+            "created_at": "2026-11-13T15:51:09.188952Z"
+          }
+        ],
+        "corrections": [],
+        "latency_ms": 6604,
+        "prompt_version": "item_extract.v2",
+        "reused": false
+      },
+      "client_total_ms": 6607
+    },
+    "7d2516b1-74f2-4454-860f-e77f60473891": {
+      "status": 201,
+      "body": {
+        "draft_id": "8e9410e6-a6f0-4455-bbf0-e0c0f2b0d56f",
+        "items": [
+          {
+            "sources": {
+              "sources": "derived",
+              "owner_id": "derived",
+              "id": "derived",
+              "name": "model",
+              "image_path": "user",
+              "category": "model",
+              "sub": "model",
+              "colors": "model",
+              "material": "model",
+              "pattern": "model",
+              "warmth": "model",
+              "formality": "model",
+              "seasons": "model",
+              "confidence": "model",
+              "needs_confirm": "derived",
+              "user_edited": "derived",
+              "created_at": "derived",
+              "_corrections": {
+                "source": "derived",
+                "entries": []
+              },
+              "_upload": {
+                "source": "derived",
+                "draft_id": "8e9410e6-a6f0-4455-bbf0-e0c0f2b0d56f",
+                "photo_sha256": "c23909f8a48ac0b5cf1bf06edc0e920e84bc1a6b01a3e6b6dab20b9c42c9a456"
+              }
+            },
+            "owner_id": "7d2516b1-74f2-4454-860f-e77f60473891",
+            "id": "U7d2516b174f24454860fe77f604738918e9410e6a6f04455bbf0e0c0f2b0d56f-00",
+            "name": null,
+            "image_path": "uploads/7d2516b1-74f2-4454-860f-e77f60473891/8e9410e6a6f04455bbf0e0c0f2b0d56f.jpg",
+            "category": "top",
+            "sub": "拉链长袖短款上衣",
+            "colors": [
+              "白色"
+            ],
+            "material": "化纤面料",
+            "pattern": "纯色",
+            "warmth": 2,
+            "formality": 1,
+            "seasons": [
+              "spring",
+              "summer",
+              "autumn"
+            ],
+            "confidence": 0.95,
+            "needs_confirm": false,
+            "user_edited": false,
+            "created_at": "2026-11-13T15:51:15.655085Z"
+          }
+        ],
+        "corrections": [],
+        "latency_ms": 6458,
+        "prompt_version": "item_extract.v2",
+        "reused": false
+      },
+      "client_total_ms": 6461
+    }
+  },
+  "B_before_upload": [],
+  "A_list_ids": [
+    "U1dbd7aae2f1a456286fe4949d1cc06dbbb70fa1415874eb19639e369e7d04527-00"
+  ],
+  "B_list_ids": [
+    "U7d2516b174f24454860fe77f604738918e9410e6a6f04455bbf0e0c0f2b0d56f-00"
+  ],
+  "cross_photo_status": 404,
+  "cross_patch_status": 404,
+  "dev_seed_A": [
+    14,
+    15
+  ],
+  "real_compose": {
+    "status": 200,
+    "body": {
+      "session_id": "S13ab3384c78844139a9fea3f6b296383",
+      "sets": [
+        {
+          "id": "S13ab3384c78844139a9fea3f6b296383-1",
+          "rank": 1,
+          "slots": {
+            "top": "1dbd7aae2f1a456286fe4949d1cc06db:W01",
+            "bottom": "1dbd7aae2f1a456286fe4949d1cc06db:W04",
+            "outer": "1dbd7aae2f1a456286fe4949d1cc06db:W10",
+            "shoes": "1dbd7aae2f1a456286fe4949d1cc06db:W09",
+            "dress": null
+          },
+          "reason": "白色棉质上装与米色混纺下装搭配卡其色棉质外套，黑色皮革鞋提供正式度支撑，适合凉爽通勤。",
+          "items": [
+            {
+              "sources": {
+                "sources": "derived",
+                "owner_id": "derived",
+                "id": "derived",
+                "name": "model",
+                "image_path": "user",
+                "category": "model",
+                "sub": "model",
+                "colors": "model",
+                "material": "model",
+                "pattern": "model",
+                "warmth": "model",
+                "formality": "model",
+                "seasons": "model",
+                "confidence": "model",
+                "needs_confirm": "derived",
+                "user_edited": "derived",
+                "created_at": "derived"
+              },
+              "owner_id": "1dbd7aae-2f1a-4562-86fe-4949d1cc06db",
+              "id": "1dbd7aae2f1a456286fe4949d1cc06db:W01",
+              "name": "白色棉质衬衫",
+              "image_path": null,
+              "category": "top",
+              "sub": "衬衫",
+              "colors": [
+                "白色"
+              ],
+              "material": "棉",
+              "pattern": "纯色",
+              "warmth": 2,
+              "formality": 3,
+              "seasons": [
+                "spring",
+                "summer",
+                "autumn",
+                "winter"
+              ],
+              "confidence": null,
+              "needs_confirm": false,
+              "user_edited": false,
+              "created_at": "2026-11-13T15:51:15.675073Z"
+            },
+            {
+              "sources": {
+                "sources": "derived",
+                "owner_id": "derived",
+                "id": "derived",
+                "name": "model",
+                "image_path": "user",
+                "category": "model",
+                "sub": "model",
+                "colors": "model",
+                "material": "model",
+                "pattern": "model",
+                "warmth": "model",
+                "formality": "model",
+                "seasons": "model",
+                "confidence": "model",
+                "needs_confirm": "derived",
+                "user_edited": "derived",
+                "created_at": "derived"
+              },
+              "owner_id": "1dbd7aae-2f1a-4562-86fe-4949d1cc06db",
+              "id": "1dbd7aae2f1a456286fe4949d1cc06db:W04",
+              "name": "米色阔腿裤",
+              "image_path": null,
+              "category": "bottom",
+              "sub": "阔腿裤",
+              "colors": [
+                "米色"
+              ],
+              "material": "混纺",
+              "pattern": "纯色",
+              "warmth": 2,
+              "formality": 3,
+              "seasons": [
+                "spring",
+                "summer",
+                "autumn"
+              ],
+              "confidence": null,
+              "needs_confirm": false,
+              "user_edited": false,
+              "created_at": "2026-11-13T15:51:15.675102Z"
+            },
+            {
+              "sources": {
+                "sources": "derived",
+                "owner_id": "derived",
+                "id": "derived",
+                "name": "model",
+                "image_path": "user",
+                "category": "model",
+                "sub": "model",
+                "colors": "model",
+                "material": "model",
+                "pattern": "model",
+                "warmth": "model",
+                "formality": "model",
+                "seasons": "model",
+                "confidence": "model",
+                "needs_confirm": "derived",
+                "user_edited": "derived",
+                "created_at": "derived"
+              },
+              "owner_id": "1dbd7aae-2f1a-4562-86fe-4949d1cc06db",
+              "id": "1dbd7aae2f1a456286fe4949d1cc06db:W10",
+              "name": "卡其色风衣",
+              "image_path": null,
+              "category": "outer",
+              "sub": "风衣",
+              "colors": [
+                "卡其"
+              ],
+              "material": "棉",
+              "pattern": "纯色",
+              "warmth": 3,
+              "formality": 3,
+              "seasons": [
+                "spring",
+                "autumn"
+              ],
+              "confidence": null,
+              "needs_confirm": false,
+              "user_edited": false,
+              "created_at": "2026-11-13T15:51:15.675134Z"
+            },
+            {
+              "sources": {
+                "sources": "derived",
+                "owner_id": "derived",
+                "id": "derived",
+                "name": "model",
+                "image_path": "user",
+                "category": "model",
+                "sub": "model",
+                "colors": "model",
+                "material": "model",
+                "pattern": "model",
+                "warmth": "model",
+                "formality": "model",
+                "seasons": "model",
+                "confidence": "model",
+                "needs_confirm": "derived",
+                "user_edited": "derived",
+                "created_at": "derived"
+              },
+              "owner_id": "1dbd7aae-2f1a-4562-86fe-4949d1cc06db",
+              "id": "1dbd7aae2f1a456286fe4949d1cc06db:W09",
+              "name": "黑色乐福鞋",
+              "image_path": null,
+              "category": "shoes",
+              "sub": "乐福鞋",
+              "colors": [
+                "黑色"
+              ],
+              "material": "皮革",
+              "pattern": "纯色",
+              "warmth": 2,
+              "formality": 4,
+              "seasons": [
+                "spring",
+                "summer",
+                "autumn",
+                "winter"
+              ],
+              "confidence": null,
+              "needs_confirm": false,
+              "user_edited": false,
+              "created_at": "2026-11-13T15:51:15.675130Z"
+            }
+          ]
+        },
+        {
+          "id": "S13ab3384c78844139a9fea3f6b296383-2",
+          "rank": 2,
+          "slots": {
+            "top": "1dbd7aae2f1a456286fe4949d1cc06db:W07",
+            "bottom": "1dbd7aae2f1a456286fe4949d1cc06db:W11",
+            "outer": "1dbd7aae2f1a456286fe4949d1cc06db:W03",
+            "shoes": "1dbd7aae2f1a456286fe4949d1cc06db:W09",
+            "dress": null
+          },
+          "reason": "灰色羊毛厚上装配藏青混纺下装及同色系羊毛混纺外套，保暖且色调统一，符合凉爽天气需求。",
+          "items": [
+            {
+              "sources": {
+                "sources": "derived",
+                "owner_id": "derived",
+                "id": "derived",
+                "name": "model",
+                "image_path": "user",
+                "category": "model",
+                "sub": "model",
+                "colors": "model",
+                "material": "model",
+                "pattern": "model",
+                "warmth": "model",
+                "formality": "model",
+                "seasons": "model",
+                "confidence": "model",
+                "needs_confirm": "derived",
+                "user_edited": "derived",
+                "created_at": "derived"
+              },
+              "owner_id": "1dbd7aae-2f1a-4562-86fe-4949d1cc06db",
+              "id": "1dbd7aae2f1a456286fe4949d1cc06db:W07",
+              "name": "灰色圆领羊毛衫",
+              "image_path": null,
+              "category": "top",
+              "sub": "毛衫",
+              "colors": [
+                "灰色"
+              ],
+              "material": "羊毛",
+              "pattern": "纯色",
+              "warmth": 4,
+              "formality": 3,
+              "seasons": [
+                "autumn",
+                "winter"
+              ],
+              "confidence": null,
+              "needs_confirm": false,
+              "user_edited": false,
+              "created_at": "2026-11-13T15:51:15.675122Z"
+            },
+            {
+              "sources": {
+                "sources": "derived",
+                "owner_id": "derived",
+                "id": "derived",
+                "name": "model",
+                "image_path": "user",
+                "category": "model",
+                "sub": "model",
+                "colors": "model",
+                "material": "model",
+                "pattern": "model",
+                "warmth": "model",
+                "formality": "model",
+                "seasons": "model",
+                "confidence": "model",
+                "needs_confirm": "derived",
+                "user_edited": "derived",
+                "created_at": "derived"
+              },
+              "owner_id": "1dbd7aae-2f1a-4562-86fe-4949d1cc06db",
+              "id": "1dbd7aae2f1a456286fe4949d1cc06db:W11",
+              "name": "藏青A字半裙",
+              "image_path": null,
+              "category": "bottom",
+              "sub": "半身裙",
+              "colors": [
+                "藏青"
+              ],
+              "material": "混纺",
+              "pattern": "纯色",
+              "warmth": 2,
+              "formality": 4,
+              "seasons": [
+                "spring",
+                "summer",
+                "autumn",
+                "winter"
+              ],
+              "confidence": null,
+              "needs_confirm": false,
+              "user_edited": false,
+              "created_at": "2026-11-13T15:51:15.675138Z"
+            },
+            {
+              "sources": {
+                "sources": "derived",
+                "owner_id": "derived",
+                "id": "derived",
+                "name": "model",
+                "image_path": "user",
+                "category": "model",
+                "sub": "model",
+                "colors": "model",
+                "material": "model",
+                "pattern": "model",
+                "warmth": "model",
+                "formality": "model",
+                "seasons": "model",
+                "confidence": "model",
+                "needs_confirm": "derived",
+                "user_edited": "derived",
+                "created_at": "derived"
+              },
+              "owner_id": "1dbd7aae-2f1a-4562-86fe-4949d1cc06db",
+              "id": "1dbd7aae2f1a456286fe4949d1cc06db:W03",
+              "name": "藏青针织开衫",
+              "image_path": null,
+              "category": "outer",
+              "sub": "针织开衫",
+              "colors": [
+                "藏青"
+              ],
+              "material": "羊毛混纺",
+              "pattern": "纯色",
+              "warmth": 3,
+              "formality": 3,
+              "seasons": [
+                "spring",
+                "autumn"
+              ],
+              "confidence": null,
+              "needs_confirm": false,
+              "user_edited": false,
+              "created_at": "2026-11-13T15:51:15.675097Z"
+            },
+            {
+              "sources": {
+                "sources": "derived",
+                "owner_id": "derived",
+                "id": "derived",
+                "name": "model",
+                "image_path": "user",
+                "category": "model",
+                "sub": "model",
+                "colors": "model",
+                "material": "model",
+                "pattern": "model",
+                "warmth": "model",
+                "formality": "model",
+                "seasons": "model",
+                "confidence": "model",
+                "needs_confirm": "derived",
+                "user_edited": "derived",
+                "created_at": "derived"
+              },
+              "owner_id": "1dbd7aae-2f1a-4562-86fe-4949d1cc06db",
+              "id": "1dbd7aae2f1a456286fe4949d1cc06db:W09",
+              "name": "黑色乐福鞋",
+              "image_path": null,
+              "category": "shoes",
+              "sub": "乐福鞋",
+              "colors": [
+                "黑色"
+              ],
+              "material": "皮革",
+              "pattern": "纯色",
+              "warmth": 2,
+              "formality": 4,
+              "seasons": [
+                "spring",
+                "summer",
+                "autumn",
+                "winter"
+              ],
+              "confidence": null,
+              "needs_confirm": false,
+              "user_edited": false,
+              "created_at": "2026-11-13T15:51:15.675130Z"
+            }
+          ]
+        },
+        {
+          "id": "S13ab3384c78844139a9fea3f6b296383-3",
+          "rank": 3,
+          "slots": {
+            "top": "1dbd7aae2f1a456286fe4949d1cc06db:W01",
+            "bottom": "1dbd7aae2f1a456286fe4949d1cc06db:W06",
+            "outer": "1dbd7aae2f1a456286fe4949d1cc06db:W02",
+            "shoes": "1dbd7aae2f1a456286fe4949d1cc06db:W09",
+            "dress": null
+          },
+          "reason": "白色棉质上装与黑色混纺下装形成经典对比，外搭黑色聚酯纤维外套提升正式度，适应通勤场景。",
+          "items": [
+            {
+              "sources": {
+                "sources": "derived",
+                "owner_id": "derived",
+                "id": "derived",
+                "name": "model",
+                "image_path": "user",
+                "category": "model",
+                "sub": "model",
+                "colors": "model",
+                "material": "model",
+                "pattern": "model",
+                "warmth": "model",
+                "formality": "model",
+                "seasons": "model",
+                "confidence": "model",
+                "needs_confirm": "derived",
+                "user_edited": "derived",
+                "created_at": "derived"
+              },
+              "owner_id": "1dbd7aae-2f1a-4562-86fe-4949d1cc06db",
+              "id": "1dbd7aae2f1a456286fe4949d1cc06db:W01",
+              "name": "白色棉质衬衫",
+              "image_path": null,
+              "category": "top",
+              "sub": "衬衫",
+              "colors": [
+                "白色"
+              ],
+              "material": "棉",
+              "pattern": "纯色",
+              "warmth": 2,
+              "formality": 3,
+              "seasons": [
+                "spring",
+                "summer",
+                "autumn",
+                "winter"
+              ],
+              "confidence": null,
+              "needs_confirm": false,
+              "user_edited": false,
+              "created_at": "2026-11-13T15:51:15.675073Z"
+            },
+            {
+              "sources": {
+                "sources": "derived",
+                "owner_id": "derived",
+                "id": "derived",
+                "name": "model",
+                "image_path": "user",
+                "category": "model",
+                "sub": "model",
+                "colors": "model",
+                "material": "model",
+                "pattern": "model",
+                "warmth": "model",
+                "formality": "model",
+                "seasons": "model",
+                "confidence": "model",
+                "needs_confirm": "derived",
+                "user_edited": "derived",
+                "created_at": "derived"
+              },
+              "owner_id": "1dbd7aae-2f1a-4562-86fe-4949d1cc06db",
+              "id": "1dbd7aae2f1a456286fe4949d1cc06db:W06",
+              "name": "黑色西裤",
+              "image_path": null,
+              "category": "bottom",
+              "sub": "西裤",
+              "colors": [
+                "黑色"
+              ],
+              "material": "混纺",
+              "pattern": "纯色",
+              "warmth": 2,
+              "formality": 5,
+              "seasons": [
+                "spring",
+                "summer",
+                "autumn",
+                "winter"
+              ],
+              "confidence": null,
+              "needs_confirm": false,
+              "user_edited": false,
+              "created_at": "2026-11-13T15:51:15.675115Z"
+            },
+            {
+              "sources": {
+                "sources": "derived",
+                "owner_id": "derived",
+                "id": "derived",
+                "name": "model",
+                "image_path": "user",
+                "category": "model",
+                "sub": "model",
+                "colors": "model",
+                "material": "model",
+                "pattern": "model",
+                "warmth": "model",
+                "formality": "model",
+                "seasons": "model",
+                "confidence": "model",
+                "needs_confirm": "derived",
+                "user_edited": "derived",
+                "created_at": "derived"
+              },
+              "owner_id": "1dbd7aae-2f1a-4562-86fe-4949d1cc06db",
+              "id": "1dbd7aae2f1a456286fe4949d1cc06db:W02",
+              "name": "黑色西装外套",
+              "image_path": null,
+              "category": "outer",
+              "sub": "西装外套",
+              "colors": [
+                "黑色"
+              ],
+              "material": "聚酯纤维",
+              "pattern": "纯色",
+              "warmth": 3,
+              "formality": 5,
+              "seasons": [
+                "spring",
+                "autumn"
+              ],
+              "confidence": null,
+              "needs_confirm": false,
+              "user_edited": false,
+              "created_at": "2026-11-13T15:51:15.675089Z"
+            },
+            {
+              "sources": {
+                "sources": "derived",
+                "owner_id": "derived",
+                "id": "derived",
+                "name": "model",
+                "image_path": "user",
+                "category": "model",
+                "sub": "model",
+                "colors": "model",
+                "material": "model",
+                "pattern": "model",
+                "warmth": "model",
+                "formality": "model",
+                "seasons": "model",
+                "confidence": "model",
+                "needs_confirm": "derived",
+                "user_edited": "derived",
+                "created_at": "derived"
+              },
+              "owner_id": "1dbd7aae-2f1a-4562-86fe-4949d1cc06db",
+              "id": "1dbd7aae2f1a456286fe4949d1cc06db:W09",
+              "name": "黑色乐福鞋",
+              "image_path": null,
+              "category": "shoes",
+              "sub": "乐福鞋",
+              "colors": [
+                "黑色"
+              ],
+              "material": "皮革",
+              "pattern": "纯色",
+              "warmth": 2,
+              "formality": 4,
+              "seasons": [
+                "spring",
+                "summer",
+                "autumn",
+                "winter"
+              ],
+              "confidence": null,
+              "needs_confirm": false,
+              "user_edited": false,
+              "created_at": "2026-11-13T15:51:15.675130Z"
+            }
+          ]
+        }
+      ],
+      "shortage": null,
+      "shortage_hint": null,
+      "degraded": false,
+      "degrade_reason": null,
+      "prompt_version": "outfit_compose.v1",
+      "latency_ms": 14863
+    }
+  },
+  "A_before_clear": {
+    "wardrobe_items": 15,
+    "sessions": 1,
+    "outfit_sets": 3,
+    "outfit_items": 12
+  },
+  "B_before_clear": {
+    "wardrobe_items": 1,
+    "sessions": 0,
+    "outfit_sets": 0,
+    "outfit_items": 0
+  },
+  "A_clear": {
+    "status": 200,
+    "body": {
+      "outfit_items": 12,
+      "outfit_sets": 3,
+      "sessions": 1,
+      "wardrobe_items": 15,
+      "photos": 1
+    }
+  },
+  "A_after_clear": {
+    "wardrobe_items": 0,
+    "sessions": 0,
+    "outfit_sets": 0,
+    "outfit_items": 0
+  },
+  "B_after_A_clear": {
+    "wardrobe_items": 1,
+    "sessions": 0,
+    "outfit_sets": 0,
+    "outfit_items": 0
+  },
+  "retained_quota_A": [
+    1,
+    1
+  ],
+  "B_cleanup_status": 200,
+  "B_after_cleanup": {
+    "wardrobe_items": 0,
+    "sessions": 0,
+    "outfit_sets": 0,
+    "outfit_items": 0
+  },
+  "legacy_after": {
+    "wardrobe_items": 24,
+    "sessions": 2,
+    "outfit_sets": 6,
+    "outfit_items": 18
+  }
+}
