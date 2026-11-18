@@ -53,6 +53,27 @@ def legal_response(path, **scenario):
     }}]})
 
 
+def test_saved_profile_used_only_by_owner_and_version_persisted(api, monkeypatch):
+    http, path = api
+    http.patch('/api/profile', json={'height_cm': 168.5, 'body_shape': 'TY'})
+    other = '22222222-2222-4222-8222-222222222222'
+    http.patch('/api/profile', headers={'X-Device-ID': other}, json={'height_cm': 190})
+    sent = []
+
+    def handler(request):
+        body = json.loads(request.content)
+        sent.append(json.loads(body['messages'][1]['content']))
+        return legal_response(path, temp_c=18, occasion='commute')
+
+    transport(monkeypatch, handler)
+    result = http.post('/api/outfits', json={'temp_c': 18, 'occasion': 'commute'})
+    assert result.status_code == 200
+    assert sent[0]['body_profile'] == {'height_cm': 168.5, 'body_shape': 'TY'}
+    assert result.json()['prompt_version'] == 'outfit_compose.v2'
+    with closing(connect_db(path)) as db:
+        assert db.execute('SELECT prompt_version FROM sessions WHERE id=?', (result.json()['session_id'],)).fetchone()[0] == 'outfit_compose.v2'
+
+
 def test_real_pipeline_persists_session_sets_items_and_sources(api, monkeypatch):
     http, path = api
     calls = []

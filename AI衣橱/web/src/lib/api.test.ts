@@ -8,6 +8,19 @@ beforeEach(() => { vi.stubGlobal("localStorage", {
 }); });
 afterEach(() => vi.unstubAllGlobals());
 
+it('手工归类成功后本地卡片移动，失败保持原分类', async () => {
+  const items = [{ ...original, category: null, wardrobe_group: 'unclassified' as const }];
+  const patch = { wardrobe_group: 'jewelry' as const, sub: '项链' };
+  const next = await saveWardrobeItem(items, original.id, patch, async (_, options) => {
+    expect(JSON.parse(options?.body as string)).toEqual(patch);
+    return Response.json({ ...items[0], ...patch });
+  });
+  expect(next[0].wardrobe_group).toBe('jewelry');
+  expect(items[0].wardrobe_group).toBe('unclassified');
+  await expect(saveWardrobeItem(items, original.id, patch, async () => Response.json({ detail: '分类保存失败' }, { status: 503 }))).rejects.toThrow('分类保存失败');
+  expect(items[0].wardrobe_group).toBe('unclassified');
+});
+
 it("删除204无需解析JSON，成功才移除本地卡片并携带设备头", async () => {
   const { deleteWardrobeItem } = await import("./api");
   const items = [original, { ...original, id: "other" }];

@@ -4,7 +4,7 @@ from collections.abc import Sequence
 from itertools import chain, combinations, product
 from pathlib import Path
 
-from app.models import Occasion, WardrobeItem
+from app.models import STORAGE_ONLY_GROUPS, Occasion, WardrobeItem
 
 _SPEC = json.loads(
     (Path(__file__).resolve().parents[2] / "cases" / "cases.json").read_text(encoding="utf-8")
@@ -106,6 +106,8 @@ def _warmth_allowed(item: WardrobeItem, band: str) -> bool:
 
 
 def _allowed_slot(item: WardrobeItem, band: str) -> bool:
+    if item.wardrobe_group in STORAGE_ONLY_GROUPS:
+        return False
     if item.category is None:
         return False
     if item.category == _SLOTS["outer"] and band in _SLOTS["forbidden_outer_bands"]:

@@ -1,4 +1,5 @@
 import { DeviceIdError, deviceHeaders, getDeviceId } from "./deviceId";
+import type { WardrobeGroup } from './wardrobeCategories';
 
 export const categoryLabels = {
   top: "上装", bottom: "下装", dress: "连衣裙", outer: "外套", shoes: "鞋", accessory: "配饰",
@@ -15,6 +16,7 @@ export type WardrobeItem = {
   name: string | null;
   image_path: string | null;
   category: Category | null;
+  wardrobe_group?: WardrobeGroup | null;
   sub: string | null;
   colors: string[];
   material: string | null;
@@ -31,6 +33,7 @@ export type WardrobeItem = {
 
 export type WardrobePatch = Partial<Pick<WardrobeItem, "sub" | "colors" | "material" | "pattern">> & {
   category?: Category;
+  wardrobe_group?: WardrobeGroup;
 };
 type Fetcher = typeof fetch;
 class ApiError extends Error {}

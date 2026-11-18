@@ -111,6 +111,26 @@ def test_prompt_schema_single_source(filtered, scenario, payload):
     assert kwargs == {"schema": Composition, "timeout": 20, "max_retries": 2}
 
 
+def test_body_profile_only_enters_compose_payload(filtered, scenario, payload):
+    ids = [item.id for item in filtered['candidates']]
+    chat = ScriptedChat(json.dumps(payload))
+    result = compose_outfits(filtered, **scenario, chat=chat,
+                             profile={'height_cm': 165.5, 'weight_kg': 55, 'body_shape': 'A'})
+    sent = json.loads(chat.calls[0][0][1]['content'])
+    assert sent['body_profile'] == {'height_cm': 165.5, 'weight_kg': 55, 'body_shape': 'A'}
+    assert [x['id'] for x in sent['candidates']] == ids
+    assert result.prompt_version == 'outfit_compose.v2'
+    assert '不用于' in chat.calls[0][0][0]['content']
+
+
+def test_profile_fallback_preserves_version(filtered, scenario):
+    from app.services.compose import generate_outfits
+    chat = ScriptedChat('not json', 'not json')
+    result = generate_outfits(filtered, **scenario, chat=chat, profile={'height_cm': 170})
+    assert result.degraded
+    assert result.prompt_version == 'outfit_compose.v2'
+
+
 @pytest.fixture
 def client_config(monkeypatch, tmp_path):
     monkeypatch.setattr(client, "ENV_PATH", tmp_path / ".env")

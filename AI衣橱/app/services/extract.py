@@ -10,6 +10,7 @@ from app.llm.errors import public_model_failure
 from app.models import (
     CorrectionAudit,
     ErrorCategory,
+    ExtractionResponse,
     WardrobeItem,
     derive_needs_confirm,
 )
@@ -77,6 +78,22 @@ def parse_items(raw: str, *, image_path: str) -> list[WardrobeItem]:
     return items
 
 
+def parse_items_v3(raw: str, *, image_path: str) -> list[WardrobeItem]:
+    response = ExtractionResponse.model_validate_json(strip_fences(raw))
+    result = []
+    storage_groups = {'set': 'sets', 'bag': 'bags', 'jewelry': 'jewelry', 'unknown': 'unclassified'}
+    for extracted in response.items:
+        values = extracted.model_dump()
+        kind = values['category']
+        if kind in storage_groups:
+            values.update(category=None, wardrobe_group=storage_groups[kind],
+                          sources={'category': 'derived', 'wardrobe_group': 'model'})
+        item = WardrobeItem.model_validate(values | {'id': 'V' + uuid4().hex, 'image_path': image_path})
+        item.needs_confirm = derive_needs_confirm(uploaded=True, user_edited=False)
+        result.append(item)
+    return result
+
+
 def resolve_prompt_file(prompt_file: str) -> Path:
     allowed = {f"prompts/item_extract.v{version}.md" for version in (1, 2)}
     if prompt_file not in allowed:
@@ -98,18 +115,20 @@ def _recognition_failure(category):
 
 def extract_photo(image: Path, *, image_reference: str, mime_type: str, request_id: str, vision=None) -> list[WardrobeItem]:
     """上传与录制共用解析/校正规则；网络唯一出口仍为client.vision。"""
-    prompt = resolve_prompt_file("prompts/item_extract.v2.md").read_text(encoding="utf-8")
+    prompt = (ROOT / 'prompts/item_extract.v3.md').read_text(encoding='utf-8').replace(
+        '{{JSON_SCHEMA}}', json.dumps(ExtractionResponse.model_json_schema(), ensure_ascii=False),
+    )
     call = vision or client.vision
     try:
-        result = call(prompt, image, model="qwen3.8-omni-flash", prompt_version="item_extract.v2",
+        result = call(prompt, image, model="qwen3.8-omni-flash", prompt_version="item_extract.v3",
                       case_id=request_id, timeout=20, max_retries=2, mime_type=mime_type,
-                      validate=lambda raw: parse_items(raw, image_path=image_reference))
+                      validate=lambda raw: parse_items_v3(raw, image_path=image_reference))
     except client.LLMError as error:
         raise _recognition_failure(error.category) from None
     if result.get("error"):
         raise _recognition_failure(ErrorCategory(result.get("category") or "network"))
     try:
-        originals = parse_items(result["raw_content"], image_path=image_reference)
+        originals = parse_items_v3(result["raw_content"], image_path=image_reference)
     except (ValueError, ValidationError):
         raise _recognition_failure(ErrorCategory.PARSE) from None
     if not originals:

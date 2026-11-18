@@ -12,6 +12,31 @@ Occasion = Literal["commute", "date", "weekend", "client_meeting"]
 SessionStatus = Literal["ok", "degraded", "failed"]
 FallbackType = Literal["timeout", "parse_fail", "no_compliant_set"]
 Score = Annotated[int, Field(ge=1, le=5, strict=True)]
+WardrobeGroup = Literal['tops', 'bottoms', 'skirts', 'sets', 'shoes', 'bags', 'jewelry', 'accessories', 'unclassified']
+STORAGE_ONLY_GROUPS = frozenset(('sets', 'bags', 'jewelry', 'unclassified'))
+
+
+def wardrobe_group_for(category, sub):
+    if category == 'bottom' and '裙' in (sub or ''):
+        return 'skirts'
+    return {'top': 'tops', 'outer': 'tops', 'bottom': 'bottoms', 'dress': 'skirts',
+            'shoes': 'shoes', 'accessory': 'accessories'}.get(category, 'unclassified')
+
+
+def category_for_group(group, sub):
+    if group in STORAGE_ONLY_GROUPS:
+        return None
+    if group == 'tops':
+        if any(word in (sub or '') for word in ('外套', '夹克', '大衣', '风衣', '羽绒', '冲锋', '防晒服')):
+            return 'outer'
+        return 'top' if any(word in (sub or '') for word in ('衬衫', 'T恤', '毛衣', '卫衣', '背心', '针织', '上衣')) else None
+    if group == 'skirts':
+        if '连衣' in (sub or ''):
+            return 'dress'
+        if '裙' in (sub or ''):
+            return 'bottom'
+        return None
+    return {'bottoms': 'bottom', 'shoes': 'shoes', 'accessories': 'accessory'}[group]
 
 
 def sourced(source: Source, **options):
@@ -31,6 +56,7 @@ class WardrobePatch(BaseModel):
     material: str | None = None
     pattern: str | None = None
     category: Category | None = None
+    wardrobe_group: WardrobeGroup | None = None
 
     @model_validator(mode="after")
     def validate_changes(self) -> Self:
@@ -38,6 +64,14 @@ class WardrobePatch(BaseModel):
             raise ValueError("请至少修改一个字段。")
         if "category" in self.model_fields_set and self.category is None:
             raise ValueError("品类必须选择有效值。")
+        if ('wardrobe_group' in self.model_fields_set
+                and (self.wardrobe_group in (None, 'unclassified') or not (self.sub and self.sub.strip()))):
+            raise ValueError('请选择明确分类并填写具体品类名称。')
+        if 'wardrobe_group' in self.model_fields_set and 'category' in self.model_fields_set:
+            compatible = {'tops': {'top', 'outer'}, 'skirts': {'bottom', 'dress'},
+                          'bottoms': {'bottom'}, 'shoes': {'shoes'}, 'accessories': {'accessory'}}
+            if self.category not in compatible.get(self.wardrobe_group, set()):
+                raise ValueError('搭配位置与衣橱分类不一致。')
         return self
 
 
@@ -77,11 +111,35 @@ class UploadAudit(BaseModel):
     source: Literal["derived"] = "derived"
     draft_id: UUID
     photo_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
+    prompt_version: Literal['item_extract.v2', 'item_extract.v3'] = 'item_extract.v2'
 
 
 class OwnedModel(SourcedModel):
     # legacy仅用于迁移/离线基准；HTTP入口必须提供真实设备UUID。
     owner_id: UUID | Literal["legacy"] = sourced("derived", default="legacy")
+
+
+BodyShape = Literal["X", "A", "TY", "H", "O"]
+
+
+class ProfilePatch(BaseModel):
+    model_config = ConfigDict(extra="forbid", strict=True, allow_inf_nan=False)
+    height_cm: float | None = Field(default=None, gt=0)
+    weight_kg: float | None = Field(default=None, gt=0)
+    body_shape: BodyShape | None = None
+
+    @model_validator(mode="after")
+    def require_changes(self) -> Self:
+        if not self.model_fields_set:
+            raise ValueError("请至少填写或清除一项身材资料。")
+        return self
+
+
+class BodyProfile(OwnedModel):
+    model_config = ConfigDict(extra="forbid", allow_inf_nan=False)
+    height_cm: float | None = sourced("user", default=None, gt=0)
+    weight_kg: float | None = sourced("user", default=None, gt=0)
+    body_shape: BodyShape | None = sourced("user", default=None)
 
 
 class DailyQuota(BaseModel):
@@ -102,6 +160,7 @@ class WardrobeItem(OwnedModel):
     name: str | None = sourced("model", default=None)
     image_path: str | None = sourced("user", default=None)
     category: Category | None = sourced("model", default=None)
+    wardrobe_group: WardrobeGroup | None = sourced('derived', default=None)
     sub: str | None = sourced("model", default=None)
     colors: list[str] = sourced("model", default_factory=list)
     material: str | None = sourced("model", default=None)
@@ -116,10 +175,28 @@ class WardrobeItem(OwnedModel):
         "derived", default_factory=lambda: datetime.now(UTC)
     )
 
+    @model_validator(mode='after')
+    def derive_group(self) -> Self:
+        if self.wardrobe_group is None:
+            self.wardrobe_group = wardrobe_group_for(self.category, self.sub)
+            self.sources['wardrobe_group'] = 'derived'
+        if self.wardrobe_group in STORAGE_ONLY_GROUPS and self.category is not None:
+            self.category = None
+            self.sources['category'] = 'derived'
+        return self
+
     def apply_user_patch(self, patch: WardrobePatch) -> Self:
         changes = patch.model_dump(exclude_unset=True)
         values = self.model_dump() | changes
         values["sources"] = self.sources | dict.fromkeys(changes, "user")
+        if 'wardrobe_group' in changes:
+            mapped = changes['category'] if 'category' in changes else category_for_group(changes['wardrobe_group'], values['sub'])
+            if mapped != values['category']:
+                values['category'] = mapped
+                values['sources']['category'] = 'derived'
+        elif 'category' in changes or ('sub' in changes and self.sources['wardrobe_group'] != 'user'):
+            values['wardrobe_group'] = wardrobe_group_for(values['category'], values['sub'])
+            values['sources']['wardrobe_group'] = 'derived'
         return type(self).model_validate(values).confirm_recognition()
 
     def confirm_recognition(self) -> Self:
@@ -132,6 +209,24 @@ class WardrobeItem(OwnedModel):
             "user_edited": "derived", "needs_confirm": "derived",
         }
         return type(self).model_validate(values)
+
+
+class ExtractedItem(BaseModel):
+    model_config = ConfigDict(extra='forbid', allow_inf_nan=False)
+    category: Literal['top', 'bottom', 'dress', 'outer', 'shoes', 'accessory', 'set', 'bag', 'jewelry', 'unknown']
+    sub: str | None
+    colors: list[str]
+    material: str | None
+    pattern: str | None
+    warmth: Score | None
+    formality: Score | None
+    seasons: list[Season]
+    confidence: float = Field(ge=0, le=1)
+
+
+class ExtractionResponse(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    items: list[ExtractedItem]
 
 
 class Session(OwnedModel):

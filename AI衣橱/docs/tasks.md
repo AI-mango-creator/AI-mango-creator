@@ -18,7 +18,7 @@
 | 阶段 4 项目测试 | ✅ | T10/T11评测交付；失败与缺项保留，人工可穿率未测 |
 | 阶段 5 BUG 改进 | 🟡 | T12文档完成；T5上传已验，完整演示待T9换一套 |
 
-**当前任务：T17✅（GitHub公开源码发布）。当前main的286个Git跟踪文件上传至AI-mango-creator/AI-mango-creator公开仓库的AI衣橱/目录，主页新增完整源码入口；保留原主页README。286项内容与文件模式逐项比对，缺失0/差异0；本机密钥、运行库/照片与依赖按.gitignore排除。上传是源码快照，在线体验仍由T16临时通道提供。T14容器、T9与T12完整录屏仍未完成。**
+**当前任务：T18✅（身材资料与衣橱分类）。A→B→C→D1→D2→E及最终审查修复、375×812验收完成；332 pytest+44 Vitest、lint/build通过。新prompt真实模型效果未复测，不部署、不发布，134冻结项不变。**
 
 **此前T5上传链路✅：D1真实落库门闸后，D2九张真实浏览器上传全部成功，完整单张建档5411–8880ms（n=9）。** 正式九张SQLite15→24，同draft全部重传仍24、模型调用9→9；corrections审计均落库，本批0条。T12仍🟡待T9/完整演示，T11✅；识别稳定性2/3见repeatability报告。134个旧证据/prompt/cases哈希不变。
 D2全量244 pytest + 15 Vitest、lint及构建通过；375×812下上传loading/error/成功与衣柜loading/empty已检查，无横向溢出。失败保留File/input/占位/draft_id，原地重试幂等。T9、完整录屏、人工可穿率、首次10张建档总计时与HTTP端到端P95仍未完成；本轮不改旧prompt/cases或评测证据。
@@ -46,6 +46,7 @@ D2全量244 pytest + 15 Vitest、lint及构建通过；375×812下上传loading/
 | T15 | 单品硬删除与方案图片预览：共用照片最后引用清理、照片失败降级与资源释放 | `app/routers/wardrobe.py`、`web/src/components/ItemPhoto.tsx`、`reports/t15-experience.md` | make test/lint/build；CDP375×812 | — | T3、T7 | ✅ |
 | T16 | 临时HTTPS真实交互测试：同址网页/API、独立库、全站20/30日额度、真实上传/确认/生成；带宽限制披露 | `scripts/share.py`、`app/tests/test_share.py`、`docs/10-临时测试指南.md`、`reports/t16-share.md` | make share；公网health/上传/生成/隔离；make test/lint | — | T5、T7、T13、T15 | ✅ |
 | T17 | GitHub主页公开完整项目快照及源码入口，保留首页原内容 | [AI衣橱源码](https://github.com/AI-mango-creator/AI-mango-creator/tree/main/AI%E8%A1%A3%E6%A9%B1) | 远端递归tree对比本地Git blob SHA和mode；make test/lint | — | T16 | ✅ |
+| T18 | 身材资料、五体型示意、推荐说明接入及衣橱管理分类；按A—E实施 | docs/11-资料与分类实施计划.md、reports/t18-profile-categories.md | 每段make test/lint；最终375×812 | — | T17 | ✅ |
 
 **关键路径**：T1 → T2 → T4 → T6 → T7 → T10 → T11 → T12（这条路径决定"什么时候有验收证据"）。
 T5 可以并行，但**按纪律串行**；T3 只为 T7 服务，不要提前做卡片墙美化。
@@ -343,6 +344,13 @@ make eval    # 生成 docs/reports/eval_v1.md
 
 | 任务 | 日期 | 实测证据（命令 + 关键输出） |
 |---|---|---|
+| T18最终验收 | 2026-11-18 | `zsh -ilc 'make test && make lint'`→`332 passed in 3.07s`+`Tests 44 passed (44)`，ruff/tsc exit0；build392ms。CDP11张375×812截图scrollWidth均375、Runtime异常0；临时库真实GET/PATCH覆盖资料保存刷新、五型选择、分类空态/保存失败保留/成功迁移和设备切换保护。另浏览器回归自定义名称保留手选outer：先丢失为null RED，修复后PASS。只读审查4项已修复，最终修复7代码文件，134冻结项SHA256不变；无新增模型调用，不发布。详情reports/t18-profile-categories.md。 |
+| T18-E代码 | 2026-11-18 | 329 pytest+42 Vitest及lint通过，build335ms；新增分类映射/计数/固定类别/手工命名3测试和API移动/失败保留1测试。5前端文件，375px截图及最终审查待验，T18保持🟡。 |
+| T18-D2 | 2026-11-18 | 分类后端8文件完成，新增9测试，329 pytest+38 Vitest及lint通过。006只增列并幂等回填；外套归上装、半裙归裙装且底层槽位保留。新增v3类别schema由models生成，包包/首饰/套装/unknown入库待确认，未分类需手工归类，非衣物仍422；收纳类不推荐，来源可追溯。生产上传版本断言随功能由v2更新为v3，旧v1/v2与案例不改。 |
+| T18-D1 | 2026-11-18 | 人类批准D1/D2拆分。新增迁移回放回归先因重复加列失败，再暴露人工分类被覆盖；结构核对与只回填NULL修复后329 pytest+38 Vitest、lint全绿。test_db旧库夹具仅移除001不存在的新列，并增加迁移后分类断言；旧表/owner/外键/数量断言保留。D1代码仅db.py、test_db.py、test_owner_isolation.py。 |
+| T18-C | 2026-11-18 | 3条资料接入/降级版本测试先RED，完成后319 pytest+38 Vitest、lint全绿。仅本设备资料进入S3，候选ID不变，无资料仍v1；有资料v2响应/session一致。编排v2仅在旧v1基础新增身材用途/禁用合身推断说明，schema仍单一来源。 |
+| T18-B | 2026-11-18 | 新增profileApi4测试先因模块缺失RED，完成后316 pytest+38 Vitest全绿，lint通过；五种SVG轮廓和原文描述、正数/空值、小数、GET/PATCH设备头与保存失败均覆盖。资料页及导航完成，375px截图待E最终验收。 |
+| T18-A | 2026-11-18 | 新增14条临时库资料API测试先13失败（接口404），实现后全量316 pytest+34 Vitest通过；make lint通过。GET/PATCH保存/刷新、小数、五型、设备隔离和清空均验证；迁移重复执行成功。旧test_db增加新表与完整字段检查，A共7代码文件。 |
 | T17公开源码 | 2026-11-16 | 主分支286文件（含47张测试素材/验收截图）共7719302字节，公开至主页仓库AI衣橱/；凭据扫描未发现真实密钥，.env/data/.venv/node_modules未上传。远端tree与本地Git逐文件比对：missing=0、hash_or_mode_mismatch=0、unexpected_files=0。保留原主页README并加源码入口，非强制更新远端main；公开网页与后续文件回读另行核验。`make test`→`302 passed in 2.70s` + `Tests 34 passed (34)`；`make lint`→`All checks passed!`、tsc exit0。发布当前主分支文件快照，不含未合入T14或本地Git历史，不改功能/prompt/cases/冻结证据、未新增模型调用。 |
 | T16轮换与后台补修 | 2026-11-16 | 旧URL实际502/no tunnel、本地health200，通道日志已有新域名但脚本读取首条；旧主进程消失而子进程仍存活，退出原因未确定。追加5条回归：最新域名、先验证再更新两分支、父进程组退出后台存活、相对解释器身份识别。`make test`→`302 passed in 2.69s` + `Tests 34 passed (34)`，lint/脚本ruff通过；后台启动返回后主进程PPID=1且自有进程组，公网health/root均200，status可查，模型日志仍4条。见reports/t16-rotation.md，未重新调用模型或重做UI。 |
 | T16保活补验 | 2026-11-16 | 发布前发现SSH闲置超时与公网短暂502；新增保活和软失败2条先RED后GREEN回归，现14 share tests；全量`297 passed in 2.80s` + `Tests 34 passed (34)`，lint/脚本ruff通过。make share实际重启后公网约1分钟5次health均200，进程一直运行，模型日志仍4条；原文见reports/t16-keepalive.json。旧域名失效及网络波动记录保留，临时地址不承诺长期有效。 |

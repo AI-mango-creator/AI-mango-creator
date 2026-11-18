@@ -39,7 +39,14 @@ def init_db(db_path: Path = DB_PATH) -> None:
                     statement += line
                     if sqlite3.complete_statement(statement):
                         if statement.strip().upper() not in {"BEGIN;", "COMMIT;"}:
-                            connection.execute(statement)
+                            # 恢复旧版本号的库可能已有006列；仅核对这一个已知DDL，其他错误仍抛出。
+                            added_group = (
+                                statement.strip().startswith("ALTER TABLE wardrobe_items ADD COLUMN wardrobe_group")
+                                and any(row["name"] == "wardrobe_group" and row["type"].upper() == "TEXT"
+                                        for row in connection.execute("PRAGMA table_info(wardrobe_items)"))
+                            )
+                            if not added_group:
+                                connection.execute(statement)
                         statement = ""
                 if statement.strip():
                     raise sqlite3.OperationalError("迁移SQL语句不完整。")

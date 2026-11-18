@@ -1,0 +1,127 @@
+{
+  "source": "temporary fixture DB + real GET/PATCH; failures injected in Chrome Fetch only; no model calls",
+  "viewport": {
+    "width": 375,
+    "height": 812
+  },
+  "screenshots": [
+    {
+      "name": "01-wardrobe-all",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "02-category-empty",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "03-classify-error-preserved",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "04-classified-top",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "05-profile-loading",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "06-profile-empty",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "07-profile-save-error",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "08-profile-saved-bottom",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "09-profile-refreshed-top",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "10-device-changed-protected",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "11-profile-load-error",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    }
+  ],
+  "shapes": [
+    "X",
+    "A",
+    "TY",
+    "H",
+    "O"
+  ],
+  "preserved": {
+    "name": "半拉链短袖T恤",
+    "group": "tops"
+  },
+  "saved": {
+    "sources": {
+      "sources": "derived",
+      "owner_id": "derived",
+      "height_cm": "user",
+      "weight_kg": "user",
+      "body_shape": "user"
+    },
+    "owner_id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+    "height_cm": 165.5,
+    "weight_kg": 55.2,
+    "body_shape": "A"
+  },
+  "refreshed": [
+    "165.5",
+    "55.2"
+  ],
+  "otherOwner": {
+    "sources": {
+      "sources": "derived",
+      "owner_id": "derived",
+      "height_cm": "user",
+      "weight_kg": "user",
+      "body_shape": "user"
+    },
+    "owner_id": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+    "height_cm": null,
+    "weight_kg": null,
+    "body_shape": null
+  },
+  "failedPatch": {
+    "sub": "半拉链短袖T恤",
+    "category": "top",
+    "wardrobe_group": "tops"
+  },
+  "failedProfile": {
+    "height_cm": 165.5,
+    "weight_kg": 55.2,
+    "body_shape": "A"
+  },
+  "runtimeErrors": []
+}

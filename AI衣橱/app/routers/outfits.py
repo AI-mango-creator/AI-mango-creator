@@ -17,8 +17,9 @@ from app.models import (
     OutfitView,
     Session,
 )
+from app.routers.profile import get_profile
 from app.routers.wardrobe import Owner, database_path, list_items
-from app.services.compose import PROMPT_VERSION, ComposeError, generate_outfits
+from app.services.compose import ComposeError, compose_prompt_version, generate_outfits
 from app.services.filter import filter_candidates
 
 router = APIRouter(prefix="/api/outfits", tags=["搭配"])
@@ -61,9 +62,12 @@ def create_outfits(body: OutfitsRequest, path: Annotated[Path, Depends(database_
 def _create_outfits(body, path, owner_id, started):
     session_id = "S" + uuid4().hex
     target = body.formality_target if body.formality_target is not None else DEFAULT_TARGETS[body.occasion]
+    profile = get_profile(path, owner_id).model_dump(
+        include={"height_cm", "weight_kg", "body_shape"}, exclude_none=True,
+    )
     session = Session(
         id=session_id, owner_id=owner_id, temp_c=body.temp_c, occasion=body.occasion,
-        formality_target=target, excluded_items=body.excluded, prompt_version=PROMPT_VERSION,
+        formality_target=target, excluded_items=body.excluded, prompt_version=compose_prompt_version(profile),
         sources={"formality_target": "user" if body.formality_target is not None else "derived"},
     )
     wardrobe = list_items(path, owner_id)
@@ -73,7 +77,7 @@ def _create_outfits(body, path, owner_id, started):
         reserve_quota(path, owner_id, "composition")
     try:
         result = generate_outfits(filtered, temp_c=body.temp_c, occasion=body.occasion,
-                                  formality_target=target, case_id=session_id)
+                                  formality_target=target, case_id=session_id, **({"profile": profile} if profile else {}))
     except (ComposeError, LLMError, ServiceError):
         session.status = "failed"
         _persist(path, session, [])

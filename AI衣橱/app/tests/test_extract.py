@@ -17,6 +17,29 @@ ROOT = Path(__file__).resolve().parents[2]
 RAW = ROOT / "docs/reports/raw/recognition"
 
 
+@pytest.mark.parametrize(('kind', 'group'), [('set', 'sets'), ('bag', 'bags'), ('jewelry', 'jewelry'), ('unknown', 'unclassified')])
+def test_v3_new_categories_are_stored_but_not_used_as_outfits(item, kind, group):
+    from app.services.extract import parse_items_v3
+    from app.services.filter import filter_candidates
+    result = parse_items_v3(json.dumps({'items': [item | {'category': kind}]}), image_path='uploads/photo.jpg')
+    assert result[0].wardrobe_group == group
+    assert result[0].category is None
+    assert result[0].needs_confirm
+    assert result[0].sources['wardrobe_group'] == 'model'
+    assert not filter_candidates([result[0].confirm_recognition()], temp_c=18, occasion='commute')['candidates']
+
+
+def test_v3_schema_is_single_source_and_fences_still_parse(item):
+    from app.models import ExtractionResponse
+    from app.services.extract import parse_items_v3
+    template = (ROOT / 'prompts/item_extract.v3.md').read_text()
+    assert template.count('{{JSON_SCHEMA}}') == 1
+    assert '"items"' not in template
+    assert 'bag' in json.dumps(ExtractionResponse.model_json_schema())
+    result = parse_items_v3('```json\n' + json.dumps({'items': [item]}) + '\n```', image_path='x')
+    assert result[0].category == item['category']
+
+
 def record(case_id):
     return json.loads((RAW / f"{case_id}.json").read_text())
 

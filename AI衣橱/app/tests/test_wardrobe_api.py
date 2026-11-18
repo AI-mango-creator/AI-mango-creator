@@ -16,6 +16,71 @@ from scripts.claim_legacy import claim_legacy
 from scripts.seed import seed_database
 
 
+def test_management_group_migration_and_manual_move(client, database):
+    first = client.get('/api/wardrobe/items').json()[0]
+    assert first['wardrobe_group'] in {'tops', 'bottoms', 'skirts', 'shoes', 'accessories'}
+    init_db(database)
+    moved = client.patch(f"/api/wardrobe/items/{first['id']}", json={'wardrobe_group': 'bags', 'sub': '手提包'})
+    assert moved.status_code == 200
+    data = moved.json()
+    assert data['wardrobe_group'] == 'bags' and data['category'] is None
+    assert data['sources']['wardrobe_group'] == data['sources']['sub'] == 'user'
+    assert data['sources']['category'] == 'derived'
+    assert not filter_candidates([WardrobeItem.model_validate(data)], temp_c=18, occasion='commute')['candidates']
+    read = client.get('/api/wardrobe/items').json()
+    assert next(x for x in read if x['id'] == first['id'])['wardrobe_group'] == 'bags'
+    denied = client.patch(f"/api/wardrobe/items/{first['id']}", headers={'X-Device-ID': '22222222-2222-4222-8222-222222222222'}, json={'wardrobe_group': 'tops', 'sub': '衬衫'})
+    assert denied.status_code == 404
+
+
+def test_manual_group_needs_concrete_name_and_uses_fixed_groups(client):
+    first = client.get('/api/wardrobe/items').json()[0]
+    for patch in [{'wardrobe_group': 'other', 'sub': '项链'}, {'wardrobe_group': 'jewelry'}, {'wardrobe_group': 'jewelry', 'sub': ' '}, {'wardrobe_group': 'unclassified', 'sub': '项链'}]:
+        assert client.patch(f"/api/wardrobe/items/{first['id']}", json=patch).status_code == 422
+
+
+@pytest.mark.parametrize(('old', 'group', 'name', 'expected'), [
+    ('outer', 'tops', '衬衫', 'top'), ('dress', 'skirts', '百褶裙', 'bottom'),
+])
+def test_manual_name_correction_does_not_keep_wrong_old_slot(client, database, old, group, name, expected):
+    first = client.get('/api/wardrobe/items').json()[0]
+    with closing(connect_db(database)) as db, db:
+        db.execute('UPDATE wardrobe_items SET category=?,wardrobe_group=? WHERE id=?', (old, group, first['id']))
+    response = client.patch(f"/api/wardrobe/items/{first['id']}", json={'wardrobe_group': group, 'sub': name})
+    assert response.status_code == 200 and response.json()['category'] == expected
+
+
+def test_explicit_slot_can_correct_ambiguous_management_group(client):
+    first = client.get('/api/wardrobe/items').json()[0]
+    endpoint = f"/api/wardrobe/items/{first['id']}"
+    result = client.patch(endpoint, json={'wardrobe_group': 'skirts', 'sub': '礼服', 'category': 'dress'})
+    assert result.status_code == 200 and result.json()['category'] == 'dress'
+    assert result.json()['sources']['category'] == 'user'
+    assert client.patch(endpoint, json={'wardrobe_group': 'skirts', 'sub': '礼服', 'category': 'top'}).status_code == 422
+
+
+def test_user_can_reclassify_bag_back_to_top_via_existing_category(client):
+    first = client.get('/api/wardrobe/items').json()[0]
+    endpoint = f"/api/wardrobe/items/{first['id']}"
+    assert client.patch(endpoint, json={'wardrobe_group': 'bags', 'sub': '手提包'}).status_code == 200
+    moved = client.patch(endpoint, json={'category': 'top', 'sub': '衬衫'}).json()
+    assert moved['category'] == 'top' and moved['wardrobe_group'] == 'tops'
+
+
+def test_unclassified_must_be_manually_classified_before_confirm(client, recognition):
+    _, script = recognition
+    unknown = json.loads((Path(__file__).resolve().parents[2] / 'docs/reports/raw/recognition/R01.json').read_text())['parsed']
+    unknown['items'][0]['category'] = 'unknown'
+    script[:] = [unknown]
+    created = upload(client, uuid4()).json()['items'][0]
+    endpoint = f"/api/wardrobe/items/{created['id']}"
+    assert client.post(endpoint + '/confirm').status_code == 422
+    assert client.patch(endpoint, json={'category': 'top'}).status_code == 422
+    fixed = client.patch(endpoint, json={'wardrobe_group': 'jewelry', 'sub': '项链'})
+    assert fixed.status_code == 200
+    assert fixed.json()['wardrobe_group'] == 'jewelry' and not fixed.json()['needs_confirm']
+
+
 def test_delete_item_removes_references_empty_sets_and_last_photo(client, database):
     items = client.get("/api/wardrobe/items").json()
     target, remaining = items[:2]
@@ -276,7 +341,7 @@ def test_upload_persists_corrections_sources_photo_and_confirmation(client, data
     assert response.status_code == 201, response.text
     body = response.json()
     assert body["draft_id"] == str(draft_id) and body["reused"] is False
-    assert body["prompt_version"] == "item_extract.v2" and body["latency_ms"] >= 0
+    assert body["prompt_version"] == "item_extract.v3" and body["latency_ms"] >= 0
     item = body["items"][0]
     assert item["warmth"] == 2 and item["seasons"] == ["spring", "winter"]
     assert item["confidence"] == 0.4 and item["needs_confirm"] is True

@@ -85,7 +85,8 @@ def _upload_response(draft_id, items, started, reused):
                    if isinstance(item.sources.get("_corrections"), CorrectionAudit)
                    for entry in item.sources["_corrections"].entries]
     return WardrobeUploadResponse(draft_id=draft_id, items=items, corrections=corrections,
-                                  latency_ms=round((perf_counter() - started) * 1000), reused=reused)
+                                  latency_ms=round((perf_counter() - started) * 1000), reused=reused,
+                                  prompt_version=items[0].sources['_upload'].prompt_version if items else 'item_extract.v3')
 
 
 @router.post("/items", response_model=WardrobeUploadResponse, status_code=201)
@@ -123,7 +124,8 @@ def upload_item(request: Request, path: Database, photo: Annotated[UploadFile, F
                 values = item.model_dump()
                 values["id"] = f"{prefix}{index:02}"
                 values["owner_id"] = owner_id
-                values["sources"]["_upload"] = UploadAudit(draft_id=draft_id, photo_sha256=digest)
+                values["sources"]["_upload"] = UploadAudit(draft_id=draft_id, photo_sha256=digest,
+                                                           prompt_version='item_extract.v3')
                 items[index] = WardrobeItem.model_validate(values)
             with closing(connect_db(path)) as connection, connection:
                 for item in items:
@@ -195,9 +197,15 @@ def _confirm_or_patch(path, owner_id, item_id, patch):
         row = connection.execute("SELECT * FROM wardrobe_items WHERE id=? AND owner_id=?", (item_id, owner_id)).fetchone()
         if row is None:
             raise HTTPException(status_code=404, detail="这件单品不存在，请重新加载衣柜。")
-        updated = _item(row).apply_user_patch(patch) if patch is not None else _item(row).confirm_recognition()
+        item = _item(row)
+        if item.wardrobe_group == 'unclassified' and (patch is None or not {'category', 'wardrobe_group'} & patch.model_fields_set):
+            raise HTTPException(422, '请先选择分类并填写具体品类名称，再确认这件单品。')
+        if item.wardrobe_group == 'unclassified' and not (patch.sub and patch.sub.strip()):
+            raise HTTPException(422, '请填写具体品类名称，再确认这件单品。')
+        updated = item.apply_user_patch(patch) if patch is not None else item.confirm_recognition()
         values = to_db_values(updated)
-        fields = [*(patch.model_fields_set if patch is not None else ()), "user_edited", "needs_confirm", "sources"]
+        fields = list(dict.fromkeys([*(patch.model_fields_set if patch is not None else ()),
+                                    'category', 'wardrobe_group', "user_edited", "needs_confirm", "sources"]))
         assignments = ", ".join(f"{name}=:{name}" for name in fields)
         connection.execute(f"UPDATE wardrobe_items SET {assignments} WHERE id=:id AND owner_id=:owner_id", values)
         return updated
@@ -211,6 +219,7 @@ def clear_items(path: Database, owner_id: Owner) -> dict[str, int]:
         counts = {}
         for table in ("outfit_items", "outfit_sets", "sessions", "wardrobe_items"):
             counts[table] = connection.execute(f"DELETE FROM {table} WHERE owner_id=?", (owner_id,)).rowcount
+        connection.execute("DELETE FROM body_profiles WHERE owner_id=?", (owner_id,))
         uploads = (path.parent / "uploads").resolve()
         photos = set()
         for row in rows:

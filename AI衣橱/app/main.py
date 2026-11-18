@@ -17,6 +17,7 @@ from app.db import _quota_day, expire_quotas
 from app.llm.errors import LLMError, ServiceError, public_model_failure
 from app.models import ExtractionFailureResponse
 from app.routers.outfits import router as outfits_router
+from app.routers.profile import router as profile_router
 from app.routers.wardrobe import database_path
 from app.routers.wardrobe import router as wardrobe_router
 from app.services.compose import ComposeError
@@ -58,6 +59,7 @@ async def lifespan(application):
 app = FastAPI(title="算法衣橱", lifespan=lifespan)
 app.include_router(wardrobe_router)
 app.include_router(outfits_router)
+app.include_router(profile_router)
 
 
 @app.middleware("http")

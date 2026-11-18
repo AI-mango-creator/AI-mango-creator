@@ -9,7 +9,14 @@ import pytest
 from pydantic import ValidationError
 
 from app.db import connect_db, init_db, to_db_values
-from app.models import DailyQuota, OutfitItem, OutfitSet, Session, WardrobeItem
+from app.models import (
+    BodyProfile,
+    DailyQuota,
+    OutfitItem,
+    OutfitSet,
+    Session,
+    WardrobeItem,
+)
 from scripts.seed import seed_database
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -57,6 +64,7 @@ def test_init_creates_four_tables_matching_models(database):
         "outfit_sets": OutfitSet,
         "outfit_items": OutfitItem,
         "sessions": Session,
+        "body_profiles": BodyProfile,
     }
     with closing(connect_db(database)) as connection:
         tables = {
@@ -211,6 +219,8 @@ def test_owner_migration_preserves_legacy_rows_and_is_repeatable(tmp_path):
         item = WardrobeItem.model_validate(json.loads(CASES_PATH.read_text())["wardrobe"][0])
         values = to_db_values(item)
         values.pop("owner_id", None)
+        # 001历史表没有后续006的管理分类列；明确构造历史数据，不删验收断言。
+        values.pop("wardrobe_group", None)
         connection.execute(f"INSERT INTO wardrobe_items ({', '.join(values)}) VALUES ({', '.join(':'+k for k in values)})", values)
     init_db(path)
     init_db(path)
@@ -224,6 +234,7 @@ def test_owner_migration_preserves_legacy_rows_and_is_repeatable(tmp_path):
             columns = {r["name"]: r for r in connection.execute(f"PRAGMA table_info({table})")}
             assert columns["owner_id"]["notnull"] == 1
         assert connection.execute("SELECT count(*) FROM wardrobe_items").fetchone()[0] == 1
+        assert row['wardrobe_group'] == item.wardrobe_group
 
 
 def test_seed_scopes_two_explicit_devices_without_changing_cases(database):

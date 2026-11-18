@@ -334,6 +334,24 @@ def test_unexpected_api_error_also_disables_cache(api):
     assert response.headers.get("cache-control") == "no-store"
 
 
+def test_replayed_group_migration_preserves_manual_classification(tmp_path):
+    path = tmp_path / 'migration.db'
+    seed_database(path, owner_id=A)
+    with closing(connect_db(path)) as db, db:
+        item_id = db.execute('SELECT id FROM wardrobe_items WHERE owner_id=? LIMIT 1', (A,)).fetchone()[0]
+        db.execute("UPDATE wardrobe_items SET wardrobe_group='bags',category=NULL,sub='手提包',"
+                   "sources=json_set(sources,'$.wardrobe_group','user') WHERE id=?", (item_id,))
+        db.execute('PRAGMA user_version=5')
+    init_db(path)
+    init_db(path)
+    with closing(connect_db(path)) as db:
+        row = db.execute('SELECT wardrobe_group,sources FROM wardrobe_items WHERE id=?', (item_id,)).fetchone()
+        assert row['wardrobe_group'] == 'bags'
+        assert json.loads(row['sources'])['wardrobe_group'] == 'user'
+        assert [x[1] for x in db.execute('PRAGMA table_info(wardrobe_items)')].count('wardrobe_group') == 1
+        assert db.execute('PRAGMA foreign_key_check').fetchall() == []
+
+
 def test_owner_lock_files_are_bounded_not_permanent_device_identifiers(tmp_path):
     from app.db import owner_lock
     path = tmp_path / "locks.db"
