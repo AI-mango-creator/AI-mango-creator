@@ -1,16 +1,34 @@
-import { useState } from "react";
-import Outfits from "./pages/Outfits";
-import Wardrobe from "./pages/Wardrobe";
-import Profile from "./pages/Profile";
-
+import { useEffect, useState } from 'react';
+import Wardrobe from './pages/Wardrobe';
+import Outfits from './pages/Outfits';
+import Profile from './pages/Profile';
+import Home from './pages/Home';
+import Weather from './pages/Weather';
+import BottomNav from './components/BottomNav';
+import type { Page } from './components/BottomNav';
+import { forecastTemperature, getWeather } from './lib/weatherApi';
+import type { WeatherCity, WeatherSelection, WeatherState } from './lib/weatherApi';
 export default function App() {
-  const [page, setPage] = useState<"wardrobe" | "outfits" | "profile">("wardrobe");
-  return <>
-    <nav aria-label="页面切换" className="mx-auto flex w-full max-w-[480px] flex-wrap gap-2 px-4 pt-5">
-      <button type="button" className={`rounded-xl px-4 py-2 text-sm ${page === "wardrobe" ? "bg-slate-800 text-white" : "bg-white"}`} onClick={() => setPage("wardrobe")}>我的衣柜</button>
-      <button type="button" className={`rounded-xl px-4 py-2 text-sm ${page === "outfits" ? "bg-slate-800 text-white" : "bg-white"}`} onClick={() => setPage("outfits")}>今天怎么穿</button>
-      <button type="button" className={`rounded-xl px-4 py-2 text-sm ${page === "profile" ? "bg-slate-800 text-white" : "bg-white"}`} onClick={() => setPage("profile")}>身材资料</button>
-    </nav>
-    {page === "wardrobe" ? <Wardrobe /> : page === "outfits" ? <Outfits /> : <Profile />}
-  </>;
+  const [, clockTick] = useState(0);
+  useEffect(() => { const timer = window.setInterval(() => clockTick(x => x + 1), 30000); return () => clearInterval(timer); }, []);
+  const [page, setPage] = useState<Page>('home'); const [revision, setRevision] = useState(0);
+  const [city, setCity] = useState<WeatherCity | null>(null);
+  const [weather, setWeather] = useState<WeatherState>({ city: null, forecast: null, status: 'empty', error: '', date: '' });
+  const [selection, setSelection] = useState<WeatherSelection | null>(null);
+  const [uploadEntry, setUploadEntry] = useState(false);
+  useEffect(() => { if (!city) return; const c = new AbortController();
+    setWeather({ city, forecast: null, status: 'loading', error: '', date: '' });
+    void getWeather(city, c.signal).then(f => { if (!c.signal.aborted) setWeather({ city, forecast: f, status: 'ok', error: '', date: f.days[0].date }); }).catch(e => { if (!c.signal.aborted) setWeather({ city, forecast: null, status: 'error', error: e.message, date: '' }); });
+    return () => c.abort();
+  }, [city, revision]);
+  function navigate(next: Page, upload = false, keepWeather = false) { if (next === 'outfits' && !keepWeather) setSelection(null); setUploadEntry(upload); setPage(next); window.scrollTo(0, 0); }
+  // 天气仅预填参数；用户点击生成后才调用模型。
+  function useWeather() { if (!weather.forecast || !city) return;
+    try { setSelection({ temperature: forecastTemperature(weather.forecast, weather.date), city: city.name, date: weather.date }); navigate('outfits', false, true); }
+    catch (e) { setWeather({ ...weather, status: 'error', error: e instanceof Error ? e.message : '请刷新天气。' }); }
+  }
+  return <div className="app-frame" data-weather-temperature={selection?.temperature} data-upload-entry={uploadEntry}>
+    {page === 'home' ? <Home weather={weather} onNavigate={navigate} /> : page === 'weather' ? <Weather state={weather} onCity={setCity} onDate={date => setWeather(x => ({ ...x, date }))} onRefresh={() => setRevision(x => x + 1)} onUse={useWeather} onManual={() => { setSelection(null); navigate('outfits'); }} onBack={() => navigate('home')} /> : page === 'wardrobe' ? <Wardrobe initialUpload={uploadEntry} onAI={() => { setSelection(null); navigate('outfits'); }} /> : page === 'outfits' ? <Outfits initialWeather={selection} onBack={() => navigate('home')} /> : <Profile onBack={() => navigate('home')} />}
+    <BottomNav page={page} onNavigate={next => { if (next === 'outfits') setSelection(null); navigate(next); }} />
+  </div>;
 }

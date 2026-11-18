@@ -4,6 +4,7 @@ import { confirmWardrobeItem, createPhotoDraft, deleteWardrobeItem, hasUploadPla
   saveWardrobeItem, submitPhotoDraft } from "../lib/api";
 import type { Category, PhotoDraft, WardrobeItem, WardrobePatch } from "../lib/api";
 import ItemPhoto from "../components/ItemPhoto";
+import AppIcon from "../components/AppIcon";
 import { getViewState } from "../lib/viewState";
 import { classificationPatch, countGroups, filterGroup, groupOf, wardrobeGroups } from '../lib/wardrobeCategories';
 import type { GroupFilter, WardrobeGroup } from '../lib/wardrobeCategories';
@@ -12,7 +13,8 @@ type Draft = { sub: string; colors: string; material: string; pattern: string; g
 const inputClass = "mt-1 w-full min-w-0 rounded-xl border border-slate-300 bg-white px-3 py-2 text-base";
 const buttonClass = "rounded-xl bg-slate-800 px-4 py-3 text-sm text-white disabled:opacity-50";
 
-export default function Wardrobe() {
+export default function Wardrobe({ onAI, initialUpload = false }: { onAI?: () => void; initialUpload?: boolean }) {
+  const [showUpload, setShowUpload] = useState(initialUpload);
   const [items, setItems] = useState<WardrobeItem[]>([]);
   const [status, setStatus] = useState<"loading" | "error" | "ok">("loading");
   const [reload, setReload] = useState(0);
@@ -154,12 +156,8 @@ export default function Wardrobe() {
   }
 
   return (
-    <main className="shell">
-      <header className="mb-6">
-        <p className="text-xs font-medium tracking-widest text-slate-500">WARDROBE COPILOT</p>
-        <h1 className="mt-3 text-3xl font-semibold">我的衣柜</h1>
-        <p className="mt-3 text-sm leading-6 text-slate-600">点开单品，修正识别结果。</p>
-      </header>
+    <main className="shell wardrobe-page">
+      <header className="wardrobe-header"><div><h1>我的衣橱<span>（{status === 'ok' ? items.length : '—'}件）</span></h1><p>让每件衣服，都找到自己的位置</p></div><button aria-label="添加衣物" className="round-icon" onClick={() => setShowUpload(x => !x)}><AppIcon name="upload" /></button></header>
       {pendingDelete && <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/30 p-6">
         <section role="alertdialog" aria-modal="true" aria-label="删除单品确认" className="panel w-full min-w-0 max-w-[420px]">
           <h2 className="text-lg font-semibold">删除{pendingDelete.sub || "这件单品"}？</h2>
@@ -173,7 +171,7 @@ export default function Wardrobe() {
           </div>
         </section>
       </div>}
-      <section aria-label="拍照建档" className="panel mb-5 min-w-0" data-upload-zone
+      <section aria-label="拍照建档" className="panel mb-5 min-w-0" data-upload-zone hidden={!showUpload && !photoDraft}
         onDragOver={(event) => event.preventDefault()}
         onDrop={(event) => {
           event.preventDefault();
@@ -205,10 +203,10 @@ export default function Wardrobe() {
       </section>
       {actionError && <p role="alert" className="mb-4 rounded-xl bg-red-50 p-3 text-sm text-red-900">{actionError}</p>}
       {notice && <p role="status" className="mb-4 rounded-xl bg-green-50 p-3 text-sm text-green-900">{notice}</p>}
-      {status === 'ok' && <nav aria-label="衣橱分类" className="mb-5 grid min-w-0 grid-cols-3 gap-2">
+      {status === 'ok' && <nav aria-label="衣橱分类" className="category-tabs wardrobe-tabs">
         {Object.entries(wardrobeGroups).map(([key, label]) => <button key={key} type="button" disabled={busy}
           aria-pressed={group === key} onClick={() => setGroup(key as GroupFilter)}
-          className={`min-w-0 rounded-xl border px-2 py-3 text-sm disabled:opacity-50 ${group === key ? 'border-slate-800 bg-slate-800 text-white' : 'border-slate-200 bg-white text-slate-700'}`}>
+          className="wardrobe-tab">
           {label} <span className="text-xs opacity-75">{counts[key as GroupFilter]}</span>
         </button>)}
       </nav>}
@@ -266,10 +264,10 @@ export default function Wardrobe() {
           </form>
         </section>}
         {visibleItems.length === 0 && <section className="panel mb-4"><h2 className="font-semibold">{wardrobeGroups[group]}还没有单品</h2><p className="mt-3 text-sm leading-6 text-slate-600">可从上方上传照片，或切回“全部”修改已有单品的分类。</p></section>}
-        <section aria-label="衣柜单品" className="grid min-w-0 grid-cols-2 gap-3">
+        <section aria-label="衣柜单品" className="wardrobe-grid">
           {visibleItems.map((item) => <article key={item.id}
             data-item-id={item.id} data-highlighted={highlighted.includes(item.id) ? "true" : "false"}
-            className={`min-w-0 rounded-2xl border bg-white p-3 text-left disabled:opacity-50 ${highlighted.includes(item.id) ? "border-green-500 ring-2 ring-green-300" : "border-slate-200"}`}
+            className={`wardrobe-card min-w-0 rounded-2xl border bg-white p-2 text-left disabled:opacity-50 ${highlighted.includes(item.id) ? "border-green-500 ring-2 ring-green-300" : "border-slate-200"}`}
             >
             <div className="mb-2 flex justify-end">
               <button type="button" disabled={busy} aria-label={`删除${item.sub || "单品"}`}
@@ -278,8 +276,8 @@ export default function Wardrobe() {
             </div>
             <button type="button" className="block w-full min-w-0 text-left disabled:opacity-50" disabled={busy} onClick={() => edit(item)}>
             <ItemPhoto item={item} />
-            <span className="mt-3 block break-all text-xs text-slate-500">{wardrobeGroups[groupOf(item)]} · {item.sub || "名称待补充"}</span>
-            <span className="mt-1 block font-semibold">{item.sub || item.name || "未命名单品"}</span>
+            <span className="card-title mt-2 block text-xs">{wardrobeGroups[groupOf(item)]} · {item.sub || "名称待补充"}</span>
+
             <span className="mt-2 block text-xs leading-5 text-slate-600">{item.colors.join(" / ") || "颜色待补充"}</span>
             {item.needs_confirm && <span className="mt-2 block text-xs text-amber-800">待确认</span>}
             {groupOf(item) === 'unclassified' && <span className="mt-2 block text-xs leading-5 text-amber-800">点开卡片，选择分类并填写具体名称</span>}
@@ -290,6 +288,7 @@ export default function Wardrobe() {
           </article>)}
         </section>
       </>}
+      <div className="wardrobe-actions"><button className="soft-button" disabled={busy} onClick={() => { setShowUpload(true); window.scrollTo({ top: 0, behavior: 'smooth' }); }}><AppIcon name="upload" />导入衣橱</button><button className="gradient-button" disabled={busy} onClick={onAI}><AppIcon name="spark" />AI搭配</button></div>
     </main>
   );
 }

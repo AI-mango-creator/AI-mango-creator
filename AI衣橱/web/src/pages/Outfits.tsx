@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
 import DegradeBanner from "../components/DegradeBanner";
 import ItemPhoto from "../components/ItemPhoto";
+import AppIcon from "../components/AppIcon";
+import type { WeatherSelection } from "../lib/weatherApi";
 import { categoryLabels } from "../lib/api";
 import { createOutfits, occasionLabels } from "../lib/outfitsApi";
 import type { OutfitsInput, OutfitsResult } from "../lib/outfitsApi";
@@ -10,8 +12,8 @@ import { getViewState } from "../lib/viewState";
 const fieldClass = "mt-2 w-full min-w-0 rounded-xl border border-slate-300 bg-white px-3 py-2 text-base";
 const previewSlots = ["top", "bottom", "shoes", "outer", "dress", "accessory"];
 
-export default function Outfits() {
-  const [temp, setTemp] = useState("18");
+export default function Outfits({ initialWeather, onBack }: { initialWeather?: WeatherSelection | null; onBack?: () => void }) {
+  const [temp, setTemp] = useState(initialWeather ? String(initialWeather.temperature) : "18");
   const [occasion, setOccasion] = useState<OutfitsInput["occasion"]>("commute");
   const [status, setStatus] = useState<"loading" | "error" | "ok">("ok");
   const [result, setResult] = useState<OutfitsResult | null>(null);
@@ -42,13 +44,11 @@ export default function Outfits() {
     }
   }
 
-  return <main className="shell">
+  return <main className="shell outfits-page">
     {state === "ready" && result?.degraded && <DegradeBanner key={result.session_id} reason={result.degrade_reason} />}
-    <header className="mb-6">
-      <p className="text-xs font-medium tracking-widest text-slate-500">WARDROBE COPILOT</p>
-      <h1 className="mt-3 text-3xl font-semibold">今天怎么穿</h1>
-      <p className="mt-3 text-sm leading-6 text-slate-600">根据你的衣柜，挑选今天能穿的搭配。</p>
-    </header>
+    <header className="detail-header"><button aria-label="返回首页" onClick={onBack}><AppIcon name="back" /></button><h1>AI帮我搭</h1><span /></header>
+    <div className="outfits-intro"><span className="eyebrow">YOUR CLOSET. YOUR STYLE.</span><h2>今天，穿出自己的样子</h2><p>只从你的衣橱里，挑选真正能穿出门的搭配。</p></div>
+    {initialWeather && <p className="weather-source">⌖ {initialWeather.city} · {initialWeather.date} 预报最低温 {initialWeather.temperature}°C<br /><small>已带入参考温度，可按出门时间手动修改。</small></p>}
     <form onSubmit={generate} className="panel mb-5">
       <fieldset disabled={status === "loading"} className="min-w-0">
         <div className="grid min-w-0 grid-cols-2 gap-3">
@@ -61,7 +61,7 @@ export default function Outfits() {
             </select>
           </label>
         </div>
-        <button className="mt-4 w-full rounded-xl bg-slate-800 px-4 py-3 text-sm text-white disabled:opacity-50" type="submit">
+        <button className="gradient-button mt-5 w-full" type="submit">
           {status === "loading" ? "正在生成…" : "生成搭配"}
         </button>
       </fieldset>

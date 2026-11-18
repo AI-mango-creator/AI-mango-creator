@@ -15,16 +15,16 @@ export default function BodyShapeGuide({ value, onChange, disabled = false }: {
     <legend className="mb-3 font-semibold">体型画像（五选一）</legend>
     <p className="mb-3 text-xs leading-5 text-slate-500">示意图用于帮助选择，按肩、腰、臀的相对比例判断。</p>
     <div className="grid min-w-0 grid-cols-1 gap-3">
-      {bodyShapes.map(shape => <label key={shape.id} className={`flex min-w-0 cursor-pointer items-center gap-3 rounded-xl border p-3 ${value === shape.id ? 'border-sky-600 bg-sky-50' : 'border-slate-200 bg-white'}`}>
+      {bodyShapes.map(shape => <label key={shape.id} className={`flex min-w-0 cursor-pointer items-center gap-3 rounded-xl border p-3 ${value === shape.id ? 'border-fuchsia-300 bg-pink-50' : 'border-slate-200 bg-white'}`}>
         <input type="radio" name="body-shape" value={shape.id} checked={value === shape.id} onChange={() => onChange(shape.id)} className="shrink-0" />
         <svg viewBox="0 0 80 118" role="img" aria-label={`${shape.name}体型示意图`} className="h-28 w-16 shrink-0">
-          <circle cx="40" cy="12" r="10" fill="#b3d5df" />
-          <path d={shape.outline} fill="#b3d5df" stroke="#477a8c" strokeWidth="1.5" />
-          <path d="M8 36 H72 M8 64 H72 M8 88 H72" stroke="#477a8c" strokeWidth="1" strokeDasharray="3 3" opacity=".55" />
+          <circle cx="40" cy="12" r="10" fill="#e9c5e6" />
+          <path d={shape.outline} fill="#e9c5e6" stroke="#aa7ca7" strokeWidth="1.5" />
+          <path d="M8 36 H72 M8 64 H72 M8 88 H72" stroke="#aa7ca7" strokeWidth="1" strokeDasharray="3 3" opacity=".55" />
         </svg>
         <span className="min-w-0"><span className="block text-sm font-semibold">{shape.name}</span><span className="mt-2 block text-xs leading-5 text-slate-600">{shape.description}</span></span>
       </label>)}
     </div>
-    <button type="button" className="mt-3 text-sm text-sky-800 underline" onClick={() => onChange('')}>清除体型选择</button>
+    <button type="button" className="mt-3 text-sm text-fuchsia-700 underline" onClick={() => onChange('')}>清除体型选择</button>
   </fieldset>;
 }

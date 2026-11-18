@@ -1,0 +1,23 @@
+{
+  "source": "real backend HTTP and real Open-Meteo; no Fetch injection; no model calls",
+  "screenshots": [
+    {
+      "name": "20-weather-real",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "21-outfits-real-weather",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    }
+  ],
+  "forecastText": "18/28°C\n\n毛毛雨\n\n⌖ 深圳\n2026-11-18\n当日穿搭建议\n\n早晚偏凉，搭配时需要外套，注意温差。\n\n天气预报仅供参考，以所选日期最低温搭配。",
+  "selection": {
+    "temperature": "18",
+    "source": "⌖ 深圳 · 2026-11-18 预报最低温 18°C\n已带入参考温度，可按出门时间手动修改。"
+  },
+  "runtimeErrors": []
+}

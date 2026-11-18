@@ -1,0 +1,43 @@
+{
+  "source": "explicit browser failures; no model calls",
+  "screenshots": [
+    {
+      "name": "22-weather-error",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "23-wardrobe-loading",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "24-wardrobe-error",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "25-profile-loading",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "26-profile-load-error",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "27-outfits-error",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    }
+  ],
+  "manualAfterWeatherError": true,
+  "runtimeErrors": []
+}

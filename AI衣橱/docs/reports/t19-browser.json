@@ -1,0 +1,82 @@
+{
+  "mode": "temporary DB real wardrobe/profile; weather/outfits browser Fetch fixtures; zero model calls",
+  "viewport": {
+    "width": 375,
+    "height": 812
+  },
+  "screenshots": [
+    {
+      "name": "01-home",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "02-wardrobe",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "03-profile",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "04-profile-edit",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "05-weather-empty",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "06-city-search",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "07-weather-loading",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "08-weather",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "09-outfits-weather",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "10-outfits-loading",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "11-outfits-shortage",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    }
+  ],
+  "grid": {
+    "columns": "111.656px 111.672px 111.656px",
+    "count": 14
+  },
+  "weatherPrefill": "17",
+  "profileSaved": 173.5,
+  "runtimeErrors": []
+}

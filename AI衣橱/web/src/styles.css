@@ -1,36 +1,313 @@
 @import "tailwindcss";
+:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#28242d;background:#faf7fc;font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
 
-:root {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-    "Microsoft YaHei", sans-serif;
-  color: #263843;
-  background: #edf4f8;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
+
+*{box-sizing:border-box}
+
+body{margin:0;min-width:0}
+
+button{cursor:pointer;font:inherit}
+
+button:disabled{cursor:wait;opacity:.55}
+
+button,input,select{font:inherit}
+
+button,a,input,select{-webkit-tap-highlight-color:transparent}
+
+h1,h2,p{overflow-wrap:anywhere}
+
+button{transition:background .2s,transform .2s}
+
+button:active:not(:disabled){transform:translateY(1px)}
+
+
+.app-frame{max-width:480px;margin:auto;min-height:100svh;background:linear-gradient(180deg,#ffe0f7 0,#fff0fb 260px,#fff 700px);position:relative}
+
+.shell{width:100%;max-width:480px;min-height:100svh;margin-inline:auto;padding:24px 18px 130px;overflow-wrap:anywhere}
+
+.panel{padding:22px;border:1px solid #f1e8f0;border-radius:24px;background:#ffffffdf;box-shadow:0 9px 28px #50345d05}
+
+.panel h2{font-weight:600}
+
+.panel p{line-height:1.7;margin-top:12px}
+
+.app-icon{width:26px;height:26px;flex:none}
+
+.eyebrow{font-size:9px;letter-spacing:2px;color:#a47c9f}
+
+.muted{font-size:11px;color:#978c9c;line-height:1.6}
+
+.error-text{font-size:13px;color:#a33256;margin:14px 0;line-height:1.7}
+
+.text-link{color:#b543a8;text-decoration:underline;margin-left:8px}
+
+.soft-button,.gradient-button{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;border:1px solid #eae3eb;border-radius:24px;background:#fff;padding:11px 18px;font-size:14px}
+
+.gradient-button{background:linear-gradient(105deg,#72dfe7,#d590ef 52%,#f34cd9);color:#fff;border:0;font-weight:600;box-shadow:0 5px 14px #d470ca1a}
+
+.button-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+
+.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);z-index:40;width:min(100%,480px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:13px 8px max(14px,env(safe-area-inset-bottom));border:1px solid #f6f1f7;border-bottom:0;border-radius:30px 30px 0 0;background:#ffffffed;backdrop-filter:blur(18px);box-shadow:0 -9px 28px #54305f08}
+
+.bottom-nav button{display:flex;flex-direction:column;align-items:center;gap:6px;min-height:52px;color:#605763;font-size:12px}
+
+.bottom-nav .app-icon{width:27px;height:27px}
+
+.bottom-nav [aria-current=page]{color:#d55cc5}
+
+.bottom-nav [aria-current=page] .app-icon{filter:drop-shadow(0 2px 4px #e6a1d9)}
+
+
+.home-page{padding-bottom:120px}
+
+.home-top{padding:25px 14px 24px;background:linear-gradient(165deg,#ffdef5aa,#f5eafeaa 80%,#fff0)}
+
+.home-intro{display:flex;justify-content:space-between;align-items:center;padding:0 5px}
+
+.small-date{font-size:10px;color:#a186a2}
+
+.home-summary{display:flex;align-items:center;gap:10px;margin:20px 0 26px;padding:10px 0;min-width:0}
+
+.avatar-link{position:relative;width:65px;flex:none}
+
+.avatar-circle{width:59px;height:59px;display:flex;align-items:center;justify-content:center;border:3px solid white;border-radius:50%;background:linear-gradient(140deg,#f2e3f4,#d6e5f8);color:#9d81a6}
+
+.avatar-circle .app-icon{width:34px;height:34px}
+
+.avatar-label{position:absolute;bottom:-5px;left:-2px;white-space:nowrap;border-radius:18px;background:linear-gradient(90deg,#f3aac8,#e9a7eb,#b3dfe9);font-size:10px;padding:3px 9px;color:#fff}
+
+.closet-summary{flex:1;min-width:0;text-align:left}
+
+.closet-summary strong{display:block;font-size:16px;white-space:nowrap}
+
+.closet-summary strong span{font-size:13px}
+
+.closet-summary small{font-size:10px;display:block;margin-top:8px;color:#a188a1}
+
+.weather-mini{width:78px;display:flex;flex-direction:column;align-items:center;flex:none}
+
+.weather-mini .app-icon{width:28px;height:28px;color:#f4b626;fill:#ffe27b40}
+
+.weather-mini strong{font-size:15px;margin-top:3px}
+
+.weather-mini small{font-size:9px;color:#978494;margin-top:3px}
+
+.shortcut-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}
+
+.shortcut-grid button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:81px;border-radius:19px;background:#fffdfefa;box-shadow:0 10px 16px #a4afd70a}
+
+.shortcut-grid .app-icon{width:25px;height:25px}
+
+.shortcut-grid button:nth-child(2n) .app-icon{color:#bc65b7}
+
+.shortcut-grid span{font-size:11px;white-space:nowrap}
+
+.home-body{padding:0 13px}
+
+.ai-hero{margin:4px 0 27px;width:100%;display:flex;align-items:center;justify-content:space-between;text-align:left;border-radius:17px;padding:21px 17px;min-height:142px;overflow:hidden;background:radial-gradient(circle at 73% 35%,#fff2c9 0,#fff2c900 34%),linear-gradient(105deg,#f9d387,#fde8bb 50%,#efbb91);box-shadow:0 8px 18px #d29b5720}
+
+.ai-hero>span:first-child{z-index:1;position:relative;white-space:nowrap}
+
+.ai-hero small{display:block;font-size:7px;letter-spacing:1.1px;color:#ae743c}
+
+.ai-hero strong{display:block;margin:3px 0;font-size:29px;font-weight:800;color:#693a18;letter-spacing:-1px}
+
+.ai-hero em{font-style:normal;font-size:37px;color:#ad4c19;margin-right:3px}
+
+.hero-caption{font-size:8px;color:#9f754f;display:block}
+
+.hero-pill{margin-top:12px;display:inline-flex;gap:5px;align-items:center;font-size:9px;background:#fff8dfb5;border:1px solid #fff8;border-radius:20px;padding:5px 9px;color:#8d5729}
+
+.hero-pill .app-icon{width:11px;height:11px}
+
+.hero-art{position:relative;flex:1;min-width:80px;height:95px;display:block;margin-left:5px}
+
+.outfit-paper{display:flex;align-items:center;justify-content:center;position:absolute;width:63px;height:88px;background:#fff6e7;border:3px solid #fff9;border-radius:5px;box-shadow:0 5px 12px #8b643329;color:#9c705d}
+
+.outfit-paper .app-icon{width:37px;height:48px}
+
+.paper-one{left:-2px;top:9px;transform:rotate(-14deg);background:#f9eed4}
+
+.paper-two{left:36px;top:-2px;transform:rotate(6deg);background:#efddd4;color:#774940}
+
+.paper-three{left:71px;top:15px;transform:rotate(15deg);background:#e8eccd;color:#6b7c57}
+
+.section-heading{display:flex;align-items:center;justify-content:space-between;margin:0 3px 17px}
+
+.section-heading h1{font-size:20px;font-weight:650}
+
+.section-heading>span{font-size:10px;color:#a096a4}
+
+.category-tabs{display:flex;gap:24px;overflow-x:auto;scrollbar-width:none;margin-bottom:18px;max-width:100%;padding:0 3px}
+
+.category-tabs::-webkit-scrollbar,.weather-dates::-webkit-scrollbar{display:none}
+
+.category-tabs button{position:relative;flex:none;font-size:15px;color:#8d818f;padding:0 1px 13px;white-space:nowrap;min-height:40px}
+
+.category-tabs button[aria-pressed=true]{color:#29212b;font-weight:650}
+
+.category-tabs button[aria-pressed=true]:after{content:'';position:absolute;bottom:3px;left:30%;right:30%;height:3px;border-radius:5px;background:#302333}
+
+.home-feed{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:12px}
+
+.inspiration-card{position:relative;min-width:0;text-align:left;border-radius:19px;overflow:hidden;background:white;box-shadow:0 5px 20px #5136520c;padding-bottom:13px;border:1px solid #f5f0f4}
+
+.inspiration-card>img,.inspiration-card>[data-photo-state]{aspect-ratio:3/4!important;border-radius:0!important}
+
+.inspiration-card img{object-fit:cover!important}
+
+.inspiration-card strong{display:block;font-size:13px;line-height:1.6;padding:9px 10px 0}
+
+.inspiration-card small{display:block;color:#9c8fa2;font-size:10px;padding:5px 10px}
+
+.feed-label{position:absolute;top:10px;left:9px;font-size:9px;color:#7a5b76;background:#fff9;border-radius:15px;padding:4px 8px;backdrop-filter:blur(5px)}
+
+.offset{margin-top:19px}
+
+.skeleton{background:linear-gradient(90deg,#f8eaf5,#fff5fc,#f0e5f3);background-size:200% 100%;animation:shimmer 1.5s linear infinite;border-radius:18px}
+
+.skeleton.tall{height:230px}
+
+.home-feed>p{font-size:13px;color:#9d809a;grid-column:1/-1;text-align:center}
+
+.empty-card{padding:34px 20px;text-align:center;background:#fff9;border:1px solid #f3e9f0;border-radius:23px}
+
+.empty-card>.app-icon{margin:0 auto 16px;width:45px;height:45px;color:#c7a0c6}
+
+.empty-card h2{font-size:17px;font-weight:600}
+
+.empty-card p{font-size:12px;line-height:1.9;color:#a28d9f;margin:13px 0 19px}
+
+.detail-header{display:grid;grid-template-columns:40px 1fr 40px;align-items:center;margin:0 -4px 25px}
+
+.detail-header h1{text-align:center;font-size:20px;font-weight:650}
+
+.detail-header button{height:44px;display:flex;align-items:center}
+
+.detail-header .app-icon{width:24px}
+
+.city-switch{display:flex;justify-content:space-between;align-items:center;width:100%;margin:0 0 17px;padding:13px 5px;font-size:13px;color:#7c647d}
+
+.city-switch>span+span{font-size:11px;color:#ab80a6}
+
+.city-panel{margin-bottom:18px}
+
+.city-search{display:flex;gap:8px;margin:14px 0}
+
+.city-search input{width:0;flex:1;min-width:0;background:#fcf6fc;border:1px solid #eae0eb;border-radius:14px;padding:9px 10px;font-size:14px}
+
+.city-search button{font-size:12px;padding-inline:16px}
+
+.city-results{list-style:none;padding:0;margin:12px 0 0}
+
+.city-results button{display:grid;grid-template-columns:1fr 20px;width:100%;padding:12px 0;border-top:1px solid #f1eaf1;text-align:left;gap:3px}
+
+.city-results strong{font-size:14px;font-weight:500}
+
+.city-results small{font-size:11px;color:#9a8b9b;grid-row:2}
+
+.city-results svg{grid-column:2;grid-row:1/3;align-self:center;width:16px}
+
+.weather-dates{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;max-width:100%;padding:2px 0 25px}
+
+.weather-dates button{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:51px;border-radius:35px;background:#fff;padding:15px 9px;font-size:12px}
+
+.weather-dates strong{font-size:18px;font-weight:500}
+
+.weather-dates svg{color:#eab73d;width:25px;height:25px}
+
+.weather-dates [aria-pressed=true]{background:linear-gradient(#f557dc,#ec60d3);color:#fff;box-shadow:0 5px 12px #ed86d641}
+
+.weather-dates [aria-pressed=true] strong{background:#fffc;color:#db4dbb;border-radius:6px;padding:0 6px}
+
+.forecast-card{border-radius:30px;background:linear-gradient(155deg,#fffc,#f6f6fc);padding:25px 22px;box-shadow:0 6px 25px #d8c7e01c;border:1px solid #fff}
+
+.forecast-top{display:flex;justify-content:space-between;align-items:center}
+
+.forecast-top strong{font-size:38px;font-weight:450;letter-spacing:-1.8px}
+
+.forecast-top strong span{font-size:30px}
+
+.forecast-top p{font-size:13px;margin:7px 0 0}
+
+.forecast-top>.app-icon{width:57px;height:57px;color:#f1b41e;fill:#ffe26555}
+
+.forecast-city{display:flex;justify-content:space-between;font-size:11px;color:#978197;margin:17px 0}
+
+.advice{padding-top:17px;border-top:2px dashed #9dd9e5;margin-top:20px}
+
+.advice h2{color:#77bdd2;font-size:17px;font-weight:500}
+
+.advice p{font-size:15px;line-height:1.9;margin:13px 0 16px}
+
+.weather-cta{text-align:center;padding:35px 8px 23px}
+
+.weather-cta h2{font-size:20px;font-weight:600;margin:10px 0}
+
+.weather-cta p{font-size:12px;color:#a391a2;margin-bottom:22px}
+
+.weather-cta button{width:100%;margin-bottom:13px}
+
+.weather-credit{text-align:center;font-size:9px;line-height:1.9;color:#ac9dac}
+
+.weather-credit a{text-decoration:underline}
+
+.weather-skeleton{height:190px;margin-bottom:20px}
+
+@keyframes shimmer{to{background-position:-200% 0}
+
 }
 
-body {
-  margin: 0;
-  min-width: 0;
-}
 
-button {
-  cursor: pointer;
-}
+/* Detail pages share the reference's light cards and pink accents. */
+.profile-page .panel{margin-bottom:20px;border:1px solid #fff;box-shadow:0 8px 25px #8f7b9c06}
 
-.shell {
-  width: 100%;
-  max-width: 480px;
-  min-height: 100svh;
-  margin-inline: auto;
-  padding: 48px 24px;
-  overflow-wrap: anywhere;
-}
+.profile-page .profile-identity{background:linear-gradient(155deg,#fff0fb66,#ffffffb0)}
 
-.panel {
-  padding: 24px;
-  border: 1px solid #e9e3d8;
-  border-radius: 20px;
-  background: #faf7f0;
-}
+.profile-identity h2,.profile-overview h2{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:500}
+
+.profile-identity h2 .app-icon,.profile-overview h2 .app-icon{padding:5px;color:white;background:#403a44;border-radius:9px;width:27px;height:27px}
+
+.identity-preview{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;width:114px;height:126px;margin:20px 0 13px;background:linear-gradient(140deg,#fff,#f1dfef);border:2px solid #e4abe0;border-radius:19px;color:#b68eb3;font-size:11px}
+
+.identity-preview svg{height:60px;width:60px}
+.profile-edit{width:100%;display:flex;justify-content:center;align-items:center;gap:8px;border-radius:15px;background:#f2eff4;min-height:45px;margin-top:20px;font-size:15px}
+.profile-edit svg{width:20px;height:20px}
+
+.profile-overview h3{font-size:18px;font-weight:600;margin:24px 0 9px}
+.profile-overview p{font-size:13px;line-height:1.9;color:#8b7e8e;margin:0}
+.profile-note{text-align:center;color:#a896aa;font-size:10px;line-height:1.9;padding:0 12px}
+.notice-box{padding:12px 16px;border-radius:14px;background:#eff8f1;color:#4d8669;font-size:12px;margin-bottom:15px}
+.profile-page form button[type=submit]{background:linear-gradient(105deg,#79dce6,#cb9be9,#f378d6)}
+
+.wardrobe-page{padding:30px 12px 190px}
+.wardrobe-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:10px 3px 24px}
+.wardrobe-header h1{font-size:21px;font-weight:650}
+.wardrobe-header h1 span{font-size:16px;font-weight:500}
+.wardrobe-header p{font-size:11px;color:#9c839c;margin-top:8px}
+.round-icon{background:#fff9;border:1px solid #fff;border-radius:13px;display:flex;align-items:center;justify-content:center;width:39px;height:39px}
+.round-icon svg{width:22px;height:22px}
+.wardrobe-tabs{gap:23px;margin-bottom:18px}
+.wardrobe-tabs .wardrobe-tab{background:transparent;border:0;border-radius:0;min-height:43px;padding:0 0 14px}
+.wardrobe-tabs button span{font-size:11px}
+.wardrobe-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.wardrobe-card{border:1px solid #f5eff4;border-radius:17px;box-shadow:0 6px 17px #64536608;position:relative}
+.wardrobe-card>div:first-child{margin-bottom:3px}
+.wardrobe-card>div:first-child button{font-size:9px;padding:4px 5px;min-height:26px;color:#a38ca0}
+.wardrobe-card img{object-fit:contain;background:white}
+.wardrobe-card .card-title{font-size:10px;line-height:1.5;color:#6e5f73;min-height:30px;overflow-wrap:anywhere}
+.wardrobe-card>button>span:not([data-photo-state]){font-size:9px;line-height:1.6}
+.wardrobe-card>button:last-child:not(.block){font-size:10px;padding:7px 2px;border-radius:10px;margin-top:8px;min-height:32px;background:#f6edf6;color:#a16b98}
+.wardrobe-card [data-photo-state]{font-size:9px}
+.wardrobe-actions{position:fixed;bottom:89px;left:50%;transform:translateX(-50%);width:min(100%,480px);display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:15px 18px 12px;background:#ffffffed;backdrop-filter:blur(12px);border-radius:26px 26px 0 0;border:1px solid #f7f0f7;z-index:35}
+.wardrobe-actions button{font-size:14px;min-height:43px}
+.wardrobe-actions svg{width:19px;height:19px}
+.outfits-intro{text-align:center;margin:10px 0 26px}
+.outfits-intro h2{font-size:23px;font-weight:600;margin:12px 0}
+.outfits-intro p{font-size:11px;color:#99889c;line-height:1.8}
+.weather-source{border:1px solid #eadaef;padding:12px 14px;border-radius:16px;font-size:12px;line-height:1.8;color:#92658e;background:#fff9;margin-bottom:16px}
+.weather-source small{font-size:10px;color:#a88ca5}
+.outfits-page .panel{margin-bottom:16px}
+.outfits-page input,.outfits-page select,.profile-page input,.profile-page select{border-color:#e8dce8}
+.outfits-page [aria-label="搭配方案"] h2{color:#8e5487}
+.outfits-page [aria-label="搭配方案"] img{object-fit:contain;background:white}

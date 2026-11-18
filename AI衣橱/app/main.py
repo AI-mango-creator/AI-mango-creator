@@ -20,6 +20,7 @@ from app.routers.outfits import router as outfits_router
 from app.routers.profile import router as profile_router
 from app.routers.wardrobe import database_path
 from app.routers.wardrobe import router as wardrobe_router
+from app.routers.weather import router as weather_router
 from app.services.compose import ComposeError
 from app.services.extract import ExtractError
 
@@ -60,6 +61,7 @@ app = FastAPI(title="算法衣橱", lifespan=lifespan)
 app.include_router(wardrobe_router)
 app.include_router(outfits_router)
 app.include_router(profile_router)
+app.include_router(weather_router)
 
 
 @app.middleware("http")

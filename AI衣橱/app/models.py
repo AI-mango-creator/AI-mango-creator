@@ -421,3 +421,42 @@ class ExtractionFailureResponse(BaseModel):
     detail: str
     category: ErrorCategory | None
     code: Literal["IN_PARSE", "MODEL_CONFIG", "MODEL_NETWORK", "MODEL_TIMEOUT", "MODEL_RESPONSE", "NOT_CLOTHING"]
+
+
+# 天气来自外部预报服务，独立协议，不改变衣物来源或现有业务模型。
+class WeatherCity(BaseModel):
+    model_config = ConfigDict(allow_inf_nan=False)
+    id: int = Field(gt=0)
+    name: str = Field(min_length=1)
+    admin1: str = ''
+    country: str = ''
+    latitude: float = Field(ge=-90, le=90)
+    longitude: float = Field(ge=-180, le=180)
+    timezone: str
+
+
+class WeatherCities(BaseModel):
+    cities: list[WeatherCity] = Field(max_length=5)
+
+
+class WeatherDay(BaseModel):
+    model_config = ConfigDict(allow_inf_nan=False)
+    date: str
+    temp_min_c: float = Field(ge=-100, le=70)
+    temp_max_c: float = Field(ge=-100, le=70)
+    weather_code: int
+    weather_text: str
+    advice: str
+
+    @model_validator(mode='after')
+    def valid_range(self) -> Self:
+        if self.temp_min_c > self.temp_max_c:
+            raise ValueError('最低温高于最高温')
+        return self
+
+
+class WeatherForecast(BaseModel):
+    provider: Literal['Open-Meteo'] = 'Open-Meteo'
+    timezone: str
+    fetched_at: datetime
+    days: list[WeatherDay] = Field(min_length=7, max_length=7)

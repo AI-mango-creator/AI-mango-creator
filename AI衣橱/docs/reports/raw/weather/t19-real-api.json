@@ -1,0 +1,115 @@
+[
+  {
+    "endpoint": "cities",
+    "status": 504,
+    "latency_ms": 8043,
+    "response": {
+      "detail": "天气服务等待超时，请重试或手动输入温度。"
+    }
+  },
+  {
+    "endpoint": "forecast",
+    "status": 200,
+    "latency_ms": 1577,
+    "response": {
+      "provider": "Open-Meteo",
+      "timezone": "Asia/Shanghai",
+      "fetched_at": "2026-11-18T14:03:47.807604Z",
+      "days": [
+        {
+          "date": "2026-11-18",
+          "temp_min_c": 17.5,
+          "temp_max_c": 27.9,
+          "weather_code": 53,
+          "weather_text": "毛毛雨",
+          "advice": "早晚偏凉，搭配时需要外套，注意温差。"
+        },
+        {
+          "date": "2026-11-19",
+          "temp_min_c": 15.5,
+          "temp_max_c": 21.3,
+          "weather_code": 3,
+          "weather_text": "阴",
+          "advice": "早晚偏凉，搭配时需要外套，注意温差。"
+        },
+        {
+          "date": "2026-11-20",
+          "temp_min_c": 13.9,
+          "temp_max_c": 16.5,
+          "weather_code": 3,
+          "weather_text": "阴",
+          "advice": "气温偏冷，搭配时需要外套，优先选择较厚的衣物。"
+        },
+        {
+          "date": "2026-11-21",
+          "temp_min_c": 11.9,
+          "temp_max_c": 22.1,
+          "weather_code": 3,
+          "weather_text": "阴",
+          "advice": "气温偏冷，搭配时需要外套，优先选择较厚的衣物。"
+        },
+        {
+          "date": "2026-11-22",
+          "temp_min_c": 15.1,
+          "temp_max_c": 22.8,
+          "weather_code": 3,
+          "weather_text": "阴",
+          "advice": "早晚偏凉，搭配时需要外套，注意温差。"
+        },
+        {
+          "date": "2026-11-23",
+          "temp_min_c": 18.4,
+          "temp_max_c": 24.0,
+          "weather_code": 3,
+          "weather_text": "阴",
+          "advice": "早晚偏凉，搭配时需要外套，注意温差。"
+        },
+        {
+          "date": "2026-11-24",
+          "temp_min_c": 14.9,
+          "temp_max_c": 23.0,
+          "weather_code": 55,
+          "weather_text": "强毛毛雨",
+          "advice": "早晚偏凉，搭配时需要外套，注意温差。"
+        }
+      ]
+    }
+  },
+  {
+    "endpoint": "cities_manual_retry",
+    "query": "深圳",
+    "status": 200,
+    "latency_ms": 3845,
+    "response": {
+      "cities": [
+        {
+          "id": 1795565,
+          "name": "深圳",
+          "admin1": "广东",
+          "country": "中国",
+          "latitude": 22.54554,
+          "longitude": 114.0683,
+          "timezone": "Asia/Shanghai"
+        },
+        {
+          "id": 1669562,
+          "name": "深圳",
+          "admin1": "臺灣省 or 台灣省",
+          "country": "台湾",
+          "latitude": 24.95694,
+          "longitude": 121.01222,
+          "timezone": "Asia/Taipei"
+        },
+        {
+          "id": 8420705,
+          "name": "深圳",
+          "admin1": "福建省",
+          "country": "中国",
+          "latitude": 24.79594,
+          "longitude": 118.43899,
+          "timezone": "Asia/Shanghai"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,58 @@
+{
+  "source": "Chrome Fetch failure injection; wardrobe/profile temporary SQLite real API; no model calls",
+  "screenshots": [
+    {
+      "name": "12-home-loading",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "13-home-empty",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "14-wardrobe-empty",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "15-home-error",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "16-profile-error",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "17-upload-error-preserved",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "18-delete-confirm",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "19-outfits-degraded",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    }
+  ],
+  "uploadFileRetained": 1,
+  "retrySameDraft": true,
+  "uploadAttempts": 2,
+  "bannerClosed": true,
+  "runtimeErrors": []
+}
