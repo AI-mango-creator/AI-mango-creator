@@ -18,7 +18,7 @@
 | 阶段 4 项目测试 | ✅ | T10/T11评测交付；失败与缺项保留，人工可穿率未测 |
 | 阶段 5 BUG 改进 | 🟡 | T12文档完成；T5上传已验，完整演示待T9换一套 |
 
-**当前任务：T18✅（身材资料与衣橱分类）。A→B→C→D1→D2→E及最终审查修复、375×812验收完成；332 pytest+44 Vitest、lint/build通过。新prompt真实模型效果未复测，不部署、不发布，134冻结项不变。**
+**当前任务：T17增量同步✅。T18已完成的代码、文档与截图已同步GitHub公开AI衣橱/；312项项目快照与本地c6ffb75逐文件一致，另补本轮同步记录。332 pytest+44 Vitest、lint通过。未部署/开启公网体验，新prompt真实模型效果未复测，134冻结项不变。**
 
 **此前T5上传链路✅：D1真实落库门闸后，D2九张真实浏览器上传全部成功，完整单张建档5411–8880ms（n=9）。** 正式九张SQLite15→24，同draft全部重传仍24、模型调用9→9；corrections审计均落库，本批0条。T12仍🟡待T9/完整演示，T11✅；识别稳定性2/3见repeatability报告。134个旧证据/prompt/cases哈希不变。
 D2全量244 pytest + 15 Vitest、lint及构建通过；375×812下上传loading/error/成功与衣柜loading/empty已检查，无横向溢出。失败保留File/input/占位/draft_id，原地重试幂等。T9、完整录屏、人工可穿率、首次10张建档总计时与HTTP端到端P95仍未完成；本轮不改旧prompt/cases或评测证据。
@@ -344,6 +344,7 @@ make eval    # 生成 docs/reports/eval_v1.md
 
 | 任务 | 日期 | 实测证据（命令 + 关键输出） |
 |---|---|---|
+| T17同步T18 | 2026-11-18 | 本地c6ffb75的312项文件快照同步至公开主页仓库AI衣橱/，新增/更新50项、额外远端文件0；候选tree逐项SHA/mode核对missing=0、mismatch=0、outsideChanged=0，main已回读至d7d88aebb6f0bbadcd28107f4dea4a6051bd7df0。另补同步记录文档。`make test`→`332 passed in 3.02s`+`Tests 44 passed (44)`；`make lint`→`All checks passed!`、tsc exit0。凭据模式命中0，无.env/data/依赖路径，134冻结项不变，无模型调用或部署。详见reports/t17-sync-t18.md。 |
 | T18最终验收 | 2026-11-18 | `zsh -ilc 'make test && make lint'`→`332 passed in 3.07s`+`Tests 44 passed (44)`，ruff/tsc exit0；build392ms。CDP11张375×812截图scrollWidth均375、Runtime异常0；临时库真实GET/PATCH覆盖资料保存刷新、五型选择、分类空态/保存失败保留/成功迁移和设备切换保护。另浏览器回归自定义名称保留手选outer：先丢失为null RED，修复后PASS。只读审查4项已修复，最终修复7代码文件，134冻结项SHA256不变；无新增模型调用，不发布。详情reports/t18-profile-categories.md。 |
 | T18-E代码 | 2026-11-18 | 329 pytest+42 Vitest及lint通过，build335ms；新增分类映射/计数/固定类别/手工命名3测试和API移动/失败保留1测试。5前端文件，375px截图及最终审查待验，T18保持🟡。 |
 | T18-D2 | 2026-11-18 | 分类后端8文件完成，新增9测试，329 pytest+38 Vitest及lint通过。006只增列并幂等回填；外套归上装、半裙归裙装且底层槽位保留。新增v3类别schema由models生成，包包/首饰/套装/unknown入库待确认，未分类需手工归类，非衣物仍422；收纳类不推荐，来源可追溯。生产上传版本断言随功能由v2更新为v3，旧v1/v2与案例不改。 |
