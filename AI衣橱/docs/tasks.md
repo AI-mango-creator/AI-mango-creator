@@ -18,7 +18,7 @@
 | 阶段 4 项目测试 | ✅ | T10/T11评测交付；失败与缺项保留，人工可穿率未测 |
 | 阶段 5 BUG 改进 | 🟡 | T12文档完成；T5上传已验，完整演示待T9换一套 |
 
-**当前任务：T19✅，参考图首页/天气/档案/衣橱改版完成。355 pytest+50 Vitest、lint/build通过；真实选城/七天预报/温度带入通过，27张375×812无溢出，独立审查3项已修复。天气曾超时，报告保留；无新LLM调用或发布。**
+**当前任务：T17同步T19✅。已完成的首页/真实天气/档案/衣橱改版及27张截图同步GitHub公开AI衣橱/；358项快照与本地f9070c8逐文件一致，另补同步记录。355 pytest+50 Vitest及lint通过，未开启公网交互服务。**
 
 **此前T5上传链路✅：D1真实落库门闸后，D2九张真实浏览器上传全部成功，完整单张建档5411–8880ms（n=9）。** 正式九张SQLite15→24，同draft全部重传仍24、模型调用9→9；corrections审计均落库，本批0条。T12仍🟡待T9/完整演示，T11✅；识别稳定性2/3见repeatability报告。134个旧证据/prompt/cases哈希不变。
 D2全量244 pytest + 15 Vitest、lint及构建通过；375×812下上传loading/error/成功与衣柜loading/empty已检查，无横向溢出。失败保留File/input/占位/draft_id，原地重试幂等。T9、完整录屏、人工可穿率、首次10张建档总计时与HTTP端到端P95仍未完成；本轮不改旧prompt/cases或评测证据。
@@ -345,6 +345,7 @@ make eval    # 生成 docs/reports/eval_v1.md
 
 | 任务 | 日期 | 实测证据（命令 + 关键输出） |
 |---|---|---|
+| T17同步T19 | 2026-11-18 | 本地f9070c8的358项文件快照同步至公开AI衣橱/，59项新增/更新（32文本+27截图）。候选tree校验missing/mismatch/extra/outsideChanged均0，快照commit6874d2921aee6e33bf397e1b3cfa34cedefe72ec；正常前进、expected_sha校验，无强推。`355 passed in 3.10s`+`Tests 50 passed (50)`，make lint exit0；凭据模式命中0，无运行数据路径，134冻结项不变。另补同步记录，详见reports/t17-sync-t19.md。 |
 | T19收尾 | 2026-11-18 | `355 passed in 3.54s`+`Tests 50 passed (50)`，make lint exit0、build425ms。真实GET cities200/3项3845ms（首次504/8043ms保留），forecast200/7天1577ms；浏览器真实搜索选城→预报→18°C带入通过。27张CDP375×812，scrollWidth375、Runtime0；上传失败File保留1、2次重试draft_id相同，黄条关闭有效。审查3项先RED后GREEN；134冻结项不变，无LLM调用。详见reports/t19-home-weather.md。 |
 | T19-C实现 | 2026-11-18 | ≤6代码文件，354 pytest+50 Vitest及lint通过，build346ms；档案分区摘要/编辑、衣橱横分类/三列网格、天气预填与上传跳转接线完成。375px与独立审查待验，真实天气暂因TLS未通过。 |
 | T19-B | 2026-11-18 | 8代码文件；天气API6测试先RED后GREEN，全量354 pytest+50 Vitest、lint通过，build335ms。粉色首页/真实衣物、天气搜索与7天卡、四入口底栏完成；C段继续详情/预填接线，375px待最终验收。 |
