@@ -18,7 +18,7 @@
 | 阶段 4 项目测试 | ✅ | T10/T11评测交付；失败与缺项保留，人工可穿率未测 |
 | 阶段 5 BUG 改进 | 🟡 | T12文档完成；T5上传已验，完整演示待T9换一套 |
 
-**当前任务：T20✅。A—E按批准范围顺序完成，每段全量test/lint通过；最终373 pytest+57 Vitest、lint/build通过，双设备真实社区与34张375×812截图已验，详见reports/t20-community.md。**
+**当前任务：T17同步T20✅。T20已完成并合入main，413文件项目快照已同步至公开GitHub的AI衣橱/，70项新增/更新含34截图，逐文件核验一致；同步证据另补入。详见reports/t17-sync-t20.md，T20验收见reports/t20-community.md。**
 
 **此前T5上传链路✅：D1真实落库门闸后，D2九张真实浏览器上传全部成功，完整单张建档5411–8880ms（n=9）。** 正式九张SQLite15→24，同draft全部重传仍24、模型调用9→9；corrections审计均落库，本批0条。T12仍🟡待T9/完整演示，T11✅；识别稳定性2/3见repeatability报告。134个旧证据/prompt/cases哈希不变。
 D2全量244 pytest + 15 Vitest、lint及构建通过；375×812下上传loading/error/成功与衣柜loading/empty已检查，无横向溢出。失败保留File/input/占位/draft_id，原地重试幂等。T9、完整录屏、人工可穿率、首次10张建档总计时与HTTP端到端P95仍未完成；本轮不改旧prompt/cases或评测证据。
@@ -346,6 +346,7 @@ make eval    # 生成 docs/reports/eval_v1.md
 
 | 任务 | 日期 | 实测证据（命令 + 关键输出） |
 |---|---|---|
+| T17同步T20 | 2026-11-19 | 本地eff55df的413项快照同步至公开AI衣橱/，70项新增/更新（36文本+34截图）；候选tree核验missing/mismatch/extra/outsideChanged均0，快照commit9daabff8e313de8220ad947c37c51ca96fcf1685已回读。373 pytest+57 Vitest、lint exit0；凭据模式命中0、运行路径0、134冻结项不变；另补同步记录，见reports/t17-sync-t20.md。 |
 | T20收尾 | 2026-11-19 | `373 passed in 5.09s`+`Tests 57 passed (57)`、lint exit0、build426ms。真实临时API双设备四类发布/关注/赞/评论/投票，回包丢失重试3→3帖；A清空14件/2照片及社区、B1帖保留，匿名额度1保留。34张CDP375×812均scrollWidth375、Runtime0，ObjectURL A43/43 B50/50释放。审查修复图片结构/路径/history及嵌套WebP，回归先RED后GREEN；134冻结项不变，无LLM/天气调用。见reports/t20-community.md。 |
 | T20-E实现 | 2026-11-18 | 7代码文件，帖子详情/真实互动/评论/四类发布及照片预览、失败草稿保留、设备切换阻止；新增1 Vitest先RED后GREEN，全量367 pytest+57 Vitest、lint/build364ms通过。独立审查与375px双设备验收待做。 |
 | T20-D | 2026-11-18 | 8代码文件；6新增Vitest先缺模块RED后GREEN，367 pytest+56 Vitest、lint/build350ms通过。四栏目真实列表/公开照片/赞数与空错载入、设备头API及ObjectURL释放、底栏社区与衣橱子导航完成，详情发布待E。 |
