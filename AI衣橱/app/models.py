@@ -460,3 +460,158 @@ class WeatherForecast(BaseModel):
     timezone: str
     fetched_at: datetime
     days: list[WeatherDay] = Field(min_length=7, max_length=7)
+
+
+CommunityKind = Literal['photo', 'outfit', 'poll', 'buy']
+CommunityTab = Literal['following', 'all', 'outfits', 'votes']
+
+
+class CommunityTimed(SourcedModel):
+    created_at: str = sourced('derived', default_factory=lambda: datetime.now(UTC).isoformat())
+
+
+class CommunityAuthor(CommunityTimed):
+    id: str = sourced('derived')
+    owner_id: UUID = sourced('derived')
+    nickname: str = sourced('derived')
+
+
+class CommunityPost(CommunityTimed):
+    id: str = sourced('derived')
+    author_id: str = sourced('derived')
+    kind: CommunityKind = sourced('user')
+    title: str = sourced('user', min_length=1, max_length=80)
+    body: str = sourced('user', default='', max_length=2000)
+    draft_id: str = sourced('user')
+    request_hash: str = sourced('derived', min_length=64, max_length=64)
+
+
+class CommunityMedia(SourcedModel):
+    id: str = sourced('derived')
+    post_id: str = sourced('derived')
+    position: int = sourced('derived', ge=0)
+    file_path: str = sourced('derived')
+    mime_type: Literal['image/jpeg', 'image/png', 'image/webp'] = sourced('derived')
+    caption: str = sourced('derived', default='')
+
+
+class CommunityLike(CommunityTimed):
+    post_id: str = sourced('derived')
+    author_id: str = sourced('derived')
+
+
+class CommunityFollow(CommunityTimed):
+    follower_id: str = sourced('derived')
+    followee_id: str = sourced('user')
+
+
+class CommunityComment(CommunityTimed):
+    id: str = sourced('derived')
+    post_id: str = sourced('derived')
+    author_id: str = sourced('derived')
+    text: str = sourced('user', min_length=1, max_length=500)
+    client_id: str = sourced('user')
+
+
+class CommunityOption(SourcedModel):
+    id: str = sourced('derived')
+    post_id: str = sourced('derived')
+    position: int = sourced('derived', ge=0)
+    label: str = sourced('user', min_length=1, max_length=80)
+    media_id: str | None = sourced('derived', default=None)
+
+
+class CommunityVote(CommunityTimed):
+    post_id: str = sourced('derived')
+    author_id: str = sourced('derived')
+    option_id: str = sourced('user')
+
+
+class CommunityOptionDraft(BaseModel):
+    model_config = ConfigDict(extra='forbid', str_strip_whitespace=True)
+    label: str = Field(min_length=1, max_length=80)
+
+
+class CommunityDraft(BaseModel):
+    model_config = ConfigDict(extra='forbid', str_strip_whitespace=True)
+    draft_id: UUID
+    kind: CommunityKind
+    title: str = Field(min_length=1, max_length=80)
+    body: str = Field(default='', max_length=2000)
+    item_ids: list[str] = Field(default_factory=list, max_length=8)
+    options: list[CommunityOptionDraft] = Field(default_factory=list, max_length=4)
+
+    @model_validator(mode='after')
+    def valid_kind(self) -> Self:
+        if self.kind == 'outfit':
+            if not 2 <= len(self.item_ids) <= 8 or len(set(self.item_ids)) != len(self.item_ids):
+                raise ValueError('搭配分享请选择2至8件不同衣物')
+        elif self.item_ids:
+            raise ValueError('此类帖子不接受衣柜单品')
+        if (self.kind == 'poll' and not 2 <= len(self.options) <= 4) or (self.kind != 'poll' and self.options):
+            raise ValueError('穿搭投票需2至4个选项，其他类型不接受自定义选项')
+        return self
+
+
+class CommunityCommentDraft(BaseModel):
+    model_config = ConfigDict(extra='forbid', str_strip_whitespace=True)
+    client_id: UUID
+    text: str = Field(min_length=1, max_length=500)
+
+
+class CommunityVoteDraft(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    option_id: str = Field(min_length=1, max_length=80)
+
+
+class CommunityAuthorView(BaseModel):
+    id: str
+    nickname: str
+
+
+class CommunityMediaView(BaseModel):
+    id: str
+    caption: str
+
+
+class CommunityOptionView(BaseModel):
+    id: str
+    label: str
+    media_id: str | None
+    votes: int
+
+
+class CommunityPostView(BaseModel):
+    id: str
+    author: CommunityAuthorView
+    kind: CommunityKind
+    title: str
+    body: str
+    created_at: str
+    media: list[CommunityMediaView]
+    options: list[CommunityOptionView]
+    likes: int
+    comments: int
+    votes: int
+    liked: bool
+    following: bool
+    my_vote: str | None
+    can_delete: bool
+
+
+class CommunityFeed(BaseModel):
+    posts: list[CommunityPostView]
+    next_cursor: str | None
+
+
+class CommunityCommentView(BaseModel):
+    id: str
+    author: CommunityAuthorView
+    text: str
+    created_at: str
+    can_delete: bool
+
+
+class CommunityComments(BaseModel):
+    comments: list[CommunityCommentView]
+    next_cursor: str | None

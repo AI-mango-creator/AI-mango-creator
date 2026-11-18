@@ -1,0 +1,43 @@
+{
+  "recorded_at": "2026-11-19",
+  "clear_status": 200,
+  "A_private_rows": {
+    "wardrobe_items": 0,
+    "outfit_sets": 0,
+    "outfit_items": 0,
+    "sessions": 0,
+    "body_profiles": 0
+  },
+  "A_community_author_rows": 0,
+  "community_remaining_B_rows": {
+    "community_authors": 1,
+    "community_posts": 1,
+    "community_media": 1,
+    "community_comments": 0,
+    "community_likes": 0,
+    "community_follows": 0,
+    "community_votes": 0,
+    "community_poll_options": 0
+  },
+  "quota_before": [
+    {
+      "owner_hash": "1e367573d96f373db0630cbbda176a653103f5b6debe998dfcf286d76fef866f",
+      "day": "2026-11-19",
+      "recognition": 1,
+      "composition": 0,
+      "expires_at": "2026-11-20T00:00:00+08:00"
+    }
+  ],
+  "quota_after": [
+    {
+      "owner_hash": "1e367573d96f373db0630cbbda176a653103f5b6debe998dfcf286d76fef866f",
+      "day": "2026-11-19",
+      "recognition": 1,
+      "composition": 0,
+      "expires_at": "2026-11-20T00:00:00+08:00"
+    }
+  ],
+  "quota_preserved": true,
+  "public_photo_files": 1,
+  "model_log_exists": false
+}

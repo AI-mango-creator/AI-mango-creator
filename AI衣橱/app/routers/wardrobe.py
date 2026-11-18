@@ -213,25 +213,36 @@ def _confirm_or_patch(path, owner_id, item_id, patch):
 
 @router.delete("/items")
 def clear_items(path: Database, owner_id: Owner) -> dict[str, int]:
-    with owner_lock(path, owner_id), closing(connect_db(path)) as connection, connection:
-        connection.execute("BEGIN IMMEDIATE")
-        rows = connection.execute("SELECT image_path FROM wardrobe_items WHERE owner_id=?", (owner_id,)).fetchall()
-        counts = {}
-        for table in ("outfit_items", "outfit_sets", "sessions", "wardrobe_items"):
-            counts[table] = connection.execute(f"DELETE FROM {table} WHERE owner_id=?", (owner_id,)).rowcount
-        connection.execute("DELETE FROM body_profiles WHERE owner_id=?", (owner_id,))
-        uploads = (path.parent / "uploads").resolve()
-        photos = set()
-        for row in rows:
-            if row["image_path"]:
-                image = (path.parent / row["image_path"]).resolve()
-                if not image.is_relative_to(uploads):
-                    raise HTTPException(500, "照片清理未完成，请稍后重试。")
-                photos.add(image)
-        for image in photos:
-            image.unlink(missing_ok=True)
-        own_directory = uploads / owner_id
-        if own_directory.is_dir():
-            shutil.rmtree(own_directory)
-        counts["photos"] = len(photos)
+    from app.services import community
+
+    staged = []
+    with owner_lock(path, owner_id):
+        try:
+            with closing(connect_db(path)) as connection, connection:
+                connection.execute("BEGIN IMMEDIATE")
+                staged = community.stage_owner_posts(connection, path, owner_id)
+                community.clear_for_owner(connection, owner_id)
+                rows = connection.execute("SELECT image_path FROM wardrobe_items WHERE owner_id=?", (owner_id,)).fetchall()
+                counts = {}
+                for table in ("outfit_items", "outfit_sets", "sessions", "wardrobe_items"):
+                    counts[table] = connection.execute(f"DELETE FROM {table} WHERE owner_id=?", (owner_id,)).rowcount
+                connection.execute("DELETE FROM body_profiles WHERE owner_id=?", (owner_id,))
+                uploads = (path.parent / "uploads").resolve()
+                photos = set()
+                for row in rows:
+                    if row["image_path"]:
+                        image = (path.parent / row["image_path"]).resolve()
+                        if not image.is_relative_to(uploads):
+                            raise HTTPException(500, "照片清理未完成，请稍后重试。")
+                        photos.add(image)
+                for image in photos:
+                    image.unlink(missing_ok=True)
+                own_directory = uploads / owner_id
+                if own_directory.is_dir():
+                    shutil.rmtree(own_directory)
+                counts["photos"] = len(photos)
+        except Exception:
+            community.restore_staged(staged)
+            raise
+        community.purge_trash(path, owner_id)
     return counts

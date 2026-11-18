@@ -11,6 +11,14 @@ from pydantic import ValidationError
 from app.db import connect_db, init_db, to_db_values
 from app.models import (
     BodyProfile,
+    CommunityAuthor,
+    CommunityComment,
+    CommunityFollow,
+    CommunityLike,
+    CommunityMedia,
+    CommunityOption,
+    CommunityPost,
+    CommunityVote,
     DailyQuota,
     OutfitItem,
     OutfitSet,
@@ -65,6 +73,10 @@ def test_init_creates_four_tables_matching_models(database):
         "outfit_items": OutfitItem,
         "sessions": Session,
         "body_profiles": BodyProfile,
+        "community_authors": CommunityAuthor, "community_posts": CommunityPost,
+        "community_media": CommunityMedia, "community_likes": CommunityLike,
+        "community_follows": CommunityFollow, "community_comments": CommunityComment,
+        "community_poll_options": CommunityOption, "community_votes": CommunityVote,
     }
     with closing(connect_db(database)) as connection:
         tables = {

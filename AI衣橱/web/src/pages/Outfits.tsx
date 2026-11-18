@@ -46,7 +46,7 @@ export default function Outfits({ initialWeather, onBack }: { initialWeather?: W
 
   return <main className="shell outfits-page">
     {state === "ready" && result?.degraded && <DegradeBanner key={result.session_id} reason={result.degrade_reason} />}
-    <header className="detail-header"><button aria-label="返回首页" onClick={onBack}><AppIcon name="back" /></button><h1>AI帮我搭</h1><span /></header>
+    <header className="detail-header"><button aria-label="返回衣橱" onClick={onBack}><AppIcon name="back" /></button><h1>AI帮我搭</h1><span /></header>
     <div className="outfits-intro"><span className="eyebrow">YOUR CLOSET. YOUR STYLE.</span><h2>今天，穿出自己的样子</h2><p>只从你的衣橱里，挑选真正能穿出门的搭配。</p></div>
     {initialWeather && <p className="weather-source">⌖ {initialWeather.city} · {initialWeather.date} 预报最低温 {initialWeather.temperature}°C<br /><small>已带入参考温度，可按出门时间手动修改。</small></p>}
     <form onSubmit={generate} className="panel mb-5">

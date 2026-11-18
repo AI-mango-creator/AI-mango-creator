@@ -1,5 +1,10 @@
-export type IconName = 'home' | 'wardrobe' | 'spark' | 'person' | 'sun' | 'cloud' | 'rain' | 'upload' | 'arrow' | 'back' | 'edit';
+export type IconName = 'home' | 'wardrobe' | 'spark' | 'person' | 'sun' | 'cloud' | 'rain' | 'upload' | 'arrow' | 'back' | 'edit' | 'community' | 'camera' | 'heart' | 'comment' | 'close';
 const paths: Record<IconName, string> = {
+  community: 'M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z M7 14q5 6 10 0',
+  camera: 'M3 6h4l2-3h6l2 3h4v15H3Z M12 10a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z',
+  heart: 'M12 21S1 14 2 7a5 5 0 0 1 10-1A5 5 0 0 1 22 7c1 7-10 14-10 14Z',
+  comment: 'M3 3h18v14H9l-6 5Z M7 8h10 M7 12h7',
+  close: 'm5 5 14 14 M19 5 5 19',
   home: 'M3 10 12 2l9 8v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z',
   wardrobe: 'M4 3h16v17H4z M12 3v17 M8 9v5 M16 9v5 M6 20v2 M18 20v2',
   spark: 'm12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5Z',

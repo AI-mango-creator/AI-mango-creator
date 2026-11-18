@@ -1,0 +1,350 @@
+{
+  "recorded_at": "2026-11-18T16:11:42.853Z",
+  "context": "real SQLite and API; temporary seeded private wardrobe and actual case images, no model calls; only error/loading states injected",
+  "viewport": "375x812 CDP device emulation",
+  "records": [
+    {
+      "label": "browser forward restores compose"
+    },
+    {
+      "label": "photo publication via browser",
+      "id": "P37436f0ac82a41938f9426999c3e8baa",
+      "photos": 2
+    },
+    {
+      "label": "outfit explicit snapshots",
+      "id": "Pd67727d41dc44a1d8291faf05d98522b"
+    },
+    {
+      "label": "lost-response injection follows actual commit",
+      "serverStatus": 201
+    },
+    {
+      "label": "failed publish retains actual File and text"
+    },
+    {
+      "label": "retry idempotent after committed lost response",
+      "before": 3,
+      "after": 3
+    },
+    {
+      "label": "poll publication via browser",
+      "id": "P2b5950e149d44438802d372a9059da6a"
+    },
+    {
+      "label": "B private wardrobe remains empty"
+    },
+    {
+      "label": "B sees A actual public posts",
+      "count": 4
+    },
+    {
+      "label": "public response excludes private identifiers"
+    },
+    {
+      "label": "B cannot read A private photo"
+    },
+    {
+      "label": "B cannot delete A post"
+    },
+    {
+      "label": "real follow like comment vote persisted",
+      "likes": 1,
+      "comments": 1,
+      "votes": 1
+    },
+    {
+      "label": "vote change rejected"
+    },
+    {
+      "label": "vote state persists on reopen"
+    },
+    {
+      "label": "withdrawal hidden cross-device"
+    },
+    {
+      "label": "withdrawal removes public photo"
+    },
+    {
+      "label": "A clear-all actual API",
+      "response": {
+        "outfit_items": 0,
+        "outfit_sets": 0,
+        "sessions": 0,
+        "wardrobe_items": 14,
+        "photos": 2
+      }
+    },
+    {
+      "label": "A clear retains B published post",
+      "remaining": 1
+    },
+    {
+      "label": "A private wardrobe empty after clear"
+    },
+    {
+      "label": "ObjectURL cleanup A",
+      "created": 43,
+      "revoked": 43,
+      "active": 0
+    },
+    {
+      "label": "ObjectURL cleanup B",
+      "created": 50,
+      "revoked": 50,
+      "active": 0
+    },
+    {
+      "label": "browser Runtime exceptions",
+      "count": 0
+    }
+  ],
+  "screenshots": [
+    {
+      "name": "01-all-empty",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "02-following-empty",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "03-publish-types",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "04-photo-draft",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "05-photo-detail",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "06-outfit-draft",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "07-outfit-detail",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "08-publish-error-retained",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "09-buy-detail",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "10-poll-draft",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "11-poll-detail",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "12-all-feed",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "13-outfits-feed",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "14-votes-feed",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "15-buy-voted-comment",
+      "owner": "b",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "16-following-feed",
+      "owner": "b",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "17-poll-voted",
+      "owner": "b",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "18-feed-loading-injected-delay",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "19-feed-error-injected",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "20-photo-error-injected",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "21-delete-confirmation",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "22-following-loading-injected",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "23-following-error-injected",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "24-following-empty",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "22-outfits-loading-injected",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "23-outfits-error-injected",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "24-outfits-empty",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "22-votes-loading-injected",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "23-votes-error-injected",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "24-votes-empty",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "25-detail-loading-injected",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "26-detail-error-injected",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "27-outfit-chooser-empty",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "28-wardrobe-ai-entry",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    }
+  ],
+  "additional_checks": [
+    "following loading/error/retry passed",
+    "outfits loading/error/retry passed",
+    "votes loading/error/retry passed",
+    "all loading/error/retry passed",
+    "detail loading/error/retry passed",
+    "wardrobe AI subnavigation reachable"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "/health": 200,
+  "/api/community/posts": 200,
+  "/api/wardrobe/items": 200,
+  "nested_webp_status": 422,
+  "nested_webp_body": {
+    "detail": "社区仅支持JPG、PNG或WebP图片，请重新选择。"
+  }
+}

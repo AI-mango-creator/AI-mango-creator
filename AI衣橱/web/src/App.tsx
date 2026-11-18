@@ -4,6 +4,7 @@ import Outfits from './pages/Outfits';
 import Profile from './pages/Profile';
 import Home from './pages/Home';
 import Weather from './pages/Weather';
+import Community from './pages/Community';
 import BottomNav from './components/BottomNav';
 import type { Page } from './components/BottomNav';
 import { forecastTemperature, getWeather } from './lib/weatherApi';
@@ -28,7 +29,8 @@ export default function App() {
     catch (e) { setWeather({ ...weather, status: 'error', error: e instanceof Error ? e.message : '请刷新天气。' }); }
   }
   return <div className="app-frame" data-weather-temperature={selection?.temperature} data-upload-entry={uploadEntry}>
-    {page === 'home' ? <Home weather={weather} onNavigate={navigate} /> : page === 'weather' ? <Weather state={weather} onCity={setCity} onDate={date => setWeather(x => ({ ...x, date }))} onRefresh={() => setRevision(x => x + 1)} onUse={useWeather} onManual={() => { setSelection(null); navigate('outfits'); }} onBack={() => navigate('home')} /> : page === 'wardrobe' ? <Wardrobe initialUpload={uploadEntry} onAI={() => { setSelection(null); navigate('outfits'); }} /> : page === 'outfits' ? <Outfits initialWeather={selection} onBack={() => navigate('home')} /> : <Profile onBack={() => navigate('home')} />}
+    {(page === 'wardrobe' || page === 'outfits') && <nav className="closet-subnav" aria-label="衣橱与搭配"><button aria-pressed={page==='wardrobe'} onClick={()=>navigate('wardrobe')}>我的衣橱</button><button aria-pressed={page==='outfits'} onClick={()=>navigate('outfits')}>AI搭配</button></nav>}
+    {page === 'community' ? <Community /> : page === 'home' ? <Home weather={weather} onNavigate={navigate} /> : page === 'weather' ? <Weather state={weather} onCity={setCity} onDate={date => setWeather(x => ({ ...x, date }))} onRefresh={() => setRevision(x => x + 1)} onUse={useWeather} onManual={() => { setSelection(null); navigate('outfits'); }} onBack={() => navigate('home')} /> : page === 'wardrobe' ? <Wardrobe initialUpload={uploadEntry} onAI={() => { setSelection(null); navigate('outfits'); }} /> : page === 'outfits' ? <Outfits initialWeather={selection} onBack={() => navigate('wardrobe')} /> : <Profile onBack={() => navigate('home')} />}
     <BottomNav page={page} onNavigate={next => { if (next === 'outfits') setSelection(null); navigate(next); }} />
   </div>;
 }

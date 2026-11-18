@@ -16,6 +16,7 @@ from starlette.exceptions import HTTPException
 from app.db import _quota_day, expire_quotas
 from app.llm.errors import LLMError, ServiceError, public_model_failure
 from app.models import ExtractionFailureResponse
+from app.routers.community import router as community_router
 from app.routers.outfits import router as outfits_router
 from app.routers.profile import router as profile_router
 from app.routers.wardrobe import database_path
@@ -62,6 +63,7 @@ app.include_router(wardrobe_router)
 app.include_router(outfits_router)
 app.include_router(profile_router)
 app.include_router(weather_router)
+app.include_router(community_router)
 
 
 @app.middleware("http")
