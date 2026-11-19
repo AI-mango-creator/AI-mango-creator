@@ -19,6 +19,7 @@ from app.models import ExtractionFailureResponse
 from app.routers.community import router as community_router
 from app.routers.outfits import router as outfits_router
 from app.routers.profile import router as profile_router
+from app.routers.tryon import router as tryon_router
 from app.routers.wardrobe import database_path
 from app.routers.wardrobe import router as wardrobe_router
 from app.routers.weather import router as weather_router
@@ -64,6 +65,7 @@ app.include_router(outfits_router)
 app.include_router(profile_router)
 app.include_router(weather_router)
 app.include_router(community_router)
+app.include_router(tryon_router)
 
 
 @app.middleware("http")

@@ -236,3 +236,76 @@ def vision(prompt, image, *, model, prompt_version, case_id, validate,
                 wait(retry_delay)
             pending.append({"role": "user", "content": f"上次识别失败：{failure} 请按原始要求重新识别。"})
     return {**attempts[-1], "attempts": attempts, "latency_ms": round((perf_counter() - total_started) * 1000)}
+
+
+# T21 native image API. Existing chat/vision and their log format are unchanged.
+_tryon_http_client = httpx2.Client
+
+
+def tryon_configuration():
+    values = {}
+    try:
+        for line in ENV_PATH.read_text().splitlines() if ENV_PATH.exists() else []:
+            tokens = shlex.split(line, comments=True)
+            if tokens and tokens[0] == 'export':
+                tokens = tokens[1:]
+            if len(tokens) == 1 and '=' in tokens[0]:
+                name, value = tokens[0].split('=', 1)
+                values[name] = value
+    except (OSError, ValueError):
+        raise LLMError('MODEL_CONFIG', '无法读取试穿配置，请检查.env。') from None
+    key = os.environ.get('FASHN_API_KEY', values.get('FASHN_API_KEY', '')).strip()
+    if not key or key.startswith(('your-', '<')):
+        raise LLMError('MODEL_CONFIG', '试穿服务尚未配置，请在后端.env设置FASHN_API_KEY。')
+    return key
+
+
+def _tryon_request(method, suffix, body=None):
+    from app.models import ProviderTryon
+
+    key = tryon_configuration()
+    started, outcome = perf_counter(), 'failed'
+    try:
+        with _tryon_http_client(timeout=20, follow_redirects=False) as transport:
+            response = (transport.post('https://api.fashn.ai/v1/'+suffix, headers={'Authorization': 'Bearer '+key}, json=body)
+                        if method == 'POST' else transport.get('https://api.fashn.ai/v1/'+suffix, headers={'Authorization': 'Bearer '+key}))
+        if response.status_code in (401, 403):
+            raise LLMError('MODEL_CONFIG', '试穿服务暂不可用，请检查后端配置。', http_status=response.status_code)
+        if response.status_code == 429:
+            raise LLMError('MODEL_RATE_LIMIT', '试穿服务正忙，请稍后重新确认试穿。', category=ErrorCategory.RATE_LIMIT, http_status=429)
+        if not 200 <= response.status_code < 300:
+            raise LLMError('MODEL_NETWORK', '试穿服务暂不可用，请稍后再试。')
+        if len(response.content) > 15*1024*1024:
+            raise LLMError('MODEL_RESPONSE', '试穿结果过大，暂时无法处理。')
+        result = ProviderTryon.model_validate(response.json())
+        outcome = 'ok'
+        return result
+    except httpx2.TimeoutException:
+        raise LLMError('MODEL_TIMEOUT', '试穿提交或查询超时，请稍后查看任务。') from None
+    except httpx2.HTTPError:
+        raise LLMError('MODEL_NETWORK', '试穿连接中断，请稍后查看任务。') from None
+    except (ValidationError, ValueError):
+        raise LLMError('MODEL_RESPONSE', '试穿响应格式有误，请稍后查看任务。') from None
+    finally:
+        _write_log({'event': 'tryon_call', 'case_id': _request.get().case_id if _request.get() else str(uuid4()), 'prompt_version': 'fashn.tryon-v1.6',
+                    'latency_ms': round((perf_counter()-started)*1000), 'prompt_tokens': None,
+                    'completion_tokens': None, 'degraded': False, 'operation': method, 'outcome': outcome})
+
+
+def tryon_submit(person, garment, category):
+    if category not in ('tops', 'bottoms', 'one-pieces'):
+        raise LLMError('MODEL_RESPONSE', '此类服饰暂不支持试穿。')
+    def uri(data):
+        mime = 'image/png' if data.startswith(b'\x89PNG') else 'image/webp' if data.startswith(b'RIFF') else 'image/jpeg'
+        return 'data:'+mime+';base64,'+base64.b64encode(data).decode('ascii')
+    return _tryon_request('POST', 'run', {'model_name': 'tryon-v1.6', 'inputs': {
+        'model_image': uri(person), 'garment_image': uri(garment), 'category': category,
+        'num_samples': 1, 'return_base64': True, 'output_format': 'jpeg',
+        'mode': 'balanced', 'moderation_level': 'conservative', 'seed': 42}})
+
+
+def tryon_status(task_id):
+    import re
+    if not re.fullmatch(r'[A-Za-z0-9_-]{1,200}', task_id):
+        raise LLMError('MODEL_RESPONSE', '试穿任务编号无效。')
+    return _tryon_request('GET', 'status/'+task_id)

@@ -20,9 +20,12 @@ from app.models import (
     CommunityPost,
     CommunityVote,
     DailyQuota,
+    ExperienceProduct,
     OutfitItem,
     OutfitSet,
     Session,
+    TryonDailyQuota,
+    TryonJob,
     WardrobeItem,
 )
 from scripts.seed import seed_database
@@ -73,6 +76,7 @@ def test_init_creates_four_tables_matching_models(database):
         "outfit_items": OutfitItem,
         "sessions": Session,
         "body_profiles": BodyProfile,
+        "experience_products": ExperienceProduct, "tryon_jobs": TryonJob,
         "community_authors": CommunityAuthor, "community_posts": CommunityPost,
         "community_media": CommunityMedia, "community_likes": CommunityLike,
         "community_follows": CommunityFollow, "community_comments": CommunityComment,
@@ -84,7 +88,8 @@ def test_init_creates_four_tables_matching_models(database):
                 "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'"
             )
         }
-        assert tables == set(expected) | {"daily_quotas"}
+        assert tables == set(expected) | {"daily_quotas", "tryon_daily_quotas"}
+        assert {r[1] for r in connection.execute("PRAGMA table_info(tryon_daily_quotas)")} == set(TryonDailyQuota.model_fields)
         quota_columns = {row[1] for row in connection.execute("PRAGMA table_info(daily_quotas)")}
         assert quota_columns == set(DailyQuota.model_fields)
         for table, model in expected.items():

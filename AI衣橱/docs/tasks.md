@@ -18,7 +18,7 @@
 | 阶段 4 项目测试 | ✅ | T10/T11评测交付；失败与缺项保留，人工可穿率未测 |
 | 阶段 5 BUG 改进 | 🟡 | T12文档完成；T5上传已验，完整演示待T9换一套 |
 
-**当前任务：T17同步T20✅。T20已完成并合入main，413文件项目快照已同步至公开GitHub的AI衣橱/，70项新增/更新含34截图，逐文件核验一致；同步证据另补入。详见reports/t17-sync-t20.md，T20验收见reports/t20-community.md。**
+**当前任务：T21🟡。A/B/C离线实现与验收完成，394 pytest+65 Vitest、lint/build383ms；23张375×812截图无横向溢出、真实调用0次。默认体验目录待授权素材；真实试穿账号/费用/照片验证以后安排。见reports/t21-tryon-experience.md。**
 
 **此前T5上传链路✅：D1真实落库门闸后，D2九张真实浏览器上传全部成功，完整单张建档5411–8880ms（n=9）。** 正式九张SQLite15→24，同draft全部重传仍24、模型调用9→9；corrections审计均落库，本批0条。T12仍🟡待T9/完整演示，T11✅；识别稳定性2/3见repeatability报告。134个旧证据/prompt/cases哈希不变。
 D2全量244 pytest + 15 Vitest、lint及构建通过；375×812下上传loading/error/成功与衣柜loading/empty已检查，无横向溢出。失败保留File/input/占位/draft_id，原地重试幂等。T9、完整录屏、人工可穿率、首次10张建档总计时与HTTP端到端P95仍未完成；本轮不改旧prompt/cases或评测证据。
@@ -49,6 +49,7 @@ D2全量244 pytest + 15 Vitest、lint及构建通过；375×812下上传loading/
 | T18 | 身材资料、五体型示意、推荐说明接入及衣橱管理分类；按A—E实施 | docs/11-资料与分类实施计划.md、reports/t18-profile-categories.md | 每段make test/lint；最终375×812 | — | T17 | ✅ |
 | T19 | 参考图首页、真实城市天气与详情视觉改版；A→B→C | docs/superpowers/specs/2026-11-18-home-weather-design.md | 分段make test/lint，最终CDP375×812与真实天气 | — | T18 | ✅ |
 | T20 | 真实社区：四类发布/关注/点赞/评论/投票，衣橱与搭配导航合并；A—E及双设备验收完成 | docs/reports/t20-community.md | 分段test/lint、双设备真实API与375×812 | — | T19 | ✅ |
+| T21 | 首页服饰体验目录、详情与真实托管试穿；先体验版后平台接入 | docs/superpowers/specs/2026-11-19-tryon-experience-design.md | 分段全量test/lint，375×812，真实试穿需另确认资源与预算 | — | T19、T20 | 🟡 |
 
 **关键路径**：T1 → T2 → T4 → T6 → T7 → T10 → T11 → T12（这条路径决定"什么时候有验收证据"）。
 T5 可以并行，但**按纪律串行**；T3 只为 T7 服务，不要提前做卡片墙美化。
@@ -346,6 +347,11 @@ make eval    # 生成 docs/reports/eval_v1.md
 
 | 任务 | 日期 | 实测证据（命令 + 关键输出） |
 |---|---|---|
+| T21离线收尾 | 2026-11-19 | 394 pytest+65 Vitest、lint exit0、build383ms；独立审查两项修复先RED后GREEN：丢回包新尝试同票重试生成2→2，查询错误后恢复轮询。23张CDP375×812均scrollWidth375、Runtime0；双设备私有job/结果404、A清空B保留、A2/B1匿名额度保留，ObjectURL9/9与7/7释放。134冻结项不变；只有隔离供应商注入3次，真实生成0次，不用截图冒充真人效果。T21保持🟡，见reports/t21-tryon-experience.md。 |
+| T21-C实现 | 2026-11-19 | C8文件首页体验目录/详情/人物选择与处理说明/真实任务状态/结果切换/删除，首页上传入口移除、衣橱上传保留；7新增Vitest先缺模块RED后GREEN。392 pytest+64 Vitest、lint/build467ms通过；独立审查与375px待验。未发真实试穿调用。 |
+| T21-B | 2026-11-19 | B8文件完成真实默认FASHN REST、体验目录与私有job API、结果存本地、清空接线；新增13后端用例，392 pytest+57 Vitest、lint全绿。缺key/未确认不创建，提交未知不重发，状态节流/30次预算、坏结果拒绝、清空在途提交/查询均无照片复活；全部供应商响应为离线测试注入，无实际生成。 |
+| T21-A | 2026-11-19 | A7文件完成：素材有权导入dry-run/幂等、008纯创建迁移、独立匿名试穿额度账本、15分钟不过午夜ticket、原子任务保留与删除后410；新增6测试，379 pytest+57 Vitest、lint及脚本ruff通过。旧无列名INSERT导致采用独立额度表，旧断言未改；本地开发重载的早期008已备份补齐，旧业务计数不变、早期多余列保留。无真实调用。 |
+| T21设计 | 2026-11-19 | 仅调研/设计文档：用户无平台商品资源，已选择体验素材+真实试穿路线；核对FASHN官方REST/计费单位/数据保留，未调用付费API。独立审查补删除后去重账本/短期ticket/午夜拒重，A7/B8/C8待批准。git diff --check通过；未运行功能测试、不宣称功能完成。 |
 | T17同步T20 | 2026-11-19 | 本地eff55df的413项快照同步至公开AI衣橱/，70项新增/更新（36文本+34截图）；候选tree核验missing/mismatch/extra/outsideChanged均0，快照commit9daabff8e313de8220ad947c37c51ca96fcf1685已回读。373 pytest+57 Vitest、lint exit0；凭据模式命中0、运行路径0、134冻结项不变；另补同步记录，见reports/t17-sync-t20.md。 |
 | T20收尾 | 2026-11-19 | `373 passed in 5.09s`+`Tests 57 passed (57)`、lint exit0、build426ms。真实临时API双设备四类发布/关注/赞/评论/投票，回包丢失重试3→3帖；A清空14件/2照片及社区、B1帖保留，匿名额度1保留。34张CDP375×812均scrollWidth375、Runtime0，ObjectURL A43/43 B50/50释放。审查修复图片结构/路径/history及嵌套WebP，回归先RED后GREEN；134冻结项不变，无LLM/天气调用。见reports/t20-community.md。 |
 | T20-E实现 | 2026-11-18 | 7代码文件，帖子详情/真实互动/评论/四类发布及照片预览、失败草稿保留、设备切换阻止；新增1 Vitest先RED后GREEN，全量367 pytest+57 Vitest、lint/build364ms通过。独立审查与375px双设备验收待做。 |

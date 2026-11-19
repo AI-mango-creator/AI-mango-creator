@@ -615,3 +615,79 @@ class CommunityCommentView(BaseModel):
 class CommunityComments(BaseModel):
     comments: list[CommunityCommentView]
     next_cursor: str | None
+
+
+TryonCategory = Literal['tops', 'bottoms', 'one-pieces']
+TryonStatus = Literal['submitting', 'starting', 'in_queue', 'processing', 'completed', 'failed', 'unknown', 'timed_out']
+
+
+class ExperienceProduct(SourcedModel):
+    owner_id: Literal['catalog'] = sourced('derived', default='catalog')
+    id: str = sourced('derived', pattern=r'^[A-Za-z0-9_-]{1,80}$')
+    title: str = sourced('user', min_length=1, max_length=100)
+    category: TryonCategory = sourced('user')
+    image_path: str = sourced('derived')
+    source_label: str = sourced('user', min_length=1, max_length=200)
+    rights_note: str = sourced('user', min_length=1, max_length=500)
+    content_hash: str = sourced('derived')
+    created_at: float = sourced('derived')
+
+
+class ExperienceProductView(BaseModel):
+    id: str
+    title: str
+    category: TryonCategory
+    source_label: str
+
+
+class TryonJob(SourcedModel):
+    id: str = sourced('derived')
+    owner_id: UUID = sourced('derived')
+    request_id: str = sourced('derived')
+    request_hash: str = sourced('derived')
+    product_id: str = sourced('user')
+    status: TryonStatus = sourced('derived', default='submitting')
+    provider_task_id: str | None = sourced('derived', default=None)
+    portrait_path: str | None = sourced('derived', default=None)
+    result_path: str | None = sourced('derived', default=None)
+    error_kind: str | None = sourced('derived', default=None)
+    created_at: float = sourced('derived')
+    latency_ms: int = sourced('derived', default=0)
+    polls: int = sourced('derived', default=0)
+    last_poll: float = sourced('derived', default=0)
+
+
+class TryonView(BaseModel):
+    id: str
+    product_id: str
+    status: TryonStatus
+    message: str = ''
+    has_result: bool = False
+    latency_ms: int = 0
+    version: Literal['fashn.tryon-v1.6'] = 'fashn.tryon-v1.6'
+
+
+class TryonTicket(BaseModel):
+    ticket: str
+    request_id: str
+    expires_at: float
+
+
+class ProviderTryonError(BaseModel):
+    name: str | None = None
+    message: str | None = None
+
+
+class ProviderTryon(BaseModel):
+    id: str = Field(min_length=1, max_length=200, pattern=r'^[A-Za-z0-9_-]+$')
+    status: Literal['starting', 'in_queue', 'processing', 'completed', 'failed'] | None = None
+    output: list[str] | None = None
+    error: ProviderTryonError | str | None = None
+
+
+class TryonDailyQuota(BaseModel):
+    owner_hash: str = Field(pattern=r'^[0-9a-f]{64}$')
+    day: str
+    expires_at: str
+    tryon: int = Field(default=0, ge=0, le=3)
+    tryon_request_hashes: list[str] = Field(default_factory=list)

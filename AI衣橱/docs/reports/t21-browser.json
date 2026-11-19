@@ -1,0 +1,242 @@
+{
+  "recorded_at": "2026-11-19T14:40:33.772Z",
+  "mode": "OFFLINE PROVIDER INJECTION; all inputs/outputs are garment fixtures, NOT real human try-on; local API/SQLite are real and isolated",
+  "checks": [
+    {
+      "name": "home removes personal feed and upload shortcut"
+    },
+    {
+      "name": "unconfigured retains File and preview"
+    },
+    {
+      "name": "unconfigured never invokes provider"
+    },
+    {
+      "name": "actual job persisted",
+      "id": "T9e30dafcac5b4df1afdea4816868bcce"
+    },
+    {
+      "name": "B cannot read A private job"
+    },
+    {
+      "name": "B cannot read A result"
+    },
+    {
+      "name": "B wardrobe stays empty"
+    },
+    {
+      "name": "manual query restores automatic polling",
+      "before": 5,
+      "after": 6
+    },
+    {
+      "name": "lost response follows actual server acceptance"
+    },
+    {
+      "name": "lost new-task response closes modal and keeps input"
+    },
+    {
+      "name": "same attempt retry does not regenerate",
+      "before": 2,
+      "after": 2
+    },
+    {
+      "name": "A clear returns success"
+    },
+    {
+      "name": "A private tasks cleared"
+    },
+    {
+      "name": "B task survives A clear"
+    },
+    {
+      "name": "shared fixture catalog survives owner clear"
+    },
+    {
+      "name": "wardrobe upload remains"
+    },
+    {
+      "name": "ObjectURL released A",
+      "created": 9,
+      "revoked": 9,
+      "active": 0
+    },
+    {
+      "name": "ObjectURL released B",
+      "created": 7,
+      "revoked": 7,
+      "active": 0
+    },
+    {
+      "name": "browser Runtime errors zero"
+    },
+    {
+      "name": "three injected submissions, zero real provider calls",
+      "injected": 3,
+      "real": 0
+    }
+  ],
+  "screenshots": [
+    {
+      "name": "01-home-empty",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "02-home-loading-injected",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "03-home-error-injected",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "04-home-feed-fixtures",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "05-category-empty",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "06-product-detail-fixture",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "07-person-selection-fixture",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "08-unconfigured-file-retained",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "09-starting-injected",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "10-processing-injected",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "11-poll-error-injected",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "12-poll-resumed-injected",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "13-result-fixture-not-real",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "14-result-controls",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "15-original-fixture",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "16-new-task-confirmation",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "17-new-task-lost-response-retained",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "18-retried-result-fixture",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "19-delete-confirmation",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "20-detail-loading-injected",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "21-detail-error-injected",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "22-wardrobe-upload-preserved",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    },
+    {
+      "name": "23-community-preserved",
+      "owner": "a",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375
+    }
+  ]
+}

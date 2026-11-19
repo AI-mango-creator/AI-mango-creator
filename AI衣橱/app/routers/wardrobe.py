@@ -213,7 +213,7 @@ def _confirm_or_patch(path, owner_id, item_id, patch):
 
 @router.delete("/items")
 def clear_items(path: Database, owner_id: Owner) -> dict[str, int]:
-    from app.services import community
+    from app.services import community, tryon
 
     staged = []
     with owner_lock(path, owner_id):
@@ -222,6 +222,7 @@ def clear_items(path: Database, owner_id: Owner) -> dict[str, int]:
                 connection.execute("BEGIN IMMEDIATE")
                 staged = community.stage_owner_posts(connection, path, owner_id)
                 community.clear_for_owner(connection, owner_id)
+                tryon.clear_for_owner(connection, owner_id)
                 rows = connection.execute("SELECT image_path FROM wardrobe_items WHERE owner_id=?", (owner_id,)).fetchall()
                 counts = {}
                 for table in ("outfit_items", "outfit_sets", "sessions", "wardrobe_items"):

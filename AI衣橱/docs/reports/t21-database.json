@@ -1,0 +1,18 @@
+{
+  "A_jobs": 0,
+  "B_jobs": 1,
+  "catalog": 2,
+  "quota_counts": [
+    {
+      "tryon": 2,
+      "day": "2026-11-19"
+    },
+    {
+      "tryon": 1,
+      "day": "2026-11-19"
+    }
+  ],
+  "frozen_unchanged": 134,
+  "actual_provider_calls": 0,
+  "mode": "isolated offline injection"
+}

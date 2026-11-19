@@ -101,7 +101,8 @@ def _quota_day(now=None):
 def expire_quotas(db_path: Path, *, now=None) -> int:
     _, day, _ = _quota_day(now)
     with closing(connect_db(db_path)) as connection, connection:
-        return connection.execute("DELETE FROM daily_quotas WHERE day < ?", (day,)).rowcount
+        old = connection.execute("DELETE FROM daily_quotas WHERE day < ?", (day,)).rowcount
+        return old + connection.execute('DELETE FROM tryon_daily_quotas WHERE day < ?', (day,)).rowcount
 
 
 def reserve_quota(db_path: Path, owner_id: str, ability: str, *, now=None) -> None:
@@ -164,3 +165,70 @@ def opaque_item_id(db_path: Path, owner_id: str, reference_id: str) -> str:
         ordinal = "-" + index
     digest = hashlib.sha256((quota_key(db_path, owner_id) + ":item:" + reference_id).encode()).hexdigest()
     return "I" + digest[:32] + ordinal
+
+
+# T21: opaque short-lived tickets plus same-day anonymous rejection ledger.
+def issue_tryon_ticket(db_path, owner_id, product_id, *, now=None):
+    import base64
+    import hashlib
+    import hmac
+    from uuid import uuid4
+
+    key = quota_key(db_path, owner_id)
+    current, _, midnight = _quota_day(now)
+    values = {"owner": key, "product": product_id, "request": str(uuid4()),
+                  "expires": min(current.timestamp()+900, midnight.timestamp())}
+    data = base64.urlsafe_b64encode(json.dumps(values, sort_keys=True).encode()).decode()
+    secret = (Path(db_path).parent/'.quota_salt').read_bytes()
+    signature = hmac.new(secret, data.encode(), hashlib.sha256).hexdigest()
+    return {"ticket": data+'.'+signature, "request_id": values['request'], "expires_at": values['expires']}
+
+
+def reserve_tryon(db_path, owner_id, product_id, ticket, digest, *, now=None):
+    import base64
+    import hashlib
+    import hmac
+    from uuid import uuid4
+
+    from fastapi import HTTPException
+
+    from app.models import TryonJob
+
+    key = quota_key(db_path, owner_id)
+    try:
+        data, signature = ticket.split('.')
+        secret = (Path(db_path).parent/'.quota_salt').read_bytes()
+        if not hmac.compare_digest(signature, hmac.new(secret, data.encode(), hashlib.sha256).hexdigest()):
+            raise ValueError()
+        value = json.loads(base64.urlsafe_b64decode(data))
+        if value['owner'] != key or value['product'] != product_id:
+            raise ValueError()
+    except (ValueError, KeyError, TypeError):
+        raise HTTPException(422, '试穿凭据无效，请重新确认试穿。') from None
+    with closing(connect_db(db_path)) as db, db:
+        db.execute('BEGIN IMMEDIATE')
+        current, day, midnight = _quota_day(now)
+        if value['expires'] <= current.timestamp():
+            raise HTTPException(409, '操作已过期，请重新确认试穿；已选照片可保留。')
+        old = db.execute('SELECT * FROM tryon_jobs WHERE owner_id=? AND request_id=?', (owner_id, value['request'])).fetchone()
+        if old:
+            if old['request_hash'] != digest:
+                raise HTTPException(409, '同一试穿请求内容已变化，请重新确认。')
+            return dict(old), True
+        db.execute('DELETE FROM tryon_daily_quotas WHERE day<?', (day,))
+        db.execute('INSERT INTO tryon_daily_quotas(owner_hash,day,expires_at) VALUES (?,?,?) ON CONFLICT DO NOTHING', (key, day, midnight.isoformat()))
+        quota = db.execute('SELECT * FROM tryon_daily_quotas WHERE owner_hash=? AND day=?', (key, day)).fetchone()
+        seen = json.loads(quota['tryon_request_hashes'])
+        request_hash = hashlib.sha256((key+value['request']).encode()).hexdigest()
+        if request_hash in seen:
+            raise HTTPException(410, '此试穿已删除，请重新确认后创建新任务。')
+        if quota['tryon'] >= 3:
+            raise HTTPException(429, '今日试穿已达3次上限，请明天再试。')
+        if os.getenv('APP_SHARE_MODE') == '1' and db.execute('SELECT coalesce(sum(tryon),0) FROM tryon_daily_quotas WHERE day=?', (day,)).fetchone()[0] >= 10:
+            raise HTTPException(429, '测试服务今日试穿总额度已用完，请明天再试。')
+        job = TryonJob(id='T'+uuid4().hex, owner_id=owner_id, request_id=value['request'],
+                       request_hash=digest, product_id=product_id, created_at=current.timestamp())
+        values = to_db_values(job)
+        db.execute(f"INSERT INTO tryon_jobs ({','.join(values)}) VALUES ({','.join(':'+x for x in values)})", values)
+        db.execute('UPDATE tryon_daily_quotas SET tryon=tryon+1,tryon_request_hashes=? WHERE owner_hash=? AND day=?', (json.dumps(seen+[request_hash]), key, day))
+        return dict(db.execute('SELECT * FROM tryon_jobs WHERE id=?', (job.id,)).fetchone()), False

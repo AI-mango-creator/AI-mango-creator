@@ -35,7 +35,7 @@
 P0 明确**不做**（写进 checklist，不要"顺手实现"）：
 - 用户注册登录、多设备同步
 - 3D 人体建模、点云重建、Unity / AR
-- **虚拟试穿**（P1 才做，且只允许走托管推理 API，禁止自部署）
+- **虚拟试穿**（T21 人类批准限定例外：本轮实现明确标注的服饰体验目录与托管API试穿，不接平台抓取/交易或衣柜外推荐；当前仅离线实现，真实调用等待账号、费用及照片确认。禁止自部署。）
 - 电商链接抓取、商品比价、分佣、退货率数据
 - 社交分享、穿搭社区、案例广场（T20 人类批准例外：仅实现应用内真实社区的显式发帖、关注、点赞、评论和投票；私人衣柜默认隔离，只有用户主动发布的副本可跨设备查看。不扩展站外分享、商城、试穿或注册登录；其余限制保持。）
 - 会员付费、积分体系、文小言生态联动
@@ -60,7 +60,7 @@ AI    唯一出口 app/llm/client.py；视觉识别与文本编排分开两个�
 
 **禁用清单**：Docker、Kubernetes、微服务、Redis、Celery、GraphQL、任何需要联网的第三方数据库、任何需要付费账号的第三方 SDK。
 
-**P0 额外禁用（见 `docs/decisions.md` D7）**：本地模型权重下载、Paddle / PaddleDetection / PaddleClas、SAM、detectron2、diffusers、torch 本地推理、任何 GPU 依赖。P0 的 AI 能力**只允许 2 类远程调用**——识别与编排；"2" 指能力种类，每类单次请求最多 3 次调用（首调 1 + 重试 2，见 D7.1），不是总共只能调 2 次。本机是 16GB MacBook Air，跑不动 7B 视觉模型。
+**P0 额外禁用（见 `docs/decisions.md` D7）**：本地模型权重下载、Paddle / PaddleDetection / PaddleClas、SAM、detectron2、diffusers、torch 本地推理、任何 GPU 依赖。P0 的 AI 能力**只允许 2 类远程调用**——识别与编排；"2" 指能力种类，每类单次请求最多 3 次调用（首调 1 + 重试 2，见 D7.1），不是总共只能调 2 次。T21 限定新增第三类“托管试穿”，只经 client.py 原生REST，不装付费SDK或本地模型；每任务最多一次生成提交、每HTTP≤20s，状态只读查询最多30次/120s且间隔≥2s，生成提交不自动重试。本机是 16GB MacBook Air，跑不动 7B 视觉模型。
 
 理由：这是要在笔记本上 `make dev` 就能跑、面试时能当场演示的项目。引入任何需要额外启动步骤的组件都是减分。
 
@@ -143,6 +143,7 @@ make eval     # 跑 20 条 case，生成 docs/reports/eval_vN.md
 1. 所有 LLM 调用必须走 `app/llm/client.py`，**禁止在 service 层直接 import SDK**。
 2. 输出一律**结构化 + Pydantic 校验**；禁止对模型返回文本做正则/裸 `json.loads` 猜字段。
 3. 每次调用必须带：`timeout=20s`、`max_retries=2`、`max_tokens` 上限、`temperature` 显式指定（编排用 0.3，识别用 0）。
+   T21 原生试穿图像API使用结构化请求/响应与版本记录，不适用文本生成的max_tokens/temperature/schema参数；旧识别和编排规则不变。
 4. prompt 全部放 `prompts/*.md`，文件名带 `.vN`；**改 prompt 必须在汇报里贴改动前后 diff 摘要 + 是否影响既有 case**。
 5. 每次调用写一条日志到 `data/llm.log`：`case_id / prompt_version / 耗时 / prompt_tokens / completion_tokens / 是否降级`。
 

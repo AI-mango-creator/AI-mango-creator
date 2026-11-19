@@ -1,0 +1,39 @@
+.venv/bin/python -m pytest -q app/tests
+........................................................................ [ 18%]
+........................................................................ [ 36%]
+........................................................................ [ 54%]
+........................................................................ [ 73%]
+........................................................................ [ 91%]
+..................................                                       [100%]
+394 passed in 3.84s
+cd web && npm test
+
+> wardrobe-copilot-web@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 /Users/yuanying/Desktop/算法衣橱/web
+
+
+ Test Files  10 passed (10)
+      Tests  65 passed (65)
+   Start at  22:43:56
+   Duration  443ms (tests 64%, transform 18%, import 13%, worker 5%)
+
+.venv/bin/python -m ruff check app
+All checks passed!
+cd web && npx tsc --noEmit
+
+> wardrobe-copilot-web@0.1.0 build
+> tsc --noEmit && vite build
+
+vite v7.3.8 building client environment for production...
+transforming...
+✓ 54 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.58 kB │ gzip:  0.40 kB
+dist/assets/index-mfwXMKZH.css   44.09 kB │ gzip: 10.66 kB
+dist/assets/App-HxVOgihr.js      91.14 kB │ gzip: 27.08 kB
+dist/assets/index-ILSfH6-h.js   144.86 kB │ gzip: 47.05 kB
+✓ built in 383ms
