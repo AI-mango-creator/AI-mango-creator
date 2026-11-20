@@ -24,3 +24,6 @@ cd web && npx tsc --noEmit
 ## 边界
 
 链接仍是免费临时通道，电脑需保持开机联网；轮换或停用后主页按钮需再次更新。本次没有长期托管、固定域名、新增模型调用或发布求职材料；数据仍在本机独立分享库。无法据此保证所有运营商/微信内置浏览器网络条件。
+
+
+发布提交：3a38a9dd20b40f90aba79d17e5958bbf3f3ef313。发布后按该提交回读根README全文一致；匿名raw.githubusercontent.com原文200并含当前体验按钮，新地址首页与health再次200。候选tree与原tree比较，除批准4路径外unrelatedChanges=0、unexpectedFiles=0。此后仅补验收记录，不再次改主页入口。
