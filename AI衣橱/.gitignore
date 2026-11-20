@@ -9,3 +9,13 @@ web/dist/
 .pytest_cache/
 .ruff_cache/
 .DS_Store
+
+# 本地求职材料：保留原稿，不纳入Git跟踪或GitHub同步
+**/*简历*
+**/*求职*
+**/*面试*
+**/*投递*
+**/[Rr][Ee][Ss][Uu][Mm][Ee].*
+**/[Rr][Ee][Ss][Uu][Mm][Ee]-*
+**/[Cc][Vv].*
+docs/作品说明.md
