@@ -38,7 +38,8 @@ def _author(db, owner, create=False):
     row = db.execute('SELECT * FROM community_authors WHERE owner_id=?', (owner,)).fetchone()
     if row is None and create:
         uid = 'U' + uuid4().hex
-        _insert(db, 'community_authors', CommunityAuthor(id=uid, owner_id=owner, nickname='衣友'+uid[-6:]))
+        setting = db.execute('SELECT nickname FROM personal_settings WHERE owner_id=?', (owner,)).fetchone()
+        _insert(db, 'community_authors', CommunityAuthor(id=uid, owner_id=owner, nickname=setting['nickname'] if setting else '衣友'+uid[-6:]))
         row = db.execute('SELECT * FROM community_authors WHERE id=?', (uid,)).fetchone()
     return row
 

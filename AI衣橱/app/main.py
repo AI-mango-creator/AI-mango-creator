@@ -17,7 +17,9 @@ from app.db import _quota_day, expire_quotas
 from app.llm.errors import LLMError, ServiceError, public_model_failure
 from app.models import ExtractionFailureResponse
 from app.routers.community import router as community_router
+from app.routers.ootd import router as ootd_router
 from app.routers.outfits import router as outfits_router
+from app.routers.personal import router as personal_router
 from app.routers.profile import router as profile_router
 from app.routers.tryon import router as tryon_router
 from app.routers.wardrobe import database_path
@@ -46,6 +48,8 @@ async def lifespan(application):
     try:
         provider = application.dependency_overrides.get(database_path, database_path)
         path = provider()
+        from app.services.personal import recover_pending_clear
+        recover_pending_clear(path)
         expire_quotas(path)
         application.state.quota_paths.add(path)
     except (OSError, sqlite3.Error):
@@ -63,6 +67,8 @@ app = FastAPI(title="算法衣橱", lifespan=lifespan)
 app.include_router(wardrobe_router)
 app.include_router(outfits_router)
 app.include_router(profile_router)
+app.include_router(personal_router)
+app.include_router(ootd_router)
 app.include_router(weather_router)
 app.include_router(community_router)
 app.include_router(tryon_router)

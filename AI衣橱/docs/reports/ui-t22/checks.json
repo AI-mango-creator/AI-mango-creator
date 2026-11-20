@@ -1,0 +1,150 @@
+[
+  {
+    "name": "01-my-history",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "name": "02-favorites",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "name": "03-published",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "name": "04-ootd-private",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "name": "05-outfits",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "name": "06-points-real",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "name": "07-received-interactions",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "name": "08-settings-top",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "name": "09-settings-bottom",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "name": "10-edit-identity",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "name": "11-ootd-new-empty",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "name": "12-ootd-selected-photo",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "name": "13-ootd-saved-detail",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "name": "14-ootd-edit",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "name": "15-post-bookmark-real",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "name": "16-content-loading",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "name": "17-content-error-injected",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "name": "18-photo-error-injected",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "runtimeErrors": 0
+  },
+  {
+    "name": "19-my-empty",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "name": "20-messages-empty",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "emptyRuntimeErrors": 0
+  },
+  {
+    "name": "21-messages-loading",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "name": "22-messages-error-injected",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "name": "23-points-loading",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "name": "24-points-error-injected",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "name": "25-points-empty-after-clear",
+    "width": 375,
+    "scrollWidth": 375
+  },
+  {
+    "runtimeErrors": 0,
+    "clear": {
+      "sign": {
+        "awarded": false,
+        "day": "2026-11-20",
+        "balance": 0
+      },
+      "otherPosts": 1
+    }
+  },
+  {
+    "name": "26-outfit-chinese-labels",
+    "width": 375,
+    "scrollWidth": 375,
+    "runtimeErrors": 0
+  }
+]

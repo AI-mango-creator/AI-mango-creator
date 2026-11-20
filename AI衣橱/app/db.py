@@ -102,7 +102,10 @@ def expire_quotas(db_path: Path, *, now=None) -> int:
     _, day, _ = _quota_day(now)
     with closing(connect_db(db_path)) as connection, connection:
         old = connection.execute("DELETE FROM daily_quotas WHERE day < ?", (day,)).rowcount
-        return old + connection.execute('DELETE FROM tryon_daily_quotas WHERE day < ?', (day,)).rowcount
+        old += connection.execute('DELETE FROM tryon_daily_quotas WHERE day < ?', (day,)).rowcount
+        old += connection.execute('DELETE FROM point_daily_claims WHERE day < ?', (day,)).rowcount
+        old += connection.execute("DELETE FROM personal_write_receipts WHERE day < ? AND purpose<>'clear'", (day,)).rowcount
+        return old
 
 
 def reserve_quota(db_path: Path, owner_id: str, ability: str, *, now=None) -> None:

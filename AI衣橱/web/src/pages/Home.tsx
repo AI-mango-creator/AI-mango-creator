@@ -11,7 +11,7 @@ import type {Product} from '../lib/tryonApi';
 import type { WeatherState } from '../lib/weatherApi';
 import { forecastIsFresh } from '../lib/weatherApi';
 const shortcuts: { title: string; icon: IconName; page: Page; upload?: boolean }[] = [
-  { title: '我的衣橱', icon: 'wardrobe', page: 'wardrobe' }, { title: '身材档案', icon: 'person', page: 'profile' },
+  { title: '我的衣橱', icon: 'wardrobe', page: 'wardrobe' }, { title: '我的档案', icon: 'person', page: 'profile' },
   { title: '天气穿搭', icon: 'sun', page: 'weather' }, { title: 'AI搭配', icon: 'spark', page: 'outfits' },
 ];
 export default function Home({ weather, onNavigate }: { weather: WeatherState; onNavigate: (p: Page, upload?: boolean) => void }) {

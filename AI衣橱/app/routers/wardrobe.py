@@ -1,5 +1,4 @@
 import json
-import shutil
 from contextlib import closing
 from hashlib import sha256
 from pathlib import Path
@@ -213,37 +212,31 @@ def _confirm_or_patch(path, owner_id, item_id, patch):
 
 @router.delete("/items")
 def clear_items(path: Database, owner_id: Owner) -> dict[str, int]:
-    from app.services import community, tryon
+    from app.services import community, personal, tryon
 
-    staged = []
+    personal.recover_pending_clear(path, owner_id)
     with owner_lock(path, owner_id):
+        operation = personal.prepare_clear(path, owner_id)
         try:
             with closing(connect_db(path)) as connection, connection:
                 connection.execute("BEGIN IMMEDIATE")
-                staged = community.stage_owner_posts(connection, path, owner_id)
+                personal.stage_private(path, owner_id, operation)
+                photos = connection.execute("SELECT count(DISTINCT image_path) FROM wardrobe_items WHERE owner_id=?", (owner_id,)).fetchone()[0]
+                personal.clear_records(connection, path, owner_id)
                 community.clear_for_owner(connection, owner_id)
                 tryon.clear_for_owner(connection, owner_id)
-                rows = connection.execute("SELECT image_path FROM wardrobe_items WHERE owner_id=?", (owner_id,)).fetchall()
                 counts = {}
                 for table in ("outfit_items", "outfit_sets", "sessions", "wardrobe_items"):
                     counts[table] = connection.execute(f"DELETE FROM {table} WHERE owner_id=?", (owner_id,)).rowcount
                 connection.execute("DELETE FROM body_profiles WHERE owner_id=?", (owner_id,))
-                uploads = (path.parent / "uploads").resolve()
-                photos = set()
-                for row in rows:
-                    if row["image_path"]:
-                        image = (path.parent / row["image_path"]).resolve()
-                        if not image.is_relative_to(uploads):
-                            raise HTTPException(500, "照片清理未完成，请稍后重试。")
-                        photos.add(image)
-                for image in photos:
-                    image.unlink(missing_ok=True)
-                own_directory = uploads / owner_id
-                if own_directory.is_dir():
-                    shutil.rmtree(own_directory)
-                counts["photos"] = len(photos)
+                connection.execute("UPDATE personal_write_receipts SET state='consumed' WHERE token_hash=?", (operation,))
+                counts["photos"] = photos
         except Exception:
-            community.restore_staged(staged)
+            personal.finish_clear(path, operation, False)
             raise
-        community.purge_trash(path, owner_id)
+        try:
+            personal.finish_clear(path, operation, True)
+            community.purge_trash(path, owner_id)
+        except OSError:
+            raise HTTPException(500, "数据已清空，照片清理未完成，请重试。") from None
     return counts

@@ -23,6 +23,13 @@ from app.models import (
     ExperienceProduct,
     OutfitItem,
     OutfitSet,
+    PersonalFavorite,
+    PersonalFeedback,
+    PersonalOotd,
+    PersonalSettings,
+    PersonalWriteReceipt,
+    PointDailyClaim,
+    PointEntry,
     Session,
     TryonDailyQuota,
     TryonJob,
@@ -71,6 +78,9 @@ def create_outfit(connection):
 
 def test_init_creates_four_tables_matching_models(database):
     expected = {
+        "personal_settings": PersonalSettings, "point_entries": PointEntry, "point_daily_claims": PointDailyClaim,
+        "personal_favorites": PersonalFavorite, "personal_ootds": PersonalOotd,
+        "personal_feedback": PersonalFeedback, "personal_write_receipts": PersonalWriteReceipt,
         "wardrobe_items": WardrobeItem,
         "outfit_sets": OutfitSet,
         "outfit_items": OutfitItem,

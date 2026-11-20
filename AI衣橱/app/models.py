@@ -691,3 +691,132 @@ class TryonDailyQuota(BaseModel):
     expires_at: str
     tryon: int = Field(default=0, ge=0, le=3)
     tryon_request_hashes: list[str] = Field(default_factory=list)
+
+
+# T22 additive private-center schemas; existing recommendation contracts stay unchanged.
+class PersonalSettings(SourcedModel):
+    owner_id: UUID = sourced('derived')
+    nickname: str = sourced('user', min_length=1, max_length=24)
+    avatar_path: str | None = sourced('user', default=None)
+    avatar_version: str = sourced('derived', default='')
+    created_at: str = sourced('derived')
+
+
+class PointEntry(SourcedModel):
+    id: str = sourced('derived')
+    owner_id: UUID = sourced('derived')
+    day: str = sourced('derived')
+    delta: Literal[10] = sourced('derived', default=10)
+    reason: Literal['daily_visit'] = sourced('derived', default='daily_visit')
+    created_at: str = sourced('derived')
+
+
+class PointDailyClaim(SourcedModel):
+    owner_hash: str = sourced('derived', pattern=r'^[0-9a-f]{64}$')
+    day: str = sourced('derived')
+    expires_at: str = sourced('derived')
+
+
+class PersonalFavorite(SourcedModel):
+    owner_id: UUID = sourced('derived')
+    post_id: str = sourced('user')
+    created_at: str = sourced('derived')
+
+
+class PersonalOotd(SourcedModel):
+    id: str = sourced('derived')
+    owner_id: UUID = sourced('derived')
+    client_id: str = sourced('derived')
+    request_hash: str = sourced('derived')
+    worn_on: str = sourced('user')
+    title: str = sourced('user', default='', max_length=80)
+    note: str = sourced('user', default='', max_length=500)
+    kind: Literal['photo', 'outfit'] = sourced('user')
+    photo_path: str | None = sourced('user', default=None)
+    set_id: str | None = sourced('user', default=None)
+    created_at: str = sourced('derived')
+    updated_at: str = sourced('derived')
+
+
+class PersonalFeedback(SourcedModel):
+    id: str = sourced('derived')
+    owner_id: UUID = sourced('derived')
+    client_id: str = sourced('derived')
+    request_hash: str = sourced('derived')
+    category: Literal['feedback', 'complaint'] = sourced('user')
+    text: str = sourced('user', min_length=1, max_length=1000)
+    created_at: str = sourced('derived')
+
+
+class PersonalWriteReceipt(SourcedModel):
+    token_hash: str = sourced('derived')
+    owner_hash: str = sourced('derived')
+    purpose: Literal['ootd', 'feedback', 'avatar', 'settings', 'favorite', 'clear'] = sourced('derived')
+    day: str = sourced('derived')
+    expires_at: float = sourced('derived')
+    state: Literal['issued', 'consumed', 'revoked'] = sourced('derived', default='issued')
+    payload_hash: str | None = sourced('derived', default=None)
+
+
+class PersonalInput(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    ticket: str = Field(min_length=1, max_length=2048)
+
+
+class PersonalSettingsPatch(PersonalInput):
+    nickname: str = Field(min_length=1, max_length=24)
+
+
+class PersonalFeedbackDraft(PersonalInput):
+    category: Literal['feedback', 'complaint'] = 'feedback'
+    text: str = Field(min_length=1, max_length=1000)
+
+
+class OotdDraft(PersonalInput):
+    worn_on: str = Field(pattern=r'^\d{4}-\d{2}-\d{2}$')
+    title: str = Field(default='', max_length=80)
+    note: str = Field(default='', max_length=500)
+    kind: Literal['photo', 'outfit']
+    set_id: str | None = Field(default=None, max_length=100)
+
+    @model_validator(mode='after')
+    def valid_source_date(self) -> Self:
+        from datetime import date
+        date.fromisoformat(self.worn_on)
+        if (self.kind == 'photo' and self.set_id is not None) or (self.kind == 'outfit' and not self.set_id):
+            raise ValueError('请选择照片或本人搭配作为来源。')
+        return self
+
+
+class OotdPatch(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    worn_on: str = Field(pattern=r'^\d{4}-\d{2}-\d{2}$')
+    title: str = Field(default='', max_length=80)
+    note: str = Field(default='', max_length=500)
+
+    @model_validator(mode='after')
+    def valid_date(self) -> Self:
+        from datetime import date
+        date.fromisoformat(self.worn_on)
+        return self
+
+
+class PersonalTicketView(BaseModel):
+    ticket: str
+    request_id: str
+    expires_at: float
+
+
+class PersonalPage(BaseModel):
+    items: list[dict]
+    next_cursor: str | None = None
+
+
+class PersonalPointsView(PersonalPage):
+    balance: int = Field(ge=0)
+
+
+class PersonalCheckinView(BaseModel):
+    awarded: bool
+    day: str
+    balance: int = Field(ge=0)
