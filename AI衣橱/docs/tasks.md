@@ -18,7 +18,7 @@
 | 阶段 4 项目测试 | ✅ | T10/T11评测交付；失败与缺项保留，人工可穿率未测 |
 | 阶段 5 BUG 改进 | 🟡 | T12文档完成；T5上传已验，完整演示待T9换一套 |
 
-**当前任务：T17同步T21✅。T21离线实现457文件快照已同步公开GitHub，58项新增/更新含23截图，逐文件一致、主页其他文件不变。T21仍🟡待素材与真实试穿费用/效果验证；同步记录见reports/t17-sync-t21.md。**
+**当前任务：T17发布清理✅。专用求职文案和作品展示文档已从GitHub当前版本删除，本地原稿保留、解除跟踪并加入忽略规则，README已清理入口；远端删除提交7dc1815已回读。394 pytest+65 Vitest、lint通过，134冻结项不变；旧提交仍含历史副本，本轮不重写历史。见reports/t17-career-exclusion.md。**
 
 **此前T5上传链路✅：D1真实落库门闸后，D2九张真实浏览器上传全部成功，完整单张建档5411–8880ms（n=9）。** 正式九张SQLite15→24，同draft全部重传仍24、模型调用9→9；corrections审计均落库，本批0条。T12仍🟡待T9/完整演示，T11✅；识别稳定性2/3见repeatability报告。134个旧证据/prompt/cases哈希不变。
 D2全量244 pytest + 15 Vitest、lint及构建通过；375×812下上传loading/error/成功与衣柜loading/empty已检查，无横向溢出。失败保留File/input/占位/draft_id，原地重试幂等。T9、完整录屏、人工可穿率、首次10张建档总计时与HTTP端到端P95仍未完成；本轮不改旧prompt/cases或评测证据。
@@ -347,6 +347,7 @@ make eval    # 生成 docs/reports/eval_v1.md
 
 | 任务 | 日期 | 实测证据（命令 + 关键输出） |
 |---|---|---|
+| T17发布清理 | 2026-11-20 | 远端提交7dc181567d02ee94349d99e0e10728c2db3e0366已回读；递归tree确认两份专用文档不存在，456项项目文件、其他文件SHA不变。local originals=2 preserved; tracked=0; ignored=2; README links=0；技术截图poll-resumed不被误忽略。make test→394 passed in 4.08s + Tests 65 passed (65)；make lint→All checks passed!、tsc exit0；134冻结项mismatches=[]。本地原稿不上传，历史不改写，详见reports/t17-career-exclusion.md。 |
 | T17同步T21 | 2026-11-19 | 本地3d742e7的457项快照同步公开AI衣橱/，58项新增/更新（35文本+23离线截图）；missing/mismatch/extra/outsideChanged均0，快照commitf1137c852f6a999201c7eb8dc0bf3f845744b471已回读。394 pytest+65 Vitest、lint exit0；凭据模式/运行路径命中0、134冻结项不变；另补同步记录，真实试穿未做，见reports/t17-sync-t21.md。 |
 | T21离线收尾 | 2026-11-19 | 394 pytest+65 Vitest、lint exit0、build383ms；独立审查两项修复先RED后GREEN：丢回包新尝试同票重试生成2→2，查询错误后恢复轮询。23张CDP375×812均scrollWidth375、Runtime0；双设备私有job/结果404、A清空B保留、A2/B1匿名额度保留，ObjectURL9/9与7/7释放。134冻结项不变；只有隔离供应商注入3次，真实生成0次，不用截图冒充真人效果。T21保持🟡，见reports/t21-tryon-experience.md。 |
 | T21-C实现 | 2026-11-19 | C8文件首页体验目录/详情/人物选择与处理说明/真实任务状态/结果切换/删除，首页上传入口移除、衣橱上传保留；7新增Vitest先缺模块RED后GREEN。392 pytest+64 Vitest、lint/build467ms通过；独立审查与375px待验。未发真实试穿调用。 |
