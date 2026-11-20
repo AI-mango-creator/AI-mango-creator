@@ -18,7 +18,7 @@
 | 阶段 4 项目测试 | ✅ | T10/T11评测交付；失败与缺项保留，人工可穿率未测 |
 | 阶段 5 BUG 改进 | 🟡 | T12文档完成；T5上传已验，完整演示待T9换一套 |
 
-**当前任务：T17同步T22及临时手机链接✅。906c89e的509项快照已同步GitHub，70项更新含26截图，逐文件一致、目录外变更0；后台临时HTTPS首页/health/最新资源及设备接口已实测。链接可轮换，查询scripts.share --status；简历材料/密钥/运行数据未上传。见reports/t17-sync-t22.md。**
+**当前任务：T17主页入口修复。已定位根README仍使用旧免费通道且匿名502/no tunnel，当前新通道首页/health200；更新GitHub主页体验按钮并保留其他内容，远端回读验证中。见reports/t17-profile-entry-fix.md。**
 
 **此前T5上传链路✅：D1真实落库门闸后，D2九张真实浏览器上传全部成功，完整单张建档5411–8880ms（n=9）。** 正式九张SQLite15→24，同draft全部重传仍24、模型调用9→9；corrections审计均落库，本批0条。T12仍🟡待T9/完整演示，T11✅；识别稳定性2/3见repeatability报告。134个旧证据/prompt/cases哈希不变。
 D2全量244 pytest + 15 Vitest、lint及构建通过；375×812下上传loading/error/成功与衣柜loading/empty已检查，无横向溢出。失败保留File/input/占位/draft_id，原地重试幂等。T9、完整录屏、人工可穿率、首次10张建档总计时与HTTP端到端P95仍未完成；本轮不改旧prompt/cases或评测证据。
@@ -348,6 +348,7 @@ make eval    # 生成 docs/reports/eval_v1.md
 
 | 任务 | 日期 | 实测证据（命令 + 关键输出） |
 |---|---|---|
+| T17主页入口修复 | 2026-11-20 | 旧根README按钮地址与上轮临时地址均匿名502/no tunnel；新通道首页/health200，仓库private=false。409 pytest+76 Vitest、lint通过；只更新根README入口及项目3份同步文档，发布后回读检查。见reports/t17-profile-entry-fix.md。 |
 | T17同步T22 | 2026-11-20 | 509项快照、70项新增/更新（44文本+26图），远端64c1135d80166be8eab1d5d0dbbc013cd15a568c已回读；missing/mismatch/extra/outsideChanged均0。409 pytest+76 Vitest、lint通过；简历材料和配置密钥均未上传。后台临时HTTPS首页/health/最新App资源200，带设备头200/无设备头400，T22积分只读200；无新增模型调用，见reports/t17-sync-t22.md。 |
 | T22最终 | 2026-11-20 | 409 passed in 5.98s、76 Vitest、lint exit0、build469ms；26张375×812均scrollWidth375/Runtime0。真实双设备积分10重复不增、收藏1、收到3互动+1关注、OOTD照片/方案引用持久化、异设备404、反馈保存；StrictMode浏览器选图保存成功。审查5项均修复，慢分页串栏3→0、设置浏览器返回正确、历史只读task快照。134冻结项不变、旧test_db断言不变；清空A后B保留、当日积分0不补领；无真实试穿、部署或GitHub同步，见reports/t22-personal-center.md。 |
 | T22-F | 2026-11-20 | T22-F: 408 passed in 4.24s; Vitest 73 passed; make lint exit0. 新增测试先RED后GREEN；产品整体验收仍待完成。 |

@@ -4,7 +4,9 @@
 
 上传自己的衣服、裤子和鞋子照片，AI 识别建档；确认单品后，输入温度和场合，生成来自自己衣柜的穿搭方案与理由，缺少合适单品时给出缺件提示。
 
-**[👉 点击体验 AI衣橱](https://53d43a3c36282c.app.lhr.life/)**
+**[👉 点击体验 AI衣橱](https://8392ed6dc1c1ad.app.lhr.life/)**
+
+体验入口更新：2026-11-20（临时链接，电脑需保持开机联网）。
 
 **[📁 查看完整项目源码、文档与评测证据](https://github.com/AI-mango-creator/AI-mango-creator/tree/main/AI%E8%A1%A3%E6%A9%B1)**
 
